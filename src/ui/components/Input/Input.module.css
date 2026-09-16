@@ -1,0 +1,89 @@
+.container {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: var(--bliro-dark-6);
+  color: var(--bliro-dark-2);
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  margin: 4px 0;
+}
+
+.container:has(input:focus) {
+  border-color: var(--bliro-dark-4);
+}
+
+.container:has(input:disabled) {
+  border-color: var(--bliro-dark-6);
+  background-color: rgba(239, 240, 240, 0.5);
+}
+
+.container.error {
+  border-color: var(--bliro-red-1) !important;
+}
+
+.icon {
+  color: var(--bliro-dark-4);
+}
+
+.input {
+  border: none;
+  outline: none;
+  padding: 0;
+  flex: 1;
+  font-family: Inter;
+  font-style: normal;
+}
+
+.input::placeholder {
+  color: var(--bliro-dark-5);
+}
+.small {
+  padding: 6px 12px;
+}
+
+.medium {
+  padding: 8px 16px;
+}
+
+.large {
+  padding: 11px 16px;
+}
+
+.xLarge {
+  padding: 15px 16px;
+}
+
+.small .input {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px; /* 138.462% */
+  letter-spacing: -0.13px;
+}
+
+.medium .input {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+  letter-spacing: -0.28px;
+}
+
+.large .input {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
+}
+
+.xLarge .input {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
+}
+
+.container svg {
+  width: 20px;
+  height: 20px;
+  color: var(--bliro-dark-4);
+}

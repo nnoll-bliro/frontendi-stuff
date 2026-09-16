@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16.0px"
+   height="16.0px"
+   viewBox="0 0 16.0 16.0"
+   version="1.1"
+   id="SVGRoot"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlnssvg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1767" />
+  <g
+     id="layer1">
+    <rect
+       style="fill:#a093ed;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linejoin:round"
+       id="rect1825"
+       width="16"
+       height="16"
+       x="0"
+       y="0"
+       ry="2" />
+  </g>
+  <g
+     id="layer3">
+    <rect
+       style="fill:#a093ed;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linejoin:round"
+       id="rect1929"
+       width="12"
+       height="7"
+       x="2"
+       y="4"
+       ry="2" />
+    <rect
+       style="fill:#fffefd;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linejoin:round"
+       id="rect1931"
+       width="12"
+       height="8"
+       x="2"
+       y="4"
+       ry="1" />
+    <circle
+       style="fill:#a093ed;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linejoin:round"
+       id="path1978"
+       cx="6"
+       cy="6"
+       r="1.5" />
+    <path
+       style="fill:#a093ed;stroke:#a093ed;stroke-width:0.866611px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1;fill-opacity:1"
+       d="M 3.4332964,10.566695 H 8.5667039 C 8.2827201,9.0833688 7.4063881,8.2275692 6.0000001,7.9333045 4.6425219,8.2328727 3.7169987,9.0300772 3.4332964,10.566695 Z"
+       id="path3199" />
+    <rect
+       style="fill:#a093ed;fill-opacity:1;stroke:none;stroke-width:0.768;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4228"
+       width="3"
+       height="2"
+       x="10"
+       y="8.5"
+       ry="0.5" />
+    <rect
+       style="fill:#a093ed;fill-opacity:1;stroke:none;stroke-width:0.768;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4230"
+       width="4"
+       height="2"
+       x="9"
+       y="5.5"
+       ry="0.5" />
+  </g>
+  <g
+     id="layer4" />
+</svg>

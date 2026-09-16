@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": ["es2022", "dom", "dom.iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "types": ["node", "vite/client", "vite-plugin-svgr/client"],
+
+    "strict": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    // server/ imports its siblings with explicit .ts extensions, which is what
+    // Vite's native config loader wants for the files vite.config.ts pulls in.
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "useDefineForClassFields": false,
+
+    "baseUrl": ".",
+    "paths": {
+      // Same alias the monorepo uses, so design-system code copied out of
+      // bliro/libs/bliro-ui — or any web-app component that imports it —
+      // resolves here without rewriting a single import.
+      "@bliro/ui": ["./src/ui"],
+      "@bliro/ui/*": ["./src/ui/*"],
+      "@bliro/web-app/*": ["./src/*"],
+      "@bliro/common-types/*": ["./src/common-types/*"],
+      "@/*": ["./src/*"],
+      // Type-only: the client imports the API response shapes from here, so
+      // both sides stay in sync without server code entering the bundle.
+      "@server/*": ["./server/*"]
+    }
+  },
+  "include": ["src", "server", "vite.config.ts"]
+}

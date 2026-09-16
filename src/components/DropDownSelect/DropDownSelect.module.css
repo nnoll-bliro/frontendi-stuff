@@ -1,0 +1,24 @@
+.templateBtn {
+  padding: 1px 8px !important;
+  border-radius: 16px !important;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.2s;
+  color: black !important;
+  font-weight: bold !important;
+  border: 1px solid rgb(201, 201, 201) !important;
+  background-color: rgb(237, 236, 236) !important;
+
+  text-align: left;
+}
+
+.btnText {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.popover {
+  margin-top: 4px;
+}

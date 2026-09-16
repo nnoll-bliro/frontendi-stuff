@@ -1,0 +1,3651 @@
+{
+  "you": "you",
+  "notes": "Notes",
+  "summary": "Summary",
+  "aiSummary": "AI Summary",
+  "newSummary": "New Summary",
+  "noResultsFor": "No results found for \"{{what}}\"",
+  "errorLoadingCalls": "Error loading calls",
+  "note": "Note",
+  "noText": "No Text",
+  "noDataAvailable": {
+    "normal": "No data available",
+    "upper": "No Data Available"
+  },
+  "noMeetingsTranscribed": {
+    "title": "No meetings yet",
+    "description": "Transcribe your first meeting with the Bliro app for desktop or mobile."
+  },
+  "noMeetingsInGroup": {
+    "title": "No meetings in this group yet",
+    "description": "Once a meeting is added to this group, it will appear here."
+  },
+  "noMeetingsMatchingFilter": {
+    "title": "No meetings match your filters",
+    "description": "Try adjusting your filters to see more results."
+  },
+  "errorWhileFetchCall": "An error occurred while trying to fetch your Call",
+  "errorWhileFetchGroup": "An error occurred while trying to fetch your Group",
+  "errorWhileFetchPerson": "An error occurred while trying to fetch person",
+  "errorWhileFetchCompany": "An error occurred while trying to fetch company",
+  "validation": {
+    "nameRequired": "Name cannot be empty"
+  },
+  "errorOccurred": "An Error occurred",
+  "popupBlocked": "Your browser blocked the connect popup. Please allow popups for this site and try again.",
+  "integrationAlreadyConnected": "You're already connected to this integration. Disconnect it first to reconnect or switch accounts.",
+  "integrationOauthUnsupported": "This integration can't be connected this way.",
+  "untitled": "Untitled",
+  "showTranscript": "Show Transcript",
+  "showSummary": "Show Summary",
+  "noContent": "No content available",
+  "edit": "Edit",
+  "delete": "Delete",
+  "rename": "Rename",
+  "copy": "Copy",
+  "openIn": "Open in",
+  "openCallIn": "Open Call in",
+  "profileSaveFailed": "Profile save failed",
+  "profileSaved": "Profile Saved",
+  "reload": "Reload",
+  "error": "Error",
+  "externalParticipants": "External Participants",
+  "internalParticipants": "Internal Participants",
+  "share": "Share",
+  "unknown": "Unknown",
+  "welcomeDescription": {
+    "part1": "Your AI powered call assistant. Here you find all your recorded calls and can gain insights from them.",
+    "part2": "You can sync your recorded calls with your favorite software."
+  },
+  "exampleCRMs": "Example CRMs",
+  "bliroSlogan": "Never take notes during your meetings again.",
+  "noDescriptionAvailable": "No Description available",
+  "copyToClipboard": "Copied to Clipboard!",
+  "errorCopyingToClipboard": "Error copying to Clipboard!",
+  "anErrorOccurred": "An error occurred",
+  "callWasDeleted": "Call was deleted",
+  "yourCallWasDeleted": "Your Call was Deleted",
+  "undo": "UNDO",
+  "undoAction": "Undo",
+  "redoAction": "Redo",
+  "copyNote": "Copy note",
+  "copied": "Copied!",
+  "editNote": "Edit note",
+  "noteEditDialogTitle": "Agent note",
+  "typeNoteHere": "Type your note here...",
+  "copyEmail": "Copy email",
+  "emailToLabel": "To:",
+  "emailCcLabel": "Cc:",
+  "emailBccLabel": "Bcc:",
+  "emailAddCcRowButton": "Cc",
+  "emailAddBccRowButton": "Bcc",
+  "emailSubjectLabel": "Subject:",
+  "openInMail": "Open in mail",
+  "openInGmail": "Open in Gmail",
+  "openInOutlook": "Open in Outlook",
+  "openDraftInGmail": "Open draft in Gmail",
+  "openDraftInOutlook": "Open draft in Outlook",
+  "viewInGmail": "View in Gmail",
+  "viewInOutlook": "View in Outlook",
+  "viewSentFolder": "View Sent folder",
+  "recipientsMore": "{{count}} more",
+  "recipientsMoreDetailed": "{{count}} more ({{details}})",
+  "emailCcCountPart": "{{count}} Cc",
+  "emailBccCountPart": "{{count}} Bcc",
+  "emailRecipientsPlaceholder": "Recipients:",
+  "emailEditDialogTitle": "Edit email",
+  "invalidEmail": "Invalid email address",
+  "emailAlreadyAdded": "This recipient is already added",
+  "completeCall": "Complete Call",
+  "searchHighlights": "Search in Highlights",
+  "searchTranscript": "Search in Transcript",
+  "searchSummary": "Search in Summary",
+  "highlights": "Highlights",
+  "transcript": "Transcript",
+  "newArtifactTab": "New",
+  "aiGeneratedContentPageNotice": "This page contains AI-generated content.",
+  "newArtifact": {
+    "chooseTemplate": "Choose template",
+    "searchPlaceholder": "Search for template",
+    "createFailed": "Failed to add template. Please try again.",
+    "emptyState": {
+      "title": "No templates found",
+      "description": "No templates available.",
+      "searchDescription": "No templates were found for \"{{query}}\"."
+    }
+  },
+  "artifact": {
+    "noTranscript": "No transcript available — cannot generate artifact.",
+    "noTranscriptTooltip": "No transcript available",
+    "noPermissionTooltip": "You don't have permission to regenerate this",
+    "regenerateFailed": "Failed to regenerate. Please try again.",
+    "templateNotFound": "Cannot regenerate. Template does not exist."
+  },
+  "transcriptNotAvailable": "Transcript is not available for this call",
+  "summaryNotAvailable": "AI Summary is not available for this call",
+  "summarizationFailed": "Summarization Failed",
+  "givenName": "Given Name",
+  "familyName": "Family Name",
+  "emailLabel": "Email",
+  "editButton": "Edit",
+  "save": "Save",
+  "review": "Review",
+  "deleteAccount": "Delete Account",
+  "deleteAccountConfirmation": "Are you sure you want to Delete?",
+  "deleteThisCallQuestion": "Are you sure you want to delete this call?",
+  "removeUser": "Remove User",
+  "changePassword": {
+    "normal": "Change password",
+    "upper": "Change Password"
+  },
+  "fillFormChangePassword": "Please fill in the form below to change the current password",
+  "currentPassword": "Current Password",
+  "newPassword": "New Password",
+  "repeatNewPassword": "Repeat New Password",
+  "passwordsDoNotMatch": "Passwords do not match!",
+  "cancel": "Cancel",
+  "submit": "Change Password",
+  "cardTitle": "{title} Card",
+  "connected": "Connected",
+  "connect": "Connect",
+  "integrationSettings": "Integration Settings",
+  "disconnect": "Disconnect",
+  "close": "Close",
+  "integrations": "Integrations",
+  "canNotConnectToTwoTypeIntegrations": "Can not connect to two {{type}} integrations at the same time.",
+  "nameIsAlreadyConnected": "{{name}} is already connected.",
+  "personal": "Personal",
+  "organization": "Organization",
+  "marketplace": "Marketplace",
+  "viewManageMembers": "View and manage members of your organization here",
+  "members": "Members",
+  "guests": "Guests",
+  "invitationsSent": "Invitations sent",
+  "invitationsFailed": "Invitations failed",
+  "roleChanged": "Role changed",
+  "roleChangeFailed": "Role change failed",
+  "userRemoved": "User removed",
+  "userRemoveFailed": "User remove failed",
+  "planUpgradeFailed": "Plan Upgrade failed",
+  "accessLevel": "Access Level",
+  "convertToMember": "Convert to Member",
+  "guest": "Guest",
+  "removeFromWorkspace": "Remove from Workspace",
+  "user": "User",
+  "workspaceOwner": "Workspace owner",
+  "downgradeOwnAccess": "Downgrade Own Access",
+  "areYouSureDowngradeOwnAccess": "Are you sure you want to downgrade your own access to member? You will no longer be able to invite members or change access for other users.",
+  "downgradeAccess": "Downgrade access",
+  "lastWorkspaceOwner": "Last Workspace Owner",
+  "lastOwnerWarning": "<b>{{owner}}</b> is the last Owner in this workspace. Removing the last owner's rights will lead to the organization being deleted. Please contact {{contact}} if you wish to delete the organization.",
+  "goBack": "Go back",
+  "canChangeWorkspaceSettingsAndInviteMembers": "Can change workspace settings and invite new members to the workspace",
+  "confirmRemove": "Confirm Remove",
+  "areYouSureRemoveOwnAccess": "Are you sure you want to remove your own access? You will lose access to the workspace, and any call data will be lost.",
+  "areYouSureRemoveName": "Are you sure you want to remove <b>{{name}}</b> from this workspace?",
+  "areYouSure": "Sure?",
+  "cannotChangeWorkspaceSettingsOrInviteNewMembers": "Cannot change workspace settings or invite new members to the workspace",
+  "removeOwnAccess": "Remove own access",
+  "remove": "Remove",
+  "upgradeAccountAddMembers": "Upgrade your account to add members to your organization.",
+  "upgradeToTeamStandard": "Upgrade to Team Standard",
+  "upgradeToTeamPro": "Upgrade to Team Pro",
+  "moreInfoOnPricing": "More info on pricing",
+  "enterEmailToInvite": "Enter an email to invite",
+  "pressEnterToAddMultipleEmails": "Press 'Enter' to add multiple emails",
+  "ok": "Okay",
+  "oops": "Oops...",
+  "unique": "Unique",
+  "orgId": "Org. ID",
+  "editOrganization": "Edit Organization",
+  "saveOrganization": "Save Organization",
+  "organizationSaved": "Organization Saved",
+  "organizationSaveFailed": "Organization save failed",
+  "disableMemberAppDownload": "Disable Member App Download",
+  "disableAutoAppUpdate": "Disable Auto App Updates via Bliro for Members",
+  "appWillBeProvidedByOrg": "The App will be provided by your organization",
+  "needHelpContactUs": "Need help ? Contact us!",
+  "email": "Email",
+  "telephone": "Telephone",
+  "form": "Form",
+  "contactFormHere": "Contact Form here",
+  "contactUs": "Contact Us",
+  "member": {
+    "normal": "member",
+    "upper": "Member"
+  },
+  "admin": "admin",
+  "min": "min",
+  "noOrg": "no org",
+  "userPermission": "user permission",
+  "help": "Help",
+  "reportBug": "Report a Bug",
+  "openMenu": "Open menu",
+  "settingsAndMembers": "Settings & Members",
+  "downloadApp": "Download App",
+  "untitledCall": "Untitled Call",
+  "audioSnippetModuleLabel": "Label",
+  "audioSnippetModuleTranscriptUnavailable": "No transcript available.",
+  "audioSnippetModulePlay": "Play",
+  "audioSnippetModulePause": "Pause",
+  "noNotesAvailable": "No notes available",
+  "addFilter": "Add Filter",
+  "subject": "Subject",
+  "date": "Date",
+  "company": "Company",
+  "participants": "Participants",
+  "callSubject": "Subject",
+  "calendarMonth": "Calendar Month",
+  "business": "Business",
+  "peopleAlt": "People Alt",
+  "search": "Search",
+  "clear": "Clear",
+  "clearSelection": "Clear selection",
+  "selectAll": "Select all",
+  "deselectAll": "Deselect all",
+  "loading": "Loading...",
+  "noCalls": "No calls found.",
+  "noSubject": "No subject",
+  "noWho": "No who",
+  "noWhat": "No what",
+  "welcomeCall": "Welcome Call",
+  "continueWith": "Continue with {{platform}}",
+  "pageNotFound": "Page Not Found",
+  "goHome": "Go Home",
+  "mainText": "Main Text",
+  "changeRole": "{{currentUser}} changed to {{action}}",
+  "removedUser": "{{currentUser}} removed from workspace",
+  "successEmail": "{{email}}<br/>",
+  "removeEmail": "{{email}}<br/>",
+  "bliroNotetakerPlatform": "Bliro notetaker and platform",
+  "signUp": "Sign Up",
+  "login": "Log In",
+  "loginSlogan": "Log In to start using the Bliro Platform",
+  "calls": "Calls",
+  "closeSidebar": "Close Sidebar",
+  "expandSidebar": "Expand Sidebar",
+  "welcomeFooter": "Never take notes during your meetings again.",
+  "connectYourCalendar": "Connect your calendar",
+  "bliroCalendarUseReason": "Bliro uses your calendar events to know when your meetings begin, so we can help you log each one. Connecting Google Calendar or Outlook is required in order to continue.",
+  "skipThisStep": "Skip this step",
+  "googleOutlookDataStoredSecurely": "Your Google and Outlook data is stored securely and never used in any other way than specified in our Privacy Policy",
+  "needHelpQuestion": "Need Help?",
+  "crmAlreadyConnected": "A CRM has already been connected.",
+  "crmWasConnectedAlready": "The CRM was connected already.",
+  "connectWithCRM": "Connect with CRM",
+  "bliroCRMReason": "Bliro connects with your CRM, so we can help you log each meeting in seconds.",
+  "salesforceAndHubSpotDataStoredSecurely": "Your Salesforce and HubSpot data is stored securely and never used in any other way than specified in our Privacy Policy",
+  "blogPost": "Blog Post",
+  "wordOfMouth": "Word of Mouth",
+  "inPersonEvent": "In-Person Event",
+  "invitationFromAColleague": "Invitation from a colleague",
+  "other": "Other",
+  "howDidYouHearAboutUs": "How did you hear about us?",
+  "specifyOtherSource": "Specify other source",
+  "skip": "Skip",
+  "continue": "Continue",
+  "downloadBliroNotetakerForPlatform": "Download Bliro notetaker for {{what}}",
+  "downloadBliroNotetaker": "Download Bliro notetaker",
+  "downloadForWhat": "Download for {{what}}",
+  "skipDownload": "Proceed without downloading",
+  "downloadForDesktop": "Download for Desktop",
+  "downloadForMobile": "Download for Mobile",
+  "scanQRCodeToDownloadApp": "Scan the QR code below to download the app.",
+  "findOutInaFewSeconds": "Find out in a few seconds",
+  "notSureIntelOrMacM1": "Not sure whether your Mac is Intel or Apple M1 based?",
+  "inTheMenuSelectAboutThisMac": "In the menu, select the \"About This Mac\" option.",
+  "whichMacAppToDownloadQuestion": "Which Mac App to download?",
+  "ifChipPropertyMentionsM1": "If the \"Chip\" property mentiones \"Apple M1\", download Bliro for Apple M1.",
+  "ifItMentionsIntelDownloadIntel": "If it mentions \"Intel\", download Bliro for \"Intel\".",
+  "back": "Back",
+  "onceDownloadedOpenAndInstallBliroApp": "Once downloaded, open and install the Bliro desktop app to complete the setup",
+  "done": "Done",
+  "whoElseShouldKnowAboutBliro": "Who else should know about Bliro?",
+  "emailAddress": "Email Address",
+  "invite": "Invite",
+  "bliroLivesInTheMenuBarOfYourScreenToggle": "Bliro lives in the menu bar of your screen. Toggle the app by simply clicking the menu bar icon!",
+  "understood": "Understood!",
+  "welcomeToBliro": "Welcome to Bliro!",
+  "welcomeTranscript1": "Hi, this is Luca from Bliro. It's great to have you here. Bliro platform is the place you can always go to and re-experience your calls. Even after months, you can come back here and quickly dive into the insights, problems or praise, that came up.",
+  "welcomeTranscript2": "We know that using Bliro is a change in your note-taking process but we've found that once you complete 3 calls with Bliro, you'll never want to go back.",
+  "welcomeTranscript3": "Once you downloaded and installed the app, just follow the onboarding instructions and connect your calendar and CRM system to it. You can use Bliro without calendar but our statistics show that users who connect Bliro to their calendar love Bliro much more than users who do not. Connecting your calendar activates powerful features like popup meeting reminders, call data auto-fill and documentation of past calendar events. 📆",
+  "welcomeDescription1": "This is Bliro platform",
+  "welcomeDescription2": "Try to use Bliro in 3️⃣ calls!",
+  "welcomeDescription3": "In-App Onboarding and Integrations",
+  "actionItem": "Action Item",
+  "productFeedback": "Product Feedback",
+  "welcomeLabel1": "This is Bliro platform",
+  "welcomeLabel2": "Try to use Bliro in 3️⃣ calls!",
+  "welcomeLabel3": "In-App Onboarding and Integrations",
+  "whatSettings": "{{what}} Settings",
+  "welcomeNoteJson": "{\"blocks\":[{\"key\":\"7auqv\",\"text\":\"Note:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":5,\"style\":\"BOLD\"},{\"offset\":0,\"length\":5,\"style\":\"UNDERLINE\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"b0nq8\",\"text\":\"This is how it looks like when you document a call with the Bliro desktop application! This onboarding call is just visible to you until you log your first call.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"305ru\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"etkmi\",\"text\":\"Bliro works on the basis of audio snippets. Instead of writing notes manually, you can now just highlight important parts of the conversation. Here, on the platform, you find your call notes together with your audio snippets, to follow your calls again.\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":44,\"length\":98,\"style\":\"BOLD\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"3mh84\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"dkksn\",\"text\":\"We just created a few audio snippets to get you started with Bliro!\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"bd5ej\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"fdqvr\",\"text\":\"Next Steps:\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":11,\"style\":\"BOLD\"},{\"offset\":0,\"length\":11,\"style\":\"UNDERLINE\"}],\"entityRanges\":[],\"data\":{}},{\"key\":\"5r414\",\"text\":\"🎧Listen through the audio snippets, they will help you getting started with Bliro\",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"1pdq7\",\"text\":\"✏️Document your first meeting with Bliro \",\"type\":\"unordered-list-item\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}}],\"entityMap\":{}}",
+  "successfullyDisconnectedIntegration": "Successfully disconnected integration",
+  "failedToDisconnectIntegration": "Failed to disconnect integration",
+  "newWord": "New Word",
+  "addToDictionary": "Add to Dictionary",
+  "thisWordIsAlreadyDefinedInSettings": "This word is already defined in your organizational settings",
+  "customDictionary": "Custom Dictionary",
+  "usage": "Usage",
+  "account": "Account",
+  "workspace": "Workspace",
+  "couldNotUpdateUser": "Could not update User",
+  "changeAccountSettingsHere": "Change your account settings here",
+  "deleteAccountWarning": "By Deleting your account, you will lose all your information including all recorded calls. If you want to proceed with deleting your account, please type ",
+  "deleteEverything": "Delete everything",
+  "updateUser": "Update User",
+  "invalid": "Invalid",
+  "unknownCompany": "Unknown Company",
+  "today": "Today",
+  "yesterday": "Yesterday",
+  "previous7Days": "Previous 7 days",
+  "olderThan7Days": "Older than 7 days",
+  "invalidDate": "Invalid Date",
+  "membersSettingsDescription": "Utilize this panel to administer team members in Bliro for efficient call management. Delegate specific roles to regulate their access to your company's call data.",
+  "couldNotGenerateOrganization": "Could not create organization",
+  "couldNotUpdateOrganization": "Could not update Organization",
+  "updateOrganization": "Update Organization",
+  "changeOrganizationalSettingsHere": "Change Organizational Settings here",
+  "integrationData": {
+    "names": {
+      "microsoft-outlook": "Outlook Calendar",
+      "google-calendar": "Google Calendar",
+      "salesforce": "Salesforce",
+      "hubspot": "HubSpot",
+      "slack": "Slack",
+      "microsoft-dynamics": "Microsoft Dynamics",
+      "google-mail": "Gmail",
+      "microsoft-mail": "Outlook Mail",
+      "sap-c4c": "SAP",
+      "bliro": "Bliro"
+    },
+    "descriptions": {
+      "microsoft-outlook": "Calendar",
+      "google-calendar": "Calendar",
+      "google-mail": "Email",
+      "salesforce": "CRM Software",
+      "hubspot": "CRM Software",
+      "slack": "Business Communication Platform",
+      "microsoft-dynamics": "CRM Software",
+      "microsoft-mail": "Email",
+      "sap-c4c": "CRM Software"
+    }
+  },
+  "utilizeThisPanelToViewTheUsageDataOfYourOrganization": "Utilize this panel to view the usage data of your organization.",
+  "utilizeThisPanelToKeepTrackOfYourAppUsage": "Utilize this panel to keep track of your app usage.",
+  "couldNotLoadUsageDataForSelectedMonth": "Could not load usage data for selected month",
+  "period": "Period",
+  "usageData": "Usage Data",
+  "couldNotLoadUsageDataForSelectedDate": "Could not load usage data for selected date",
+  "usageInSelectedBillingPeriod": "Usage in selected billing period",
+  "monthlyUsageProgressBarDescription": "Your monthly usage of subscription minutes for the selected interval in comparison to the purchased transcription minutes for the billing cycle",
+  "transcriptionMinutes": "Transcription Minutes",
+  "dailyUsageTranscriptionMinutes": "Daily Usage (Transcription Minutes)",
+  "removeFromTeam": "Remove from Team",
+  "locateAppleIcon": "Locate the Apple Icon on the top left corner of your screen and click on it.",
+  "welcomeChat": {
+    "message1": "Can I look at my transcript after the call was finished?",
+    "message2": "Yes, this panel shows you the full dialog.",
+    "message3": "Amazing!"
+  },
+  "welcomeSummary": "<ul><li>Bliro is a powerful tool for recording your calls</li><li>Bliro integrates with many other tools such as Salesforce, HubSpot, Slack, and many more</li></ul>",
+  "welcomeHighlight": "<p>Note:</p><p>This is how it looks like when you document a call with the Bliro desktop application! This onboarding call is just visible to you until you log your first call.</p><p>Bliro works on the basis of audio snippets. Instead of writing notes manually, you can now just highlight important parts of the conversation. Here, on the platform, you find your call notes together with your audio snippets, to follow your calls again.</p><p>We just created a few audio snippets to get you started with Bliro!</p><p>Next Steps:</p><ul><li>🎧Listen through the audio snippets, they will help you getting started with Bliro</li><li>✏️Document your first meeting with Bliro </li></ul>",
+  "highlight": "Highlight",
+  "actionitem": "ACTION ITEM",
+  "bookmark": "BOOKMARK",
+  "insight": "INSIGHT",
+  "productfeedback": "PRODUCT FEEDBACK",
+  "praise": "PRAISE",
+  "noTopic": "No Topic",
+  "noSummaryAvailable": "No summary available",
+  "errorCreatingSummary": "Error creating summary",
+  "errorCreatingAnalyses": "Error creating analyses",
+  "analysesAreProcessing": "Analyses are processing",
+  "regenerateAnalyses": "Regenerate analyses",
+  "userUpdated": "User updated",
+  "confirmDeletion": "Confirm Deletion",
+  "confirmation": "Confirmation",
+  "changedTo": "{{from}} changed to {{to}}",
+  "removedFromWorkspace": "{{what}} removed from workspace",
+  "memberRole": {
+    "description": "Can view and edit all workspace content",
+    "label": "Member"
+  },
+  "adminRole": {
+    "description": "Can change workspace settings and invite new members to the workspace",
+    "label": "Admin"
+  },
+  "success": "Success",
+  "typeToAddATitle": "Type to add a title",
+  "typeToSearch": "Type to search",
+  "addContacts": "Add Contacts...",
+  "addParticipants": "Add participants",
+  "addAccOpps": "Add Acc/Opps",
+  "errorUpdating": "Error updating",
+  "errorUpdatingMeeting": "Error updating meeting",
+  "pleaseEnterAValidEmail": "Please enter a valid email",
+  "pleaseEnterAValidPercentage": "Please enter a valid percentage",
+  "pleaseEnterAValidPhoneNumber": "Please enter a valid phone number",
+  "errorUpdatingParticipants": "Error updating participants",
+  "addWhat": "Add {{what}}",
+  "convertToLead": "Convert to Lead",
+  "convertToContact": "Convert to Contact",
+  "errorEnterAValidEmail": "Error: Enter valid email",
+  "errorChangingRecord": "Error changing record",
+  "errorFetchingRecords": "Error fetching records",
+  "pleaseEnterAValidURL": "Please enter a valid URL",
+  "now": "now",
+  "minutesAgo": "{{minutes}} minutes ago",
+  "hoursAgo": "{{hours}} hours ago",
+  "onDate": "on {{date}}",
+  "lastUpdatedAtText": "Edited {{when}}",
+  "createdAtText": "Created by {{who}} {{when}}",
+  "globalCancelConfirmDialog": {
+    "title": "Unsaved changes",
+    "content": "You have unsaved changes. Are you sure you want to leave this page?",
+    "agree": "Leave",
+    "cancel": "Cancel"
+  },
+  "templates": {
+    "title": "Templates",
+    "createNewTemplateButton": "Create New Template",
+    "createTemplateSection": "Create section",
+    "sectionsForYourTemplate": "Sections for your template",
+    "summaryPreview": "Summary Preview",
+    "user": {
+      "title": "Personal Templates"
+    },
+    "org": {
+      "title": "Organizational Templates"
+    },
+    "marketplace": {
+      "title": "Template Marketplace",
+      "useThisTemplate": "Use this template",
+      "useInOrganization": "Use in organization",
+      "usePersonally": "Use personally"
+    },
+    "card": {
+      "default": "Default",
+      "orgDefault": "Org-default"
+    },
+    "snackbar": {
+      "saved": "Successfully saved changes!",
+      "saveFailed": "The changes are not saved!",
+      "removed": "Successfully deleted template!",
+      "removeFailed": "Error deleting template!",
+      "created": "Successfully created template!",
+      "createFailed": "Error creating template!",
+      "sectionIsNotSelected": "At least one section needs to be selected!",
+      "removeMarketplaceFailed": "Error deleting template!",
+      "loadFailed": "Error loading templates!",
+      "templateCopiedToWorkspace": "Template copied to your workspace!",
+      "templateCopiedToOrg": "Template copied to organization!",
+      "templateCopyFailed": "Error copying template!",
+      "requiredFieldsMissing": "Please fill in all required fields"
+    }
+  },
+  "automationRules": {
+    "createNewRuleButton": "Create New Template",
+    "user": {
+      "title": "Personal Templates"
+    },
+    "org": {
+      "title": "Organizational Templates"
+    },
+    "card": {
+      "default": "Default"
+    },
+    "emptyState": "No templates yet. Create your first template to get started."
+  },
+  "templateSettings": {
+    "startBySelectingASection": "Start by selecting a section from the list",
+    "selectSectionFromList": "Select a section from the list below or create a new one.",
+    "selectedSections": "Selected Sections",
+    "otherSections": "Other Sections",
+    "description": "Create templates to personalise Bliro's AI notes to your needs and generate different AI notes for different types of meetings.",
+    "editTemplate": {
+      "copyToOrg": "Copy to Org",
+      "addTitleLabel": "Give the template a title",
+      "addDescriptionLabel": "Write a short description (optional)",
+      "helperText": "Choose from the following summarisation blocks. Bliro will create the summary based on these blocks. Do not choose more than 3 blocks to keep your summary concise.",
+      "templateSections": {
+        "section": {
+          "inputs": {
+            "title": {
+              "label": "Section Title",
+              "placeholder": "A descriptive title for the section, e.g. Short Sales Summary"
+            },
+            "key": {
+              "label": "Section Key",
+              "placeholder": "A unique key for the section, e.g. short-sales-summary"
+            },
+            "prompt": {
+              "label": "Prompt",
+              "placeholder": "A prompt for the AI to generate the section, e.g. A short summary of the call in 5-7 sentences. Include the main points discussed and any action items."
+            },
+            "format": {
+              "label": "Return Type Format"
+            },
+            "options": {
+              "label": "Pick List Options",
+              "create": "Create Option"
+            }
+          }
+        },
+        "executiveSummaryCard": {
+          "title": "Executive Summary",
+          "description": "A high-level summary of the gist of the meeting in a few sentences.",
+          "preview": "<h2>Executive Summary</h2><p>Eine kurze Zusammenfassung der wichtigsten Informationen des Gesprächs in Fließtext.</p>"
+        },
+        "customTopicsCard": {
+          "title": "Custom Topics",
+          "description": "Define a list of topics. Bliro will summarize the conversation based on your list of topics.",
+          "preview_concise": "<h2>Custom Topics</h2><ul><li><strong>Your custom topic 1</strong><ul><li>Brief bullet points on this topic</li></ul></li><li><strong>Your custom topic 2</strong><ul><li>Brief bullet points on this topic</li></ul></li><li><strong>Your custom topic 3</strong><ul><li>Brief bullet points on this topic</li></ul></li></ul>",
+          "preview_elaborate": "<h2>Custom Topics</h2><ul><li><strong>Your custom topic 1</strong><ul><li>Detailed and formulated bullet points on this topic</li></ul></li><li><strong>Your custom topic 2</strong><ul><li>Detailed and formulated bullet points on this topic</li></ul></li><li><strong>Your custom topic 3</strong><ul><li>Detailed and formulated bullet points on this topic</li></ul></li></ul>"
+        },
+        "chronologicalSummaryCard": {
+          "title": "Chronological Summary",
+          "description": "Summarise the full conversation in bullet points mapped to chronological chapters.",
+          "preview_concise": "<h2>Chronological Summary</h2><ul><li><strong>Chapter 1</strong><ul><li>Brief bullet points in chronological order</li></ul></li><li><strong>Chapter 2</strong><ul><li>Bliro defines chronological chapters automatically</li></ul></ul>",
+          "preview_elaborate": "<h2>Chronological Summary</h2><ul><li><strong>Chapter 1</strong><ul><li>Detailed and formulated bullet points in chronological order</li></ul></li><li><strong>Chapter 2</strong><ul><li>Bliro defines chronological chapters automatically</li></ul></ul>"
+        },
+        "moodCard": {
+          "title": "Mood",
+          "description": "Summarise the general mood of the meeting in a few sentences.",
+          "preview": "<h2>Mood</h2><p>A brief summary of the mood of the meeting in a few sentences.</p>"
+        },
+        "aiTopicsCard": {
+          "title": "AI Topics",
+          "description": "Identify the most important topics and summarise them in bullet points automatically.",
+          "preview_concise": "<h2>AI Topics</h2><ul><li><strong>Topic 1</strong><ul><li>Brief bullet points on the most important topics</li></ul></li><li><strong>Topic 2</strong><ul><li>Bliro detects these topics automatically</li></ul></li></ul>",
+          "preview_elaborate": "<h2>AI Topics</h2><ul><li><strong>Topic 1</strong><ul><li>Detailed and formulated bullet points on the most important topics</li></ul></li><li><strong>Topic 2</strong><ul><li>Bliro detects these topics automatically</li></ul></li></ul>"
+        },
+        "actionItemsCard": {
+          "title": "Action Items",
+          "description": "Identify the tasks discussed including responsible person and deadline if available.",
+          "preview": "<h2>Tasks</h2><ul><li><strong>Task 1</strong><ul><li>Brief Task Description</li><li>Responsible Person</li><li>Deadline</li></ul></li><li><strong>Task 2</strong><ul><li>Brief Task Description</li><li>Responsible Person</li><li>Deadline</li></ul></li></ul>"
+        },
+        "agendaCard": {
+          "title": "Agenda",
+          "description": "Summarise the meeting according to the agenda of the meeting invite. Make sure to connect your calendar to Bliro. Ensure that your meeting invites contain an agenda.",
+          "preview_concise": "<h2>Agenda</h2><ul><li><strong>Agenda Item 1</strong><ul><li>Brief bullet points on the individual agenda items</li></ul></li><li><strong>Agenda Item 2</strong><ul><li>Your Calendar must be linked so that Bliro can derive the agenda from the meeting invite</li></ul></li></ul>",
+          "preview_elaborate": "<h2>Agenda</h2><ul><li><strong>Agenda Item 1</strong><ul><li>Detailed and formulated bullet points for the individual agenda items</li></ul></li><li><strong>Agenda Item 2</strong><ul><li>Your Calendar must be linked so that Bliro can derive the agenda from the meeting invite</li></ul></li></ul>"
+        },
+        "faqCard": {
+          "title": "FAQ",
+          "description": "Extract all questions asked in the conversation and summarise the corresponding answers.",
+          "preview": "<h2>FAQ</h2><p>Q: A question that was asked during the conversation<br>A: The corresponding answer in written text</p><p>Q: Another question<br>A: The corresponding answer in written text</p>"
+        }
+      },
+      "templateSectionFields": {
+        "shortenText": {
+          "label": "Shorten Text",
+          "helperText": "Shortens the text of the summary section to be more concise."
+        },
+        "customTopicNamess": {
+          "label": "Topics",
+          "helperText": "Define custom topics the AI will search for in the conversation and summarize after.",
+          "inputPlaceholder": "e.g. \"Customer Problems\""
+        }
+      }
+    },
+    "deleteConfirmDialog": {
+      "title": "Delete Template?",
+      "content": "Are you sure you want to delete this template?"
+    },
+    "templateSection": {
+      "deleteDialog": {
+        "title": "Delete Section?",
+        "message": "Are you sure you want to delete {{title}}?",
+        "confirmButtonText": "Delete Section",
+        "cancelButtonText": "Cancel"
+      }
+    }
+  },
+  "rateCallSummary": "How satisfied are you with these AI notes?",
+  "agree": "Agree",
+  "disagree": "Disagree",
+  "enterprise": "Enterprise",
+  "plan": "Plan",
+  "download": "Download",
+  "billing": "Billing",
+  "subscription": "Subscription",
+  "free": "free",
+  "upgrade": "Upgrade",
+  "apply": "Apply",
+  "downgrade": "Downgrade",
+  "confirm": "Confirm",
+  "expiresAt": "expires at",
+  "year": "year",
+  "month": "month",
+  "contactSales": "Contact Sales",
+  "cancelPlan": "Cancel",
+  "monthly": "monthly",
+  "yearly": "yearly",
+  "individualOffer": "Individual offer",
+  "subscriptionSettings": {
+    "confirmCancellation": "Confirm Cancelation",
+    "confirmCancellationButton": "Cancel Subscription",
+    "failedToReload": "Failed to reload",
+    "subscriptionCancelledSuccess": "Subscription was cancelled to the end of the billing period",
+    "subscriptionCancelledError": "Failed to cancel subscription. We apologize for the error. Please contact our support team.",
+    "subscriptionReactivated": "Subscription was reactivated",
+    "subscriptionReactivationError": "Failed to reactivate subscription",
+    "confirmCancellationMessage": "By Cancelling your subscription, you will not be able to use Bliro\nPro features after the end of your current billing period. All members of your organization will be downgraded to the free plan.",
+    "confirmationCancellationAction": "If you want to continue with the cancellation, please type",
+    "confirmationCancellationCode": "Cancel Subscription",
+    "questionsOrNeedHelp": "Questions or need help?",
+    "billed": "billed {{period}}",
+    "header": "Manage your subscriptions here",
+    "label": "Subscription",
+    "downgradesOn": "Downgrades on {{date}}",
+    "canceledInfo": "Canceld (expires on {{date}})",
+    "reactivate": "Reactivate",
+    "pricePerMonth": "{{price}}€ / month",
+    "pricePerYear": "{{price}}€ / month",
+    "transcriptionMinutes": "{{minutes}} min",
+    "starterSubscriptionFeature1": "1 user",
+    "starterSubscriptionFeature2": "250 meeting minutes per month",
+    "starterSubscriptionFeature3": "Transcribe all online and offline conversations",
+    "starterSubscriptionFeature4": "AI meeting notes for all conversations",
+    "starterSubscriptionFeature5": "Google and Outlook Calendar Integrations",
+    "starterSubscriptionFeature6": "Unlimited Integrations into Salesforce, Slack, HubSpot and more",
+    "starterSubscriptionFeature7": "All transcripts and AI meeting notes on Bliro platform",
+    "starterSubscriptionFeature8": "Custom Dictionary for transcription",
+    "starterSubscriptionFeature9": "Summarise meetings based on meeting templates",
+    "proSubscriptionFeature1": "Everything from Starter",
+    "proSubscriptionFeature2": "Unlimited Users",
+    "proSubscriptionFeature3": "Billing via meeting minutes packages",
+    "proSubscriptionFeature4": "24/7 Support via Email and Chat",
+    "enterpriseSubscriptionFeature1": "Everything from Pro",
+    "enterpriseSubscriptionFeature2": "More flexible controls",
+    "enterpriseSubscriptionFeature3": "Advanced Security",
+    "enterpriseSubscriptionFeature4": "Personalized Support by Customer Success Team",
+    "enterpriseSubscriptionFeature5": "Customizations in Integrations on Demand",
+    "enterpriseSubscriptionFeature6": "24/7 Support via Email, Chat and Phone"
+  },
+  "billingSettings": {
+    "renews": "renews",
+    "makeSubscriptionInfo": "Please make a subscription first before changing billing details",
+    "endsWith": "ends with {{cardNumber}}",
+    "paymentDetails": "Payment Details",
+    "paymentMethod": "Payment method",
+    "billedTo": "Billed to",
+    "transcriptionMinutesPerMonth": "{{minutes}} transcription minutes per month",
+    "editNumber": "Edit number",
+    "vatGstNumber": "VAT/GST Number",
+    "noInvoicesFound": "No invoices found",
+    "invoices": "Invoices",
+    "billingEmail": "Billing email",
+    "label": "Billing Settings",
+    "header": "You can change your billing details here",
+    "errorLoadUserDetails": "Could not load user details",
+    "errorLoadCustomerDetails": "Could not load customer details",
+    "changePlanButton": "Change plan",
+    "changePeriodButton": "Change period",
+    "editMethodButton": "Edit method",
+    "invoice": "Invoice",
+    "editInformationButton": "Edit information",
+    "editEmailButton": "Edit email",
+    "editNumberButton": "Edit number",
+    "invoiceLabel": "Invoice {{date}}",
+    "downloadButton": "Download",
+    "billingPeriod": "Billing period"
+  },
+  "cartDetails": {
+    "promoCode": "Promo code",
+    "package": "Package {{minutes}}",
+    "orderSummary": "Order summary",
+    "subtotal": "Subtotal",
+    "totalForToday": "Total",
+    "effectiveDate": "Effective {{date}}",
+    "effectiveDateTooltip": "This is the date the new plan will be effective. Your old plan will be canceled on this date.",
+    "tax": "Tax",
+    "taxInfo": "Tax ({{rate}}%)",
+    "taxInfoIncomplete": "Tax (billing address required)",
+    "discount": "Discount ({{message}})",
+    "today": "today",
+    "transcriptionMinutesPerMonth": "{{minutes}} transcription minutes / month"
+  },
+  "stripeSettingsDialog": {
+    "vatNumberLabel": "VAT/GST Number",
+    "stripeNotInitializedError": "Stripe is not initialized",
+    "successMessage": "Settings updated",
+    "title": "Update Billing Details",
+    "vatInfo": "include country code (e.g. BE0123456789)"
+  },
+  "paymentMethodPreview": {
+    "editButton": "Change payment details",
+    "paymentDetails": "Payment details",
+    "cardNumber": "****",
+    "cardExpires": "Expires {{month}}/{{year}}",
+    "billedTo": "Billed to"
+  },
+  "billingDialog": {
+    "downgradeToPackage": "Downgrade to Package {{minutes}}",
+    "upgradeToPackage": "Upgrade to Package {{minutes}}",
+    "toggleButtonMonthly": "Monthly",
+    "toggleButtonYearly": "Annually (10% off)",
+    "termsText": "By clicking \"{{type}}\" you agree to the",
+    "bliroTermsOfService": "Bliro Terms of Service",
+    "promoCodeInvalid": "Promo code invalid or expired",
+    "errorComputingPrice": "Error computing price",
+    "subscriptionCreatedSuccessMessage": "Subscription created",
+    "subscriptionCreatedErrorMessage": "Error creating subscription",
+    "errorConfirmingPayment": "Could not confirm card payment"
+  },
+  "downgradeMessage": "Downgrades to {{minutes}} minutes on {{date}}",
+  "billingDowngradeMessage": "Downgrades to {{billingPeriod}} on {{date}}",
+  "sendDraftDialog": {
+    "crmRecipients": "CRM recipients",
+    "slackRecipients": "Slack recipients",
+    "sendingCall": "Sending Call",
+    "sendCall": "Send Call",
+    "sendCallConfirmation": "Are you sure you want to send this call?",
+    "noParticipantsOrRecordsAssigned": "Keine Teilnehmer oder Firma zugewiesen",
+    "areYouSureYouWantToSendThisCallAlthoughNoAssignments": "Sind Sie sicher, dass Sie dieses Meeting senden möchten, obwohl keine Teilnehmer oder Firma zugewiesen sind?",
+    "sendAnyways": "Send Anyways"
+  },
+  "summaryTemplate": {
+    "summaryTemplate": "Template",
+    "noData": "No data available",
+    "aiTopics": "AI Topics",
+    "customTopics": "Custom Topics",
+    "chronologicalSummary": "Chronological Summary",
+    "executiveSummary": "Executive Summary",
+    "mood": "Mood",
+    "actionItems": "Action Items",
+    "agenda": "Agenda",
+    "faq": "FAQ",
+    "bulletPoints": "Bullet Points",
+    "generate": "Generate",
+    "generatingNewSection": "Generating New Section",
+    "addSection": "Add Section",
+    "customSection": "Custom Section",
+    "byBliro": "BY BLIRO",
+    "copySection": "Copy Section",
+    "recomputeSection": "Recompute Section",
+    "customSectionHeaderPlaceholder": "What should we call this section? Ex. Project Goals",
+    "customSectionDescriptionPlaceholder": "What is this section about?",
+    "changeSummaryTemplateDialog": {
+      "title": "Changing Template",
+      "message": "Switching to a new template will replace your current summary with a freshly generated one based on the selected template. Do you wish to continue?"
+    },
+    "changeSummaryTargetLanguageDialog": {
+      "title": "Changing Language",
+      "message": "Switching to a new language will replace your current summary with a freshly generated one based on the selected language. Do you wish to continue?"
+    }
+  },
+  "discard": "Discard",
+  "saveChanges": "Save Changes",
+  "confirmToDelete": "Confirm to delete",
+  "transcriptChunkLockedWhileLive": "Still being transcribed - you can edit or delete it once this speaker's turn ends",
+  "transcriptChunkDeleteError": "Failed to delete transcript segment",
+  "copyTranscript": "Copy Transcript",
+  "copySummary": "Copy Summary",
+  "summaryIsProcessing": "Summary is processing",
+  "clickToGenerateNewSummary": "Click ✨ to generate new summary",
+  "draft": "Draft",
+  "send": "Send",
+  "privacy": "Privacy",
+  "changePrivacySettings": "Change Privacy Settings about your data",
+  "ttlTranscriptDataDescription": "Activate deletion of transcript data after custom period of time",
+  "ttlTranscriptData": "Transcript Data Deletion",
+  "ttlTranscriptDataWarning": "By immediately deleting transcripts after recording, you will lose the ability to create new summaries",
+  "updatePrivacySettings": "Update Privacy Settings",
+  "days": "Days",
+  "statusLabel": {
+    "sent": "Synced",
+    "draft": "Not synced",
+    "failed": "Failed",
+    "default": "Default"
+  },
+  "sendStatus": {
+    "sent": "This meeting was sent to one ore more of your integrations.",
+    "draft": "This meeting is a draft and was not sent to any of your integrations.",
+    "failed": "This meeting could not be sent to one ore more of your integrations.",
+    "default": "This meeting was successfully recorded"
+  },
+  "next": "Next",
+  "feedback": {
+    "placeholder": "Type your feedback here. The more details you share, the better we can improve your experience.",
+    "cancel": "Cancel",
+    "send": "Send",
+    "thankYouForYourFeedback": "Thank you for your feedback!",
+    "rateThisTranscript": "How would you rate this transcript?",
+    "rateThisConversation": "How would you rate this conversation?",
+    "voiceCall": {
+      "title": "Improve Bliro Agent",
+      "description": "We're sorry your experience wasn't the best. What was wrong with this conversation?"
+    },
+    "analysis": {
+      "title": "Improve Bliro analyses",
+      "description": "We're sorry your experience wasn't the best. What was wrong about the Bliro generated content?",
+      "options": {
+        "badUserAssignment": "Bad speaker assignment",
+        "importantInfoMissing": "Important information is missing",
+        "toneStyle": "I don't like the tone / style",
+        "tooGeneric": "Too superficial",
+        "tooLong": "Too much text"
+      }
+    },
+    "transcript": {
+      "title": "How can we improve?",
+      "description": "We're sorry your experience wasn't the best. What was wrong about the Bliro transcript?",
+      "options": {
+        "speakerAttribution": "Speakers weren't identified correctly",
+        "languageHandling": "Different languages weren't handled well",
+        "transcriptionAccuracy": "Names or technical terms were transcribed incorrectly",
+        "hallucination": "Hallucinated or added content"
+      }
+    }
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "What best describes your job?",
+      "subtitle": "Welcome to Bliro!"
+    },
+    "name": {
+      "title": "What is your name?",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastNamePlaceholder": "Enter your last name"
+    },
+    "language": {
+      "title": "What is the main language that you speak during your meetings?",
+      "selectLanguage": "Select Language",
+      "addSecondaryLanguage": "Add Secondary Language"
+    },
+    "timezone": {
+      "title": "What is your timezone?",
+      "description": "We use this to show and schedule meeting times correctly, including for your phone assistant.",
+      "selectTimezone": "Select Timezone"
+    },
+    "calendar": {
+      "title": "Connect your calendar",
+      "subtitle": "Bliro uses your calendar events to know when your meetings begin, so we can help you log them.",
+      "description": "Your data data is stored securely and never used in any other way then specified in our Privacy Policy",
+      "connectWith": "Connect with {{what}}"
+    },
+    "download": {
+      "title": "Download Bliro app",
+      "subtitle": "Bliro desktop app is your companion that supports you in your meetings and takes notes for you.",
+      "description": "Not sure whether your Mac is Intel or Apple based?"
+    },
+    "testimonal": {
+      "savesTimeDesc": "saves me a ton of time. I used to log meetings in Salesforce manually.",
+      "now": "Now",
+      "gameChangerDesc": "tracks everything automatically. I just add my notes. That's it. A real game changer!",
+      "name": "Maruska Kapic",
+      "role": "Senior Client Success Manager"
+    },
+    "jobs": {
+      "sales": "Sales",
+      "leadership": "Leadership / Management",
+      "customer": "Customer Success / AM",
+      "operations": "Operations",
+      "product": "Product / UX",
+      "investor": "Investor / VC",
+      "recruiting": "Recruiting",
+      "insurance": "Insurance",
+      "other": "Other"
+    },
+    "downloadTheBliroApp": {
+      "title": "Download the Bliro app",
+      "description": "Focus on your business meetings - we'll handle the notes! Download the desktop or mobile app and let Bliro transcribe your meetings in real time.",
+      "actionBtnTitle": "Download Bliro"
+    },
+    "watchOurDemoVideo": {
+      "title": "Watch our demo video",
+      "description": "Watch our demo video and learn how to make the most out of the Bliro Desktop App.",
+      "actionBtnTitle": "Watch Video"
+    },
+    "startTranscribingYourMeetings": {
+      "title": "Transcribe your first meeting",
+      "description": "Transcribe your first meeting with Bliro for Desktop and gain insights into your conversations.",
+      "actionBtnTitle": "Start Bliro"
+    },
+    "youAreReadyToMakeTheMostOutOfBliro": {
+      "title": "You are ready to make the most out of Bliro!",
+      "actionBtnTitle": "Done"
+    }
+  },
+  "previous": "Previous",
+  "helpCenterLink": "Go to Help Center",
+  "settings": {
+    "title": "Settings",
+    "dictionary": {
+      "title": "Dictionary",
+      "description": "Enrich Bliro's vocabulary with words and abbreviations that are specific to your industry or company.",
+      "helpCenterUrl": "https://help.bliro.io/en/articles/8087172-teach-new-words-to-bliro",
+      "addNewWord": "Add a new word",
+      "addWord": "Add Word",
+      "searchForaWord": "Search for a word...",
+      "word": "Word",
+      "soundsLike": "Sounds like",
+      "editWord": "Edit word",
+      "duplicateWordError": "Word {{word}} already exists",
+      "maxWordsError": "Cannot exceed {{max}} words"
+    },
+    "automationRules": {
+      "title": "Templates",
+      "description": "Use templates to tell Bliro exactly how you like your meetings to be summarized.",
+      "helpCenterUrl": "https://help.bliro.io/en/articles/13162669-meeting-templates"
+    },
+    "integrations": {
+      "title": "Integrations",
+      "description": "Integrate Bliro seamlessly with your Calendar, CRM system or Slack",
+      "helpCenterUrl": "https://help.bliro.io/en/articles/8553688-integrations-for-your-workflow",
+      "selectPrompt": "Select an integration from the list",
+      "addIntegration": "Add integration",
+      "noConnections": "No connections yet. Use the + above to add one.",
+      "paused": {
+        "title": "Integration paused",
+        "description": "This integration needs a {{license}} license, so it has stopped syncing. Ask your admin for access."
+      },
+      "removeIntegration": "Remove integration",
+      "connectionsNeedLicense": "Your existing connections require a license. Ask your admin for access.",
+      "orgDefault": "Org default",
+      "activeLockedByOrg": "Your organisation sets the active integration for this type.",
+      "activeIsOrgDefault": "This is your organisation's default. Change it from the menu next to the integration.",
+      "setAsOrgDefault": "Set as org default",
+      "setAsOrgDefaultNeedsActive": "Turn on the Active switch for this integration first.",
+      "removeAsOrgDefault": "Remove org default",
+      "deleteIntegration": "Delete integration",
+      "orgDefaultMismatch": "Your active instance differs from the organisation default.",
+      "removeOrgDefaultConfirm": {
+        "title": "Remove org default?",
+        "message": "Are you sure you want to remove this as the organization default? All org members will be able to connect freely to instances in this category again.",
+        "confirm": "Yes, remove",
+        "cancel": "Cancel"
+      },
+      "catalog": {
+        "title": "Available integrations",
+        "subtitle": "Connect a new instance. You can connect the same integration multiple times (e.g. several Salesforce orgs).",
+        "connect": "Connect",
+        "connected": "Connected",
+        "connectedBadge": "connected",
+        "connectedCount": "{{n}} connected",
+        "orgManaged": "Your organization manages this integration",
+        "setup": "Set up",
+        "setupRequired": "Ask your admin to set up Salesforce first"
+      },
+      "agentTools": {
+        "defaultTools": {
+          "title": "Tools & Permissions",
+          "description": "Choose when Bliro is allowed to use these tools.",
+          "permissionLevels": {
+            "always_execute": "Always allowed",
+            "confirmation": "Needs approval",
+            "disabled": "Blocked",
+            "queue": "Queued"
+          },
+          "permissionButtons": {
+            "alwaysExecute": "Always execute",
+            "needsApproval": "Needs approval",
+            "disabled": "Disabled"
+          },
+          "messages": {
+            "failedToUpdate": "Failed to update permission"
+          },
+          "alwaysAllowWarning": {
+            "title": "Always allow \"{{toolLabel}}\" without asking?",
+            "message": "This action can't be undone. With \"Always allow\", the agent will run it on its own and may occasionally misread your intent or run the same action twice. We recommend \"Keep asking\" so you can review each run before it happens.",
+            "confirm": "Always allow",
+            "cancel": "Keep asking"
+          },
+          "tools": {
+            "crm_get_contacts_for_account": {
+              "label": "Get Account Contacts"
+            },
+            "crm_get_opportunities_for_account": {
+              "label": "Get Account Opportunities"
+            },
+            "email_list_drafts": {
+              "label": "List Email Drafts"
+            },
+            "email_list_threads": {
+              "label": "List Email Threads"
+            },
+            "email_get_thread": {
+              "label": "Get Email Thread"
+            },
+            "email_get_draft": {
+              "label": "Get Email Draft"
+            },
+            "email_create_draft": {
+              "label": "Create Email Draft"
+            },
+            "email_update_draft": {
+              "label": "Update Email Draft"
+            },
+            "email_send_draft": {
+              "label": "Send Email Draft"
+            },
+            "email_send_email": {
+              "label": "Send Email"
+            },
+            "calendar_get_event": {
+              "label": "Get Calendar Event"
+            },
+            "calendar_create_event": {
+              "label": "Create Calendar Event"
+            },
+            "calendar_update_event": {
+              "label": "Update Calendar Event"
+            },
+            "bliro_search_people": {
+              "label": "Search People"
+            },
+            "email_search_contacts": {
+              "label": "Search Contacts"
+            },
+            "bliro_get_note": {
+              "label": "Get Note"
+            },
+            "bliro_create_note": {
+              "label": "Create Note"
+            },
+            "bliro_update_note": {
+              "label": "Update Note"
+            },
+            "bliro_get_meeting": {
+              "label": "Get Meeting"
+            },
+            "bliro_search_meetings": {
+              "label": "Search Meetings"
+            },
+            "bliro_create_meeting_from_phone_call": {
+              "label": "Create Meeting from Phone Call"
+            },
+            "bliro_search_groups": {
+              "label": "Search Groups"
+            },
+            "bliro_list_group_meetings": {
+              "label": "List Meetings by Group"
+            },
+            "bliro_add_meeting_to_group": {
+              "label": "Add Meeting to Group"
+            },
+            "calendar_search_meeting_times": {
+              "label": "Search Meeting Times"
+            }
+          }
+        }
+      },
+      "salesforce": {
+        "title": "Salesforce Settings",
+        "sendNotesAsSelect": {
+          "title": "Select which Salesforce object to create on sending notes",
+          "placeholder": "Select Salesforce object",
+          "event": "Event",
+          "task": "Task",
+          "call": "Call",
+          "successMessage": "Salesforce settings updated successfully",
+          "errorMessage": "Could not update Salesforce settings"
+        },
+        "page": {
+          "title": "Salesforce",
+          "description": "Let Bliro manage Salesforce for you. Before a meeting, Bliro can read CRM information like contacts, accounts, and open opportunities to brief you on who you're talking to and where things stand. Afterward, Bliro can write your visit reports, update deals and opportunities, and log activities. Review what Bliro prepared, approve, and keep your CRM current without switching between apps.",
+          "connectedDescription": "Salesforce is connected to Bliro. Bliro can now read and update your CRM data (contacts, deals, activities, etc.) before and after every meeting.",
+          "disconnect": "Disconnect",
+          "toolsAndPermissions": {
+            "title": "Tools & Permissions",
+            "description": "Choose when Bliro is allowed to use these tools.",
+            "addTools": "Add tools",
+            "noTools": "No tools configured yet. Click \"Add tools\" to get started.",
+            "subTools": {
+              "get": {
+                "label": "Get"
+              },
+              "create": {
+                "label": "Create"
+              },
+              "update": {
+                "label": "Update"
+              },
+              "search": {
+                "label": "Search"
+              }
+            },
+            "permissionLevels": {
+              "alwaysExecute": "Always allowed",
+              "confirmation": "Needs approval",
+              "disabled": "Blocked",
+              "queue": "Queued"
+            }
+          },
+          "toolDialog": {
+            "addTitle": "Add tool",
+            "selectObjectPlaceholder": "Select object",
+            "instructionsPlaceholder": "Describe when Bliro should use this tool",
+            "addTool": "Add tool",
+            "saveChanges": "Save changes",
+            "capabilityDialogTitle": "Tool capability",
+            "schemaModeDefault": "Default",
+            "schemaModeAdvanced": "Advanced",
+            "schemaModeGroupLabel": "Schema mode",
+            "capabilities": {
+              "search": "Search"
+            },
+            "outputSchemaLabel": "Output schema",
+            "fieldPickerPlaceholder": "Select your fields",
+            "fieldPickerHelper": "Define the schema that will be available to the agent. Leave empty to return only the record id.",
+            "fieldPickerLoadError": "Couldn't load fields for this object. Try reopening this dialog, or reconnect the integration if it's expired.",
+            "fieldPickerLoading": "Loading fields…",
+            "fieldSearchPlaceholder": "Search fields…",
+            "noFieldsFound": "No matching fields",
+            "descriptionLabel": "Description",
+            "schemaFieldLabel": "Schema",
+            "returnColumnsHelper": "Omit `get.returnColumns` to return every field; an empty array returns only the record id. `search.returnColumns` returns ids only whether omitted or empty.",
+            "specRequired": "A specification is required.",
+            "specShapeError": "The specification must be a JSON object with `get`, `create`, and `update` sections.",
+            "discardInvalidSpecTitle": "Discard invalid JSON?",
+            "discardInvalidSpecMessage": "The schema in the Advanced editor isn't valid JSON, so it can't be carried over to Default mode. Switching now will discard your changes here and show the tool's last saved configuration instead.",
+            "discardInvalidSpecConfirm": "Discard changes",
+            "forceCloseTitle": "Close without finishing?",
+            "forceCloseMessage": "Your previous tool was already removed and its replacement hasn't been saved yet. Closing now will lose it for good — click Save in this dialog instead to finish saving it.",
+            "forceCloseConfirm": "Close anyway"
+          },
+          "deleteDialog": {
+            "title": "Remove tool",
+            "message": "Are you sure you would like to remove {{name}} from your tools? All Bliro users will lose the ability to use it.",
+            "messageBoth": "Are you sure you would like to remove {{name}} from your tools? This removes both its Read/Create/Update and Search capabilities. All Bliro users will lose the ability to use it.",
+            "delete": "Yes, remove tool"
+          },
+          "disconnectDialog": {
+            "title": "Disconnect Salesforce",
+            "message": "Are you sure you want to disconnect Salesforce? Your configured tools will remain but will no longer function until you reconnect."
+          },
+          "messages": {
+            "failedToLoad": "Failed to load tools",
+            "toolAdded": "Tool added successfully",
+            "toolUpdated": "Tool updated successfully",
+            "toolDeleted": "Tool deleted",
+            "failedToSave": "Failed to save tool",
+            "failedToSaveToolGone": "Your previous tool was removed, but the replacement failed to save. Click Save again without closing this dialog, or the tool will be lost.",
+            "factoriesUnavailable": "Tool configuration isn't loaded yet, so nothing was saved. Reload the page and try again.",
+            "failedToDelete": "Failed to delete tool",
+            "failedToDeletePartial": "Removed {{name}}'s Read/Create/Update capability, but failed to remove its Search capability — please try deleting it again.",
+            "disconnected": "Disconnected from Salesforce",
+            "failedToDisconnect": "Failed to disconnect Salesforce",
+            "failedToConnect": "Failed to connect Salesforce"
+          },
+          "sandbox": {
+            "toggle": "Connect a sandbox or custom domain",
+            "domainLabel": "Salesforce domain",
+            "domainPlaceholder": "mycompany.my.salesforce.com",
+            "domainHelper": "For sandboxes, use your sandbox My Domain (e.g. mycompany--dev.sandbox.my.salesforce.com) or test.salesforce.com. Leave blank for production.",
+            "invalidDomain": "Enter a valid Salesforce domain, e.g. mycompany.my.salesforce.com or test.salesforce.com.",
+            "dialogTitle": "Connect Salesforce"
+          }
+        },
+        "setup": {
+          "title": "Salesforce setup",
+          "subtitle": "Connect your Salesforce org to Bliro so your team members can link their own Salesforce accounts.",
+          "membersNotice": "Setting up the Salesforce integration requires a workspace admin. Ask your admin to complete the setup — afterwards you can connect your own Salesforce account from the integrations page.",
+          "invalidLink": {
+            "clientId": "This setup link is missing a valid consumer key. Open the Bliro Setup page in Salesforce again and use the \"Finish setup in Bliro\" button.",
+            "instanceUrl": "This setup link doesn't carry a valid Salesforce domain. Open the Bliro Setup page in Salesforce again and use the \"Finish setup in Bliro\" button."
+          },
+          "confirm": {
+            "title": "Complete the connection",
+            "description": "This is the public client ID your own Salesforce org generated when you deployed Bliro's packaged app settings. It identifies the app — it is not a secret, and no secret is sent or stored anywhere in this flow.",
+            "orgDomain": "Salesforce domain",
+            "consumerKey": "Consumer key (public client ID)",
+            "alreadyRegistered": "This workspace is already connected to {{domain}}. Continuing registers a second Salesforce org, and members may then be asked which one to use.",
+            "registrationsUnknown": "We could not load this workspace's existing Salesforce setup, so we cannot tell whether an org is already registered. Check the domain and key below before continuing.",
+            "orgId": "Salesforce org ID",
+            "complete": "Complete setup"
+          },
+          "done": {
+            "title": "Salesforce is set up",
+            "description": "This workspace is connected to {{domain}}. Team members can now connect their own Salesforce accounts from the integrations page.",
+            "backToIntegrations": "Go to integrations"
+          },
+          "steps": {
+            "title": "How to set up Salesforce",
+            "install": "Install the Bliro package in your Salesforce org — you need Salesforce System Administrator permissions.",
+            "installButton": "Install Bliro in Salesforce",
+            "installSandboxLink": "Install in a sandbox instead",
+            "connectOrg": "In Salesforce, open the App Launcher and search for \"Bliro Setup\" — the page shows that your org is ready.",
+            "finish": "Click \"Finish setup in Bliro\" — it brings you back here to complete the connection.",
+            "propagationNote": "After installing the package, Salesforce needs a few minutes to distribute the app's configuration to your org. If connecting fails right away with “External client app is not installed in this org”, wait a moment and try again."
+          },
+          "messages": {
+            "completed": "Salesforce setup completed. Your team can now connect.",
+            "failed": "Could not complete the Salesforce setup. Please try again."
+          },
+          "registering": "Registering your Salesforce org with Bliro…"
+        }
+      },
+      "microsoftDynamics": {
+        "title": "Microsoft Dynamics Settings",
+        "description": "Let Bliro manage Microsoft Dynamics for you. Before a meeting, Bliro can read CRM information like contacts, accounts, and open opportunities to brief you on who you're talking to and where things stand. Afterward, Bliro can write your visit reports, update deals and opportunities, and log activities. Review what Bliro prepared, approve, and keep your CRM current without switching between apps.",
+        "instanceSelect": {
+          "placeholder": "Select instance",
+          "modalTitle": "Select instance",
+          "modalDescription": "Choose the Dynamics instance you want to connect to. You can connect to additional instances later.",
+          "successMessage": "Microsoft Dynamics instance updated successfully",
+          "errorMessage": "Could not update Microsoft Dynamics instance"
+        },
+        "page": {
+          "title": "Microsoft Dynamics 365",
+          "description": "Let Bliro manage Microsoft Dynamics for you. Before a meeting, Bliro can read CRM information like contacts, accounts, and open opportunities to brief you on who you're talking to and where things stand. Afterward, Bliro can write your visit reports, update deals and opportunities, and log activities. Review what Bliro prepared, approve, and keep your CRM current without switching between apps.",
+          "connectedDescription": "Microsoft Dynamics 365 is connected to Bliro. Bliro can now read and update your CRM data (contacts, deals, activities, etc.) before and after every meeting.",
+          "disconnect": "Disconnect",
+          "toolsAndPermissions": {
+            "title": "Tools & Permissions",
+            "description": "Choose when Bliro is allowed to use these tools.",
+            "addTools": "Add tools",
+            "noTools": "No tools configured yet. Click \"Add tools\" to get started.",
+            "subTools": {
+              "get": {
+                "label": "Get"
+              },
+              "create": {
+                "label": "Create"
+              },
+              "update": {
+                "label": "Update"
+              },
+              "search": {
+                "label": "Search"
+              }
+            },
+            "permissionLevels": {
+              "alwaysExecute": "Always allowed",
+              "confirmation": "Needs approval",
+              "disabled": "Blocked",
+              "queue": "Queued"
+            },
+            "searchDisabledWarning": "Dataverse search is off, so search tools use basic substring matching instead of fuzzy search. Enable it in the Power Platform admin center for better results."
+          },
+          "toolDialog": {
+            "addTitle": "Add tool",
+            "selectObjectPlaceholder": "Select object",
+            "instructionsPlaceholder": "Describe when Bliro should use this tool",
+            "addTool": "Add tool",
+            "saveChanges": "Save changes",
+            "capabilityDialogTitle": "Tool capability",
+            "searchDisabledWarning": "Dataverse search isn't enabled for this environment, so this tool will use basic substring matching instead of fuzzy search. Enable Dataverse search in the Power Platform admin center for better results.",
+            "schemaModeDefault": "Default",
+            "schemaModeAdvanced": "Advanced",
+            "schemaModeGroupLabel": "Schema mode",
+            "capabilities": {
+              "search": "Search"
+            },
+            "outputSchemaLabel": "Output schema",
+            "inputSchemaLabel": "Input schema",
+            "fieldPickerPlaceholder": "Select your fields",
+            "fieldPickerHelper": "Define the schema that will be available to the agent. Leave empty to return only the record id.",
+            "inputFieldPickerHelper": "Define which fields the agent can write. Untouched, every writable field is available; deselect all to narrow it to the object's required fields.",
+            "updateInputRequiredHelper": "Select at least one field to allow updates, or set the Update permission to Disabled and clear its field selection.",
+            "fieldPickerLoadError": "Couldn't load fields for this object. Try reopening this dialog, or reconnect the integration if it's expired.",
+            "fieldPickerLoading": "Loading fields…",
+            "fieldSearchPlaceholder": "Search fields…",
+            "noFieldsFound": "No matching fields",
+            "descriptionLabel": "Description",
+            "schemaFieldLabel": "Schema",
+            "returnColumnsHelper": "Omit a `get`/`create`/`update` `returnColumns` field to return every field; an empty array returns only the record id. `search.returnColumns` returns ids only whether omitted or empty.",
+            "specRequired": "A specification is required.",
+            "specShapeError": "The specification must be a JSON object with `wire`, `get`, `create`, and `update` sections.",
+            "discardInvalidSpecTitle": "Discard invalid JSON?",
+            "discardInvalidSpecMessage": "The schema in the Advanced editor isn't valid JSON, so it can't be carried over to Default mode. Switching now will discard your changes here and show the tool's last saved configuration instead.",
+            "discardInvalidSpecConfirm": "Discard changes",
+            "forceCloseTitle": "Close without finishing?",
+            "forceCloseMessage": "Your previous tool was already removed and its replacement hasn't been saved yet. Closing now will lose it for good — click Save in this dialog instead to finish saving it.",
+            "forceCloseConfirm": "Close anyway"
+          },
+          "deleteDialog": {
+            "title": "Remove tool",
+            "message": "Are you sure you would like to remove {{name}} from your tools? All Bliro users will lose the ability to use it.",
+            "messageBoth": "Are you sure you would like to remove {{name}} from your tools? This removes both its Read/Create/Update and Search capabilities. All Bliro users will lose the ability to use it.",
+            "delete": "Yes, remove tool"
+          },
+          "disconnectDialog": {
+            "title": "Disconnect Microsoft Dynamics",
+            "message": "Are you sure you want to disconnect Microsoft Dynamics 365? Your configured tools will remain but will no longer function until you reconnect."
+          },
+          "messages": {
+            "failedToLoad": "Failed to load tools",
+            "toolAdded": "Tool added successfully",
+            "toolUpdated": "Tool updated successfully",
+            "toolDeleted": "Tool deleted",
+            "failedToSave": "Failed to save tool",
+            "failedToSaveToolGone": "Your previous tool was removed, but the replacement failed to save. Click Save again without closing this dialog, or the tool will be lost.",
+            "factoriesUnavailable": "Tool configuration isn't loaded yet, so nothing was saved. Reload the page and try again.",
+            "failedToDelete": "Failed to delete tool",
+            "failedToDeletePartial": "Removed {{name}}'s Read/Create/Update capability, but failed to remove its Search capability — please try deleting it again.",
+            "disconnected": "Disconnected from Microsoft Dynamics",
+            "failedToDisconnect": "Failed to disconnect",
+            "failedToConnect": "Failed to connect Microsoft Dynamics"
+          }
+        }
+      },
+      "expired": "Expired",
+      "disconnected": "Disconnected",
+      "microsoftOutlook": {
+        "page": {
+          "title": "Outlook Calendar",
+          "description": "Connect Outlook Calendar to Bliro to automatically match meetings with the right context. Bliro can sync your calendar events, remind you about upcoming meetings, and ensure every call is logged with the correct participants and timing. Useful for keeping your calendar and meeting notes in sync without any manual work.",
+          "connectedDescription": "Outlook Calendar is connected to Bliro. Your calendar events are being synced automatically to help Bliro match meetings with the right context.",
+          "disconnectDialog": {
+            "title": "Disconnect Outlook Calendar",
+            "message": "Are you sure you want to disconnect Outlook Calendar?"
+          },
+          "messages": {
+            "disconnected": "Disconnected from Outlook Calendar",
+            "failedToDisconnect": "Failed to disconnect Outlook Calendar",
+            "failedToConnect": "Failed to connect Outlook Calendar"
+          }
+        }
+      },
+      "microsoftMail": {
+        "page": {
+          "title": "Outlook Mail",
+          "description": "Connect Outlook Mail to Bliro to bridge your email and meeting workflows. Bliro can send AI-generated meeting summaries straight to your inbox or to participants, keeping everyone aligned after every call. Useful for sharing follow-ups, action items, and meeting notes without switching between tools.",
+          "connectedDescription": "Outlook Mail is connected to Bliro. Bliro can now send AI-generated meeting summaries and follow-ups directly through your Outlook inbox.",
+          "disconnectDialog": {
+            "title": "Disconnect Outlook Mail",
+            "message": "Are you sure you want to disconnect Outlook Mail?"
+          },
+          "messages": {
+            "disconnected": "Disconnected from Outlook Mail",
+            "failedToDisconnect": "Failed to disconnect Outlook Mail",
+            "failedToConnect": "Failed to connect Outlook Mail"
+          }
+        }
+      },
+      "googleCalendar": {
+        "page": {
+          "title": "Google Calendar",
+          "description": "Connect Google Calendar to Bliro to automatically match meetings with the right context. Bliro can sync your calendar events, remind you about upcoming meetings, and ensure every call is logged with the correct participants and timing. Useful for keeping your calendar and meeting notes in sync without any manual work.",
+          "connectedDescription": "Google Calendar is connected to Bliro. Your calendar events are being synced automatically to help Bliro match meetings with the right context.",
+          "disconnectDialog": {
+            "title": "Disconnect Google Calendar",
+            "message": "Are you sure you want to disconnect Google Calendar?"
+          },
+          "messages": {
+            "disconnected": "Disconnected from Google Calendar",
+            "failedToDisconnect": "Failed to disconnect Google Calendar",
+            "failedToConnect": "Failed to connect Google Calendar"
+          }
+        }
+      },
+      "googleMail": {
+        "page": {
+          "title": "Gmail",
+          "description": "Connect Google Mail to Bliro to bridge your email and meeting workflows. Bliro can send AI-generated meeting summaries straight to your inbox or to participants, keeping everyone aligned after every call. Useful for sharing follow-ups, action items, and meeting notes without switching between tools.",
+          "connectedDescription": "Gmail is connected to Bliro. Bliro can now send AI-generated meeting summaries and follow-ups directly through your Gmail inbox.",
+          "disconnectDialog": {
+            "title": "Disconnect Gmail",
+            "message": "Are you sure you want to disconnect Gmail?"
+          },
+          "messages": {
+            "disconnected": "Disconnected from Gmail",
+            "failedToDisconnect": "Failed to disconnect Gmail",
+            "failedToConnect": "Failed to connect Gmail"
+          }
+        }
+      },
+      "hubspot": {
+        "page": {
+          "title": "HubSpot",
+          "description": "Let Bliro manage HubSpot for you. Before a meeting, Bliro can read CRM information like contacts, accounts, and open opportunities to brief you on who you're talking to and where things stand. Afterward, Bliro can write your visit reports, update deals and opportunities, and log activities. Review what Bliro prepared, approve, and keep your CRM current without switching between apps.",
+          "connectedDescription": "HubSpot is connected to Bliro. Bliro can now read and update your CRM data (contacts, deals, activities, etc.) before and after every meeting.",
+          "disconnectDialog": {
+            "title": "Disconnect HubSpot",
+            "message": "Are you sure you want to disconnect HubSpot?"
+          },
+          "messages": {
+            "disconnected": "Disconnected from HubSpot",
+            "failedToDisconnect": "Failed to disconnect HubSpot",
+            "failedToConnect": "Failed to connect HubSpot"
+          }
+        }
+      },
+      "bliro": {
+        "page": {
+          "title": "Bliro",
+          "description": "Built-in Bliro tools your assistant can use during calls — looking up contacts in your Bliro directory, reading and writing notes, retrieving call details, and searching your meetings. They work without any external connection. Organization admins set the org-wide default for each tool below; your own assistant settings take precedence over it."
+        }
+      },
+      "slack": {
+        "page": {
+          "title": "Slack",
+          "description": "Connect Slack to Bliro to bring your meeting insights directly into your team's conversations. Bliro can send meeting summaries, action items, and follow-ups to the right Slack channels or individuals. Useful for keeping your team informed, sharing key takeaways instantly, and making sure decisions from meetings don't stay buried in notes.",
+          "connectedDescription": "Slack is connected to Bliro. Meeting summaries, action items, and follow-ups can be sent to your Slack channels automatically.",
+          "disconnectDialog": {
+            "title": "Disconnect Slack",
+            "message": "Are you sure you want to disconnect Slack?"
+          },
+          "messages": {
+            "disconnected": "Disconnected from Slack",
+            "failedToDisconnect": "Failed to disconnect Slack",
+            "failedToConnect": "Failed to connect Slack"
+          }
+        }
+      },
+      "sap-c4c": {
+        "page": {
+          "title": "SAP",
+          "description": "Connect to your organization's SAP Cloud for Customer instance. Once an admin has set up the connection, you can connect with your own SAP user.",
+          "connectedDescription": "You're connected to SAP. The assistant can use SAP data on your behalf.",
+          "disconnect": "Disconnect",
+          "notConfigured": {
+            "adminHint": "Enter your organization's SAP connection details below to enable SAP.",
+            "memberHint": "Ask an organization admin to set up the SAP connection before you can connect."
+          },
+          "messages": {
+            "configSaved": "SAP configuration saved.",
+            "configRemoved": "SAP configuration removed.",
+            "failedToSaveConfig": "Could not save the SAP configuration.",
+            "failedToRemoveConfig": "Could not remove the SAP configuration.",
+            "failedToLoad": "Failed to load tools.",
+            "failedToLoadConfig": "Could not load the SAP configuration. The shown connection state may be outdated.",
+            "failedToLoadEntities": "Could not load SAP collections. Make sure your SAP user is set up and has the required permissions.",
+            "toolAdded": "Tool added.",
+            "toolUpdated": "Tool updated.",
+            "toolDeleted": "Tool removed.",
+            "failedToSave": "Failed to save tool.",
+            "failedToDelete": "Failed to remove tool.",
+            "failedToSaveToolGone": "Your previous tool was removed, but the replacement failed to save. Click Save again without closing this dialog, or the tool will be lost."
+          },
+          "config": {
+            "detailsTitle": "Configuration details",
+            "tenant": "Tenant",
+            "tenantHelp": "Your C4C tenant subdomain",
+            "idpName": "Identity provider name",
+            "idpNameHelp": "The IdP / issuer name registered in C4C",
+            "clientId": "Client ID",
+            "scopes": "OData scopes",
+            "scopesHelp": "Space- or comma-separated OData scopes. UIWC:CC_HOME is required — without it SAP rejects every request.",
+            "clientSecret": "Client secret",
+            "privateKeyPem": "Private key",
+            "secretsHelpCreateState": "Secrets are stored encrypted and never shown again.",
+            "secretsHelpEditState": "Secrets are stored encrypted and never shown again. Re-enter both secrets to save changes.",
+            "secretActive": "Secret key active",
+            "privateKeyActive": "Private key active"
+          },
+          "configDialog": {
+            "createTitle": "Connect SAP C4C",
+            "editTitle": "Edit SAP C4C",
+            "saveChanges": "Save changes",
+            "tenantPlaceholder": "e.g. my370045-sso",
+            "idpNamePlaceholder": "e.g. NodeJS App",
+            "clientIdPlaceholder": "e.g. 18923425233",
+            "scopesPlaceholder": "e.g. UIWC:CC_HOME UIWC:CODACCOUNTWC UIWC:CODPARTNERWC",
+            "clientSecretPlaceholder": "Enter the OAuth client secret",
+            "privateKeyPlaceholder": "Paste the PEM-encoded signing private key"
+          },
+          "disconnectDialog": {
+            "title": "Disconnect SAP",
+            "message": "Are you sure you want to disconnect SAP? This removes the connection for your entire organization, and all Bliro users will lose access to SAP data."
+          },
+          "toolsAndPermissions": {
+            "title": "Tools & Permissions",
+            "description": "Choose when Bliro is allowed to use these tools.",
+            "addTools": "Add tools",
+            "noTools": "No tools configured yet. Click \"Add tools\" to get started.",
+            "subTools": {
+              "get": {
+                "label": "Get"
+              },
+              "create": {
+                "label": "Create"
+              },
+              "update": {
+                "label": "Update"
+              },
+              "search": {
+                "label": "Search"
+              }
+            },
+            "permissionLevels": {
+              "alwaysExecute": "Always allowed",
+              "confirmation": "Needs approval",
+              "disabled": "Blocked",
+              "queue": "Queued"
+            }
+          },
+          "toolDialog": {
+            "addTitle": "Add tool",
+            "defineTitle": "Define tool",
+            "editTitle": "Edit tool",
+            "selectObjectPlaceholder": "Select collection",
+            "instructionsPlaceholder": "Describe when Bliro should use this tool",
+            "addTool": "Add tool",
+            "saveChanges": "Save changes",
+            "duplicateCollection": "A tool for this collection already exists.",
+            "fieldPickerPlaceholder": "Select your fields",
+            "fieldSearchPlaceholder": "Search fields…",
+            "noFieldsFound": "No matching fields",
+            "fieldPickerLoadError": "Couldn't load properties for this collection. Try reopening this dialog, or check the SAP connection.",
+            "searchFieldsLabel": "Fallback search fields",
+            "searchFieldsHelper": "SAP's own free-text search runs first. These properties are matched only when it finds nothing, or when the tenant does not support it. Each one costs a separate SAP request, so pick up to {{max}}.",
+            "freeTextSearchSupported": "SAP free-text search works on this collection, so it answers most queries on its own. The fields below are used only when it returns nothing.",
+            "freeTextSearchUnsupported": "SAP free-text search does not work on this collection, so the fields below do all the matching. Choose them carefully.",
+            "freeTextSearchUnknown": "Whether SAP free-text search works on this collection could not be checked. The fields below may end up doing all the matching.",
+            "freeTextOnlySearch": "This collection has no property SAP allows filtering on, so there are no fallback fields to pick. Search will rely entirely on SAP's own free-text search, which works here.",
+            "freeTextOnlySearchToggleOn": "Offer the search tool. Turning this off removes it from the agent when you save.",
+            "freeTextOnlySearchToggleOff": "The search tool is off. Turn this on to offer it, answered by SAP's own free-text search.",
+            "searchReturnFieldsLabel": "Return fields",
+            "searchReturnFieldsHelper": "Properties returned for each match. The record key is always included, so this may be left empty — but a match then carries nothing readable, and the agent has to look each one up separately to name it. Add a name property so matches describe themselves.",
+            "tooManySearchFields": "Select at most {{max}} search fields.",
+            "searchFieldsRequired": "Select at least one search field, or clear the return fields to remove search.",
+            "getReturnFieldsLabel": "Return fields",
+            "getReturnFieldsHelper": "Properties the agent receives. The record key is always included, as is the `Text` label of any coded property you pick. Leave empty to return every readable property; select only the record key to return keys alone.",
+            "createInputFieldsLabel": "Fields the agent may set",
+            "createInputFieldsHelper": "Properties the agent may fill in on a new record. Properties SAP requires are always included. Leave empty to offer every writable property.",
+            "createReturnFieldsLabel": "Return fields",
+            "createReturnFieldsHelper": "Properties returned for the created record. The record key and `ObjectID` are always included. Leave empty to return every readable property; select only the record key to return keys alone.",
+            "updateInputFieldsLabel": "Fields the agent may change",
+            "updateInputFieldsHelper": "Properties the agent may change on an existing record. Leave empty to offer every updatable property. SAP returns no record after a change, so there is nothing to narrow here.",
+            "projectionUnavailable": "Return fields cannot be narrowed for this collection: SAP declares no single key property, so the returned record would carry no identifier the agent could reuse.",
+            "staleFilterFields": "These selected fields no longer exist on this collection: {{fields}}. They were renamed or removed, so this tool will be unavailable to the agent until they are replaced.",
+            "searchUnavailable": "Search is not available for this collection: SAP declares no single key property, so a match would carry no identifier the agent could reuse.",
+            "noSearchableFields": "Search runs SAP's own free-text search first, then falls back to properties SAP allows filtering on. Neither is available here: free-text search did not answer for this collection, and it declares no filterable property, so search cannot be configured.",
+            "searchSupportUnknown": "Whether SAP's own free-text search answers on this collection could not be checked just now. Reopen this dialog to retry; search cannot be configured until the check succeeds.",
+            "cannotSaveFieldsUnavailable": "This collection's fields could not be loaded, so the tool cannot be created. Reopen this dialog to retry, or check the SAP connection.",
+            "missingSearchFields": "These search fields no longer exist in SAP: {{fields}}. They were renamed or removed.",
+            "unfilterableSearchFields": "These search fields can no longer be used for searching: {{fields}}. SAP no longer allows filtering on them.",
+            "missingReturnFields": "These return fields no longer exist in SAP: {{fields}}.",
+            "staleFieldsBlockSave": "Replace or untick them to save this change.",
+            "schemaModeDefault": "Default",
+            "schemaModeAdvanced": "Advanced",
+            "schemaModeGroupLabel": "Schema mode",
+            "schemaFieldLabel": "Schema",
+            "specHelper": "Pin exactly what the agent sees. `wire.keyProperties` must name the collection's single key property — a composite key cannot be addressed. Omit a `returnColumns` to return the whole record; an empty array is rejected, so list the key property to return keys only. Write each property's schema out in full — a `$ref` is rejected at any depth. Add a `search` section to bundle search, where `filter` applies a fixed condition the agent never sees and `filterableFields` lets it filter at query time. SAP rejects an `or` across different fields, so use `in` for several values of one field.",
+            "specRequired": "A specification is required.",
+            "specShapeError": "The specification must be a JSON object with `wire`, `get`, `create`, and `update` sections.",
+            "specUnknownKey": "SAP does not declare {{fields}} on this collection — check the `wire.keyProperties` spelling against the field list.",
+            "specKeyCount": "`wire.keyProperties` needs exactly one entry — a tool addresses one record at a time, and a composite key is not supported yet.",
+            "discardInvalidSpecTitle": "Discard invalid JSON?",
+            "discardInvalidSpecMessage": "The schema in the Advanced editor isn't valid JSON, so it can't be carried over to Default mode. Switching now clears the editor and discards what you typed.",
+            "discardInvalidSpecConfirm": "Discard changes",
+            "discardPinnedSpecTitle": "Replace the pinned tool?",
+            "discardPinnedSpecMessage": "Default mode cannot hold a pinned schema. Switching now clears the editor, and saving replaces this tool with a metadata-driven one — the pinned schemas and their filters are deleted.",
+            "discardPinnedSpecConfirm": "Switch and replace"
+          },
+          "deleteDialog": {
+            "title": "Remove tool",
+            "message": "Are you sure you would like to remove {{name}} from your tools? All Bliro users will lose the ability to use it.",
+            "delete": "Yes, remove tool"
+          },
+          "forceCloseDialog": {
+            "title": "Close without finishing?",
+            "message": "Your previous tool was already removed and its replacement hasn't been saved yet. Closing now will lose it for good — click Save in this dialog instead to finish saving it.",
+            "confirm": "Close anyway"
+          }
+        }
+      },
+      "groups": {
+        "calendar": "Calendar",
+        "email": "Email",
+        "crm": "CRM",
+        "communication": "Communication"
+      },
+      "groupDisabledTooltip": "Each category supports one active integration at a time. Disconnect the current one before connecting a new one.",
+      "groupDimmedTooltip": "Another integration in this category is currently active. You can still open the settings.",
+      "messages": {
+        "crmRequiresSalesAssistant": "Connecting a CRM requires a Sales Assistant license. Ask your admin for access.",
+        "failedToConnect": "Couldn't connect the integration",
+        "licenseStateError": "We couldn't confirm your license status. Please try again later.",
+        "licenseStateUnresolved": "We couldn't confirm your license yet — try connecting again in a moment.",
+        "loadFailed": "Error loading integrations",
+        "requiresLicense": "A {{license}} license is required to use {{integration}}. Ask your admin for access."
+      },
+      "deleteInstanceConfirm": {
+        "title": "Delete this integration?",
+        "message": "This permanently removes the integration from your organization. Every member who is connected will be disconnected, and it will disappear from their integrations list. This cannot be undone.",
+        "confirm": "Yes, delete for everyone",
+        "cancel": "Cancel",
+        "titleWithInstance": "Delete “{{instance}}”?",
+        "acknowledge": "I acknowledge this is an irreversible action and that every member of my organization will be disconnected.",
+        "messageWithInstance": "This permanently removes “{{instance}}” from your organization. Every member who is connected will be disconnected, and it will disappear from their integrations list. This cannot be undone."
+      },
+      "disconnectInstanceTitle": "Disconnect {{integration}} (“{{instance}}”)"
+    },
+    "subscription": {
+      "title": "Subscription and billing",
+      "description": "Manage your subscription and billing details"
+    },
+    "usage": {
+      "title": "Usage",
+      "description": "See statistics and get insights about how your organization uses Bliro",
+      "pageTitle": "Usage and spend limits",
+      "pageSubtitle": "Track extra minutes beyond your plan, and manage limits.",
+      "phoneAgentSection": "Phone agent",
+      "transcriptionSection": "Transcription",
+      "minutesThisMonthSuffix": "min this month",
+      "unlimited": "Unlimited",
+      "ofLimitSuffix": "/ {{limit}} min",
+      "percentUsed": "{{percent}}% used",
+      "extraUsage": {
+        "title": "Phone agent",
+        "description": "Minutes your org used beyond your plan this cycle.",
+        "resets": "Resets {{date}}.",
+        "tooltip": "Counts only minutes beyond what your seats include. This sets the total maximum minutes the organization can consume.",
+        "editLimit": "Edit limit",
+        "limitReached": "Limit reached. Phone agent is unavailable for your team.",
+        "disabled": "Extra usage disabled",
+        "saveSuccess": "Extra usage limit updated",
+        "saveError": "Couldn't update the extra usage limit"
+      },
+      "seatSpendLimits": {
+        "title": "Seat spend limits",
+        "description": "Set how many extra minutes each user type gets. Defaults apply until you set a custom limit.",
+        "tooltip": "Counts only minutes beyond what your seats include. Sets the maximum extra usage per seat type.",
+        "editLimits": "Edit limits",
+        "editDisabledTooltip": "To edit per-seat limits, first turn on extra usage for your whole team.",
+        "standardUserLabel_one": "Standard User ({{count}} seat)",
+        "standardUserLabel_other": "Standard User ({{count}} seats)",
+        "revenueUserLabel_one": "Revenue User ({{count}} seat)",
+        "revenueUserLabel_other": "Revenue User ({{count}} seats)",
+        "minutesPerMonthSuffix": "min / month"
+      },
+      "memberUsage": {
+        "title": "Usage by member"
+      },
+      "limitsByUser": {
+        "searchPlaceholder": "Search members...",
+        "userColumn": "User",
+        "customLimitColumn": "Custom limit",
+        "extraThisMonthColumn": "Extra this month",
+        "noCustomLimit": "-",
+        "unlimited": "Unlimited",
+        "minutesValue": "{{minutes}} min",
+        "editAriaLabel": "Edit limit for {{name}}",
+        "editDisabledTooltip": "To edit per-user limits, first turn on extra usage for your whole team.",
+        "rowsPerPage": "Rows per page:",
+        "paginationRange": "{{from}}-{{to}} of {{count}}",
+        "saveSuccess": "Limit updated.",
+        "saveError": "Couldn't update the limit. Please try again.",
+        "overBadge": "Over"
+      },
+      "transcriptionByUser": {
+        "minutesUsedColumn": "Minutes used"
+      },
+      "transcription": {
+        "title": "Transcription",
+        "description": "Here's how much your team transcribed this month."
+      }
+    },
+    "personalUsage": {
+      "title": "Usage",
+      "pageTitle": "Usage",
+      "pageSubtitle": "See how many minutes you've used this month.",
+      "phoneAgent": {
+        "title": "Phone agent",
+        "notIncludedDescription": "This feature isn't included in your plan. Ask your organization admin to enable it.",
+        "requestAccess": "Request access",
+        "includedDescription": "Total minutes used, against your plan. Resets {{date}}.",
+        "usingExtraNote": "Included minutes used up. Now using extra minutes.",
+        "requestExtraMinutes": "Request extra minutes",
+        "tooltip": "Counts total minutes used against your plan's included minutes this cycle.",
+        "limitReached": "Limit reached. Ask your organization admin for more minutes.",
+        "limitReachedFree": "Limit reached. Request extra minutes to keep going.",
+        "disabled": "Phone agent disabled"
+      },
+      "transcription": {
+        "title": "Transcription",
+        "description": "Here's how much you transcribed this month."
+      }
+    },
+    "organization": {
+      "title": "Organization",
+      "description": "Manage your organization here",
+      "helpCenterUrl": "https://help.bliro.io/en/articles/12413401-navigating-your-bliro-settings-a-guide-for-admins",
+      "name": "Organization Name",
+      "general": "General",
+      "members": "Members",
+      "summary": "Summary",
+      "privacy": "Privacy",
+      "disableMemberAppDownload": {
+        "title": "Disable Member App Download",
+        "description": "With this setting, the download of the Bliro app for organization members can be disabled. This setting should be made if the Bliro app is provided centrally by the IT department."
+      },
+      "disableAutoAppUpdatesViaBliroForMembers": {
+        "title": "Disable Auto App Updates via Bliro for Members",
+        "description": "With this setting, automatic app updates via Bliro for organization members can be disabled. This setting should be made if the Bliro app is provided centrally by the IT department."
+      },
+      "disablePublicShare": {
+        "title": "Disable Public Share",
+        "description": "With this setting, sharing meetings via public link can be disabled for organization members."
+      },
+      "voiceIdPolicy": {
+        "title": "VoiceID Policy",
+        "description": "Controls whose enrolled voice profiles Bliro may use to identify speakers in your members' meetings.",
+        "options": {
+          "off": "Off",
+          "user": "Personal",
+          "org": "Organization",
+          "global": "Global"
+        },
+        "helper": {
+          "off": "Speaker identification is disabled for all members.",
+          "user": "Members are identified only in their own calls.",
+          "org": "Members are identified across all org meetings.",
+          "global": "Members are identified across all Bliro meetings."
+        },
+        "notice": "This option qualifies bliro as a \"high-risk\" AI system according to the EU AI Act. Please <0>see the documentation</0> for more information.",
+        "offDialog": {
+          "title": "Turn off VoiceID?",
+          "message": "Turning off VoiceID will delete all enrolled voice profiles in your organization. Members will no longer be identified automatically in transcripts. They'll need to re-enroll if you turn VoiceID back on.",
+          "confirm": "Continue"
+        }
+      },
+      "summaryDisclaimer": {
+        "title": "Summary Disclaimer",
+        "description": "With this setting, a disclaimer can be created for all Bliro summaries. The disclaimer is inserted at the end of each summary that is copied to the clipboard using the Copy & Paste function."
+      },
+      "transcriptDataDeletion": {
+        "title": "Transcript Data Deletion",
+        "description": "With this setting, you can activate the deletion of transcription data after a custom period of time or instantly after the call",
+        "deleteAfter": "Delete After",
+        "days": "Days",
+        "deleteInstantly": "Delete Transcript Instantly"
+      },
+      "messages": {
+        "couldNotUpdateOrganization": "Could not update Organization",
+        "successfullyUpdatedOrganization": "Organisation is updated successfully"
+      },
+      "internalDomains": {
+        "title": "Organization Domains",
+        "description": "Define which email domains belong to your organization. This is used to distinguish between internal and external people.",
+        "placeholder": "Add a domain (e.g. company.com)"
+      },
+      "domains": {
+        "title": "Auto-join for matching domains",
+        "description": "When a user signs up with an email address that ends with one of the allowed domains, they will be automatically added to the organization.",
+        "placeholder": "Allowed domains"
+      },
+      "enableAnalytics": {
+        "title": "Enable Analytics",
+        "description": "With this setting, you can enable analytics for your organization. This will allow you to see how your organization is using Bliro."
+      },
+      "desktopApp": {
+        "title": "Desktop App",
+        "remoteControl": {
+          "title": "Remote Control",
+          "description": "Controls the Desktop App behavior when using Remote Control feature. Mobile apps and self-started sessions aren't affected. ",
+          "descriptionLink": "See Remote Control feature here.",
+          "visibleMode": "Visible Mode",
+          "visibleModeDescription": "Shows Desktop App on Remote Control",
+          "stealthMode": "Stealth Mode",
+          "stealthModeDescription": "Shows a Notification only, Desktop App is hidden"
+        },
+        "minimumCallLength": {
+          "title": "Minimum Call Length",
+          "description": "Calls shorter than the minimum call length will not be saved.",
+          "duration": "{{duration}} seconds",
+          "shortCallWarning": "Short calls rarely make useful notes, try 30 seconds or more."
+        }
+      },
+      "deleteOrganization": {
+        "title": "Delete organization",
+        "description": "This is permanent. All meetings, notes, and member accounts in {{orgName}} (including your own) will be permanently erased, and subscriptions will be canceled.",
+        "descriptionWithoutName": "This is permanent. All meetings, notes, and member accounts (including your own) will be permanently erased, and subscriptions will be canceled.",
+        "button": "Delete organization",
+        "step1": {
+          "title": "Delete organization?",
+          "description": "This permanently erases all meetings, notes, and member accounts for {{orgName}}, including your own. Any active subscriptions will be canceled. This cannot be undone.",
+          "continue": "Continue"
+        },
+        "step2": {
+          "title": "Confirm deletion",
+          "instruction": "Type <0/> to confirm.",
+          "placeholder": "Type organization name",
+          "confirm": "Delete organization"
+        },
+        "success": "Organization deletion started.",
+        "error": "Failed to delete organization. Please try again.",
+        "permissionTooltip": "You don't have permission to delete this organization."
+      }
+    },
+    "members": {
+      "title": "Members",
+      "description": "Manage the members of your organization",
+      "sendInvitations": "Send Invitations",
+      "cancelInvitation": "Cancel Invitation",
+      "cancelInvitationDescription": "By canceling this invitation, you will revoke the user's access to the organization.",
+      "addMember": "Add People",
+      "role": "Role",
+      "license": "License",
+      "roleSelect": "Role Select",
+      "suspendMember": "Suspend member",
+      "suspendMemberTitle": "Suspend member",
+      "suspendMemberDescription": "Suspending <0>{{name}}</0> will immediately revoke their access to the platform. They will no longer be able to transcribe meetings, view notes, or access the phone assistant until reactivated. Their data will be preserved and not deleted.",
+      "activateMember": "Reactivate member",
+      "deleteMember": "Delete member",
+      "deleteMemberTitle": "Delete member",
+      "deleteMemberDescription": "Deleting <0>{{name}}</0> will immediately remove their access to the platform. All their data - meetings, notes, and transcripts - will be permanently deleted. This cannot be undone.",
+      "activeMembers": "Active",
+      "suspendedMembers": "Suspended",
+      "memberOptions": "More options",
+      "name": "Name",
+      "invitationPending": "Invitation Pending",
+      "inviteANewMember": "Invite a new member",
+      "sendInvitation": "Send Invitation",
+      "messages": {
+        "inviteFailed": "Error inviting member",
+        "licenseAssignFailed": "Couldn't assign the license to {{name}}. Try again.",
+        "licenseAssigned": "{{license}} license assigned to {{name}}.",
+        "licenseUnassignFailed": "Couldn't remove the license from {{name}}. Try again.",
+        "licenseUnassigned": "{{license}} license removed from {{name}}.",
+        "loadFailed": "Error loading members",
+        "noSeatsAvailable": "No seats available for {{license}}. Ask an admin to increase the pool or free up a seat.",
+        "noSeatsAvailableTooltip": "No {{license}} seats available. Free a seat or increase the pool.",
+        "reactivateFailed": "Error reactivating member",
+        "reactivateSucceeded": "Member reactivated",
+        "removeFailed": "Error removing member",
+        "roleFailed": "Error updating member role",
+        "suspendFailed": "Error suspending member",
+        "licenseAssignFailed": "Couldn't assign the license to {{name}}. Try again.",
+        "licenseAssigned": "{{license}} license assigned to {{name}}.",
+        "licenseUnassignFailed": "Couldn't remove the license from {{name}}. Try again.",
+        "licenseUnassigned": "{{license}} license removed from {{name}}.",
+        "noSeatsAvailable": "No seats available for {{license}}. Ask an admin to increase the pool or free up a seat.",
+        "poolUpdateFailed": "Couldn't save your changes. Try again.",
+        "poolChangedReadFailed": "The license pool changed while saving, and we couldn't re-read it. Reopen this dialog to see the current counts.",
+        "poolUpdated": "License pool updated successfully.",
+        "reactivateFailed": "Error reactivating member",
+        "reactivateSucceeded": "Member reactivated",
+        "suspendSucceeded": "Member suspended",
+        "unassignShortfall_one": "{{count}} member currently holds {{license}}. Unassign at least {{required}} before reducing to {{requested}}.",
+        "unassignShortfall_other": "{{count}} members currently hold {{license}}. Unassign at least {{required}} before reducing to {{requested}}."
+      },
+      "inviteErrors": {
+        "alreadyOrgMember": "This user is already a member of this organization.",
+        "unmergeableOrg": "This user already belongs to an organization they cannot be removed from.",
+        "needsFirstLogin": "This person already has a Bliro login but has never signed in. Ask them to sign in once, then add them.",
+        "alreadyInvited": "This address already has an invitation to this organization.",
+        "domainNotAllowed": "This email domain is not one of your organization's domains. Add the domain to your organization first, then invite them."
+      },
+      "licensePool": {
+        "title": "Licenses",
+        "description": "Monitor and manage the licenses available to your organization.",
+        "noteTaker": "Note Taker",
+        "salesAssistant": "Sales Assistant",
+        "loadError": "Couldn't load license usage.",
+        "progressLabel": "{{license}}: {{assigned}} of {{capacity}} assigned",
+        "unassigned": "Unassigned",
+        "manageLicenses": "Manage licenses",
+        "allAssigned_one": "All {{count}} license is assigned.",
+        "allAssigned_other": "All {{count}} licenses are assigned.",
+        "disclaimer": "Adding licenses is billed on a prorated basis for the remainder of your current term. Removing licenses takes effect at your next contract renewal. All changes to your license count are governed by the terms of your organization's contract with Bliro.",
+        "saveChanges": "Save changes",
+        "decreaseLicense": "Decrease {{license}}",
+        "increaseLicense": "Increase {{license}}",
+        "licenseCount": "{{license}} license count"
+      }
+    },
+    "analyticsTemplates": {
+      "title": "Analytics Templates",
+      "description": "Use templates to tell Bliro exactly how you like your meetings to be analyzed.",
+      "helpCenterUrl": "https://help.bliro.io/en/articles/12413717-a-guide-for-admins-setting-up-your-bliro-analytics-template"
+    },
+    "download": {
+      "title": "Download Bliro app for {{what}}",
+      "description": "Bliro app is your companion that supports you in your meetings and takes notes for you."
+    },
+    "api": {
+      "title": "API Access",
+      "description": "View and manage the API application in this organization.",
+      "description2": "Do not share your client identified or client secret with others or expose it in the browser or other client-side code. To protect your account's security, Bliro may automatically disable any API application that has leaked publicly.",
+      "helpCenterUrl": "https://help.bliro.io/en/articles/10329784-api-access",
+      "createNewApplicationToAccessBliroAPI": "Create an application to access the Bliro API",
+      "createNewApplication": "Create new application",
+      "clientId": "Client ID",
+      "clientSecret": "Client Secret",
+      "clientSecretHidden": "Shown only once, when the application was created",
+      "messages": {
+        "deleteFailed": "Error deleting API access",
+        "createFailed": "Error creating API access"
+      }
+    },
+    "webhook": {
+      "title": "Webhook Management",
+      "description": "View and manage webhook integrations of this organization.",
+      "description2": "For each webhook integration that is active, Bliro will send a copy of each processed meeting of each member of the organization to the specified URL mentioned in the webhook.",
+      "helpCenterUrl": "https://help.bliro.io/en/articles/10628092-receive-bliro-events-in-your-webhook-endpoint",
+      "webhookName": "Webhook Name",
+      "webhookNamePlaceholder": "CRM Sync",
+      "webhookUrl": "Webhook URL",
+      "webhookUrlPlaceholder": "https://example.com/webhooks/meeting-summary",
+      "securityToken": "Security Token",
+      "securityTokenPlaceholder": "my-webhook-secret",
+      "status": "Status",
+      "testWebHook": "Test webhook",
+      "options": "Options",
+      "setting": {
+        "title": "Webhook Management",
+        "description": "View and manage webhook integrations of this organization"
+      },
+      "noWebhooksCreated": {
+        "title": "No webhooks created",
+        "description": "Create and setup a new webhook integration."
+      },
+      "loadError": {
+        "title": "Couldn't load webhooks",
+        "description": "We couldn't reach the server. Your existing webhooks are unaffected.",
+        "retry": "Try again"
+      },
+      "createNewWebhook": {
+        "title": "Create new webhook",
+        "description": "Complete the information below in order to create a new webhook integration."
+      },
+      "editWebhook": {
+        "title": "Edit webhook"
+      },
+      "deleteWebhook": {
+        "title": "Delete webhook?",
+        "description": "After deletion of the webhook, Bliro will not send any processed meetings to the speficied webhook address anymore. All information about this webhook will be lost. Are you sure you want to delete this webhook?",
+        "yesDeleteWebhook": "Delete webhook"
+      },
+      "deactivateWebhook": {
+        "title": "Deactivate webhook?",
+        "description": "By deactivating the webhook, no meeting created by any member of your organization will be sent to your specified endpoint anymore.",
+        "yesDeactivateWebhook": "Understood, deactivate now"
+      },
+      "activateWebhook": {
+        "title": "Activate Webhook?",
+        "description": "Activating the webhook, each meeting created any member of your organization will be sent to your specified endpoint. Please make sure you tested the webhook connection upfront.",
+        "yesActivateWebhook": "Understood, activate now"
+      },
+      "messages": {
+        "activateFailed": "Error activating webhook",
+        "deactivateFailed": "Error deactivating webhook",
+        "updateFailed": "Error updating webhook",
+        "createFailed": "Error creating webhook",
+        "deleteFailed": "Error deleting webhook",
+        "testFailed": "Error testing webhook",
+        "loadFailed": "Error loading webhooks"
+      }
+    },
+    "profile": {
+      "title": "My Account",
+      "description": "Manage your personal details and preferences",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "primaryConversationLanguage": "Primary Conversation Language",
+      "secondaryConversationLanguage": "Secondary Conversation Language",
+      "selectLanguage": "Select Language",
+      "timezone": "Timezone",
+      "selectTimezone": "Select Timezone",
+      "helpCenterUrl": "https://help.bliro.io/en/articles/12414050-navigating-your-bliro-settings-a-guide-for-members",
+      "deleteAccount": "Delete account",
+      "deleteAccountTitle": "Delete your Bliro account",
+      "deleteAccountDescription": "This action is permanent and all of your meeting notes will be lost.",
+      "deleteAccountSuccess": "Your Bliro account has been successfully deleted.",
+      "deleteAccountCascadeSuccess": "Account and organization deletion started. This can take a moment to complete.",
+      "deleteAccountError": "Could not delete account",
+      "deleteAccountModal": {
+        "title": "Delete account",
+        "confirm": "Delete account",
+        "cascadesToOrg": {
+          "description": "This is the only account in your organization. Deleting it will delete your organization too - including all meeting history, summaries, and settings. This can't be undone.",
+          "checkboxLabel": "I understand this will permanently delete my account and organization."
+        },
+        "selfOnly": {
+          "description": "Deleting your account permanently removes all your data - meeting history, summaries, and settings. This can't be undone.",
+          "checkboxLabel": "I understand this will permanently delete my account"
+        }
+      },
+      "cantDeleteAccountModal": {
+        "title": "Can't delete account",
+        "manageMembers": "Manage Members",
+        "reasons": {
+          "lastAdmin": {
+            "description": "You're the only admin in your organization. Assign a new admin or remove all other members first."
+          }
+        }
+      }
+    },
+    "voiceId": {
+      "title": "VoiceID",
+      "description": "With VoiceID, Bliro learns your voice and identifies your voice among other speakers in a meeting.",
+      "setUp": "Set up VoiceID",
+      "reEnroll": "Re-Enroll",
+      "deleteVoiceId": "Delete VoiceID",
+      "deactivated": "Deactivated",
+      "disabledByOrgDescription": "With VoiceID, Bliro learns your voice and identifies your voice within other speakers in a meeting. This feature is currently unavailable because your organization deactivated it.",
+      "banner": {
+        "title": "Meet VoiceID",
+        "description": "Bliro learns your voice and identifies you automatically so that meeting summaries and action items are assigned reliably.",
+        "lockedDescription": "VoiceID requires a Note Taker license. Ask your admin for access."
+      },
+      "enrollmentModal": {
+        "intro": {
+          "title": "Meet VoiceID",
+          "description": "Record your voice and Bliro differentiates you from other meeting participants automatically.",
+          "cta": "Set up your VoiceID",
+          "transcript": [
+            "I finally closed the deal, took three months but we got there.",
+            "Nice. Did they push back on pricing again or did it go through clean?",
+            "One last round of negotiation, then they signed. Feels good.",
+            "Get it in the CRM before you forget the details."
+          ]
+        },
+        "consent": {
+          "title": "Setup VoiceID",
+          "subtitle": "We use voice biometrics to label your speech in transcripts automatically. <link>Learn more about data processing.</link>",
+          "card1": "<bold>We collect</bold> a voice sample (~15 s) and a biometric voice identifier derived from it. You can manage your audio recording at any time in your settings.",
+          "card2": "<bold>We encrypt and store your data</bold> within your personal Bliro account. You can withdraw at any time. <link>See our Privacy Policy</link> for details.",
+          "card3": "<bold>Your voice data will be used to</bold> identify you during Bliro meetings that you participate in, so your name appears in transcripts automatically.",
+          "checkboxLabel": "I consent to Bliro processing my biometric voice data for automatic speaker identification in meetings that I participate in.",
+          "step": "Step {{step}} of {{total}}",
+          "continue": "Continue"
+        },
+        "recording": {
+          "title": "Record your voice",
+          "subtitle": "Read the sentence below clearly. Record 10-60 seconds.",
+          "subtitleRepeat": "Read the sentence below clearly.",
+          "stopTooltip": "Keep recording for at least 10 seconds",
+          "prompt": "\"Every morning I wake up, make a fresh cup of coffee, check my messages, and spend a few quiet minutes carefully planning the most important tasks I want to accomplish before the afternoon is over.\"",
+          "startRecording": "Start Recording",
+          "stop": "Stop",
+          "retake": "Retake",
+          "play": "Play",
+          "continue": "Continue",
+          "step": "Step {{step}} of {{total}}",
+          "error": "We encountered some technical difficulties. Please try again.",
+          "processingTitle": "Creating your VoiceID",
+          "processingSubtitle": "This might take a few seconds.",
+          "processingStatus": "Processing your voice sample...",
+          "successTitle": "Setup completed",
+          "successDescription": "We'll now recognize your voice in upcoming meetings.",
+          "errorTitle": "Setup couldn't be completed",
+          "errorDescriptionService": "Our voice processing service is temporarily unavailable, so we couldn't create your VoiceID. Your recording wasn't saved. Please try again in a moment.",
+          "errorDescriptionAudio": "We couldn't use this recording. Find a quiet spot and read the sentence clearly for at least 10 seconds, then record again.",
+          "errorDescriptionDisabled": "Voice ID enrollment is turned off for your organization. Please contact your administrator.",
+          "errorDescriptionLicenseRequired": "Your organization needs a Note Taker seat for VoiceID. Please ask your admin to assign one.",
+          "errorDescriptionGeneric": "We encountered some technical difficulties and couldn't create your VoiceID. Your recording wasn't saved. Please try again.",
+          "tryAgain": "Try again",
+          "saveVoiceId": "Save VoiceID",
+          "done": "Done"
+        }
+      },
+      "deleteSuccess": "Voice profile deleted",
+      "deleteError": "Could not delete voice profile",
+      "enrollmentClosedLicenseRequired": "VoiceID requires a Note Taker license. Ask your admin for access.",
+      "deleteDialog": {
+        "title": "Delete VoiceID?",
+        "message": "Your VoiceID will be permanently deleted. Bliro will no longer recognize your voice in future meetings. This cannot be undone. Do you want to continue?",
+        "confirm": "Continue"
+      }
+    },
+    "voiceCall": {
+      "title": "Bliro Phone Assistant",
+      "description": "Manage your personal phone assistant.",
+      "phoneNumber": "Phone Number",
+      "invalidPhone": "Please enter a valid phone number in international format (e.g. +49...).",
+      "phoneSaved": "Phone number saved",
+      "phoneError": "Could not update phone number",
+      "tooManyAttempts": "Too many attempts. Please wait a few minutes and try again.",
+      "phoneRemoved": "Phone number removed",
+      "qrCode": "QR Code",
+      "qrCodeDescription": "Scan this QR code to save your assistant to your contacts.",
+      "qrCodeError": "Failed to load QR code.",
+      "presetError": "Could not update voice preset",
+      "setup": "Set up Phone Assistant",
+      "disable": "Delete Assistant",
+      "disabled": "Phone Assistant deleted",
+      "disableError": "Could not delete Phone Assistant",
+      "pinError": "Could not generate PIN",
+      "disableConfirmDialog": {
+        "title": "Delete Assistant?",
+        "content": "Deleting your assistant is permanent. Its number and saved contacts will stop working. Are you sure you want to continue?"
+      }
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "Enable skills to instruct the agent on how it should perform tasks",
+      "search": "Search...",
+      "closeSearch": "Close search",
+      "addSkill": "Add skill",
+      "customSkills": "Custom skills",
+      "exampleSkills": "Example skills",
+      "noSkills": "Create a skill to see it here",
+      "mentionedTools": "Mentioned tools",
+      "addedBy": "Added by",
+      "addedByUnknown": "Unknown",
+      "lastUpdated": "Last updated",
+      "duplicate": "Duplicate",
+      "toolAvailable": "Available",
+      "toolUnavailable": "Not available",
+      "deleteDialog": {
+        "title": "Delete skill",
+        "message": "{{name}} will be removed permanently. All Bliro users will lose access to it. Do you want to continue?",
+        "confirm": "Delete"
+      },
+      "skillDialog": {
+        "addTitle": "Write skill instructions",
+        "editTitle": "Edit skill",
+        "duplicateTitle": "Duplicate skill",
+        "name": "Skill name",
+        "namePlaceholder": "e.g. weekly-status-report",
+        "description": "Description",
+        "descriptionPlaceholder": "Generate weekly status reports from recent work. Use when asked for updates or progress summaries.",
+        "instruction": "Instructions",
+        "instructionPlaceholder": "Summarise my recent work in three sections: wins, blockers, and next steps. Keep the tone professional but not stiff.",
+        "previewMode": "Preview",
+        "markdownMode": "Markdown source",
+        "save": "Save",
+        "create": "Create",
+        "cancel": "Cancel",
+        "nameConflict": "A skill with this name already exists. Please choose a different name."
+      },
+      "messages": {
+        "failedToLoad": "Failed to load skills",
+        "skillCreated": "Skill created",
+        "skillUpdated": "Skill updated",
+        "skillDeleted": "Skill deleted",
+        "failedToSave": "Failed to save skill",
+        "failedToDelete": "Failed to delete skill",
+        "failedToToggle": "Failed to update skill"
+      },
+      "edit": "Edit",
+      "delete": "Delete"
+    }
+  },
+  "phoneAgentOnboarding": {
+    "badge": "New",
+    "title": "Bliro's Phone Assistant just landed",
+    "description": "Prep for meetings, log notes, and brainstorm on the go — all with a single phone call.",
+    "setupButton": "Try it now",
+    "invalidPhone": "Please enter a valid phone number (e.g. +49...)",
+    "dismissError": "Failed to dismiss. Please try again.",
+    "finishError": "Failed to save your progress. Please try again.",
+    "comingSoon": "Coming Soon",
+    "skipAnyways": "Skip anyways",
+    "steps": {
+      "welcome": {
+        "title": "Welcome to the\nFuture of Sales",
+        "description": "Set up your personal AI assistant\nand never do manual busywork again.",
+        "getStarted": "Get started"
+      },
+      "preset": {
+        "title": "Choose your personal assistant",
+        "description": "Who would you like to talk to?"
+      },
+      "phone": {
+        "title": "What's your phone number?",
+        "placeholder": "+49...",
+        "next": "Continue"
+      },
+      "verifyCode": {
+        "title": "Verify your number",
+        "description": "We sent a verification code via SMS.",
+        "next": "Continue",
+        "resend": "Didn't receive a code? Resend",
+        "resendCooldown": "Resend available in {{seconds}}s",
+        "invalidCode": "Invalid code. Please try again.",
+        "resent": "Verification code resent"
+      },
+      "qr": {
+        "title": "Setup your assistant",
+        "first": "Scan QR code",
+        "second": "Save as new contact",
+        "done": "Continue"
+      },
+      "success": {
+        "tim": {
+          "title": "You're all set.\nCall Tim at any time.",
+          "description": "From here, Tim takes care of\nyour busy work so you don't have to."
+        },
+        "vicky": {
+          "title": "You're all set.\nCall Vicky at any time.",
+          "description": "From here, Vicky takes care of\nyour busy work so you don't have to."
+        },
+        "cta": "Done"
+      },
+      "calendarIntegration": {
+        "tim": {
+          "heading": "Let Tim see your Calendar",
+          "description": "Tim can manage your appointments, set reminders, and fetch contacts."
+        },
+        "vicky": {
+          "heading": "Let Vicky see your Calendar",
+          "description": "Vicky can manage your appointments, set reminders, and fetch contacts."
+        }
+      },
+      "emailIntegration": {
+        "tim": {
+          "heading": "Let Tim manage your Emails",
+          "description": "Tim can write emails for meeting follow-ups, updates, or reminders."
+        },
+        "vicky": {
+          "heading": "Let Vicky manage your Emails",
+          "description": "Vicky can write emails for meeting follow-ups, updates, or reminders."
+        }
+      },
+      "skipEmailIntegration": {
+        "tim": {
+          "heading": "Tim works best with your Email connected.",
+          "description": "Without email access Tim can't take over your most time-consuming tasks."
+        },
+        "vicky": {
+          "heading": "Vicky works best with your Email connected.",
+          "description": "Without email access Vicky can't take over your most time-consuming tasks."
+        },
+        "consequences": [
+          "No follow-up email drafts",
+          "No reminder to yourself",
+          "No email context for briefings"
+        ]
+      },
+      "crmIntegration": {
+        "tim": {
+          "heading": "Let Tim manage your CRM",
+          "description": "Tim can access your CRM to write Visit Reports, update Opportunities, or manage contacts."
+        },
+        "vicky": {
+          "heading": "Let Vicky manage your CRM",
+          "description": "Vicky can access your CRM to write Visit Reports, update Opportunities, or manage contacts."
+        },
+        "sapC4c": {
+          "retryAdminNotConfigured": "Finish setting up SAP C4C for your organization to continue.",
+          "retryAdminNotPinned": "Set SAP C4C as your organization's CRM default to continue.",
+          "retryMemberNotPinned": "Ask your organization admin to set SAP C4C as your organization's CRM default.",
+          "openSettingsAction": "Open SAP settings"
+        }
+      },
+      "skipCrmIntegration": {
+        "tim": {
+          "heading": "Tim flies blind on deals without your CRM.",
+          "description": "Without it, he can't track pipeline, log activity, or know where any relationship stands."
+        },
+        "vicky": {
+          "heading": "Vicky flies blind on deals without your CRM.",
+          "description": "Without it, she can't track pipeline, log activity, or know where any relationship stands."
+        },
+        "consequences": [
+          "No writing of visit reports",
+          "No opportunity updates",
+          "No CRM context for briefings"
+        ]
+      },
+      "skipCalendarIntegration": {
+        "tim": {
+          "heading": "Tim can't manage your time without your calendar.",
+          "description": "Without it, he has no idea when you're free, what's coming up, or where to fit things in."
+        },
+        "vicky": {
+          "heading": "Vicky can't manage your time without your calendar.",
+          "description": "Without it, she has no idea when you're free, what's coming up, or where to fit things in."
+        },
+        "consequences": [
+          "No briefings for client meetings",
+          "No meeting management",
+          "No access to contacts"
+        ]
+      }
+    }
+  },
+  "modals": {
+    "apiGenerate": {
+      "title": "Safe your credentials",
+      "description": "Please store your credentials somewhere secure and accessible. For security reasons, <b>you won't be able to view your client secret again</b> through your Bliro account. If you lose the client secret, you will need to generate a new one.",
+      "clientId": "Client ID",
+      "clientSecret": "Client Secret"
+    },
+    "deleteApplication": {
+      "title": "Delete API application?",
+      "description": "Are you sure you want to delete this API application. After deletion you cannot access Bliro API with these credentials anymore. For API access, you need to create new credentials again.",
+      "yesDeleteApplication": "Delete API Application"
+    },
+    "upgradeFreePlan": {
+      "title": "Upgrade your Plan",
+      "description": "You have reached the limit of members for the free plan. Upgrade to one of the paid plans to add more members."
+    },
+    "upgradeSeats": {
+      "title": "Adding more members?",
+      "description": "Adding more members has to be done manually at the moment. Please write a quick message to our support team with the number of members you want to add."
+    },
+    "upgradeForCRMIntegration": {
+      "title": "Upgrade for CRM Integration",
+      "description": "You need to upgrade to a paid plan to integrate with CRM systems.",
+      "cta": "Start Free Trial"
+    },
+    "manageOrgSubscription": {
+      "title": "Manage your subscription?",
+      "description": "Managing organization subscriptions has to be done manually at the moment. Please write a quick message to our support team with the changes you want to make."
+    },
+    "upgradeMinutes": {
+      "title": "Adding more minutes?",
+      "description": "Adding more minutes has to be done manually at the moment. Please write a quick message to our support team with the number of minutes you want to add."
+    },
+    "editExtraUsageLimit": {
+      "title": "Edit monthly spend limit",
+      "subtitle": "The total minutes your organization can use each cycle.",
+      "unlimited": "Unlimited",
+      "setLimit": "Set limit",
+      "spendLimitLabel": "Spend limit",
+      "minPerMonth": "min / month",
+      "helperText": "When you hit the limit, phone agent pauses until the next cycle, so you never pay more than this.",
+      "save": "Set spend limit"
+    },
+    "editSeatSpendLimits": {
+      "title": "Edit seat spend limits",
+      "subtitle": "Set how many extra minutes each user type gets.",
+      "standardUserLabel": "Standard user",
+      "revenueUserLabel": "Revenue user",
+      "minPerMonth": "min / month",
+      "revertToDefault": "Revert to default",
+      "save": "Save changes"
+    },
+    "editUserLimit": {
+      "title": "Edit personal spend limits",
+      "subtitle": "Set how many extra minutes a specific team member gets.",
+      "unlimited": "Unlimited",
+      "setLimit": "Set limit",
+      "spendLimitLabel": "Spend limit",
+      "minPerMonth": "min / month",
+      "revertToDefault": "Revert to default",
+      "save": "Save changes"
+    }
+  },
+  "callPanel": {
+    "share": {
+      "title": "Share public link to meeting",
+      "description": "Share this meeting with external people. Anyone with the link has access to it.",
+      "access": {
+        "title": "Public access",
+        "description": "Anyone with the link can view",
+        "copyLink": "Copy Link"
+      }
+    },
+    "toolbar": {
+      "callDetails": "Call Details",
+      "syncTo": "Sync To...",
+      "share": "Share",
+      "copy": "Copy",
+      "regenerate": "Regenerate",
+      "addToGroup": "Add To Group",
+      "removeGroup": "Remove Group",
+      "removeFromGroup": "Remove from group",
+      "editCallDetails": "Edit call details"
+    },
+    "error": {
+      "noSummary": {
+        "title": "No summary available"
+      },
+      "noTranscript": {
+        "title": "No transcript available"
+      },
+      "analyticsDisabled": {
+        "title": "Analytics are disabled for this organization"
+      },
+      "noAnalytics": {
+        "title": "No analytics available",
+        "description": "Analytics might be disabled for this organization. Please contact your administrator for more information."
+      },
+      "analysisFailed": {
+        "title": "This analysis could not be generated",
+        "description": "Something went wrong while generating this analysis. Try regenerating it, or contact support if the problem continues.",
+        "descriptionNoTranscript": "This call's transcript is no longer available, so this analysis can't be regenerated. Contact support if you need help."
+      },
+      "noSection": {
+        "title": "No section available"
+      }
+    },
+    "artifact": {
+      "removeTemplate": "Delete View",
+      "removeDialog": {
+        "title": "Delete {{templateName}}?",
+        "message": "By deleting this view, you won't see the analysis cards associated with it for this meeting. You can always add the view again."
+      }
+    }
+  },
+  "syncTo": {
+    "sendYourSummaryTo": "Send your summary to:",
+    "addRecipients": "Add Recipients",
+    "noteSuccessfullySent": "Your note is successfully sent to {{integration}} - {{recipient}}",
+    "encounteredError": "We encountered the following error while sending your notes to {{integration}} - {{recipient}}",
+    "errorMessage": "Error Message - {{message}}",
+    "successMessage": "Summary sent successfully",
+    "sendErrorMessage": "Failed to send summary. Please try again."
+  },
+  "call": {
+    "summary": {
+      "template": "Summary Template"
+    }
+  },
+  "duration": "Duration",
+  "rating": {
+    "title": "How would you rate this summary?",
+    "optionsTitle": "Why did you give <rating></rating> as a rating?",
+    "next": "Next",
+    "done": "Done",
+    "customTitle": "Anything you want to add?",
+    "customPlaceholder": "Feedback (optional)",
+    "feedbackTitle": "Thanks for your feedback!"
+  },
+  "callDetails": {
+    "title": "Call Details",
+    "seeAllDetails": "See all details"
+  },
+  "speakers": {
+    "name": "Speaker name",
+    "placeholder": "Add speaker name",
+    "title": "Speakers",
+    "duplicateError": "The speaker name already exists",
+    "edit": "Edit Speakers",
+    "S1": "Speaker 1",
+    "S2": "Speaker 2",
+    "S3": "Speaker 3",
+    "S4": "Speaker 4",
+    "S5": "Speaker 5",
+    "S6": "Speaker 6",
+    "S7": "Speaker 7",
+    "S8": "Speaker 8",
+    "S9": "Speaker 9",
+    "S10": "Speaker 10",
+    "S11": "Speaker 11",
+    "S12": "Speaker 12",
+    "S13": "Speaker 13",
+    "S14": "Speaker 14",
+    "S15": "Speaker 15",
+    "S16": "Speaker 16",
+    "S17": "Speaker 17",
+    "S18": "Speaker 18",
+    "S19": "Speaker 19",
+    "S20": "Speaker 20"
+  },
+  "metadataFields": {
+    "startTimestampField": {
+      "label": "Start Date and Time"
+    },
+    "endTimestampField": {
+      "label": "End Date and Time"
+    },
+    "participantsField": {
+      "label": "Participants"
+    },
+    "recordField": {
+      "label": "Record"
+    }
+  },
+  "myMeetings": {
+    "title": "My Meetings",
+    "selectCall": "Select call",
+    "callType": {
+      "conversation": "Conversation",
+      "voiceMemo": "Voice Memo",
+      "agentConversation": "Agent Conversation"
+    }
+  },
+  "downloadBliro": {
+    "title": "Download Bliro"
+  },
+  "profile": {
+    "features": "Features",
+    "upgradeAccount": "Upgrade account",
+    "accountSettings": "Account settings",
+    "settings": "Settings",
+    "organizationSettings": "Organization settings",
+    "helpCenter": "Help center",
+    "logout": "Log out",
+    "support": "Support"
+  },
+  "deleteMeeting": {
+    "title": "Delete meeting?",
+    "description": "Are you sure you want to delete <0>{{title}}</0>?\nThis action cannot be undone.",
+    "yesDeleteMeeting": "Yes, Delete this meeting",
+    "yesDeleteMeetings": "Yes, Delete these meetings",
+    "titleMulti": "Delete {{count}} meetings?",
+    "descriptionMulti": "Are you sure you want to delete these {{count}} meetings?\nThis action cannot be undone.",
+    "successMulti": "{{count}} meetings deleted successfully"
+  },
+  "removeFromGroup": {
+    "title": "Remove from group?",
+    "description": "Are you sure you want to remove this call from the group?",
+    "descriptionWithName": "Are you sure you want to remove this call from \"{{groupName}}\"?",
+    "confirmButton": "Yes, Remove from group",
+    "success": "Call removed from group successfully"
+  },
+  "filters": {
+    "date": {
+      "title": "Date",
+      "sectionTitle": "Filter by date",
+      "today": "Today",
+      "last7Days": "Last 7 days",
+      "last14Days": "Last 14 days",
+      "last30Days": "Last 30 days",
+      "from": "From",
+      "upTo": "Up To"
+    },
+    "sendStatus": {
+      "title": "Send Status",
+      "sectionTitle": "Filter by send status",
+      "delivered": "Synced",
+      "failed": "Failed",
+      "notSent": "Not synced"
+    },
+    "contact": {
+      "title": "Contact",
+      "label": "Contact Name",
+      "sectionTitle": "Filter by contact name"
+    },
+    "owner": {
+      "title": "Owner",
+      "label": "Owner Name",
+      "sectionTitle": "Filter by owner name"
+    },
+    "record": {
+      "title": "Record",
+      "label": "Record Name",
+      "sectionTitle": "Filter by record name"
+    },
+    "clear": {
+      "title": "Clear all filters"
+    },
+    "ruleBuilder": {
+      "when": "When",
+      "meetingEnds": "a meeting ends and",
+      "ofTheFollowingHappens": "of the following happens",
+      "matchType": {
+        "any": "any",
+        "all": "all"
+      },
+      "addRuleButton": "Add rule",
+      "addSingleRule": "Add single rule",
+      "addRuleGroup": "Add rule group",
+      "addRuleGroupHint": "A group can contain multiple rules",
+      "emptyState": "No rules configured",
+      "thereAreNoConditions": "There are currently no conditions added. This template <bold>will not</bold> be applied to any call <bold>by default</bold>.",
+      "field": {
+        "anyParticipantsEmail": "Participant's email",
+        "hasExternalParticipants": "Is external meeting",
+        "callTitle": "Call title",
+        "callOwnerEmail": "Call owner",
+        "crmAccountName": "Account name",
+        "crmOpportunityName": "Opportunity name",
+        "anyNewMeeting": "Any new meeting"
+      },
+      "hasExternalParticipants": {
+        "whatIsThis": "What is an external meeting?",
+        "tooltip": "External meetings have at least one external participant. Internal and external participants are distinguished by the organization's domains.",
+        "manageDomains": "Manage organization domains."
+      },
+      "applyToAnyNewMeeting": "Apply to any new meeting",
+      "operator": {
+        "contains": "contains",
+        "notContains": "does not contain",
+        "equals": "equals",
+        "notEquals": "does not equal",
+        "startsWith": "starts with",
+        "notStartsWith": "does not start with",
+        "endsWith": "ends with",
+        "notEndsWith": "does not end with",
+        "oneOf": "one of",
+        "noneOf": "none of"
+      },
+      "callOwnerSelect": {
+        "searchPlaceholder": "Search for members",
+        "noResults": "No members found",
+        "more": "+ {{count}} more"
+      },
+      "valuePlaceholder": {
+        "anyParticipantsEmail": "@example.com",
+        "callTitle": "Weekly Sync",
+        "callOwnerEmail": "john@example.com",
+        "crmAccountName": "Acme Corp",
+        "crmOpportunityName": "Acme Corp's Enterprise Deal"
+      },
+      "readView": {
+        "matchTypeLabel": {
+          "any": "Any",
+          "all": "All"
+        },
+        "ofTheFollowingRules": "of the following rules:",
+        "rules": {
+          "hasExternalParticipants": {
+            "equals_true": "Is external meeting.",
+            "equals_false": "Is internal meeting."
+          },
+          "anyParticipantsEmail": {
+            "contains": "Any participant email in the call contains \"{{value}}\".",
+            "notContains": "No participant email in the call contains \"{{value}}\".",
+            "equals": "A participant in the call has the email address \"{{value}}\".",
+            "notEquals": "No participant in the call has the email address \"{{value}}\".",
+            "startsWith": "A participant's email starts with \"{{value}}\".",
+            "notStartsWith": "No participant's email starts with \"{{value}}\".",
+            "endsWith": "A participant's email ends with \"{{value}}\".",
+            "notEndsWith": "No participant's email ends with \"{{value}}\"."
+          },
+          "callTitle": {
+            "contains": "Call title contains \"{{value}}\".",
+            "notContains": "Call title does not contain \"{{value}}\".",
+            "equals": "Call title is \"{{value}}\".",
+            "notEquals": "Call title is not \"{{value}}\".",
+            "startsWith": "Call title starts with \"{{value}}\".",
+            "notStartsWith": "Call title does not start with \"{{value}}\".",
+            "endsWith": "Call title ends with \"{{value}}\".",
+            "notEndsWith": "Call title does not end with \"{{value}}\"."
+          },
+          "callOwnerEmail": {
+            "contains": "Call owner's email contains \"{{value}}\".",
+            "notContains": "Call owner's email does not contain \"{{value}}\".",
+            "equals": "Call owner's email is \"{{value}}\".",
+            "notEquals": "Call owner's email is not \"{{value}}\".",
+            "startsWith": "Call owner's email starts with \"{{value}}\".",
+            "notStartsWith": "Call owner's email does not start with \"{{value}}\".",
+            "endsWith": "Call owner's email ends with \"{{value}}\".",
+            "notEndsWith": "Call owner's email does not end with \"{{value}}\".",
+            "oneOf": "Call owner is one of: {{value}}.",
+            "noneOf": "Call owner is not one of: {{value}}."
+          },
+          "crmAccountName": {
+            "contains": "Account name contains \"{{value}}\".",
+            "notContains": "Account name does not contain \"{{value}}\".",
+            "equals": "Account name is \"{{value}}\".",
+            "notEquals": "Account name is not \"{{value}}\".",
+            "startsWith": "Account name starts with \"{{value}}\".",
+            "notStartsWith": "Account name does not start with \"{{value}}\".",
+            "endsWith": "Account name ends with \"{{value}}\".",
+            "notEndsWith": "Account name does not end with \"{{value}}\"."
+          },
+          "crmOpportunityName": {
+            "contains": "Opportunity name contains \"{{value}}\".",
+            "notContains": "Opportunity name does not contain \"{{value}}\".",
+            "equals": "Opportunity name is \"{{value}}\".",
+            "notEquals": "Opportunity name is not \"{{value}}\".",
+            "startsWith": "Opportunity name starts with \"{{value}}\".",
+            "notStartsWith": "Opportunity name does not start with \"{{value}}\".",
+            "endsWith": "Opportunity name ends with \"{{value}}\".",
+            "notEndsWith": "Opportunity name does not end with \"{{value}}\"."
+          }
+        }
+      }
+    }
+  },
+  "groups": {
+    "title": "Groups",
+    "search": "Search...",
+    "openSearch": "Search groups",
+    "closeSearch": "Close search",
+    "noResults": "No groups found",
+    "newGroup": {
+      "title": "New Group",
+      "placeholder": "Group name",
+      "create": "Create group",
+      "error": "An error occurred while creating the group",
+      "success": "Group created successfully",
+      "viewGroup": "View Group"
+    },
+    "createGroup": {
+      "title": "Create group",
+      "sharingTitle": "Add People to Join Your Group",
+      "titleLabel": "Title",
+      "titlePlaceholder": "Group name",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "What is this group about?",
+      "groupAccess": {
+        "title": "General Access",
+        "action": "Change access",
+        "options": {
+          "restricted": {
+            "label": "Restricted",
+            "description": "Only people with access can view with the link"
+          },
+          "company": {
+            "label": "Everyone at {{company}}",
+            "description": "Everyone at {{company}} can view with the link"
+          }
+        }
+      }
+    },
+    "addToGroup": {
+      "title": "Add to Group",
+      "description": "Organise your meetings in groups.",
+      "placeholder": "Select group...",
+      "error": "An error occurred while assigning the group for your call",
+      "createNewGroup": "Create new group",
+      "createWithName": "Create \"{{name}}\"",
+      "noGroups": "No groups found",
+      "nMeetingsSelected": "{{count}} meetings selected"
+    },
+    "dragDrop": {
+      "addSuccess": "Meeting added to {{groupTitle}}",
+      "moveSuccess": "Meeting moved to {{groupTitle}}",
+      "addSuccessMulti_one": "{{count}} meeting added to {{groupTitle}}",
+      "addSuccessMulti_other": "{{count}} meetings added to {{groupTitle}}",
+      "moveSuccessMulti": "{{count}} meetings moved to {{groupTitle}}",
+      "error": "An error occurred while moving the meeting"
+    },
+    "updateGroup": {
+      "title": "Edit Group",
+      "placeholder": "Group name",
+      "error": "An error occurred while editing the group",
+      "success": "Group saved successfully",
+      "save": "Save",
+      "detailsTab": "Details",
+      "sharingTab": "Sharing"
+    },
+    "removeGroup": {
+      "title": "Remove Group",
+      "success": "Group removed successfully",
+      "error": "Error removing group"
+    },
+    "manageGroups": {
+      "title": "Manage Groups"
+    },
+    "organization": "Organization",
+    "restricted": "Restricted",
+    "everyoneAt": "Everyone at {{orgName}}",
+    "restrictedDescription": "Only people with access can view the group",
+    "everyoneAtDescription": "Everyone at {{orgName}} can view the group",
+    "changeAccess": "Change access",
+    "manageMembers": {
+      "title": "Manage Group Members",
+      "addMember": "Add Member",
+      "searchPlaceholder": "Search for organization members...",
+      "members": "Members",
+      "noMembers": "No members in this group yet",
+      "noMoreMembers": "No more organization members available to add",
+      "leaveGroup": "Leave group",
+      "leaveGroupBlocked": "Assign another owner to leave this group",
+      "leaveGroupConfirm": {
+        "title": "Leave this group?",
+        "message": "You will lose access to this group and its calls. You can only rejoin if a group owner adds you again.",
+        "confirm": "Leave group",
+        "cancel": "Cancel"
+      },
+      "role": {
+        "owner": "Owner"
+      }
+    },
+    "roles": {
+      "contributor": {
+        "label": "Contributor",
+        "description": "Can read own meetings"
+      },
+      "viewer": {
+        "label": "Viewer",
+        "description": "Can read meetings"
+      },
+      "editor": {
+        "label": "Editor",
+        "description": "Can read and write meetings"
+      },
+      "owner": {
+        "label": "Owner",
+        "description": "Can manage meetings and group"
+      }
+    },
+    "removeAccess": "Remove access",
+    "addPeople": {
+      "title": "Add People",
+      "titleLabel": "People with access",
+      "peopleWithAccess": {
+        "title": "People with access",
+        "placeholder": "Add people with access"
+      },
+      "inviteButton": "Invite",
+      "suggestedPeople": {
+        "title": "Suggested people",
+        "addButton": "Add"
+      }
+    },
+    "autoShare": {
+      "title": "Auto-Share",
+      "emptyState": "There are no auto-share rules added to this group yet.",
+      "addRules": "Add rules",
+      "ruleForm": {
+        "notificationWarning": "Group members will be notified by changes."
+      },
+      "readView": {
+        "settingsSaved": "Auto-share settings saved!",
+        "matchTypeInline": {
+          "any": "any",
+          "all": "all"
+        },
+        "description": "New changes have been made for the auto-share rules for {{groupName}}. By accepting, the calls that match <bold>{{matchType}}</bold> of the rules below will be shared with this group:",
+        "descriptionAccepted": "You've <bold>accepted</bold> to automatically share your calls in this group based on <bold>{{matchType}}</bold> of the rules below:",
+        "descriptionDeclined": "You've <bold>declined</bold> to automatically share your calls in this group based on <bold>{{matchType}}</bold> of the rules below:",
+        "editRules": "Edit rules",
+        "acceptSharing": "Accept sharing",
+        "denySharing": "Deny sharing"
+      },
+      "banner": {
+        "title": "Auto-share settings changed",
+        "description": "Review details to adhere to the changes."
+      },
+      "status": {
+        "accepted": "Accepted",
+        "rejected": "Rejected",
+        "pending": "Pending",
+        "resendInvite": "Resend invite",
+        "sent": "Sent",
+        "inviteSent": "Invite sent successfully"
+      }
+    }
+  },
+  "shareCall": {
+    "title": "Share Call",
+    "generalLinkAccess": "General Link Access",
+    "restricted": "Restricted",
+    "restrictedDescription": "Only people with access to this call",
+    "anyoneWithLink": "Anyone with the link",
+    "anyoneWithLinkDescription": "Anyone with the link can view",
+    "change": "Change access",
+    "copyLink": "Copy Link",
+    "copied": "Copied!",
+    "linkCreated": "Call link created",
+    "linkRevoked": "Call link revoked",
+    "linkCopied": "Link copied to clipboard",
+    "publicShareDisabled": "Public sharing is disabled for your organization",
+    "shareDisabledWarning": "Public sharing is disabled for your organization",
+    "linkDisabledWarning": "Sharing via link is disabled on an organization level. Previously shared links will stop working.",
+    "revokeConfirmation": {
+      "title": "Revoke public link?",
+      "description": "The public link for this call will stop working. If you share this call again, you'll need to send the new link to anyone who needs access.",
+      "confirm": "Yes, Revoke Link"
+    }
+  },
+  "deleteGroup": {
+    "title": "Delete group?",
+    "description": "Are you sure you want to delete this group?\nThis action cannot be undone.",
+    "yesDeleteGroup": "Yes, Delete this group"
+  },
+  "from": "From",
+  "to": "To",
+  "askBliro": {
+    "title": "Ask Bliro",
+    "userAction": {
+      "waitingForAnswer": "Waiting for your answer...",
+      "skip": "Skip",
+      "yes": "Yes",
+      "no": "No",
+      "emailSendQuestion": "Should the email be sent now?",
+      "draftCreatedQuestion": "Should I create a draft for this email?",
+      "draftUpdatedQuestion": "Should I update this draft?",
+      "createNoteQuestion": "Should I create this note?",
+      "updateNoteQuestion": "Should I update this note?",
+      "getNoteQuestion": "Should I get the note?",
+      "searchMeetingsQuestion": "Should I look up your meetings?",
+      "getEventQuestion": "Should I retrieve this event?",
+      "getMeetingQuestion": "Should I retrieve this meeting?",
+      "searchMeetingTimesQuestion": "Should I search for available meeting times?",
+      "confirmActionQuestion": "Should I confirm this action?",
+      "cancelActionQuestion": "Should I cancel this action?",
+      "updateActionQuestion": "Should I update this action?",
+      "listEmailThreadsQuestion": "Should I list email threads?",
+      "getEmailThreadQuestion": "Should I get this email thread?",
+      "executeActionQuestion": "Execute action #{{number}}?"
+    },
+    "addToShortcuts": "Add to Shortcuts",
+    "status": {
+      "thinking": "Analyzing ...",
+      "reading_workflow": "Reading your workflow ...",
+      "loading_contacts": "Loading the contacts ...",
+      "loading_opportunities": "Loading the opportunities ...",
+      "retrieving_meeting": "Retrieving the meeting ...",
+      "searching_meetings": "Looking through your meetings ...",
+      "searching_meetings_query": "Searching your meetings for {{query}} ...",
+      "searching_group_meetings": "Searching the meetings within this group ...",
+      "searching_group_meetings_query": "Searching the meetings within this group for {{query}} ...",
+      "finding_meeting_times": "Checking availability ...",
+      "looking_up_contact": "Looking up that contact ...",
+      "looking_up_contact_query": "Looking up {{query}} ...",
+      "creating_meeting_from_phone_call": "Saving this call as a meeting ...",
+      "searching_groups": "Looking through your groups ...",
+      "searching_groups_query": "Searching your groups for {{query}} ...",
+      "listing_group_meetings": "Getting the group's meetings ...",
+      "listing_group_meetings_query": "Searching the group's meetings for {{query}} ...",
+      "adding_to_group": "Adding the meeting to the group ...",
+      "saving_note": "Saving your note ...",
+      "opening_note": "Opening the note ...",
+      "updating_note": "Updating your note ...",
+      "retrieving_event": "Retrieving the event ...",
+      "creating_event": "Creating the event ...",
+      "updating_event": "Updating the event ...",
+      "drafting_email": "Drafting your email ...",
+      "searching_drafts": "Checking your drafts ...",
+      "searching_drafts_query": "Searching your drafts for {{query}} ...",
+      "searching_email": "Looking through your emails ...",
+      "searching_email_query": "Searching your emails for {{query}} ...",
+      "opening_email_thread": "Opening the email ...",
+      "opening_email_draft": "Opening the draft ...",
+      "sending_email": "Sending your email ...",
+      "sending_email_draft": "Sending the draft ...",
+      "updating_email_draft": "Updating your draft ...",
+      "searching_crm": "Searching the {{object}} records in the CRM ...",
+      "searching_crm_query": "Searching the {{object}} records in the CRM for {{query}} ...",
+      "loading_crm": "Getting the {{object}} record from the CRM ...",
+      "saving_crm": "Creating the {{object}} record in the CRM ...",
+      "updating_crm": "Updating the {{object}} record in the CRM ..."
+    },
+    "promptPlaceholder": "Ask Bliro about your call...",
+    "askQuestionsAboutYourMeeting": "Ask Bliro anything about this call",
+    "failedToSendPrompt": "Message request failed",
+    "aiGeneratedContentNotice": "AI-generated content. Review before sharing.",
+    "startingPrompt": {
+      "prompt1": {
+        "label": "Write visit report to CRM",
+        "prompt": "Create the visit report and send it to the CRM."
+      },
+      "prompt2": {
+        "label": "Summarize this meeting",
+        "prompt": "Summarize this meeting in bullet points: starting situation, topics discussed, outcomes, and agreed next steps."
+      },
+      "prompt3": {
+        "label": "List action items",
+        "prompt": "What are the to-dos and next steps from this conversation? List them and say who is responsible for each."
+      }
+    },
+    "askBliroDisabled": "Ask Bliro is disabled",
+    "askBliroDisabledDescription": "Ask Bliro is disabled for this organization. Please contact your administrator for more information.",
+    "askBliroNotAvailable": "Ask Bliro is not available",
+    "askBliroNotAvailableDescription": "Unfortunately, Ask Bliro can't be used for this meeting because there is no information available (no transcript, notes, or other data).",
+    "group": {
+      "askQuestionsAboutYourGroup": "Ask Bliro anything about calls in this group",
+      "inputPlaceholder": "Ask Bliro about your calls...",
+      "errorMessage": "Sorry, something went wrong. Please try again.",
+      "historyLoadFailed": "Couldn't load previous messages. Starting a new chat.",
+      "startingPrompt": {
+        "prompt1": {
+          "label": "Summarize status & topics",
+          "prompt": "Summarize the current status and the key topics from the conversations in this folder."
+        },
+        "prompt2": {
+          "label": "List open action items",
+          "prompt": "What open action items and next steps come out of the conversations, and who is responsible for each?"
+        },
+        "prompt3": {
+          "label": "Surface objections & concerns",
+          "prompt": "What objections, concerns, or open questions came up in the conversations, and how were they addressed?"
+        }
+      },
+      "timeWindow": {
+        "last30days": "Last 30 days",
+        "last60days": "Last 60 days",
+        "last90days": "Last 90 days",
+        "last12months": "Last 12 months",
+        "thisYear": "This year",
+        "allTime": "All time"
+      },
+      "feedback": {
+        "title": "What went wrong?",
+        "description": "Please help us improve Ask Bliro by selecting what went wrong.",
+        "options": {
+          "inaccurate": "Inaccurate information",
+          "missedContext": "Missed relevant calls or context",
+          "tooGeneric": "Response was too generic",
+          "wrongLength": "Response was too long or too short",
+          "wrongTone": "Wrong tone or style"
+        }
+      }
+    },
+    "chats": {
+      "title": "Assistant Chats",
+      "emptyState": "Click a chat on\nthe left to read it",
+      "newChat": "New chat",
+      "newChatDisabledGenerating": "Wait for the reply to finish before starting a new chat",
+      "newChatDisabledAlreadyEmpty": "This chat is already empty",
+      "history": "Chat history",
+      "phoneCall": "Phone call",
+      "chat": "Chat",
+      "noChats": "No chats yet",
+      "noMessages": "No messages yet",
+      "loadError": "Couldn't load your chats. Please try again.",
+      "retry": "Retry",
+      "delete": {
+        "title": "Delete chat?",
+        "description": "Are you sure you want to permanently delete this chat?",
+        "confirm": "Delete",
+        "success": "Chat deleted",
+        "error": "Failed to delete chat"
+      },
+      "rename": {
+        "title": "Rename chat",
+        "placeholder": "Chat name",
+        "success": "Chat renamed",
+        "error": "Failed to rename chat"
+      }
+    },
+    "agent": {
+      "askBliroAnything": "Ask Bliro anything",
+      "askQuestionsAboutYourAgent": "Ask Bliro to plan your day, draft emails, or check your calls",
+      "inputPlaceholder": "Ask Bliro anything...",
+      "errorMessage": "Sorry, something went wrong. Please try again.",
+      "createChatFailed": "Couldn't start a new chat. Please try again.",
+      "startingPrompt": {
+        "prompt1": {
+          "label": "Prep for my next meeting",
+          "prompt": "Prepare me for my next meeting: what is it about, what is the current status with these participants, and what should I keep in mind?"
+        },
+        "prompt2": {
+          "label": "List my open commitments",
+          "prompt": "What open tasks and commitments do I have from my recent conversations that I still need to act on?"
+        },
+        "prompt3": {
+          "label": "Recap my week",
+          "prompt": "Summarize my conversations from this week: key topics, decisions, and open points."
+        }
+      }
+    }
+  },
+  "failedToSendPrompt": "Message failed",
+  "startBliro": "Start Bliro",
+  "meetings": {
+    "upcoming": {
+      "title": "Upcoming meetings",
+      "noMeetings": "No upcoming meetings",
+      "yourCalendarIsNotConnected": {
+        "title": "Your calendar is not connected.",
+        "description": "Connected your calendar and start preparing your next meeting, right here in Bliro!"
+      },
+      "calendarIntegrationExpired": {
+        "titleOutlook": "Outlook Calendar integration expired",
+        "titleGoogle": "Google Calendar integration expired",
+        "description": "Please reconnect your calendar to continue syncing your events.",
+        "failedToReconnectIntegration": "Failed to reconnect calendar integration",
+        "reconnectCalendar": "Reconnect calendar",
+        "dismiss": "Dismiss"
+      },
+      "updateGuide": {
+        "title": "Update Bliro to start taking notes for your upcoming meetings",
+        "description": "For using the Upcoming meetings feature you'll need to have installed Bliro Desktop App {{version}} or higher."
+      },
+      "setupIntegration": "Setup integration",
+      "updateBliroToStartMeeting": "Update Bliro to start meeting",
+      "meetingTemplate": "Meeting template",
+      "meetingLanguage": "Meeting language",
+      "selectMeetingTemplate": "Select a template",
+      "selectMeetingLanguage": "Select a language"
+    },
+    "previous": {
+      "title": "Previous meetings"
+    },
+    "ofMeetings": "{{display}} of {{total}} meetings",
+    "myMeetingNotes": "My meeting notes",
+    "prepareForYourUpcomingMeeting": "Prepare for your upcoming meeting",
+    "setTheDefaultMeetingTemplate": "Set the default meeting template, conversation language or take notes.",
+    "updateFailed": "Failed to update the meeting template"
+  },
+  "showMore": "Show more",
+  "showLess": "Show less",
+  "myNotes": {
+    "title": "My meeting notes",
+    "placeholder": "Start typing your meeting notes here..."
+  },
+  "startMeeting": "Start meeting",
+  "loginError": {
+    "thereWasAnError": "There was an error",
+    "errorSubtitle": "An error occurred during login. Please try again.",
+    "tryAgain": "Try again"
+  },
+  "accountSuspended": {
+    "title": "Account suspended",
+    "description": "Your account is currently suspended. Please contact your Bliro administrator to resolve this issue and regain access to Bliro.",
+    "goToLogin": "Go to Login"
+  },
+  "authError": {
+    "title": "Signin failed",
+    "description": "We could not sign you in. Please try again so we can complete your login.",
+    "detailsHeading": "Details",
+    "codeLabel": "Error code: {{code}}",
+    "tryAgain": "Try again",
+    "backToHome": "Back to home"
+  },
+  "acceptInvitation": {
+    "title": "You've been invited to join {{orgName}}",
+    "titleGeneric": "You've been invited",
+    "description": "Click the button below to accept your invitation and continue.",
+    "accept": "Accept Invitation"
+  },
+  "owner": "Owner",
+  "analytics": {
+    "title": "Analytics"
+  },
+  "tiles": {
+    "emptyState": "The analysis didn't return any results."
+  },
+  "meetingTemplates": {
+    "analysis": {
+      "analyses": "Analyses",
+      "addAnalysis": "Add Analysis",
+      "selectAnalysis": "Select the analysis type",
+      "customAnalysis": "Custom Analyses",
+      "predefinedAnalysis": "Predefined Analyses",
+      "preview": "Preview",
+      "previewDescription": "This is a preview of your section. The exact content varies based on your output settings.",
+      "previewPlaceholder": "This text will be generated by the Bliro AI based on your output settings.",
+      "selectButton": "Select this analysis",
+      "noAnalysis": "No analysis found",
+      "titleField": "Title",
+      "titlePlaceholder": "A descriptive title for the analysis",
+      "keyField": "Key",
+      "outputSettings": "Output Settings",
+      "outputSettingsPlaceholder": "A prompt for the AI to generate the section",
+      "outputSettingsTooltips": {
+        "bulletPointsAnalysis": "Tell the AI which key takeaways should show up as bullet points.",
+        "checkBoxAnalysis": "Explain what makes this a clear yes/no and what evidence to mention.",
+        "checkListAnalysis": "Specify which action items you want captured as checklist items.",
+        "fullTextAnalysis": "Describe the key narrative you want summarized in a full-text response.",
+        "labeledBulletPointsAnalysis": "Specify the section labels and the bullet points you expect under each.",
+        "labeledFullTextsAnalysis": "Describe the section labels and what each full-text section should contain.",
+        "numberAnalysis": "Explain what should be counted.",
+        "pickListAnalysis": "List the options and the criteria for selecting the right one.",
+        "playbookMonitoringAnalysis": "Describe the playbook steps to check and how strict to be.",
+        "qualificationAnalysis": "Clarify which MEDDIC/SPICED/BANT signals should be captured.",
+        "scoreWithExplanationAnalysis": "Define what drives the score and what evidence to cite.",
+        "summary": "Explain which sections should appear in the summary and what to emphasize.",
+        "wholeNumberAnalysis": "Explain what should be counted as a whole number.",
+        "questionsAndAnswersAnalysis": "Explain which questions should be extracted."
+      },
+      "create": "Create",
+      "options": "Options",
+      "optionsPlaceholder": "Option {{index}}",
+      "addOption": "Add option",
+      "sectionTitle": "Section",
+      "sectionDescription": "Section description",
+      "addSummarySection": "Add summary section",
+      "addPlaybookSection": "Add playbook section",
+      "addSection": "Add section",
+      "prompt": "Prompt",
+      "framework": "Qualification Framework",
+      "frameworkPlaceholder": "Select a qualification framework",
+      "types": {
+        "summaryAnalysis": {
+          "label": "Summary",
+          "description": "Create a custom analysis that generates a summary of the meeting content in sections and returns this information in a suitable format"
+        },
+        "fullTextAnalysis": {
+          "label": "Full Text",
+          "description": "Create a custom analysis that extracts information from a meeting and returns it as a full text"
+        },
+        "bulletPointsAnalysis": {
+          "label": "Bullet Points",
+          "description": "Create a custom analysis that extracts information from a meeting and returns it as bullet points"
+        },
+        "checkBoxAnalysis": {
+          "label": "Checkbox",
+          "description": "Create a custom analysis that returns a boolean value with an explanation of the result"
+        },
+        "numberAnalysis": {
+          "label": "Number",
+          "description": "Create a custom analysis that returns a floating point number with an explanation of the result"
+        },
+        "labeledBulletPointsAnalysis": {
+          "label": "Labeled Bullet Points",
+          "description": "Create a custom analysis that extracts organized bullet points with section labels"
+        },
+        "labeledFullTextsAnalysis": {
+          "label": "Labeled Full Texts",
+          "description": "Create a custom analysis that generates organized full text content with section labels"
+        },
+        "scoreWithExplanationAnalysis": {
+          "label": "Score with Explanation",
+          "description": "Create a custom analysis that returns a score with an explanation of the result"
+        },
+        "wholeNumberAnalysis": {
+          "label": "Whole Number",
+          "description": "Create a custom analysis that returns a whole number with an explanation of the result"
+        },
+        "playbookMonitoringAnalysis": {
+          "label": "Playbook Monitoring",
+          "description": "Create a custom analysis that monitors the adherence to a predefined playbook"
+        },
+        "checkListAnalysis": {
+          "label": "Checklist",
+          "description": "Create a custom analysis that generates action items with title, assignee, and deadline"
+        },
+        "pickListAnalysis": {
+          "label": "Pick List",
+          "description": "Create a custom analysis that returns a selected option from a predefined list of options"
+        },
+        "questionsAndAnswersAnalysis": {
+          "label": "Questions & Answers",
+          "description": "Create a custom analysis that extracts questions and their corresponding answers from a meeting"
+        },
+        "aiSalesCoachAnalysis": {
+          "label": "AI Sales Coach",
+          "description": "A predefined analysis that mimics a trained AI sales coach and returns positive feedback and opportunities for improvement"
+        },
+        "customerFeedbackAnalysis": {
+          "label": "Customer Feedback",
+          "description": "A predefined analysis that extracts customer feedback and returns this information in a bullet point format"
+        },
+        "customerObjectionsAndSalesHandlingAnalysis": {
+          "label": "Customer Objections & Sales Handling",
+          "description": "A predefined analysis that extracts customer objections and respective sales handling and returns this information in a question-answer format"
+        },
+        "customerPainPointsAnalysis": {
+          "label": "Customer Pain Points",
+          "description": "A predefined analysis that extracts customer pain points and returns this information in a bullet point format"
+        },
+        "customerPersonaTypeAnalysis": {
+          "label": "Customer Persona Type (DISC)",
+          "description": "A predefined analysis that extracts customer personality types using the DISC/DISG framework and returns this information in a bullet point format"
+        },
+        "customerQuestionsAndSalesAnswersAnalysis": {
+          "label": "Customer Questions & Sales Answers",
+          "description": "A predefined analysis that extracts customer questions and respective sales answers and returns this information in a question-answer format"
+        },
+        "decisionMakerInvolvedAnalysis": {
+          "label": "Decision Maker Involved",
+          "description": "A predefined analysis that checks if the decision maker involvement was confirmed and returns this information as a checkbox with an explanation"
+        },
+        "discoveryQuestionsAndAnswersAnalysis": {
+          "label": "Discovery Questions & Answers",
+          "description": "A predefined analysis that extracts discovery questions and respective answers and returns this information in a question-answer format"
+        },
+        "followUpEmailAnalysis": {
+          "label": "Follow-Up Email",
+          "description": "A predefined analysis that generates a follow-up email based on the meeting"
+        },
+        "nextStepSetAnalysis": {
+          "label": "Next Step Set",
+          "description": "A predefined analysis that detects if concrete next steps were agreed upon and returns this information as a checkbox with an explanation"
+        },
+        "objectionHandlingPreparednessAnalysis": {
+          "label": "Objection Handling Preparedness",
+          "description": "A predefined analysis that evaluates the preparedness for objection handling and returns this information as a score between 0 and 5 with an explanation"
+        },
+        "qualificationAnalysis": {
+          "label": "Qualification",
+          "description": "A predefined analysis that evaluates the qualification of the customer after the MEDDIC, SPICED or BANT method and returns this information in a suitable format"
+        },
+        "valuePropositionClarityAnalysis": {
+          "label": "Value Proposition Clarity",
+          "description": "A predefined analysis that evaluates the clarity with which the value proposition was communicated and returns this information as a score between 0 and 5 with an explanation"
+        }
+      },
+      "examples": {
+        "exampleTitles": {
+          "summary": "Meeting Summary",
+          "fullText": "Key Discussion Points",
+          "bulletPoints": "Main Takeaways",
+          "booleanWithExplanation": "Is the customer a good fit?",
+          "numberWithExplanation": "Number of relevant pain points",
+          "labeledBulletPoints": "Customer Analysis",
+          "labeledFullTexts": "Situation Overview",
+          "scoreWithExplanation": "Deal Readiness Score",
+          "integerWithExplanation": "Days Until Decision",
+          "checkList": "Action Items",
+          "enumWithExplanation": "Top Buying Motive",
+          "playbook": "Sales Playbook Adherence",
+          "qualification": "BANT Qualification",
+          "qaSession": "Customer Questions & Sales Answers",
+          "questionsAndAnswers": "Questions & Answers",
+          "followUpEmail": "Follow-Up Email",
+          "customerFeedback": "Customer Feedback",
+          "customerPainPoints": "Customer Pain Points",
+          "customerObjections": "Objections & Handling",
+          "discoveryQuestions": "Discovery Q&A",
+          "customerPersona": "Customer Persona (DISC)",
+          "decisionMaker": "Decision Maker Involved",
+          "nextStep": "Next Steps Confirmed",
+          "aiSalesCoach": "AI Sales Coach Feedback",
+          "objectionHandling": "Objection Handling Score",
+          "valueProposition": "Value Proposition Clarity"
+        },
+        "summary": "## Customer Goals\nThe customer wants to reduce manual note-taking and improve follow-up consistency after sales calls.\n\n## Current Challenges\n- Important action items are often missed\n- CRM updates are time-consuming\n- Sales managers lack visibility into deal progress\n\n## Key Takeaways\nBliro could save the team time while improving data quality and accountability.\n\n## Next Steps\nSchedule a technical demo and share pricing details.",
+        "fullText": "The customer explained that their sales reps spend significant time after each call writing summaries and updating their CRM. As a result, follow-ups are sometimes delayed or incomplete. They are looking for a solution that automates documentation without disrupting the conversation flow.",
+        "bulletPoints": {
+          "0": "Sales reps spend too much time on post-call documentation",
+          "1": "CRM data is often incomplete or delayed",
+          "2": "Automation is a key buying criterion",
+          "3": "Team is open to piloting a new solution"
+        },
+        "booleanWithExplanation": {
+          "explanation": "The customer has a clear pain point around manual follow-ups and is actively evaluating automation tools."
+        },
+        "numberWithExplanation": {
+          "explanation": "The customer mentioned time spent on notes, missed action items, and lack of CRM consistency."
+        },
+        "labeledBulletPoints": {
+          "sectionLabel1": "Pain Points",
+          "point1": "Manual note-taking after calls",
+          "point2": "Inconsistent follow-ups",
+          "sectionLabel2": "Motivations",
+          "point3": "Save time for reps",
+          "point4": "Improve deal visibility",
+          "sectionLabel3": "Risks",
+          "point5": "Adoption by less technical users"
+        },
+        "labeledFullTexts": {
+          "sectionLabel1": "Customer Context",
+          "content1": "The customer manages a distributed sales team handling a high volume of calls each week.",
+          "sectionLabel2": "Problem Statement",
+          "content2": "Manual documentation slows down reps and reduces the quality of sales data.",
+          "sectionLabel3": "Desired Outcome",
+          "content3": "An automated, low-friction solution that integrates into existing workflows."
+        },
+        "scoreWithExplanation": {
+          "explanation": "The customer has a clear use case, budget ownership, and an upcoming decision timeline, but still needs internal buy-in."
+        },
+        "integerWithExplanation": {
+          "explanation": "The customer plans to compare vendors over the next two weeks and decide shortly after a pilot."
+        },
+        "checkList": {
+          "title1": "Send product overview deck",
+          "title2": "Schedule live demo with sales team",
+          "title3": "Share pricing and security documentation"
+        },
+        "enumWithExplanation": {
+          "explanation": "Reducing post-call admin work was identified as the primary customer priority based on discussion of their current challenges.",
+          "options": {
+            "0": "Reducing post-call admin work",
+            "1": "Improving CRM accuracy",
+            "2": "Better manager visibility"
+          }
+        },
+        "playbook": {
+          "section1": {
+            "title": "Discovery",
+            "evaluation": "Business goals discussed and current process explored thoroughly."
+          },
+          "section2": {
+            "title": "Value Proposition",
+            "evaluation": "Time savings explained and automation benefits highlighted effectively."
+          },
+          "section3": {
+            "title": "Pricing",
+            "evaluation": "Pricing was not addressed due to limited remaining time."
+          },
+          "order": "Discovery → Value Proposition → Next Steps (Pricing skipped)",
+          "deviation": "Pricing was not addressed due to limited remaining time.",
+          "scores": {
+            "followed": "Followed",
+            "somewhatFollowed": "Somewhat followed",
+            "notFollowed": "Not followed",
+            "minor": "Minor",
+            "no": "No",
+            "many": "Many"
+          }
+        },
+        "qualification": {
+          "budget": {
+            "labelCharacter": "B",
+            "label": "Budget",
+            "details": "- There is no explicit mention of a specific budget or financial figures allocated for the solution.\n- The prospective customer indicated a willingness to invest in a meeting transcription and summarization tool due to the high time cost of manual note-taking."
+          },
+          "authority": {
+            "labelCharacter": "A",
+            "label": "Authority",
+            "details": "- The participants include key stakeholders: Marco Bücher (Solution Architect), Adrian Kirschte (Head of Strategic Projects).\n- Authority is somewhat implied as Marco initiated the meeting and Adrian leads strategic projects."
+          },
+          "need": {
+            "labelCharacter": "N",
+            "label": "Need",
+            "details": "- The prospective customer clearly articulated the need for an automated meeting transcription and summarization tool to reduce the high time burden of manual note-taking."
+          },
+          "timeline": {
+            "labelCharacter": "T",
+            "label": "Timeline",
+            "details": "- No fixed or firm timeline was established during the call.\n- The prospective customer indicated no concrete deadline but expressed a desire to proceed \"as soon as possible\" once requirements are finalized."
+          },
+          "scores": {
+            "partiallyQualified": "Indirectly qualified",
+            "fullyQualified": "Directly qualified",
+            "notYetQualified": "Unqualified"
+          }
+        },
+        "qaSession": {
+          "q1": "How does your solution integrate with our existing CRM?",
+          "a1": "We offer native integrations with Salesforce, HubSpot, and Pipedrive. The setup takes about 15 minutes and syncs automatically after each call.",
+          "q2": "What happens to our data? Is it secure?",
+          "a2": "All data is encrypted at rest and in transit. We're SOC 2 Type II certified and GDPR compliant. Your data is never used to train AI models.",
+          "q3": "Can we try it before committing to a contract?",
+          "a3": "Absolutely! We offer a 14-day free trial with full access to all features. No credit card required to start."
+        },
+        "questionsAndAnswers": {
+          "q1": "What are the key deliverables for this project?",
+          "a1": "The main deliverables include the initial prototype by end of month, followed by user testing in week two, and final deployment in the third week.",
+          "q2": "Who will be the main point of contact?",
+          "a2": "Sarah from the project management team will be your primary contact. She'll coordinate all communications and schedule regular check-ins.",
+          "q3": "What's the expected timeline for approval?",
+          "a3": "We typically see approval within 5-7 business days after submission. I'll follow up if we haven't heard back by then."
+        },
+        "followUpEmail": "Hi Sarah,\n\nThank you for taking the time to meet with us today to discuss your team's workflow challenges.\n\nAs discussed, here's a quick summary of our conversation:\n- Current pain points with manual note-taking\n- Interest in automated transcription and summaries\n- Timeline for pilot program in Q1\n\nI'll send over the proposal by Friday. Please let me know if you have any questions.\n\nBest regards,\nJohn",
+        "customerFeedback": {
+          "0": "Customer praised the intuitive user interface and ease of onboarding",
+          "1": "Expressed interest in deeper CRM integration capabilities",
+          "2": "Mentioned that response time from support was excellent",
+          "3": "Requested mobile app improvements for on-the-go access"
+        },
+        "customerPainPoints": {
+          "0": "Spending 2+ hours daily on manual meeting documentation",
+          "1": "Important action items getting lost between meetings",
+          "2": "Difficulty sharing meeting insights with team members who couldn't attend",
+          "3": "No centralized searchable repository of past discussions"
+        },
+        "customerObjections": {
+          "q1": "Your pricing seems higher than competitors in the market.",
+          "a1": "I understand pricing is a key consideration. Our solution includes enterprise-grade security, unlimited storage, and dedicated support. When you factor in the 2+ hours saved per day, the ROI typically exceeds the investment within the first month.",
+          "q2": "We're concerned about data privacy and where our meeting data is stored.",
+          "a2": "That's a valid concern. All data is encrypted end-to-end and stored in EU-based data centers. We're SOC 2 Type II certified and GDPR compliant.",
+          "q3": "We already have a solution in place and switching would be disruptive.",
+          "a3": "I understand the concern about disruption. Our onboarding team provides white-glove migration support, and most customers are fully operational within 48 hours."
+        },
+        "discoveryQuestions": {
+          "q1": "What does your current meeting documentation process look like?",
+          "a1": "Currently, we assign someone to take notes manually during each meeting. It takes about 30 minutes after each call to clean up and share the notes, and important details often get missed.",
+          "q2": "How many meetings does your team have per week on average?",
+          "a2": "Our sales team alone has about 40-50 customer calls per week, plus internal syncs. It adds up to a significant time investment in documentation.",
+          "q3": "What would an ideal solution look like for your team?",
+          "a3": "We'd love something that automatically captures key points, action items, and can integrate with our CRM so nothing falls through the cracks."
+        },
+        "customerPersona": {
+          "sectionLabel1": "DISC Profile: High C (Conscientiousness)",
+          "point1": "Analytical and detail-oriented - asked many specific questions about data security",
+          "point2": "Prefers written documentation over verbal commitments",
+          "sectionLabel2": "Communication Style",
+          "point3": "Reserved and thoughtful - takes time to process before responding",
+          "point4": "Values accuracy and thoroughness over speed"
+        },
+        "decisionMaker": {
+          "explanation": "The VP of Sales, who has budget authority for tools under $50K, was present and actively participated in the pricing discussion. They requested a formal proposal to present at the next leadership meeting."
+        },
+        "nextStep": {
+          "explanation": "Clear next steps were established: a follow-up demo with the IT security team scheduled for next Tuesday, and a proposal to be delivered by end of week for budget approval review."
+        },
+        "aiSalesCoach": {
+          "sectionLabel1": "What Went Well",
+          "point1": "Strong discovery - uncovered key pain points around manual documentation",
+          "point2": "Good rapport building - customer opened up about team challenges",
+          "sectionLabel2": "Areas for Improvement",
+          "point3": "Consider asking more about budget earlier in the conversation",
+          "point4": "Could have addressed the competitor comparison more directly"
+        },
+        "objectionHandling": {
+          "explanation": "Objections were handled professionally. The pricing concern was addressed with ROI examples, though the security objection could have been addressed more thoroughly with specific compliance certifications."
+        },
+        "valueProposition": {
+          "explanation": "The value proposition was clearly articulated. Time savings and CRM accuracy benefits were well explained with concrete examples. Consider adding more customer success stories in future calls."
+        },
+        "qualificationFrameworks": {
+          "bant": {
+            "budget": "- No specific budget mentioned yet\n- Customer indicated willingness to invest if ROI is demonstrated",
+            "authority": "- VP of Sales present with budget authority for tools under $50K\n- Will need sign-off from IT for security review",
+            "need": "- Clear pain point around manual documentation\n- Currently spending 2+ hours daily on post-call notes",
+            "timeline": "- Looking to decide within 30 days\n- Pilot program could start in Q1"
+          },
+          "meddic": {
+            "metrics": "- Time savings: 2+ hours per rep per day\n- CRM data quality improvement expected",
+            "economicBuyer": "- VP of Sales identified as economic buyer\n- Budget authority confirmed for this price range",
+            "decisionCriteria": "- Ease of use for non-technical team members\n- CRM integration capabilities\n- Data security and compliance",
+            "decisionProcess": "- Initial demo completed\n- Security review pending with IT\n- Final approval from leadership team",
+            "identifiedPain": "- Manual note-taking consuming significant time\n- Action items getting lost between meetings\n- Incomplete CRM data affecting forecasting",
+            "champion": "- Sales Operations Manager actively advocating\n- Has influence with VP and IT stakeholders"
+          },
+          "spiced": {
+            "situation": "- Distributed sales team with 40-50 calls per week\n- Currently using manual note-taking process",
+            "pain": "- Reps spending 2+ hours daily on documentation\n- Follow-ups often delayed or incomplete",
+            "impact": "- Revenue at risk due to missed follow-ups\n- Sales managers lack visibility into deal progress",
+            "criticalEvent": "- Q1 planning underway\n- New sales hires starting next month need streamlined onboarding",
+            "decision": "- Comparing 2-3 vendors\n- Decision expected within 30 days after pilot"
+          }
+        }
+      }
+    }
+  },
+  "deepLink": {
+    "downloadFromAppStore": "Download from App Store",
+    "alreadyHaveApp": "Already have the app installed?",
+    "openInBliroApp": "Open in Bliro App",
+    "ifAppDoesntOpen": "If the app doesn't open automatically, make sure Bliro is installed on your computer.",
+    "downloadBliroDesktop": "Download Bliro Desktop",
+    "tryOpeningAppAgain": "Try Opening App Again",
+    "attemptingToOpen": "Attempting to open Bliro desktop app...",
+    "startCall": {
+      "title": "Starting Call with Bliro",
+      "mobilePrompt": "To start your call, you need the Bliro app installed on your device."
+    },
+    "endCall": {
+      "title": "Ending Call with Bliro",
+      "mobilePrompt": "To end your call, you need the Bliro app installed on your device."
+    },
+    "desktopCallback": {
+      "title": "You're in! 🎉"
+    }
+  },
+  "oauthCallback": {
+    "completing": {
+      "title": "Finishing up…"
+    },
+    "success": {
+      "title": "Success!",
+      "body": "The integration was connected successfully."
+    },
+    "error": {
+      "title": "Couldn't connect",
+      "body": "Something went wrong completing the connection. Please try again.",
+      "instanceMismatch": {
+        "title": "Wrong account",
+        "body": "You authenticated with a different account than the one you selected. Reconnect and choose the matching account."
+      },
+      "pinnedElsewhere": {
+        "title": "A different integration is pinned",
+        "body": "Your organization has pinned a different integration for this. Only an admin can connect another one."
+      },
+      "providerDenied": {
+        "title": "Connection cancelled",
+        "body": "You declined the connection request."
+      },
+      "reference": "Reference code: {{code}}"
+    },
+    "closeButton": "Close Popup Window",
+    "footer": {
+      "privacy": "Privacy Statement",
+      "terms": "Terms of Service",
+      "imprint": "Imprint"
+    }
+  },
+  "copyCallSummary": "Copy Call Summary",
+  "regenerateSummary": "Regenerate Summary",
+  "seeMore": "See More",
+  "seeLess": "See Less",
+  "selectLanguage": "Select Language",
+  "callId": "Call ID",
+  "sentry": {
+    "feedback": {
+      "triggerLabel": "Report a Bug",
+      "triggerAriaLabel": "Report a Bug",
+      "formTitle": "Report a Bug",
+      "submitButtonLabel": "Send Bug Report",
+      "cancelButtonLabel": "Cancel",
+      "confirmButtonLabel": "Confirm",
+      "addScreenshotButtonLabel": "Add a screenshot",
+      "removeScreenshotButtonLabel": "Remove screenshot",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your Name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your.email@example.org",
+      "isRequiredLabel": "(required)",
+      "messageLabel": "Description",
+      "messagePlaceholder": "What's the bug? What did you expect?",
+      "successMessageText": "Thank you for your report!",
+      "highlightToolText": "Highlight",
+      "hideToolText": "Hide",
+      "removeHighlightText": "Remove"
+    }
+  },
+  "people": {
+    "title": "People",
+    "searchPlaceholder": "Search for a person...",
+    "table": {
+      "person": "Person",
+      "company": "Company",
+      "lastMeeting": "Last Meeting",
+      "meetings": "Meetings"
+    }
+  },
+  "companies": {
+    "title": "Companies",
+    "searchPlaceholder": "Search for a company...",
+    "table": {
+      "company": "Company",
+      "lastMeeting": "Last Meeting",
+      "meetings": "Meetings"
+    }
+  },
+  "create": "Create",
+  "language": "en",
+  "active": "Active",
+  "integrationNotConnectedYet": "You are not connected to\n{{name}} yet.",
+  "expired": "Expired",
+  "reconnect": "Reconnect",
+  "successfullyReconnectedIntegration": "Successfully reconnected integration",
+  "failedToReconnectIntegration": "Failed to reconnect integration",
+  "integrationExpiredBanner": {
+    "title": "{{name}} integration expired",
+    "description": "Please reconnect to continue using this integration.",
+    "reconnect": "Reconnect",
+    "dismiss": "Dismiss",
+    "failedToReconnect": "Failed to reconnect {{name}}"
+  },
+  "peopleSearch": {
+    "placeholder": "Speaker name",
+    "suggested": "Suggested",
+    "noResults": "No contacts found...",
+    "searching": "Searching...",
+    "searchError": "Search failed. Please try again.",
+    "useWithName": "Use \"{{name}}\""
+  },
+  "optional": "optional",
+  "addNewContact": {
+    "title": "Add new contact",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Add email address",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Enter a valid email",
+    "nameLabel": "Name",
+    "namePlaceholder": "Add contact name",
+    "createAndAssign": "Create & Assign",
+    "createError": "Failed to create contact",
+    "addWithName": "Add \"{{name}}\" as new contact"
+  },
+  "speakerAssignment": {
+    "mergeWarningTitle": "Speaker merge warning",
+    "mergeWarningDescription": "{{person}} is already assigned to {{otherLabel}}. Assigning them here will merge both speaker turns.",
+    "mergeConfirm": "Merge & Assign",
+    "removeAssignment": "Remove assignment",
+    "removeWarningTitle": "Remove participant?",
+    "removeWarningMessage": "This participant has transcript segments assigned to them. Removing this participant will unassign those segments. Do you want to remove this participant?",
+    "removeConfirm": "Remove",
+    "assigning": "Assigning speaker...",
+    "removing": "Removing assignment...",
+    "assignError": "Failed to assign speaker",
+    "removeError": "Failed to remove assignment"
+  },
+  "license": {
+    "locked": {
+      "title": "No license assigned",
+      "requirementEither": "Note Taker or Sales Assistant",
+      "requirementNoteTaker": "Note Taker",
+      "requirementSalesAssistant": "Sales Assistant",
+      "contactAdmin": "You currently don't have access to this part of Bliro, ask your admin to upgrade your license.",
+      "navItemLocked": "{{title}} is locked"
+    },
+    "lockTooltip": {
+      "message": "This feature needs a license: {{license}}. Ask an admin for a license upgrade to unlock this for your account."
+    }
+  }
+}

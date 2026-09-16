@@ -1,0 +1,36 @@
+.text {
+  width: 100%;
+  display: inline-block;
+  padding: 0 10px 0 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.marginTop {
+  margin-top: 6px;
+}
+
+.text .marquee {
+  display: none;
+}
+
+.text .marqueeContent {
+  display: none;
+}
+
+.text:hover .marquee {
+  display: flex;
+}
+
+.text:hover .marqueeContent {
+  display: block;
+}
+
+.text .message {
+  display: block;
+}
+
+.text:hover .message {
+  display: none;
+}

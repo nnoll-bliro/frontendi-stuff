@@ -1,0 +1,16 @@
+.statusIconContainer {
+  height: 23px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.statusIcon {
+  width: 15px !important;
+  height: 15px !important;
+  color: darkgrey;
+}
+
+.hiddenIcon {
+  visibility: hidden;
+}

@@ -1,0 +1,4 @@
+.flag {
+  border: 1px solid var(--bliro-dark-6);
+  border-radius: 3px;
+}

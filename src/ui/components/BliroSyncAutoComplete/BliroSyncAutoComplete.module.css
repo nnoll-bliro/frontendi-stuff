@@ -1,0 +1,33 @@
+.content {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid var(--bliro-dark-7);
+}
+
+.contentItem {
+  flex: 1;
+}
+
+.selectedValues {
+  flex: 1;
+}
+
+.selector {
+  margin-top: 4px;
+  display: none;
+  border-radius: 4px;
+  border: 1px solid var(--bliro-dark-7);
+}
+
+.selector.open {
+  display: block;
+}
+
+.selectorHeader {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--bliro-dark-7);
+}
+
+.selectorBody {
+  padding: 10px 16px;
+}

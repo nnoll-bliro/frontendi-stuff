@@ -1,0 +1,5 @@
+.item {
+  padding: 5px 16px;
+  background-color: var(--bliro-dark-8);
+  border-radius: 4px;
+}

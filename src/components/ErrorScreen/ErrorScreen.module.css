@@ -1,0 +1,23 @@
+.errorScreen {
+  height: 100%;
+  color: #a9a9a9;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  display: flex;
+  font-size: 35px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 40px;
+  padding-right: 15px;
+}

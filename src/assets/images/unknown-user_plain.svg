@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16.0px"
+   height="16.0px"
+   viewBox="0 0 16.0 16.0"
+   version="1.1"
+   id="SVGRoot"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlnssvg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs14276">
+    <linearGradient
+       id="linearGradient19121">
+      <stop
+         style="stop-color:#3cbecd;stop-opacity:1;"
+         offset="0"
+         id="stop19119" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient17111">
+      <stop
+         style="stop-color:#3cbecd;stop-opacity:1;"
+         offset="0"
+         id="stop17109" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient19121"
+       id="linearGradient19123"
+       x1="7.8123316"
+       y1="7.1681634"
+       x2="14.648126"
+       y2="7.1681634"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="layer1"
+     style="display:inline">
+    <rect
+       style="fill:#636363;fill-opacity:1"
+       id="rect14334"
+       width="16"
+       height="16"
+       x="0"
+       y="0"
+       ry="2" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.867254px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 4.9015545,11 C 1.388601,12.8 1.9740934,14 1.9740934,14 H 9 c 0,0 0.5854915,-1.2 -2.9274611,-3"
+       id="path5693" />
+    <ellipse
+       style="fill:#636363;fill-opacity:1;stroke:none;stroke-width:1.04469;stroke-linejoin:round"
+       id="path6555"
+       cx="5.4647484"
+       cy="7.4454861"
+       rx="3.9399705"
+       ry="4.4180651" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.656532;stroke-linejoin:round"
+       id="path7368"
+       cx="5.4871941"
+       cy="8.0313368"
+       rx="2.5"
+       ry="2.75" />
+    <text
+       xml:space="preserve"
+       style="font-size:15.8624px;line-height:1.25;font-family:sans-serif;letter-spacing:6.28547px;fill:#ffffff;fill-opacity:1;stroke-width:0.396561;fill-rule:evenodd"
+       x="6.2404952"
+       y="12.834684"
+       id="text14121"
+       transform="scale(1.0695556,0.93496777)"><tspan
+         id="tspan14119"
+         x="6.2404952"
+         y="12.834684"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:0.396561;fill-rule:evenodd">?</tspan></text>
+  </g>
+  <g
+     id="layer2" />
+  <g
+     id="layer3"
+     style="display:inline" />
+  <g
+     id="layer4"
+     style="display:inline" />
+</svg>

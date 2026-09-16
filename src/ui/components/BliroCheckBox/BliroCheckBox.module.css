@@ -1,0 +1,36 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  box-sizing: border-box;
+  border: 1px solid var(--bliro-dark-6);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.checkbox.checked {
+  background-color: var(--bliro-green-1);
+  border-color: var(--bliro-green-1);
+}
+
+.checkbox.disabled {
+  cursor: not-allowed;
+  border: 1px solid var(--bliro-dark-6);
+  background-color: var(--bliro-dark-5);
+  cursor: not-allowed;
+}
+
+.checkIcon {
+  stroke: white;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.checked .checkIcon {
+  opacity: 1;
+}
+
+.label {
+  user-select: none;
+}

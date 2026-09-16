@@ -1,0 +1,51 @@
+{
+  "name": "frontend-bliro",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Frontend playground for Bliro prototypes — the bliro-ui design system without the monorepo",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "db:reset": "rm -rf server/data"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^5.17.1",
+    "@mui/material": "^5.17.1",
+    "@mui/system": "^5.17.1",
+    "@mui/utils": "^5.17.1",
+    "@mui/x-date-pickers": "^6.20.2",
+    "classnames": "^2.5.1",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
+    "emoji-picker-react": "^4.22.2",
+    "i18next": "^25.10.10",
+    "libphonenumber-js": "^1.12.40",
+    "lottie-react": "^2.4.2",
+    "lucide-react": "^0.542.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-fast-marquee": "^1.6.5",
+    "react-i18next": "^16.6.6",
+    "react-international-phone": "^4.8.0",
+    "react-qr-code": "^2.2.0",
+    "react-router": "^8.4.0",
+    "react-textarea-autosize": "^8.5.9",
+    "react-virtuoso": "^4.18.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.3",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.0.3",
+    "flag-icons": "^7.5.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.1.5",
+    "vite-plugin-svgr": "^4.3.0"
+  }
+}

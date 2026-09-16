@@ -1,0 +1,58 @@
+.container {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container:hover {
+  cursor: pointer;
+}
+
+.wrapper {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  background-color: var(--bliro-orange-5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper.secondary {
+  color: var(--bliro-dark-4);
+  background-color: var(--bliro-dark-7);
+}
+
+.smallWrapper {
+  width: 22px;
+  height: 22px;
+}
+
+.avatarTitle {
+  color: var(--bliro-orange-1) !important;
+  text-transform: uppercase;
+}
+
+.secondary .avatarTitle {
+  color: var(--bliro-dark-4) !important;
+}
+
+.overlapped {
+  margin-left: -6px;
+}
+
+.overlappedSmall {
+  width: 24px !important;
+  height: 24px !important;
+  margin-left: -6px;
+}
+
+.smallWrapper .smallAvatarTitle {
+  font-size: 10px !important;
+}

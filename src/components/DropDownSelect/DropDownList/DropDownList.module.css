@@ -1,0 +1,77 @@
+.container {
+  max-height: 350px;
+  max-width: 240px;
+  padding: 10px 10px;
+}
+
+.header {
+  font-size: 16px !important;
+  font-weight: bold !important;
+  margin-bottom: 10px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 5px 10px 5px 20px;
+  transition: all 0.2s;
+}
+
+.item:hover {
+  background-color: #00000022;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.title {
+  font-size: 14px !important;
+  font-weight: bold;
+}
+
+.descRow {
+  font-size: 12px !important;
+}
+
+.chip {
+  height: 16px !important;
+}
+
+.chip > * {
+  font-size: 10px !important;
+}
+
+.ellipsis {
+  white-space: no-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.marqueeItem {
+  cursor: pointer;
+  transition: all 0.2s;
+  overflow: hidden;
+}
+
+.marqueeItem:hover {
+  background-color: var(--bliro-dark-8);
+}

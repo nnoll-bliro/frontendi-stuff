@@ -1,0 +1,33 @@
+.textarea {
+  border: 1px solid var(--bliro-dark-6);
+  border-radius: 4px;
+  padding: 8px 16px;
+  resize: none;
+  outline: none;
+  resize: none;
+
+  color: var(--bliro-dark-2);
+  font-family: Inter !important;
+}
+
+.textarea:focus {
+  border-color: var(--bliro-dark-4);
+}
+
+.textarea::placeholder {
+  color: var(--bliro-dark-5);
+}
+
+.bodySmall {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 22px !important;
+  letter-spacing: -0.28px !important;
+}
+
+.bodyNormal {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  letter-spacing: -0.32px !important;
+}

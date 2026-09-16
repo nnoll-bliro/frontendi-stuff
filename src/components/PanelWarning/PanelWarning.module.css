@@ -1,0 +1,8 @@
+.warning {
+  padding: 18px 26px;
+  background-color: var(--bliro-yellow-6);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}

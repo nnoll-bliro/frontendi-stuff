@@ -1,0 +1,35 @@
+.titleInput {
+  color: var(--bliro-dark-1);
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  line-height: 36px;
+  letter-spacing: -0.48px;
+  outline: none;
+  border: 2px solid transparent;
+  background-color: transparent;
+  flex: 1;
+  text-overflow: ellipsis;
+  border-radius: 4px;
+  transition: all 0.3s;
+  padding: 0;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.titleInputError {
+  border: 2px solid var(--bliro-red-1) !important;
+}
+
+.titleInput:hover:not(:disabled) {
+  border: 2px solid var(--bliro-orange-4);
+}
+
+.titleInput:focus:not(.titleInputError) {
+  border: 2px solid var(--bliro-orange-1) !important;
+}
+
+.titleInput:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16.0px"
+   height="16.0px"
+   viewBox="0 0 16.0 16.0"
+   version="1.1"
+   id="SVGRoot"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlnssvg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs9" />
+  <g
+     id="layer1">
+    <rect
+       style="fill:#f5b553;fill-opacity:1;fill-rule:evenodd"
+       id="rect67"
+       width="16"
+       height="16"
+       x="0"
+       y="0"
+       ry="2" />
+    <ellipse
+       style="fill:#f5b553;fill-opacity:1"
+       id="path11246"
+       cx="4"
+       cy="5.5"
+       rx="2"
+       ry="1.5" />
+    <circle
+       style="fill:#f5b553;fill-opacity:1"
+       id="path11251"
+       cx="3"
+       cy="4"
+       r="1" />
+    <rect
+       style="opacity:1;fill:#fffefd;fill-opacity:1"
+       id="rect11696"
+       width="10"
+       height="2"
+       x="3"
+       y="13"
+       ry="0.96600038" />
+    <rect
+       style="opacity:1;fill:#fffefd;fill-opacity:1"
+       id="rect11767"
+       width="10"
+       height="1"
+       x="3"
+       y="13"
+       ry="0" />
+    <path
+       style="fill:#fffefd;fill-opacity:1;stroke:none;stroke-width:1.0757px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 3,12 2,3.9 H 14 L 13,12 Z"
+       id="path11808" />
+    <circle
+       style="opacity:1;fill:#f5b553;fill-opacity:1;stroke:none"
+       id="path13119"
+       cx="4.5"
+       cy="3.5"
+       r="0.5" />
+    <ellipse
+       style="opacity:1;fill:#f5b553;fill-opacity:1;stroke:none;stroke-width:1.36442"
+       id="path13149"
+       cx="5.1599998"
+       cy="3.7766845"
+       rx="2.5"
+       ry="3.7233157" />
+    <ellipse
+       style="fill:#f5b553;fill-opacity:1;stroke:none;stroke-width:1.36857"
+       id="path13149-5"
+       cx="10.83"
+       cy="3.7540178"
+       rx="2.5"
+       ry="3.7459822" />
+    <circle
+       style="opacity:1;fill:#fffefd;fill-opacity:1;stroke:none"
+       id="path13297"
+       cx="2.5"
+       cy="4.5"
+       r="1.5" />
+    <circle
+       style="fill:#fffefd;fill-opacity:1;stroke:none"
+       id="path13297-6"
+       cx="13.5"
+       cy="4.5"
+       r="1.5" />
+    <circle
+       style="fill:#fffefd;fill-opacity:1;stroke:none"
+       id="path13297-6-6"
+       cx="8"
+       cy="2.5"
+       r="1.5" />
+  </g>
+</svg>
