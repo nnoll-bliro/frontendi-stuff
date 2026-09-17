@@ -38,7 +38,11 @@ Keep `/team`, `/settings/account`, and `/design-system` available. Keep `/` redi
 ## Relevant Files
 
 - `src/routes/RootLayout.tsx`, `src/routes/router.tsx` — grouped sidebar, shell routes, and existing route loaders.
-- `src/routes/CrmRouteShell.tsx` — data-backed Companies, People, and Agent Sessions shells; full directory/hub layouts remain for tickets 3, 4, and 6.
+- `src/routes/CompaniesPage.tsx`, `src/routes/CompanyDetailPage.tsx` — company directory and connected company hub.
+- `src/routes/PeoplePage.tsx`, `src/routes/PersonDetailPage.tsx` — contact directory and person-scoped hub.
+- `src/components/playground/CrmHubSections.tsx` — shared relationship lists, Knowledge, named hub sections, and scoped future placeholders.
+- `src/components/playground/PageHeader.tsx` — semantic page heading while retaining existing visual styling.
+- `src/routes/CrmRouteShell.tsx` — remaining data-backed Agent Sessions shell; full layouts remain ticket 6.
 - `src/routes/ErrorPage.tsx` — handles React Router loader error responses, including missing-record 404s.
 - `src/routes/SettingsLayout.tsx`, `src/routes/SettingsSharingPage.tsx` — Settings navigation and nonfunctional Sharing placeholder.
 - `glossary.md`, `tasks/changelog.md` — shared concept definitions and dated implementation outcomes/decisions.
@@ -49,7 +53,8 @@ Keep `/team`, `/settings/account`, and `/design-system` available. Keep `/` redi
 - `server/migrate.ts`, `server/import-legacy-meeting.ts` — transactional v0 upgrade and original fixture conversion.
 - `server/api.ts`, `server/records.ts`, `server/db.ts`, `src/api/client.ts` — canonical read-only data access shared across routes.
 - `server/crm.test.ts`, `server/fixtures/schema-v0.sql`, `package.json` — isolated migration and API tests via `npm test`.
-- `README.md` — routes, seed walkthrough, API filters, and migration compatibility.
+- `playwright.config.ts`, `tests/crm-hubs.spec.ts`, `package.json`, `package-lock.json`, `.gitignore` — browser navigation tests, runner setup, and ignored test output.
+- `README.md` — routes, seed walkthrough, API filters, migration compatibility, and browser-test setup.
 
 ## Tickets
 
@@ -72,20 +77,22 @@ Keep `/team`, `/settings/account`, and `/design-system` available. Keep `/` redi
   - **Validated:** `npm test` (17 passing), production build/typecheck, and Chrome smoke checks for loaded shells, missing-record 404s, no-transcript participants, documentation provenance, canonical calendar links, browser back, and lifecycle filters. Migration of a copy of the persisted v0 database preserved all 9 existing meetings, 65 segments, and 12 calendar entries; rollback/idempotence also tested.
   - **Implementation notes:** Full hub/directory layouts remain tickets 3, 4, and 6. Ticket 5 still owns overview-first hierarchy and complete cross-record UI navigation; its existing consumers received only the compatibility changes needed for the new model. Migration supports original seeded v0 relationships and rejects conflicting custom multiple-meeting/calendar links atomically instead of merging them. Original internal meeting examples are preserved.
 
-- [ ] 3.0 **Companies directory and company hub**
-  - [ ] 3.1 Add a readable company directory linking to canonical company detail pages.
-  - [ ] 3.2 Structure the company hub around Overview, People, Meetings, Agent Sessions, and Knowledge; use the seeded history to make the relationship's current context understandable.
-  - [ ] 3.3 Show sample non-meeting knowledge such as internal notes and revenue context, distinct from individual meeting documentation.
-  - [ ] 3.4 Link people, meetings, and sessions to their canonical detail pages. Include an explicitly nonfunctional company-scoped Analysis entry and a Sharing placeholder.
+- [x] 3.0 **Companies directory and company hub**
+  - [x] 3.1 Add a readable company directory linking to canonical company detail pages.
+  - [x] 3.2 Structure the company hub around Overview, People, Meetings, Agent Sessions, and Knowledge; use the seeded history to make the relationship's current context understandable.
+  - [x] 3.3 Show sample non-meeting knowledge such as internal notes and revenue context, distinct from individual meeting documentation.
+  - [x] 3.4 Link people, meetings, and sessions to their canonical detail pages. Include an explicitly nonfunctional company-scoped Analysis entry and a Sharing placeholder.
   - **Done when:** A user can start at a company, understand its context, and navigate to its people, touchpoints, and assistant conversations without encountering copied records.
   - **Boundary:** No company editing, computed health scores, live analysis, or knowledge ingestion.
+  - **Validated:** Canonical company/contact/meeting/session links, all hub sections, illustrative revenue and internal notes, empty collections, disabled company Analysis, Sharing placeholder navigation, direct URLs/reload/back, 404s, and sidebar state checked by Playwright. Desktop screenshots reviewed; no horizontal main-panel overflow at 1024px.
 
-- [ ] 4.0 **People directory and person hub**
-  - [ ] 4.1 Add a people directory and a person hub using the same hierarchy as Companies: Overview, Meetings, Agent Sessions, and Knowledge.
-  - [ ] 4.2 Show the linked company where available and the person's own discussion history, not every meeting with their company.
-  - [ ] 4.3 Display sample person-specific context and link to canonical company, meeting, and session pages. Include person-scoped Analysis and Sharing placeholders.
+- [x] 4.0 **People directory and person hub**
+  - [x] 4.1 Add a people directory and a person hub using the same hierarchy as Companies: Overview, Meetings, Agent Sessions, and Knowledge.
+  - [x] 4.2 Show the linked company where available and the person's own discussion history, not every meeting with their company.
+  - [x] 4.3 Display sample person-specific context and link to canonical company, meeting, and session pages. Include person-scoped Analysis and Sharing placeholders.
   - **Done when:** A user can understand what was discussed with one person, traverse to their company, and distinguish customer contacts from internal Team users.
   - **Boundary:** No contact creation, editing, merging, enrichment, or full employment-history modeling.
+  - **Validated:** Anke excludes Ruben-only touchpoints/sessions and company revenue context; Ruben retains his depot call; Avery works without a company; empty histories/context are explicit. Company → Person → Meeting/back → Company, list-return links, future person-scoped placeholders, and 404s checked by Playwright. Combined validation: 9 browser tests, 17 backend tests, build/typecheck, and independent code review passed (shared-link contrast and test-setup feedback addressed).
 
 - [ ] 5.0 **Meetings as touchpoints, not recordings**
   - [ ] 5.1 Reframe the existing meeting list and detail hierarchy around meetings/calls, with company and people links independent of transcription.

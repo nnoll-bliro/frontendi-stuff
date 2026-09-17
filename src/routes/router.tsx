@@ -5,11 +5,15 @@ import { FullscreenLoading } from "@/components/Reusable/FullscreenLoading";
 
 import { CalendarEntryPage } from "./CalendarEntryPage";
 import { CalendarPage } from "./CalendarPage";
+import { CompaniesPage } from "./CompaniesPage";
+import { CompanyDetailPage } from "./CompanyDetailPage";
 import { CrmRouteShell } from "./CrmRouteShell";
 import { DesignSystemPage } from "./DesignSystemPage";
 import { ErrorPage } from "./ErrorPage";
 import { MeetingDetailPage } from "./MeetingDetailPage";
 import { MeetingsPage } from "./MeetingsPage";
+import { PeoplePage } from "./PeoplePage";
+import { PersonDetailPage } from "./PersonDetailPage";
 import { RootLayout } from "./RootLayout";
 import { SettingsAccountPage } from "./SettingsAccountPage";
 import { SettingsLayout } from "./SettingsLayout";
@@ -35,25 +39,25 @@ export const router = createBrowserRouter([
       { index: true, element: <Navigate to="/meetings" replace /> },
       {
         path: "companies",
-        element: <CrmRouteShell section="companies" />,
+        element: <CompaniesPage />,
         loader: ({ request }) => api.companies(request.signal),
         errorElement: <ErrorPage />,
       },
       {
         path: "companies/:id",
-        element: <CrmRouteShell section="companies" />,
+        element: <CompanyDetailPage />,
         loader: ({ params, request }) => api.company(params.id as string, request.signal),
         errorElement: <ErrorPage />,
       },
       {
         path: "people",
-        element: <CrmRouteShell section="people" />,
+        element: <PeoplePage />,
         loader: ({ request }) => api.people(request.signal),
         errorElement: <ErrorPage />,
       },
       {
         path: "people/:id",
-        element: <CrmRouteShell section="people" />,
+        element: <PersonDetailPage />,
         loader: ({ params, request }) => api.person(params.id as string, request.signal),
         errorElement: <ErrorPage />,
       },

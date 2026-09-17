@@ -5,6 +5,7 @@ import { BliroLogo } from "@bliro/ui/logo";
 import { colors } from "@bliro/ui/theme/colors";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { Bot, Building2, CalendarDays, ContactRound, MessagesSquare, Palette, Settings, Users } from "lucide-react";
+import { useLayoutEffect, useRef } from "react";
 import { Link, Outlet, useLoaderData, useLocation } from "react-router";
 
 import type { Session } from "@/api/client";
@@ -38,6 +39,13 @@ function isActive(pathname: string, to: string): boolean {
 export const RootLayout = () => {
   const { user, org } = useLoaderData() as Session;
   const { pathname } = useLocation();
+  const mainRef = useRef<HTMLDivElement>(null);
+
+  // The app scrolls inside <main>, not the window. Open linked records at their
+  // overview rather than carrying a long hub's scroll offset into the next page.
+  useLayoutEffect(() => {
+    mainRef.current?.scrollTo({ top: 0 });
+  }, [pathname]);
 
   return (
     <Stack direction="row" sx={{ height: "100%" }}>
@@ -118,7 +126,7 @@ export const RootLayout = () => {
         </Stack>
       </Stack>
 
-      <Box component="main" sx={{ flex: 1, minWidth: 0, overflowY: "auto" }}>
+      <Box ref={mainRef} component="main" sx={{ flex: 1, minWidth: 0, overflowY: "auto" }}>
         <Box sx={{ maxWidth: 1040, mx: "auto", px: 5, py: 5 }}>
           <Outlet />
         </Box>

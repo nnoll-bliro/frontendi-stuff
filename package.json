@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "db:reset": "rm -rf server/data",
-    "test": "node --test server/crm.test.ts"
+    "test": "node --test server/crm.test.ts",
+    "test:ui": "playwright test"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -40,6 +41,7 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@types/node": "^22.20.3",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",

@@ -18,7 +18,9 @@ export const PageHeader = ({ title, description, action }: PageHeaderProps) => (
     sx={{ mb: 3 }}
   >
     <Stack spacing={0.5}>
-      <Typography variant="h3">{title}</Typography>
+      <Typography component="h1" variant="h3">
+        {title}
+      </Typography>
       {description && (
         <Typography variant="smallBody" sx={{ color: colors.dark[400] }}>
           {description}

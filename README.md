@@ -11,6 +11,7 @@ npm install
 npm run dev       # http://localhost:3000
 npm run build     # typecheck + production build
 npm test          # isolated SQLite migration + read-only API relationship tests
+npm run test:ui   # Playwright directory/hub navigation tests (browser setup below)
 npm run db:reset  # delete the seeded database; the next `dev` rebuilds it
 ```
 
@@ -40,8 +41,8 @@ between the two doesn't change its imports. The route table is `src/routes/route
 
 | route | |
 |---|---|
-| `/companies`, `/companies/:id` | data-backed directory/hub shells; full layouts pending |
-| `/people`, `/people/:id` | data-backed contact shells, separate from Team |
+| `/companies`, `/companies/:id` | company directory and Overview / People / Meetings / Agent Sessions / Knowledge hub |
+| `/people`, `/people/:id` | contact directory and person-scoped hub, separate from Team |
 | `/agent-sessions`, `/agent-sessions/:id` | data-backed assistant Call/Chat shells |
 | `/meetings` | touchpoints, with search and a lifecycle filter in the URL |
 | `/meetings/:id` | documentation, optional transcript, independent participants, calendar link |
@@ -111,6 +112,30 @@ custom legacy databases with multiple meetings for one calendar entry are reject
 with a rollback rather than merged or losing links. Review such conflicts manually;
 no automatic reset is performed. Repeated startup does not reseed version 1 data.
 `npm test` uses temporary databases and leaves `server/data` untouched.
+
+### Browser tests
+
+Install a Playwright browser once, then run the UI checks:
+
+```bash
+npx playwright install chromium
+npm run test:ui
+# Or use an already installed Google Chrome:
+PLAYWRIGHT_CHANNEL=chrome npm run test:ui
+```
+
+Playwright starts and stops its own Vite server on port 3137. It reads the normal
+seeded prototype database (initialized/upgraded normally if needed); it never resets
+it or sends mutation requests. Empty-state cases intercept browser responses rather
+than editing fixtures. Tests cover canonical directory/hub links, contact-scoped
+history, no-company/empty states, Analysis/Sharing placeholders, missing records,
+reload/back navigation, and main-panel scroll reset. Output folders are gitignored.
+
+Company and Person hubs use visible, stacked sections rather than hiding history
+behind tabs. Both reuse `src/components/playground/CrmHubSections.tsx` and their
+existing canonical loaders. Analysis is explicitly unavailable; Sharing only links
+to the organization-policy placeholder. Agent Session details remain shells until
+ticket 6, and the Meeting overview redesign remains ticket 5.
 
 ## Fake state
 
@@ -220,4 +245,4 @@ components pulled in (`react-international-phone` was one such surprise).
   pulls the API in, and Vite's native config loader (planned to become the default)
   warns about extensionless relative imports. `allowImportingTsExtensions` in
   `tsconfig.json` is what lets TypeScript accept them.
-- No Storybook, no test runner. Add them if a prototype ever outgrows this.
+- No Storybook. `npm test` uses Node's built-in test runner; `npm run test:ui` uses Playwright.

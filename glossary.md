@@ -48,6 +48,10 @@ Scheduling/invite metadata, addressed as `/calendar/:id`. Calendar-entry IDs and
 
 Non-meeting context (`knowledge_items`) owned by one company or one person: internal notes and illustrative revenue context. It is distinct from documentation of an individual meeting. Revenue examples are not computed forecasts or booked revenue.
 
+### Company / Person hub
+
+The canonical detail page for a company or person. Visible sections organize Overview, People (company only), Meetings, Agent Sessions, and Knowledge, followed by explicitly future Analysis and Sharing placeholders. Related records are links to their canonical URLs, not copied histories. A person's Company link sits in Overview; their history uses only explicit participation/context links.
+
 ### Newly encountered record
 
 A manually seeded example of an early relationship, illustrated by Nordlicht Services and Mira Beck. No automatic company/person creation, matching, enrichment, or ingestion is implemented.

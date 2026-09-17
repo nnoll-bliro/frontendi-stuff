@@ -6,3 +6,7 @@ dist
 
 # Seeded playground database — rebuilt on next `npm run dev`
 server/data
+
+# Playwright output
+/test-results/
+/playwright-report/
