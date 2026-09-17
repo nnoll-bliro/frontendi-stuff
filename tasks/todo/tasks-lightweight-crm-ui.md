@@ -1,33 +1,8 @@
----
-STATUS: ARCHIVED
-COMPLETED_DATE: 2026-09-17
-TOPIC: lightweight-crm-ui
-DEFERRED: ticket 6 — Agent Sessions directory and linked session details (not started)
----
-
 # Lightweight CRM — UI concepts and navigation
 
 ## Goal
 
 Build a read-only, navigable prototype that makes companies, people, meetings/calls, transcripts, and agent sessions understandable as distinct, connected concepts. Validate routing and information hierarchy, not detailed interactions or production behavior.
-
-## TL;DR
-
-**Archived:** 2026-09-17
-
-**What we did:**
-- Shipped the navigable CRM prototype: grouped navigation and route shells, a shared read-only model with connected seed data, and Company, Person, and Meeting hubs built on canonical record URLs.
-- Made meetings touchpoints rather than recordings — overview first, transcript optional, and company/people links independent of transcription.
-- Kept every future capability visibly inert: Analysis, Sharing, and all creation/mutation flows are labeled placeholders.
-
-**What changed along the way:**
-- Ticket 2 separated meeting lifecycle from artifact state and shipped a transactional v0→v1 migration, which was not in the original brief.
-- Hubs use stacked, always-visible sections instead of tabs, after accessibility review.
-- Playwright was added for browser navigation coverage (34 tests total across backend and browser).
-
-**Skipped/Deferred:**
-- Ticket 6 (Agent Sessions directory and linked session details) was never started. `/agent-sessions` and `/agent-sessions/:id` remain data-backed shells via `src/routes/CrmRouteShell.tsx`. The end-to-end Company → Person → Meeting → Agent Session walkthrough in 6.4 is therefore unverified for the session leg.
-- All deferred/advanced work listed at the end of this file remains out of scope.
 
 ## Decisions
 
