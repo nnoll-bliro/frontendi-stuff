@@ -640,6 +640,13 @@ test("HTTP API exposes canonical CRM relationships and remains read-only", async
               documentation.content,
               session.messages.map((message: Json) => message.text).join("\n"),
             );
+            // The session names what it documented; the artifact stays on the meeting.
+            const produced = session.documentation.find(
+              (item: Json) => item.id === documentation.id,
+            );
+            assert.equal(produced.meeting.id, meetingId);
+            assert.equal(produced.source, source);
+            assert.equal(produced.content, documentation.content);
           } else {
             assert.deepEqual(meeting.documentation, []);
           }
@@ -647,6 +654,7 @@ test("HTTP API exposes canonical CRM relationships and remains read-only", async
         const standalone = await ok("/api/agent-sessions/as_halden_plan");
         assert.equal(standalone.meeting, null);
         assert.ok(standalone.messages.length >= 2);
+        assert.deepEqual(standalone.documentation, []);
       },
     );
 

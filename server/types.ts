@@ -149,8 +149,22 @@ export interface AgentSessionSummary {
   meeting: MeetingRef | null;
 }
 
+/**
+ * Documentation this assistant conversation produced, shown from the session side.
+ * The artifact belongs to the meeting it describes; the session is only its origin.
+ */
+export interface AgentSessionDocumentation {
+  id: string;
+  source: MeetingDocumentation["source"];
+  status: ArtifactStatus;
+  title: string;
+  content: string | null;
+  meeting: MeetingRef;
+}
+
 export interface AgentSession extends AgentSessionSummary {
   messages: { id: string; position: number; role: "user" | "assistant"; text: string }[];
+  documentation: AgentSessionDocumentation[];
 }
 
 /** List-row shape: no transcript or documentation content payload. */

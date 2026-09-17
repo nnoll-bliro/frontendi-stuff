@@ -1,6 +1,7 @@
 import { getDb } from "./db.ts";
 import type {
   AgentSession,
+  AgentSessionDocumentation,
   AgentSessionSummary,
   CalendarEntry,
   CalendarParticipant,
@@ -306,6 +307,21 @@ export function getAgentSession(id: string): AgentSession | null {
           position: Number(m.position),
           role: m.role as AgentSession["messages"][number]["role"],
           text: str(m.text),
+        })),
+        // The reverse of meeting documentation's provenance link: what this
+        // conversation produced, on the meeting it describes.
+        documentation: rows(
+          `SELECT d.*, m.title AS meeting_title FROM meeting_documentation d
+          JOIN meetings m ON m.id = d.meeting_id
+          WHERE d.agent_session_id = ? ORDER BY d.id`,
+          id,
+        ).map((d) => ({
+          id: str(d.id),
+          source: d.source as AgentSessionDocumentation["source"],
+          status: d.status as AgentSessionDocumentation["status"],
+          title: str(d.title),
+          content: nullable(d.content),
+          meeting: { id: str(d.meeting_id), title: str(d.meeting_title) },
         })),
       }
     : null;

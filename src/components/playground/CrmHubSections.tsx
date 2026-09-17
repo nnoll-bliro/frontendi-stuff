@@ -1,6 +1,7 @@
 import { Box, Button, Link as MuiLink, Stack, Typography } from "@mui/material";
 import { Avatar } from "@bliro/ui/components/Avatar";
 import { colors } from "@bliro/ui/theme/colors";
+import { fontWeight } from "@bliro/ui/theme/fonts";
 import { ArrowLeft, Bot, BookOpen, ContactRound, MessagesSquare } from "lucide-react";
 import type { ReactNode } from "react";
 import { Link } from "react-router";
@@ -11,7 +12,14 @@ import type {
   MeetingSummary,
   PersonSummary,
 } from "@server/types";
-import { formatDateTime, formatDuration, initials, MEETING_STATUS_TONE } from "@/utils/format";
+import {
+  AGENT_CHANNEL_LABEL,
+  ARTIFACT_STATUS_LABEL,
+  formatDateTime,
+  formatDuration,
+  initials,
+  MEETING_STATUS_TONE,
+} from "@/utils/format";
 import { Card } from "./Card";
 import { EmptyState } from "./EmptyState";
 import { StatusPill } from "./StatusPill";
@@ -173,7 +181,7 @@ export const MeetingsSection = ({
                 <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
                   {meeting.transcriptStatus === null
                     ? "No transcript"
-                    : `Transcript: ${meeting.transcriptStatus}`}{" "}
+                    : `Transcript: ${ARTIFACT_STATUS_LABEL[meeting.transcriptStatus]}`}{" "}
                   · {meeting.hasDocumentation ? "Documentation attached" : "No documentation"}
                 </Typography>
               </Stack>
@@ -183,6 +191,65 @@ export const MeetingsSection = ({
       </Stack>
     )}
   </HubSection>
+);
+
+/** Shared by the Agent Sessions directory and every hub's session list. */
+export const AgentSessionCards = ({
+  sessions,
+  showCompany = false,
+}: {
+  sessions: AgentSessionSummary[];
+  showCompany?: boolean;
+}) => (
+  <Stack spacing={1.5}>
+    {sessions.map((session) => (
+      <Card key={session.id} sx={{ p: 2.5 }}>
+        <Stack spacing={1}>
+          <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap>
+            <RecordLink to={`/agent-sessions/${session.id}`}>{session.title}</RecordLink>
+            <StatusPill
+              label={AGENT_CHANNEL_LABEL[session.channel]}
+              color={colors.dark[300]}
+              background={colors.dark[800]}
+            />
+          </Stack>
+          <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
+            Assistant conversation · {formatDateTime(session.startedAt)}
+          </Typography>
+          <ContextText>{session.overview}</ContextText>
+          <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+            {showCompany &&
+              (session.company ? (
+                <RecordLink to={`/companies/${session.company.id}`}>
+                  {session.company.name}
+                </RecordLink>
+              ) : (
+                <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
+                  No company linked
+                </Typography>
+              ))}
+            {session.people.map((person) => (
+              <RecordLink key={person.id} to={`/people/${person.id}`}>
+                {person.name}
+              </RecordLink>
+            ))}
+          </Stack>
+          {session.meeting ? (
+            <Stack spacing={0.5}>
+              <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
+                Related meeting
+              </Typography>
+              <RecordLink to={`/meetings/${session.meeting.id}`}>
+                {session.meeting.title}
+              </RecordLink>
+            </Stack>
+          ) : (
+            <ContextText>No related meeting — this session stands on its own.</ContextText>
+          )}
+        </Stack>
+      </Card>
+    ))}
+  </Stack>
 );
 
 export const AgentSessionsSection = ({
@@ -205,48 +272,76 @@ export const AgentSessionsSection = ({
         description="No assistant conversations are linked to this record."
       />
     ) : (
-      <Stack spacing={1.5}>
-        {sessions.map((session) => (
-          <Card key={session.id} sx={{ p: 2.5 }}>
-            <Stack spacing={1}>
-              <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap>
-                <RecordLink to={`/agent-sessions/${session.id}`}>{session.title}</RecordLink>
-                <StatusPill
-                  label={session.channel === "call" ? "Call" : "Chat"}
-                  color={colors.dark[300]}
-                  background={colors.dark[800]}
-                />
-              </Stack>
-              <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
-                Assistant conversation · {formatDateTime(session.startedAt)}
-              </Typography>
-              <ContextText>{session.overview}</ContextText>
-              <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
-                {session.people.map((person) => (
-                  <RecordLink key={person.id} to={`/people/${person.id}`}>
-                    {person.name}
-                  </RecordLink>
-                ))}
-              </Stack>
-              {session.meeting ? (
-                <Stack spacing={0.5}>
-                  <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
-                    Related meeting
-                  </Typography>
-                  <RecordLink to={`/meetings/${session.meeting.id}`}>
-                    {session.meeting.title}
-                  </RecordLink>
-                </Stack>
-              ) : (
-                <ContextText>No related meeting — this session stands on its own.</ContextText>
-              )}
-            </Stack>
-          </Card>
-        ))}
-      </Stack>
+      <AgentSessionCards sessions={sessions} />
     )}
   </HubSection>
 );
+
+/**
+ * Seeded documentation may contain light markdown (`**bold**` headings and `-` bullets).
+ * Rendering it locally keeps the playground free of a markdown dependency. Shared by the
+ * meeting touchpoint and the assistant session that produced the documentation.
+ */
+export const DocumentationBody = ({ content }: { content: string | null }) =>
+  content ? (
+    <Stack spacing={1}>
+      {content.split("\n").map((line, index) => (
+        <DocumentationLine key={index} line={line} />
+      ))}
+    </Stack>
+  ) : (
+    <Typography variant="normalBody" sx={{ color: colors.dark[400] }}>
+      No documentation content is available.
+    </Typography>
+  );
+
+const DocumentationLine = ({ line }: { line: string }) => {
+  if (!line.trim()) return <Box sx={{ height: 4 }} />;
+
+  const heading = line.match(/^\*\*(.+)\*\*$/);
+  if (heading) {
+    return (
+      <Typography
+        variant="smallTitle"
+        sx={{ color: colors.dark[100], fontWeight: fontWeight.semiBold, mt: 1 }}
+      >
+        {heading[1]}
+      </Typography>
+    );
+  }
+
+  if (line.startsWith("- ")) {
+    return (
+      <Stack direction="row" spacing={1}>
+        <Typography variant="normalBody" sx={{ color: colors.orange[100] }}>
+          •
+        </Typography>
+        <Typography variant="normalBody" sx={{ color: colors.dark[200] }}>
+          {renderInline(line.slice(2))}
+        </Typography>
+      </Stack>
+    );
+  }
+
+  return (
+    <Typography variant="normalBody" sx={{ color: colors.dark[200] }}>
+      {renderInline(line)}
+    </Typography>
+  );
+};
+
+/** Inline `**bold**` only — everything else is plain text. */
+function renderInline(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, index) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <Box key={index} component="strong" sx={{ fontWeight: fontWeight.semiBold }}>
+        {part.slice(2, -2)}
+      </Box>
+    ) : (
+      part
+    ),
+  );
+}
 
 export const KnowledgeSection = ({ items }: { items: KnowledgeItem[] }) => (
   <HubSection

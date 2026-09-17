@@ -43,7 +43,7 @@ between the two doesn't change its imports. The route table is `src/routes/route
 |---|---|
 | `/companies`, `/companies/:id` | company directory and Overview / People / Meetings / Agent Sessions / Knowledge hub |
 | `/people`, `/people/:id` | contact directory and person-scoped hub, separate from Team |
-| `/agent-sessions`, `/agent-sessions/:id` | data-backed assistant Call/Chat shells |
+| `/agent-sessions`, `/agent-sessions/:id` | assistant Call/Chat directory and session detail: conversation, documentation produced, company/people, optional related meeting |
 | `/meetings` | touchpoints, with search and a lifecycle filter in the URL |
 | `/meetings/:id` | overview-first touchpoint: company/people, documentation, optional transcript, related sessions, calendar context, Sharing placeholder |
 | `/calendar` | entries grouped by day, filtered to upcoming / past / all |
@@ -129,13 +129,14 @@ seeded prototype database (initialized/upgraded normally if needed); it never re
 it or sends mutation requests. Empty-state cases intercept browser responses rather
 than editing fixtures. Tests cover canonical directory/hub links, contact-scoped
 history, no-company/empty states, Analysis/Sharing placeholders, missing records,
-reload/back navigation, and main-panel scroll reset. Output folders are gitignored.
+reload/back navigation, main-panel scroll reset, touchpoint/artifact separation, and
+the Company → Person → Meeting → Agent Session → Company walk. Output folders are
+gitignored.
 
-Company, Person, and Meeting pages use visible, stacked sections rather than hiding
-history behind tabs. All reuse `src/components/playground/CrmHubSections.tsx` and
-their existing canonical loaders. Analysis is explicitly unavailable; Sharing only
-links to the organization-policy placeholder. Agent Session details remain shells
-until ticket 6.
+Company, Person, Meeting, and Agent Session pages use visible, stacked sections rather
+than hiding history behind tabs. All reuse `src/components/playground/CrmHubSections.tsx`
+and their existing canonical loaders. Analysis is explicitly unavailable; Sharing only
+links to the organization-policy placeholder.
 
 A meeting is a touchpoint, not a recording. Its overview comes first; documentation
 and an optional transcript sit underneath, and a meeting with no transcript is a
@@ -144,6 +145,12 @@ depend on transcription. Documentation names its source (meeting summary, Phone
 Assistant, voice memo) and links to the assistant session that produced it, which is
 a separate conversation and not the customer's transcript. Calendar invites stay
 supporting context on both sides of the link.
+
+An agent session is your own Call or Chat with the assistant. Its detail page shows the
+conversation, the documentation it produced (linked to the touchpoint that owns the
+artifact), explicit company/person context, and an optional related meeting — a session
+with no meeting link is a complete record. The conversation is never presented as a
+customer meeting transcript.
 
 ## Fake state
 

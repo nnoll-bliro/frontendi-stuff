@@ -1,15 +1,16 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { Avatar } from "@bliro/ui/components/Avatar";
 import { colors } from "@bliro/ui/theme/colors";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { CalendarClock, FileText, Languages, Users } from "lucide-react";
 import { useLoaderData } from "react-router";
 
-import type { ArtifactStatus, Meeting, MeetingDocumentation } from "@/api/client";
+import type { Meeting } from "@/api/client";
 import { Card } from "@/components/playground/Card";
 import {
   AgentSessionsSection,
   ContextText,
+  DocumentationBody,
   HubSection,
   ListReturn,
   RecordLink,
@@ -19,6 +20,10 @@ import { EmptyState } from "@/components/playground/EmptyState";
 import { PageHeader } from "@/components/playground/PageHeader";
 import { StatusPill } from "@/components/playground/StatusPill";
 import {
+  ARTIFACT_STATUS_LABEL,
+  artifactStatusTone,
+  DOCUMENTATION_SOURCE_LABEL,
+  DOCUMENTATION_SOURCE_NOTE,
   formatDateTime,
   formatDuration,
   formatOffset,
@@ -26,31 +31,6 @@ import {
   MEETING_SOURCE_LABEL,
   MEETING_STATUS_TONE,
 } from "@/utils/format";
-
-const DOCUMENTATION_SOURCE_LABEL: Record<MeetingDocumentation["source"], string> = {
-  meeting_summary: "Meeting summary",
-  phone_assistant: "Phone Assistant",
-  voice_memo: "Voice memo",
-};
-
-/**
- * What each source means for provenance. A Phone Assistant call or a voice memo
- * documents the touchpoint; neither is a recording of the customer conversation.
- */
-const DOCUMENTATION_SOURCE_NOTE: Record<MeetingDocumentation["source"], string> = {
-  meeting_summary: "Written up from this meeting.",
-  phone_assistant:
-    "Captured in a separate Phone Assistant call. That assistant conversation is not this meeting's transcript.",
-  voice_memo:
-    "Dictated as a voice memo after the touchpoint. It documents the meeting rather than recording it.",
-};
-
-const ARTIFACT_STATUS_LABEL: Record<ArtifactStatus, string> = {
-  collecting: "Collecting",
-  processing: "Processing",
-  ready: "Ready",
-  failed: "Failed",
-};
 
 export const MeetingDetailPage = () => {
   const meeting = useLoaderData() as Meeting;
@@ -269,17 +249,7 @@ const DocumentationPanel = ({ meeting }: { meeting: Meeting }) => {
                 )}
               </Stack>
 
-              {documentation.content ? (
-                <Stack spacing={1}>
-                  {documentation.content.split("\n").map((line, index) => (
-                    <DocumentationLine key={index} line={line} />
-                  ))}
-                </Stack>
-              ) : (
-                <Typography variant="normalBody" sx={{ color: colors.dark[400] }}>
-                  No documentation content is available.
-                </Typography>
-              )}
+              <DocumentationBody content={documentation.content} />
             </Stack>
           </Card>
         );
@@ -287,58 +257,6 @@ const DocumentationPanel = ({ meeting }: { meeting: Meeting }) => {
     </Stack>
   );
 };
-
-/**
- * Seeded documentation may contain light markdown (`**bold**` headings and `-` bullets).
- * Rendering it locally keeps the playground free of a markdown dependency.
- */
-const DocumentationLine = ({ line }: { line: string }) => {
-  if (!line.trim()) return <Box sx={{ height: 4 }} />;
-
-  const heading = line.match(/^\*\*(.+)\*\*$/);
-  if (heading) {
-    return (
-      <Typography
-        variant="smallTitle"
-        sx={{ color: colors.dark[100], fontWeight: fontWeight.semiBold, mt: 1 }}
-      >
-        {heading[1]}
-      </Typography>
-    );
-  }
-
-  if (line.startsWith("- ")) {
-    return (
-      <Stack direction="row" spacing={1}>
-        <Typography variant="normalBody" sx={{ color: colors.orange[100] }}>
-          •
-        </Typography>
-        <Typography variant="normalBody" sx={{ color: colors.dark[200] }}>
-          {renderInline(line.slice(2))}
-        </Typography>
-      </Stack>
-    );
-  }
-
-  return (
-    <Typography variant="normalBody" sx={{ color: colors.dark[200] }}>
-      {renderInline(line)}
-    </Typography>
-  );
-};
-
-/** Inline `**bold**` only — everything else is plain text. */
-function renderInline(text: string) {
-  return text.split(/(\*\*[^*]+\*\*)/g).map((part, index) =>
-    part.startsWith("**") && part.endsWith("**") ? (
-      <Box key={index} component="strong" sx={{ fontWeight: fontWeight.semiBold }}>
-        {part.slice(2, -2)}
-      </Box>
-    ) : (
-      part
-    ),
-  );
-}
 
 const TranscriptPanel = ({ transcript }: { transcript: NonNullable<Meeting["transcript"]> }) => {
   const statusTone = artifactStatusTone(transcript.status);
@@ -385,16 +303,6 @@ const TranscriptPanel = ({ transcript }: { transcript: NonNullable<Meeting["tran
     </Card>
   );
 };
-
-function artifactStatusTone(status: ArtifactStatus) {
-  if (status === "ready") {
-    return { color: colors.green.dark, background: colors.green[600] };
-  }
-  if (status === "failed") {
-    return { color: colors.red.dark, background: colors.red[600] };
-  }
-  return { color: colors.yellow.dark, background: colors.yellow[600] };
-}
 
 const Meta = ({ icon, children }: { icon?: React.ReactNode; children: React.ReactNode }) => (
   <Stack direction="row" alignItems="center" spacing={0.5} sx={{ color: colors.dark[400] }}>

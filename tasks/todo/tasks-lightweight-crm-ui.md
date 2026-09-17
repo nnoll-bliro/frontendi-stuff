@@ -42,18 +42,18 @@ Keep `/team`, `/settings/account`, and `/design-system` available. Keep `/` redi
 - `src/routes/PeoplePage.tsx`, `src/routes/PersonDetailPage.tsx` — contact directory and person-scoped hub.
 - `src/components/playground/CrmHubSections.tsx` — shared relationship lists, Knowledge, named hub sections, and scoped future placeholders.
 - `src/components/playground/PageHeader.tsx` — semantic page heading while retaining existing visual styling.
-- `src/routes/CrmRouteShell.tsx` — remaining data-backed Agent Sessions shell; full layouts remain ticket 6.
+- `src/routes/AgentSessionsPage.tsx`, `src/routes/AgentSessionDetailPage.tsx` — Call/Chat directory and the session hub: conversation, documentation produced, context, optional meeting.
 - `src/routes/ErrorPage.tsx` — handles React Router loader error responses, including missing-record 404s.
 - `src/routes/SettingsLayout.tsx`, `src/routes/SettingsSharingPage.tsx` — Settings navigation and nonfunctional Sharing placeholder.
 - `glossary.md`, `tasks/changelog.md` — shared concept definitions and dated implementation outcomes/decisions.
-- `src/routes/MeetingsPage.tsx`, `src/routes/MeetingDetailPage.tsx`, `src/utils/format.ts` — overview-first touchpoint hierarchy, transcript-independent company/people links, documentation provenance, related sessions, calendar context, and the selected-meeting Sharing placeholder.
+- `src/routes/MeetingsPage.tsx`, `src/routes/MeetingDetailPage.tsx`, `src/utils/format.ts` — overview-first touchpoint hierarchy, transcript-independent company/people links, documentation provenance, related sessions, calendar context, the selected-meeting Sharing placeholder, and the artifact/documentation/channel labels shared with Agent Sessions.
 - `src/routes/CalendarPage.tsx`, `src/routes/CalendarEntryPage.tsx` — calendar-to-meeting navigation.
 - `src/components/playground/` — reusable page, card, and empty-state components.
 - `server/types.ts`, `server/schema.sql`, `server/seed.ts`, `server/seed-crm.ts` — shared concept model and connected fixtures.
 - `server/migrate.ts`, `server/import-legacy-meeting.ts` — transactional v0 upgrade and original fixture conversion.
 - `server/api.ts`, `server/records.ts`, `server/db.ts`, `src/api/client.ts` — canonical read-only data access shared across routes.
 - `server/crm.test.ts`, `server/fixtures/schema-v0.sql`, `package.json` — isolated migration and API tests via `npm test`.
-- `playwright.config.ts`, `tests/crm-hubs.spec.ts`, `tests/meeting-touchpoints.spec.ts`, `package.json`, `package-lock.json`, `.gitignore` — browser navigation tests, touchpoint/artifact-separation tests, runner setup, and ignored test output.
+- `playwright.config.ts`, `tests/crm-hubs.spec.ts`, `tests/meeting-touchpoints.spec.ts`, `tests/agent-sessions.spec.ts`, `package.json`, `package-lock.json`, `.gitignore` — browser navigation tests, touchpoint/artifact-separation tests, session labeling and the end-to-end record walk, runner setup, and ignored test output.
 - `README.md` — routes, seed walkthrough, API filters, migration compatibility, and browser-test setup.
 
 ## Tickets
@@ -104,13 +104,15 @@ Keep `/team`, `/settings/account`, and `/design-system` available. Keep `/` redi
   - **Validated:** 8 new Playwright tests in `tests/meeting-touchpoints.spec.ts` cover the untranscribed call as a complete record, transcript-independent company/people links, the company-less touchpoint, documentation source and assistant-session provenance, meeting-linked sessions only, calendar linkage in both directions, the selected-meeting Sharing placeholder, and Meeting → Company → Person → Meeting with browser back. Combined: 17 browser tests, 17 backend tests, and build/typecheck passed. Desktop screenshots of the list and both transcribed/untranscribed details reviewed.
   - **Implementation notes:** Pure UI ticket — ticket 2's model already exposed `kind`, `overview`, `company`, `people`, and `agentSessions`, so no server or schema changes were needed. The Documentation/Transcript tab pair was replaced with stacked `HubSection`s matching the Company/Person hubs; a missing transcript now reads as a valid state rather than a pending or failed artifact. Meeting rows dropped whole-row click in favor of real record links, consistent with the other directories. `SharingPlaceholder` was extracted from `FutureCapabilities` so the selected-meeting scope reuses it.
 
-- [ ] 6.0 **Agent Sessions directory and linked session details**
-  - [ ] 6.1 Add a session directory with clear Call/Chat labels and linked company/person/meeting context where available.
-  - [ ] 6.2 Add a read-only session detail page showing what the assistant conversation was about, representative conversation/documentation content, and links to related records.
-  - [ ] 6.3 Make optional meeting linkage visible: sessions can exist independently, and their conversation content stays distinct from a related meeting's transcript.
-  - [ ] 6.4 Walk the seeded story end to end: Company → Person → Meeting → Agent Session → Company. Check direct URLs, browser back, consistent labels, and valid no-transcript/no-meeting-link states.
+- [x] 6.0 **Agent Sessions directory and linked session details**
+  - [x] 6.1 Add a session directory with clear Call/Chat labels and linked company/person/meeting context where available.
+  - [x] 6.2 Add a read-only session detail page showing what the assistant conversation was about, representative conversation/documentation content, and links to related records.
+  - [x] 6.3 Make optional meeting linkage visible: sessions can exist independently, and their conversation content stays distinct from a related meeting's transcript.
+  - [x] 6.4 Walk the seeded story end to end: Company → Person → Meeting → Agent Session → Company. Check direct URLs, browser back, consistent labels, and valid no-transcript/no-meeting-link states.
   - **Done when:** Users can distinguish an assistant call from a customer call while following their relationship, and all cross-record navigation resolves consistently.
   - **Boundary:** No live calling/chat, assistant preparation workflow, or generated analysis.
+  - **Validated:** 6 new Playwright tests in `tests/agent-sessions.spec.ts` cover Call/Chat labeling with company/person/meeting links in the directory, the assistant call as its own conversation, documentation produced pointing back at the meeting that owns it, meeting linkage in both directions plus the standalone account chat, a missing-session 404 with the directory still reachable, and the Company → Person → Meeting → Agent Session → Company walk with browser back. Combined: 23 browser tests, 17 backend tests, and build/typecheck passed. Desktop screenshots of the directory and both Call and Chat details were reviewed.
+  - **Implementation notes:** `CrmRouteShell.tsx` was deleted — every route now has a real page. The one server addition was `AgentSession.documentation`, the reverse of documentation provenance, so a session can name what it wrote up while the artifact stays owned by its touchpoint. Sessions deliberately get no Analysis or Sharing placeholder: no session-scoped sharing exists in the deferred design. Shared code moved rather than being copied — artifact/documentation labels and tones into `src/utils/format.ts`, `DocumentationBody` and `AgentSessionCards` into `CrmHubSections.tsx`.
 
 ## Suggested sequence
 

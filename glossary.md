@@ -40,6 +40,8 @@ An optional artifact attached to the touchpoint it describes (`meeting_documenta
 
 A separate Call or Chat conversation with the assistant (`agent_sessions`, `agent_messages`), addressed as `/agent-sessions/:id`. It has explicit company/person context and an optional related meeting. A Phone Assistant debrief is an assistant call about a customer call, not a second customer touchpoint. Account-level chats can have no meeting link.
 
+Its detail page follows the hub hierarchy: Overview, Conversation, Documentation produced, Company and people, and Related meeting. The conversation is the session's own content and is never labeled a customer transcript. "Documentation produced" is the reverse of documentation provenance — the artifact belongs to the touchpoint it describes, and the session only names what it wrote up.
+
 ### Calendar entry
 
 Scheduling/invite metadata, addressed as `/calendar/:id`. Calendar-entry IDs and meeting IDs are distinct. An entry optionally links to the same canonical meeting shown elsewhere; it does not imply a recording exists. This prototype supports at most one meeting per calendar entry.

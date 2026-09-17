@@ -15,7 +15,7 @@ import {
 import { useEffect, useState } from "react";
 import { useLoaderData, useSearchParams } from "react-router";
 
-import { api, type ArtifactStatus, type MeetingSummary } from "@/api/client";
+import { api, type MeetingSummary } from "@/api/client";
 import { Card } from "@/components/playground/Card";
 import { ContextText, RecordLink } from "@/components/playground/CrmHubSections";
 import { EmptyState } from "@/components/playground/EmptyState";
@@ -23,18 +23,12 @@ import { PageHeader } from "@/components/playground/PageHeader";
 import { StatusPill } from "@/components/playground/StatusPill";
 import { TabItem } from "@/components/TabItem/TabItem";
 import {
+  ARTIFACT_STATUS_LABEL,
   formatDateTime,
   formatDuration,
   MEETING_SOURCE_LABEL,
   MEETING_STATUS_TONE,
 } from "@/utils/format";
-
-const ARTIFACT_STATUS_LABEL: Record<ArtifactStatus, string> = {
-  collecting: "Collecting",
-  processing: "Processing",
-  ready: "Ready",
-  failed: "Failed",
-};
 
 const STATUS_TABS: { value: string; label: string; Icon: LucideIcon }[] = [
   { value: "all", label: "All", Icon: ListFilter },

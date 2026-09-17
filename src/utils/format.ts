@@ -1,6 +1,11 @@
 import dayjs from "dayjs";
 
-import type { MeetingStatus, RsvpResponse } from "@server/types";
+import type {
+  ArtifactStatus,
+  MeetingDocumentation,
+  MeetingStatus,
+  RsvpResponse,
+} from "@server/types";
 import { colors } from "@bliro/ui/theme/colors";
 
 /** "14:30" */
@@ -48,7 +53,7 @@ export function initials(name: string): string {
   return letters.map((part) => part.charAt(0).toUpperCase()).join("");
 }
 
-interface Tone {
+export interface Tone {
   label: string;
   color: string;
   background: string;
@@ -73,3 +78,36 @@ export const MEETING_SOURCE_LABEL = {
   ad_hoc: "Ad hoc",
   phone: "Phone call",
 } as const;
+
+export const ARTIFACT_STATUS_LABEL: Record<ArtifactStatus, string> = {
+  collecting: "Collecting",
+  processing: "Processing",
+  ready: "Ready",
+  failed: "Failed",
+};
+
+export function artifactStatusTone(status: ArtifactStatus): Omit<Tone, "label"> {
+  if (status === "ready") return { color: colors.green.dark, background: colors.green[600] };
+  if (status === "failed") return { color: colors.red.dark, background: colors.red[600] };
+  return { color: colors.yellow.dark, background: colors.yellow[600] };
+}
+
+export const DOCUMENTATION_SOURCE_LABEL: Record<MeetingDocumentation["source"], string> = {
+  meeting_summary: "Meeting summary",
+  phone_assistant: "Phone Assistant",
+  voice_memo: "Voice memo",
+};
+
+/**
+ * What each source means for provenance. A Phone Assistant call or a voice memo
+ * documents the touchpoint; neither is a recording of the customer conversation.
+ */
+export const DOCUMENTATION_SOURCE_NOTE: Record<MeetingDocumentation["source"], string> = {
+  meeting_summary: "Written up from this meeting.",
+  phone_assistant:
+    "Captured in a separate Phone Assistant call. That assistant conversation is not this meeting's transcript.",
+  voice_memo:
+    "Dictated as a voice memo after the touchpoint. It documents the meeting rather than recording it.",
+};
+
+export const AGENT_CHANNEL_LABEL = { call: "Call", chat: "Chat" } as const;

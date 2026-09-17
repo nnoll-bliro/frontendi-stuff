@@ -3,11 +3,12 @@ import { createBrowserRouter, Navigate } from "react-router";
 import { api } from "@/api/client";
 import { FullscreenLoading } from "@/components/Reusable/FullscreenLoading";
 
+import { AgentSessionDetailPage } from "./AgentSessionDetailPage";
+import { AgentSessionsPage } from "./AgentSessionsPage";
 import { CalendarEntryPage } from "./CalendarEntryPage";
 import { CalendarPage } from "./CalendarPage";
 import { CompaniesPage } from "./CompaniesPage";
 import { CompanyDetailPage } from "./CompanyDetailPage";
-import { CrmRouteShell } from "./CrmRouteShell";
 import { DesignSystemPage } from "./DesignSystemPage";
 import { ErrorPage } from "./ErrorPage";
 import { MeetingDetailPage } from "./MeetingDetailPage";
@@ -63,13 +64,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "agent-sessions",
-        element: <CrmRouteShell section="agent-sessions" />,
+        element: <AgentSessionsPage />,
         loader: ({ request }) => api.agentSessions({}, request.signal),
         errorElement: <ErrorPage />,
       },
       {
         path: "agent-sessions/:id",
-        element: <CrmRouteShell section="agent-sessions" />,
+        element: <AgentSessionDetailPage />,
         loader: ({ params, request }) => api.agentSession(params.id as string, request.signal),
         errorElement: <ErrorPage />,
       },

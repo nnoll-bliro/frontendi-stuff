@@ -79,6 +79,7 @@ export const api = {
 
 export type {
   AgentSession,
+  AgentSessionDocumentation,
   AgentSessionSummary,
   ArtifactStatus,
   Company,
