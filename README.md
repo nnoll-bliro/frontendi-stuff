@@ -45,7 +45,7 @@ between the two doesn't change its imports. The route table is `src/routes/route
 | `/people`, `/people/:id` | contact directory and person-scoped hub, separate from Team |
 | `/agent-sessions`, `/agent-sessions/:id` | data-backed assistant Call/Chat shells |
 | `/meetings` | touchpoints, with search and a lifecycle filter in the URL |
-| `/meetings/:id` | documentation, optional transcript, independent participants, calendar link |
+| `/meetings/:id` | overview-first touchpoint: company/people, documentation, optional transcript, related sessions, calendar context, Sharing placeholder |
 | `/calendar` | entries grouped by day, filtered to upcoming / past / all |
 | `/calendar/:id` | invite metadata and a link to the canonical meeting, if represented |
 | `/team` | the org and its users |
@@ -131,11 +131,19 @@ than editing fixtures. Tests cover canonical directory/hub links, contact-scoped
 history, no-company/empty states, Analysis/Sharing placeholders, missing records,
 reload/back navigation, and main-panel scroll reset. Output folders are gitignored.
 
-Company and Person hubs use visible, stacked sections rather than hiding history
-behind tabs. Both reuse `src/components/playground/CrmHubSections.tsx` and their
-existing canonical loaders. Analysis is explicitly unavailable; Sharing only links
-to the organization-policy placeholder. Agent Session details remain shells until
-ticket 6, and the Meeting overview redesign remains ticket 5.
+Company, Person, and Meeting pages use visible, stacked sections rather than hiding
+history behind tabs. All reuse `src/components/playground/CrmHubSections.tsx` and
+their existing canonical loaders. Analysis is explicitly unavailable; Sharing only
+links to the organization-policy placeholder. Agent Session details remain shells
+until ticket 6.
+
+A meeting is a touchpoint, not a recording. Its overview comes first; documentation
+and an optional transcript sit underneath, and a meeting with no transcript is a
+complete record rather than a failed or pending one. Company and people links never
+depend on transcription. Documentation names its source (meeting summary, Phone
+Assistant, voice memo) and links to the assistant session that produced it, which is
+a separate conversation and not the customer's transcript. Calendar invites stay
+supporting context on both sides of the link.
 
 ## Fake state
 

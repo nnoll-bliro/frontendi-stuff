@@ -4,6 +4,7 @@ Dated history of meaningful task work and decisions.
 
 ## 2026-09-17
 
+- Ticket 5: Meetings are now touchpoints rather than recordings — the overview leads, company and people links no longer depend on transcription, and a meeting with no transcript reads as a complete record instead of a failed or pending one.
 - Completed tickets 3 and 4 of `tasks/todo/tasks-lightweight-crm-ui.md`: Companies and People now have readable directories and canonical, data-backed hubs instead of route shells. Company hubs expose Overview, People, Meetings, Agent Sessions, and Knowledge; person hubs show their own context, optional Company, and explicitly linked history only.
 - Reused existing loaders and shared `src/components/playground/CrmHubSections.tsx`; no duplicate fixtures, backend mutations, or alternate record URLs were introduced. Non-meeting internal notes/revenue context are separate from meeting documentation, assistant Call/Chat conversations are labeled separately, and absent company/history/context states are explicit.
 - Added company/person-scoped Analysis placeholders with disabled actions and Sharing explanations linking only to `/settings/sharing`. No analysis runs, policy controls, or access grants exist. Agent Session detail layouts remain ticket 6; the Meeting overview-first redesign remains ticket 5.

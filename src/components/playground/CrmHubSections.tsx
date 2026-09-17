@@ -283,6 +283,22 @@ export const KnowledgeSection = ({ items }: { items: KnowledgeItem[] }) => (
   </HubSection>
 );
 
+/**
+ * No handlers or policy controls: this describes a scope, not a functional capability.
+ * Shared by the company/person hubs and the selected-meeting scope on a touchpoint.
+ */
+export const SharingPlaceholder = ({ name, note }: { name: string; note?: string }) => (
+  <Card sx={{ p: 2.5 }}>
+    <Stack spacing={1.5}>
+      <ContextText>
+        Future capability · Sharing for {name}. No access is granted, changed, or enforced here.
+      </ContextText>
+      {note && <ContextText>{note}</ContextText>}
+      <RecordLink to="/settings/sharing">Organization sharing policies · Future</RecordLink>
+    </Stack>
+  </Card>
+);
+
 /** No handlers or policy controls: these describe scopes, not functional capabilities. */
 export const FutureCapabilities = ({
   scope,
@@ -306,14 +322,7 @@ export const FutureCapabilities = ({
       </Card>
     </HubSection>
     <HubSection id="sharing" title="Sharing">
-      <Card sx={{ p: 2.5 }}>
-        <Stack spacing={1.5}>
-          <ContextText>
-            Future capability · Sharing for {name}. No access is granted, changed, or enforced here.
-          </ContextText>
-          <RecordLink to="/settings/sharing">Organization sharing policies · Future</RecordLink>
-        </Stack>
-      </Card>
+      <SharingPlaceholder name={name} />
     </HubSection>
   </Box>
 );

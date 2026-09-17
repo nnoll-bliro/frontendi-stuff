@@ -1,7 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import { Input } from "@bliro/ui/components/Input";
 import { colors } from "@bliro/ui/theme/colors";
-import { fontWeight } from "@bliro/ui/theme/fonts";
 import {
   CalendarClock,
   CheckCircle2,
@@ -14,10 +13,11 @@ import {
   XCircle,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link, useLoaderData, useNavigate, useSearchParams } from "react-router";
+import { useLoaderData, useSearchParams } from "react-router";
 
-import { api, type MeetingSummary } from "@/api/client";
+import { api, type ArtifactStatus, type MeetingSummary } from "@/api/client";
 import { Card } from "@/components/playground/Card";
+import { ContextText, RecordLink } from "@/components/playground/CrmHubSections";
 import { EmptyState } from "@/components/playground/EmptyState";
 import { PageHeader } from "@/components/playground/PageHeader";
 import { StatusPill } from "@/components/playground/StatusPill";
@@ -28,6 +28,13 @@ import {
   MEETING_SOURCE_LABEL,
   MEETING_STATUS_TONE,
 } from "@/utils/format";
+
+const ARTIFACT_STATUS_LABEL: Record<ArtifactStatus, string> = {
+  collecting: "Collecting",
+  processing: "Processing",
+  ready: "Ready",
+  failed: "Failed",
+};
 
 const STATUS_TABS: { value: string; label: string; Icon: LucideIcon }[] = [
   { value: "all", label: "All", Icon: ListFilter },
@@ -40,7 +47,6 @@ const STATUS_TABS: { value: string; label: string; Icon: LucideIcon }[] = [
 export const MeetingsPage = () => {
   const initial = useLoaderData() as MeetingSummary[];
   const [searchParams, setSearchParams] = useSearchParams();
-  const navigate = useNavigate();
 
   const status = searchParams.get("status") ?? "all";
   const q = searchParams.get("q") ?? "";
@@ -121,56 +127,49 @@ export const MeetingsPage = () => {
           {meetings.map((meeting) => {
             const tone = MEETING_STATUS_TONE[meeting.status];
             return (
-              <Card
-                key={meeting.id}
-                interactive
-                sx={{ p: 2 }}
-                // The whole row navigates; the title is still a real link so
-                // middle-click and "open in new tab" behave.
-              >
-                <Stack
-                  direction="row"
-                  alignItems="center"
-                  spacing={2}
-                  onClick={() => navigate(`/meetings/${meeting.id}`)}
-                >
-                  <Stack sx={{ flex: 1, minWidth: 0 }} spacing={0.5}>
-                    <Stack direction="row" alignItems="center" spacing={1}>
-                      <Typography
-                        component={Link}
-                        to={`/meetings/${meeting.id}`}
-                        variant="normalTitle"
-                        noWrap
-                        sx={{
-                          color: colors.dark[100],
-                          textDecoration: "none",
-                          fontWeight: fontWeight.semiBold,
-                        }}
-                      >
-                        {meeting.title}
-                      </Typography>
-                      <StatusPill
-                        label={tone.label}
-                        color={tone.color}
-                        background={tone.background}
-                      />
-                    </Stack>
-                    <Stack direction="row" alignItems="center" spacing={1.5} flexWrap="wrap">
-                      <Meta icon={<CalendarClock size={13} />}>
-                        {formatDateTime(meeting.startedAt)}
-                      </Meta>
-                      <Meta>{formatDuration(meeting.durationMinutes)}</Meta>
-                      <Meta icon={<Users size={13} />}>{meeting.participantCount}</Meta>
-                      <Meta>{MEETING_SOURCE_LABEL[meeting.source]}</Meta>
-                      <Meta>{meeting.ownerName}</Meta>
-                    </Stack>
+              <Card key={meeting.id} sx={{ p: 2.5 }}>
+                <Stack spacing={1}>
+                  <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap>
+                    <RecordLink to={`/meetings/${meeting.id}`}>{meeting.title}</RecordLink>
+                    <StatusPill label={tone.label} color={tone.color} background={tone.background} />
                   </Stack>
-                  <Typography
-                    variant="xxSmallBody"
-                    sx={{ color: colors.dark[400] }}
-                  >
-                    {meeting.hasDocumentation ? "Documentation attached" : "No documentation"}
-                  </Typography>
+
+                  <Stack direction="row" alignItems="center" spacing={1.5} flexWrap="wrap" useFlexGap>
+                    <Meta>{meeting.kind === "call" ? "Customer call" : "Meeting"}</Meta>
+                    <Meta icon={<CalendarClock size={13} />}>
+                      {formatDateTime(meeting.startedAt)}
+                    </Meta>
+                    <Meta>{formatDuration(meeting.durationMinutes)}</Meta>
+                    <Meta icon={<Users size={13} />}>{meeting.participantCount}</Meta>
+                    <Meta>{MEETING_SOURCE_LABEL[meeting.source]}</Meta>
+                    <Meta>{meeting.ownerName}</Meta>
+                  </Stack>
+
+                  <ContextText>{meeting.overview}</ContextText>
+
+                  {/* Company and people stand on their own; neither depends on a transcript. */}
+                  <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap>
+                    {meeting.company ? (
+                      <RecordLink to={`/companies/${meeting.company.id}`}>
+                        {meeting.company.name}
+                      </RecordLink>
+                    ) : (
+                      <Meta>No company linked</Meta>
+                    )}
+                    {meeting.people.map((person) => (
+                      <RecordLink key={person.id} to={`/people/${person.id}`}>
+                        {person.name}
+                      </RecordLink>
+                    ))}
+                  </Stack>
+
+                  {/* Artifact availability, kept separate from the touchpoint itself. */}
+                  <Meta>
+                    {meeting.transcriptStatus === null
+                      ? "No transcript"
+                      : `Transcript: ${ARTIFACT_STATUS_LABEL[meeting.transcriptStatus]}`}{" "}
+                    · {meeting.hasDocumentation ? "Documentation attached" : "No documentation"}
+                  </Meta>
                 </Stack>
               </Card>
             );
