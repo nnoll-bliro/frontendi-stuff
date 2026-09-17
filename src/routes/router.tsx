@@ -5,12 +5,15 @@ import { FullscreenLoading } from "@/components/Reusable/FullscreenLoading";
 
 import { CalendarEntryPage } from "./CalendarEntryPage";
 import { CalendarPage } from "./CalendarPage";
+import { CrmRouteShell } from "./CrmRouteShell";
 import { DesignSystemPage } from "./DesignSystemPage";
 import { ErrorPage } from "./ErrorPage";
 import { MeetingDetailPage } from "./MeetingDetailPage";
 import { MeetingsPage } from "./MeetingsPage";
 import { RootLayout } from "./RootLayout";
 import { SettingsAccountPage } from "./SettingsAccountPage";
+import { SettingsLayout } from "./SettingsLayout";
+import { SettingsSharingPage } from "./SettingsSharingPage";
 import type { TeamData } from "./TeamPage";
 import { TeamPage } from "./TeamPage";
 
@@ -30,6 +33,10 @@ export const router = createBrowserRouter([
     loader: () => api.session(),
     children: [
       { index: true, element: <Navigate to="/meetings" replace /> },
+      ...(["companies", "people", "agent-sessions"] as const).flatMap((section) => [
+        { path: section, element: <CrmRouteShell section={section} /> },
+        { path: `${section}/:id`, element: <CrmRouteShell section={section} /> },
+      ]),
       {
         path: "meetings",
         element: <MeetingsPage />,
@@ -72,15 +79,19 @@ export const router = createBrowserRouter([
           users: await api.users(),
         }),
       },
-      // /settings has one page for now; give it a folder so siblings slot in
-      // next to it without moving this route.
-      { path: "settings", element: <Navigate to="/settings/account" replace /> },
       {
-        path: "settings/account",
-        element: <SettingsAccountPage />,
-        errorElement: <ErrorPage />,
-        // Reuses the root loader's session rather than refetching it.
-        loader: () => api.session(),
+        path: "settings",
+        element: <SettingsLayout />,
+        children: [
+          { index: true, element: <Navigate to="/settings/account" replace /> },
+          {
+            path: "account",
+            element: <SettingsAccountPage />,
+            errorElement: <ErrorPage />,
+            loader: () => api.session(),
+          },
+          { path: "sharing", element: <SettingsSharingPage /> },
+        ],
       },
       { path: "design-system", element: <DesignSystemPage /> },
       { path: "*", element: <ErrorPage /> },

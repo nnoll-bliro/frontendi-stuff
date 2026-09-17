@@ -4,15 +4,21 @@ import { NavMenuDivider, NavMenuItem } from "@bliro/ui/components/NavMenuItem";
 import { BliroLogo } from "@bliro/ui/logo";
 import { colors } from "@bliro/ui/theme/colors";
 import { fontWeight } from "@bliro/ui/theme/fonts";
-import { CalendarDays, Mic, Palette, Settings, Users } from "lucide-react";
+import { Bot, Building2, CalendarDays, ContactRound, MessagesSquare, Palette, Settings, Users } from "lucide-react";
 import { Link, Outlet, useLoaderData, useLocation } from "react-router";
 
 import type { Session } from "@/api/client";
 import { initials } from "@/utils/format";
 
-const NAV = [
-  { to: "/meetings", label: "Meetings", Icon: Mic },
+const PRIMARY_NAV = [
+  { to: "/companies", label: "Companies", Icon: Building2 },
+  { to: "/people", label: "People", Icon: ContactRound },
+  { to: "/meetings", label: "Meetings", Icon: MessagesSquare },
+  { to: "/agent-sessions", label: "Agent Sessions", Icon: Bot },
   { to: "/calendar", label: "Calendar", Icon: CalendarDays },
+];
+
+const WORKSPACE_NAV = [
   { to: "/team", label: "Team", Icon: Users },
   { to: "/settings/account", label: "Settings", Icon: Settings },
 ];
@@ -37,11 +43,13 @@ export const RootLayout = () => {
     <Stack direction="row" sx={{ height: "100%" }}>
       <Stack
         component="nav"
+        aria-label="Main navigation"
         sx={{
           width: SIDEBAR_WIDTH,
           flexShrink: 0,
           p: 2,
           gap: 2,
+          overflowY: "auto",
           borderRight: `1px solid ${colors.dark[700]}`,
           backgroundColor: colors.dark[900],
         }}
@@ -51,13 +59,24 @@ export const RootLayout = () => {
         </Box>
 
         <Stack sx={{ flex: 1, gap: "2px" }}>
-          {NAV.map(({ to, label, Icon }) => (
+          {PRIMARY_NAV.map(({ to, label, Icon }) => (
             <NavMenuItem
               key={to}
               label={label}
               href={to}
               linkComponent={Link}
               // Prefix match so /meetings/:id keeps "Meetings" highlighted.
+              active={isActive(pathname, to)}
+              startIcon={<Icon size={18} />}
+            />
+          ))}
+          <NavMenuDivider />
+          {WORKSPACE_NAV.map(({ to, label, Icon }) => (
+            <NavMenuItem
+              key={to}
+              label={label}
+              href={to}
+              linkComponent={Link}
               active={isActive(pathname, to)}
               startIcon={<Icon size={18} />}
             />
