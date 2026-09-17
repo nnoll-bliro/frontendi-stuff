@@ -11,6 +11,7 @@ Dated history of meaningful task work and decisions.
 
 ## 2026-09-17
 
+- Archived `tasks-lightweight-crm-ui.md` to `tasks/done/` — all six tickets are complete, validated, and merged to `master`.
 - Ticket 6: Agent Sessions is a real destination instead of a shell. `src/routes/CrmRouteShell.tsx` is gone; `AgentSessionsPage` lists Call/Chat sessions with their company, people, and optional meeting, and `AgentSessionDetailPage` stacks Overview, Conversation, Documentation produced, Company and people, and Related meeting.
 - An assistant conversation is never presented as a customer transcript: the Conversation section says so, the Overview states what a Call or Chat actually is, and a session with no meeting link reads as a complete record. Sessions deliberately have no Analysis or Sharing placeholder — no session-scoped sharing exists in the deferred design.
 - Added the only server change ticket 6 needed: `AgentSession.documentation`, the reverse of documentation provenance. The session names what it wrote up and links to the touchpoint that owns the artifact.
