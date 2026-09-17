@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { Input } from "@bliro/ui/components/Input";
 import { colors } from "@bliro/ui/theme/colors";
 import { fontWeight } from "@bliro/ui/theme/fonts";
@@ -9,9 +9,9 @@ import {
   ListFilter,
   type LucideIcon,
   Mic,
-  Radio,
   Search,
   Users,
+  XCircle,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLoaderData, useNavigate, useSearchParams } from "react-router";
@@ -31,9 +31,10 @@ import {
 
 const STATUS_TABS: { value: string; label: string; Icon: LucideIcon }[] = [
   { value: "all", label: "All", Icon: ListFilter },
-  { value: "completed", label: "Completed", Icon: CheckCircle2 },
-  { value: "processing", label: "Processing", Icon: CircleDashed },
-  { value: "recording", label: "Recording", Icon: Radio },
+  { value: "scheduled", label: "Scheduled", Icon: CalendarClock },
+  { value: "in_progress", label: "In progress", Icon: CircleDashed },
+  { value: "held", label: "Held", Icon: CheckCircle2 },
+  { value: "cancelled", label: "Cancelled", Icon: XCircle },
 ];
 
 export const MeetingsPage = () => {
@@ -79,7 +80,7 @@ export const MeetingsPage = () => {
     <>
       <PageHeader
         title="Meetings"
-        description="Everything Bliro recorded — from a calendar invite or started ad hoc."
+        description="Customer meetings and calls, whether scheduled or added ad hoc."
         action={
           <Input
             placeholder="Search meetings…"
@@ -152,7 +153,6 @@ export const MeetingsPage = () => {
                         label={tone.label}
                         color={tone.color}
                         background={tone.background}
-                        live={meeting.status === "recording"}
                       />
                     </Stack>
                     <Stack direction="row" alignItems="center" spacing={1.5} flexWrap="wrap">
@@ -167,9 +167,9 @@ export const MeetingsPage = () => {
                   </Stack>
                   <Typography
                     variant="xxSmallBody"
-                    sx={{ color: meeting.hasSummary ? colors.green.dark : colors.dark[500] }}
+                    sx={{ color: colors.dark[400] }}
                   >
-                    {meeting.hasSummary ? "Summary ready" : "No summary yet"}
+                    {meeting.hasDocumentation ? "Documentation attached" : "No documentation"}
                   </Typography>
                 </Stack>
               </Card>

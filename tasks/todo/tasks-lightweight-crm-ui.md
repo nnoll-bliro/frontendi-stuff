@@ -38,14 +38,18 @@ Keep `/team`, `/settings/account`, and `/design-system` available. Keep `/` redi
 ## Relevant Files
 
 - `src/routes/RootLayout.tsx`, `src/routes/router.tsx` — grouped sidebar, shell routes, and existing route loaders.
-- `src/routes/CrmRouteShell.tsx` — temporary Companies, People, and Agent Sessions list/detail shells; replace with data-backed pages in later tickets.
+- `src/routes/CrmRouteShell.tsx` — data-backed Companies, People, and Agent Sessions shells; full directory/hub layouts remain for tickets 3, 4, and 6.
+- `src/routes/ErrorPage.tsx` — handles React Router loader error responses, including missing-record 404s.
 - `src/routes/SettingsLayout.tsx`, `src/routes/SettingsSharingPage.tsx` — Settings navigation and nonfunctional Sharing placeholder.
-- `tasks/changelog.md` — dated implementation outcomes and decisions.
-- `src/routes/MeetingsPage.tsx`, `src/routes/MeetingDetailPage.tsx` — currently frame meetings as recordings.
+- `glossary.md`, `tasks/changelog.md` — shared concept definitions and dated implementation outcomes/decisions.
+- `src/routes/MeetingsPage.tsx`, `src/routes/MeetingDetailPage.tsx`, `src/utils/format.ts` — adapted to lifecycle, documentation, optional transcript, and independent participants; overview-first hierarchy remains ticket 5.
 - `src/routes/CalendarPage.tsx`, `src/routes/CalendarEntryPage.tsx` — calendar-to-meeting navigation.
 - `src/components/playground/` — reusable page, card, and empty-state components.
-- `server/types.ts`, `server/schema.sql`, `server/seed.ts` — shared prototype model and fixtures.
-- `server/api.ts`, `server/db.ts`, `src/api/client.ts` — read-only data access shared across routes.
+- `server/types.ts`, `server/schema.sql`, `server/seed.ts`, `server/seed-crm.ts` — shared concept model and connected fixtures.
+- `server/migrate.ts`, `server/import-legacy-meeting.ts` — transactional v0 upgrade and original fixture conversion.
+- `server/api.ts`, `server/records.ts`, `server/db.ts`, `src/api/client.ts` — canonical read-only data access shared across routes.
+- `server/crm.test.ts`, `server/fixtures/schema-v0.sql`, `package.json` — isolated migration and API tests via `npm test`.
+- `README.md` — routes, seed walkthrough, API filters, and migration compatibility.
 
 ## Tickets
 
@@ -57,14 +61,16 @@ Keep `/team`, `/settings/account`, and `/design-system` available. Keep `/` redi
   - **Boundary:** Navigation and page skeletons only; no dashboard redesign or detailed interactions.
   - **Validated:** Production build/typecheck and Chrome smoke checks passed: direct list/detail shells, list-return links, browser back, exclusive sidebar highlighting, Settings tabs and Sharing placeholder, existing destinations, seeded meeting detail, and `/` redirect. New shells intentionally have no record loaders until ticket 2.
 
-- [ ] 2.0 **Shared concept model and connected example data**
-  - [ ] 2.1 Separate touchpoint identity/details from optional transcript/documentation and their processing states. Represent companies, people, and call/chat agent sessions as distinct linked records.
-  - [ ] 2.2 Seed a small connected story: one company with several people, multiple touchpoints, an untranscribed meeting, a transcribed meeting, and both call and chat agent sessions. Include a session without a meeting link and a person without a company.
-  - [ ] 2.3 Include examples of Phone Assistant and voice-memo documentation attached to a touchpoint; illustrate a newly encountered company/person without implementing auto-creation.
-  - [ ] 2.4 Expose consistent read-only records to all routes using the existing SQLite/API/loader pattern. Preserve calendar metadata separately and avoid duplicate touchpoints across views.
-  - [ ] 2.5 Capture the agreed concept definitions in `glossary.md`; record durable implementation decisions in `tasks/changelog.md` as tickets land.
+- [x] 2.0 **Shared concept model and connected example data**
+  - [x] 2.1 Separate touchpoint identity/details from optional transcript/documentation and their processing states. Represent companies, people, and call/chat agent sessions as distinct linked records.
+  - [x] 2.2 Seed a small connected story: one company with several people, multiple touchpoints, an untranscribed meeting, a transcribed meeting, and both call and chat agent sessions. Include a session without a meeting link and a person without a company.
+  - [x] 2.3 Include examples of Phone Assistant and voice-memo documentation attached to a touchpoint; illustrate a newly encountered company/person without implementing auto-creation.
+  - [x] 2.4 Expose consistent read-only records to all routes using the existing SQLite/API/loader pattern. Preserve calendar metadata separately and avoid duplicate touchpoints across views.
+  - [x] 2.5 Capture the agreed concept definitions in `glossary.md`; record durable implementation decisions in `tasks/changelog.md` as tickets land.
   - **Done when:** The same IDs and relationships drive directories, hubs, meeting details, and session details; meetings and their participants do not depend on a transcript existing.
   - **Boundary:** Only enough model work to support this prototype, not a production CRM schema or identity-resolution system.
+  - **Validated:** `npm test` (17 passing), production build/typecheck, and Chrome smoke checks for loaded shells, missing-record 404s, no-transcript participants, documentation provenance, canonical calendar links, browser back, and lifecycle filters. Migration of a copy of the persisted v0 database preserved all 9 existing meetings, 65 segments, and 12 calendar entries; rollback/idempotence also tested.
+  - **Implementation notes:** Full hub/directory layouts remain tickets 3, 4, and 6. Ticket 5 still owns overview-first hierarchy and complete cross-record UI navigation; its existing consumers received only the compatibility changes needed for the new model. Migration supports original seeded v0 relationships and rejects conflicting custom multiple-meeting/calendar links atomically instead of merging them. Original internal meeting examples are preserved.
 
 - [ ] 3.0 **Companies directory and company hub**
   - [ ] 3.1 Add a readable company directory linking to canonical company detail pages.

@@ -1,5 +1,8 @@
 import type { DatabaseSync } from "node:sqlite";
 
+import { importLegacyMeeting } from "./import-legacy-meeting.ts";
+import { seedCrm } from "./seed-crm.ts";
+
 /**
  * Mock data for one fictional Bliro customer. Everything is dated relative to the
  * moment of seeding, so the calendar always has a believable "today" no matter
@@ -650,11 +653,6 @@ export function seed(db: DatabaseSync): void {
        (id, calendar_entry_id, user_id, name, email, company, response, is_organizer)
      VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
   );
-  const insertMeeting = db.prepare(
-    `INSERT INTO meetings
-       (id, org_id, owner_id, calendar_entry_id, title, started_at, duration_minutes, source, status, language, summary)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-  );
   const insertSegment = db.prepare(
     `INSERT INTO transcript_segments (id, meeting_id, position, speaker, start_ms, text)
      VALUES (?, ?, ?, ?, ?, ?)`,
@@ -694,21 +692,10 @@ export function seed(db: DatabaseSync): void {
   }
 
   for (const meeting of MEETINGS) {
-    insertMeeting.run(
-      meeting.id,
-      ORG.id,
-      meeting.owner_id,
-      meeting.calendar_entry_id,
-      meeting.title,
-      meeting.started_at,
-      meeting.duration_minutes,
-      meeting.source,
-      meeting.status,
-      meeting.language,
-      meeting.summary,
-    );
+    importLegacyMeeting(db, { ...meeting, org_id: ORG.id });
     meeting.transcript.forEach(([speaker, startMs, text], i) => {
       insertSegment.run(`${meeting.id}_s${i}`, meeting.id, i, speaker, startMs, text);
     });
   }
+  seedCrm(db);
 }

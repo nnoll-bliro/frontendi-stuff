@@ -2,7 +2,7 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import { BackButton } from "@bliro/ui/components/BackButton/BackButton";
 import { colors } from "@bliro/ui/theme/colors";
 import { fontWeight } from "@bliro/ui/theme/fonts";
-import { CalendarClock, Link2, Mic, Video } from "lucide-react";
+import { CalendarClock, FileText, Link2, Video } from "lucide-react";
 import { Link, useLoaderData, useNavigate } from "react-router";
 
 import type { CalendarEntry } from "@/api/client";
@@ -90,7 +90,7 @@ export const CalendarEntryPage = () => {
           <Card sx={{ p: 3 }}>
             <Stack spacing={1.5}>
               <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
-                Recording
+                Meeting record
               </Typography>
               {entry.meetingId ? (
                 <Stack
@@ -100,9 +100,9 @@ export const CalendarEntryPage = () => {
                   spacing={2}
                 >
                   <Stack direction="row" alignItems="center" spacing={1}>
-                    <Mic size={16} color={colors.green.dark} />
+                    <FileText size={16} color={colors.green.dark} />
                     <Typography variant="normalBody" sx={{ color: colors.dark[200] }}>
-                      Bliro joined this meeting.
+                      A meeting record is linked to this calendar entry.
                     </Typography>
                   </Stack>
                   <Button
@@ -116,7 +116,7 @@ export const CalendarEntryPage = () => {
                 </Stack>
               ) : (
                 <Typography variant="normalBody" sx={{ color: colors.dark[400] }}>
-                  No recording yet — this entry has not happened, or Bliro was not invited.
+                  No meeting record is linked to this calendar entry.
                 </Typography>
               )}
             </Stack>

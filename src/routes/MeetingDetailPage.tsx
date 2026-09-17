@@ -1,4 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { Avatar } from "@bliro/ui/components/Avatar";
 import { BackButton } from "@bliro/ui/components/BackButton/BackButton";
 import { colors } from "@bliro/ui/theme/colors";
 import { fontWeight } from "@bliro/ui/theme/fonts";
@@ -6,31 +7,45 @@ import { CalendarClock, ExternalLink, FileText, Languages, Users } from "lucide-
 import { useState } from "react";
 import { Link, useLoaderData, useNavigate } from "react-router";
 
-import type { Meeting } from "@/api/client";
+import type { ArtifactStatus, Meeting, MeetingDocumentation } from "@/api/client";
 import { Card } from "@/components/playground/Card";
 import { EmptyState } from "@/components/playground/EmptyState";
-import { ParticipantRow } from "@/components/playground/ParticipantRow";
 import { StatusPill } from "@/components/playground/StatusPill";
 import { TabItem } from "@/components/TabItem/TabItem";
 import {
   formatDateTime,
   formatDuration,
   formatOffset,
+  initials,
   MEETING_SOURCE_LABEL,
   MEETING_STATUS_TONE,
 } from "@/utils/format";
 
-type Tab = "summary" | "transcript";
+type Tab = "documentation" | "transcript";
+
+const DOCUMENTATION_SOURCE_LABEL: Record<MeetingDocumentation["source"], string> = {
+  meeting_summary: "Meeting summary",
+  phone_assistant: "Phone Assistant",
+  voice_memo: "Voice memo",
+};
+
+const ARTIFACT_STATUS_LABEL: Record<ArtifactStatus, string> = {
+  collecting: "Collecting",
+  processing: "Processing",
+  ready: "Ready",
+  failed: "Failed",
+};
 
 export const MeetingDetailPage = () => {
   const meeting = useLoaderData() as Meeting;
   const navigate = useNavigate();
-  // Land on whichever tab actually has content — a meeting that is still
-  // recording has a growing transcript and no summary at all.
-  const [tab, setTab] = useState<Tab>(meeting.summary ? "summary" : "transcript");
+  const [tab, setTab] = useState<Tab>(
+    meeting.documentation.length ? "documentation" : "transcript",
+  );
 
   const tone = MEETING_STATUS_TONE[meeting.status];
   const entry = meeting.calendarEntry;
+  const transcript = meeting.transcript;
 
   return (
     <>
@@ -41,18 +56,15 @@ export const MeetingDetailPage = () => {
       <Stack spacing={1} sx={{ mb: 3 }}>
         <Stack direction="row" alignItems="center" spacing={1.5}>
           <Typography variant="h3">{meeting.title}</Typography>
-          <StatusPill
-            label={tone.label}
-            color={tone.color}
-            background={tone.background}
-            live={meeting.status === "recording"}
-          />
+          <StatusPill label={tone.label} color={tone.color} background={tone.background} />
         </Stack>
         <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
           <Meta icon={<CalendarClock size={14} />}>{formatDateTime(meeting.startedAt)}</Meta>
           <Meta>{formatDuration(meeting.durationMinutes)}</Meta>
           <Meta icon={<Users size={14} />}>{meeting.participantCount} participants</Meta>
-          <Meta icon={<Languages size={14} />}>{meeting.language.toUpperCase()}</Meta>
+          {transcript && (
+            <Meta icon={<Languages size={14} />}>{transcript.language.toUpperCase()}</Meta>
+          )}
           <Meta>{MEETING_SOURCE_LABEL[meeting.source]}</Meta>
           <Meta>Owner: {meeting.ownerName}</Meta>
         </Stack>
@@ -62,20 +74,24 @@ export const MeetingDetailPage = () => {
         <Stack sx={{ flex: 1, minWidth: 0 }} spacing={2}>
           <Stack direction="row" spacing={1}>
             <TabItem
-              title="Summary"
+              title={`Documentation (${meeting.documentation.length})`}
               Icon={FileText}
-              isActive={tab === "summary"}
-              onClick={() => setTab("summary")}
+              isActive={tab === "documentation"}
+              onClick={() => setTab("documentation")}
             />
             <TabItem
-              title={`Transcript (${meeting.transcript.length})`}
+              title={`Transcript (${transcript?.segments.length ?? 0})`}
               Icon={Users}
               isActive={tab === "transcript"}
               onClick={() => setTab("transcript")}
             />
           </Stack>
 
-          {tab === "summary" ? <SummaryPanel meeting={meeting} /> : <TranscriptPanel meeting={meeting} />}
+          {tab === "documentation" ? (
+            <DocumentationPanel meeting={meeting} />
+          ) : (
+            <TranscriptPanel meeting={meeting} />
+          )}
         </Stack>
 
         <Stack sx={{ width: 300, flexShrink: 0 }} spacing={2}>
@@ -114,7 +130,7 @@ export const MeetingDetailPage = () => {
                   Calendar entry
                 </Typography>
                 <Typography variant="smallBody" sx={{ color: colors.dark[300] }}>
-                  Not linked — this one was started ad hoc.
+                  Not linked — this meeting was added independently.
                 </Typography>
               </Stack>
             </Card>
@@ -125,21 +141,29 @@ export const MeetingDetailPage = () => {
               <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
                 Participants
               </Typography>
-              {entry ? (
-                entry.participants.map((participant) => (
-                  <ParticipantRow key={participant.id} participant={participant} />
+              {meeting.participants.length ? (
+                meeting.participants.map((participant) => (
+                  <Stack key={participant.id} direction="row" alignItems="center" spacing={1.5}>
+                    <Avatar
+                      title={initials(participant.name)}
+                      tooltip={participant.email}
+                      variant={participant.userId ? "primary" : "secondary"}
+                      size="small"
+                    />
+                    <Stack sx={{ minWidth: 0 }}>
+                      <Typography variant="smallBody" noWrap sx={{ color: colors.dark[100] }}>
+                        {participant.name}
+                      </Typography>
+                      <Typography variant="xxSmallBody" noWrap sx={{ color: colors.dark[400] }}>
+                        {participant.email}
+                      </Typography>
+                    </Stack>
+                  </Stack>
                 ))
               ) : (
-                <Stack spacing={1}>
-                  {speakersOf(meeting).map((speaker) => (
-                    <Typography key={speaker} variant="smallBody" sx={{ color: colors.dark[200] }}>
-                      {speaker}
-                    </Typography>
-                  ))}
-                  <Typography variant="xxSmallBody" sx={{ color: colors.dark[400] }}>
-                    Detected from the transcript — there were no invitees to match against.
-                  </Typography>
-                </Stack>
+                <Typography variant="smallBody" sx={{ color: colors.dark[400] }}>
+                  No participants are attached to this meeting.
+                </Typography>
               )}
             </Stack>
           </Card>
@@ -149,43 +173,73 @@ export const MeetingDetailPage = () => {
   );
 };
 
-/** Distinct speakers in transcript order — the stand-in for an ad-hoc guest list. */
-function speakersOf(meeting: Meeting): string[] {
-  return [...new Set(meeting.transcript.map((segment) => segment.speaker))];
-}
-
-const SummaryPanel = ({ meeting }: { meeting: Meeting }) => {
-  if (!meeting.summary) {
+const DocumentationPanel = ({ meeting }: { meeting: Meeting }) => {
+  if (meeting.documentation.length === 0) {
     return (
       <EmptyState
         Icon={FileText}
-        title={meeting.status === "recording" ? "Still recording" : "Summary is being generated"}
-        description={
-          meeting.status === "recording"
-            ? "The summary is written once the meeting ends."
-            : "This usually takes a couple of minutes after the meeting ends."
-        }
+        title="No documentation"
+        description="No documentation is attached to this meeting."
       />
     );
   }
 
   return (
-    <Card sx={{ p: 3 }}>
-      <Stack spacing={1}>
-        {meeting.summary.split("\n").map((line, index) => (
-          <SummaryLine key={index} line={line} />
-        ))}
-      </Stack>
-    </Card>
+    <Stack spacing={2}>
+      {meeting.documentation.map((documentation) => {
+        const statusTone = artifactStatusTone(documentation.status);
+        return (
+          <Card key={documentation.id} sx={{ p: 3 }}>
+            <Stack spacing={2}>
+              <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={2}>
+                <Typography variant="smallTitle" sx={{ color: colors.dark[100] }}>
+                  {documentation.title}
+                </Typography>
+                <StatusPill
+                  label={ARTIFACT_STATUS_LABEL[documentation.status]}
+                  color={statusTone.color}
+                  background={statusTone.background}
+                />
+              </Stack>
+
+              <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
+                <Meta>Source: {DOCUMENTATION_SOURCE_LABEL[documentation.source]}</Meta>
+                {documentation.agentSessionId && (
+                  <Typography
+                    component={Link}
+                    to={`/agent-sessions/${documentation.agentSessionId}`}
+                    variant="xSmallBody"
+                    sx={{ color: colors.orange[100], textDecoration: "none" }}
+                  >
+                    Provenance: assistant session
+                  </Typography>
+                )}
+              </Stack>
+
+              {documentation.content ? (
+                <Stack spacing={1}>
+                  {documentation.content.split("\n").map((line, index) => (
+                    <DocumentationLine key={index} line={line} />
+                  ))}
+                </Stack>
+              ) : (
+                <Typography variant="normalBody" sx={{ color: colors.dark[400] }}>
+                  No documentation content is available.
+                </Typography>
+              )}
+            </Stack>
+          </Card>
+        );
+      })}
+    </Stack>
   );
 };
 
 /**
- * The seeded summaries are light markdown (`**bold**` headings, `-` bullets).
- * Rendering them by hand keeps the playground free of a markdown dependency the
- * real app resolves differently.
+ * Seeded documentation may contain light markdown (`**bold**` headings and `-` bullets).
+ * Rendering it locally keeps the playground free of a markdown dependency.
  */
-const SummaryLine = ({ line }: { line: string }) => {
+const DocumentationLine = ({ line }: { line: string }) => {
   if (!line.trim()) return <Box sx={{ height: 4 }} />;
 
   const heading = line.match(/^\*\*(.+)\*\*$/);
@@ -234,49 +288,71 @@ function renderInline(text: string) {
 }
 
 const TranscriptPanel = ({ meeting }: { meeting: Meeting }) => {
-  if (meeting.transcript.length === 0) {
+  const transcript = meeting.transcript;
+  if (!transcript) {
     return (
       <EmptyState
         Icon={Users}
-        title="No transcript yet"
-        description="Bliro is still processing the audio for this meeting."
+        title="No transcript"
+        description="No transcript is attached to this meeting."
       />
     );
   }
 
+  const statusTone = artifactStatusTone(transcript.status);
   return (
     <Card sx={{ p: 3 }}>
       <Stack spacing={2.5}>
-        {meeting.transcript.map((segment) => (
-          <Stack key={segment.id} direction="row" spacing={2}>
-            <Typography
-              variant="xxSmallBody"
-              sx={{ color: colors.dark[500], width: 40, flexShrink: 0, pt: "3px" }}
-            >
-              {formatOffset(segment.startMs)}
-            </Typography>
-            <Stack spacing={0.25} sx={{ minWidth: 0 }}>
+        <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={2}>
+          <Meta icon={<Languages size={14} />}>{transcript.language.toUpperCase()}</Meta>
+          <StatusPill
+            label={ARTIFACT_STATUS_LABEL[transcript.status]}
+            color={statusTone.color}
+            background={statusTone.background}
+          />
+        </Stack>
+
+        {transcript.segments.length ? (
+          transcript.segments.map((segment) => (
+            <Stack key={segment.id} direction="row" spacing={2}>
               <Typography
-                variant="xSmallBody"
-                sx={{ color: colors.dark[300], fontWeight: fontWeight.semiBold }}
+                variant="xxSmallBody"
+                sx={{ color: colors.dark[500], width: 40, flexShrink: 0, pt: "3px" }}
               >
-                {segment.speaker}
+                {formatOffset(segment.startMs)}
               </Typography>
-              <Typography variant="normalBody" sx={{ color: colors.dark[100] }}>
-                {segment.text}
-              </Typography>
+              <Stack spacing={0.25} sx={{ minWidth: 0 }}>
+                <Typography
+                  variant="xSmallBody"
+                  sx={{ color: colors.dark[300], fontWeight: fontWeight.semiBold }}
+                >
+                  {segment.speaker}
+                </Typography>
+                <Typography variant="normalBody" sx={{ color: colors.dark[100] }}>
+                  {segment.text}
+                </Typography>
+              </Stack>
             </Stack>
-          </Stack>
-        ))}
-        {meeting.status === "recording" && (
-          <Typography variant="xSmallBody" sx={{ color: colors.red[100] }}>
-            Live — new lines appear as the meeting continues.
+          ))
+        ) : (
+          <Typography variant="normalBody" sx={{ color: colors.dark[400] }}>
+            No transcript segments are available.
           </Typography>
         )}
       </Stack>
     </Card>
   );
 };
+
+function artifactStatusTone(status: ArtifactStatus) {
+  if (status === "ready") {
+    return { color: colors.green.dark, background: colors.green[600] };
+  }
+  if (status === "failed") {
+    return { color: colors.red.dark, background: colors.red[600] };
+  }
+  return { color: colors.yellow.dark, background: colors.yellow[600] };
+}
 
 const Meta = ({ icon, children }: { icon?: React.ReactNode; children: React.ReactNode }) => (
   <Stack direction="row" alignItems="center" spacing={0.5} sx={{ color: colors.dark[400] }}>

@@ -1,17 +1,18 @@
 import { Button, Stack, Typography } from "@mui/material";
 import { colors } from "@bliro/ui/theme/colors";
-import { Link, useRouteError } from "react-router";
+import { isRouteErrorResponse, Link, useRouteError } from "react-router";
 
 /** Catches loader failures — most usefully a 404 from the mock API. */
 export const ErrorPage = () => {
   const error = useRouteError();
-  const status = error instanceof Response ? error.status : undefined;
-  const message =
-    error instanceof Response
-      ? error.statusText || "Request failed"
-      : error instanceof Error
-        ? error.message
-        : "Something went wrong.";
+  const status = isRouteErrorResponse(error) ? error.status : undefined;
+  const message = isRouteErrorResponse(error)
+    ? typeof error.data === "string" && error.data
+      ? error.data
+      : error.statusText || "Request failed"
+    : error instanceof Error
+      ? error.message
+      : "Something went wrong.";
 
   return (
     <Stack spacing={2} alignItems="flex-start" sx={{ px: 5, py: 8, maxWidth: 560 }}>

@@ -9,7 +9,8 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "db:reset": "rm -rf server/data"
+    "db:reset": "rm -rf server/data",
+    "test": "node --test server/crm.test.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

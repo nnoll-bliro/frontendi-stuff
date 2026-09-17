@@ -2,7 +2,7 @@ import { mkdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { DatabaseSync } from "node:sqlite";
 
-import { seed } from "./seed.ts";
+import { initializeDatabase } from "./migrate.ts";
 
 /**
  * Where `server/` lives on disk.
@@ -39,10 +39,12 @@ export function getDb(): DatabaseSync {
 
   const db = new DatabaseSync(path);
   db.exec("PRAGMA foreign_keys = ON");
-  db.exec(readFileSync(join(serverDir(), "schema.sql"), "utf8"));
-
-  const { count } = db.prepare("SELECT COUNT(*) AS count FROM orgs").get() as { count: number };
-  if (count === 0) seed(db);
+  try {
+    initializeDatabase(db, readFileSync(join(serverDir(), "schema.sql"), "utf8"));
+  } catch (error) {
+    db.close();
+    throw error;
+  }
 
   instance = db;
   return db;

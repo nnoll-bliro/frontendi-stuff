@@ -33,10 +33,42 @@ export const router = createBrowserRouter([
     loader: () => api.session(),
     children: [
       { index: true, element: <Navigate to="/meetings" replace /> },
-      ...(["companies", "people", "agent-sessions"] as const).flatMap((section) => [
-        { path: section, element: <CrmRouteShell section={section} /> },
-        { path: `${section}/:id`, element: <CrmRouteShell section={section} /> },
-      ]),
+      {
+        path: "companies",
+        element: <CrmRouteShell section="companies" />,
+        loader: ({ request }) => api.companies(request.signal),
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "companies/:id",
+        element: <CrmRouteShell section="companies" />,
+        loader: ({ params, request }) => api.company(params.id as string, request.signal),
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "people",
+        element: <CrmRouteShell section="people" />,
+        loader: ({ request }) => api.people(request.signal),
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "people/:id",
+        element: <CrmRouteShell section="people" />,
+        loader: ({ params, request }) => api.person(params.id as string, request.signal),
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "agent-sessions",
+        element: <CrmRouteShell section="agent-sessions" />,
+        loader: ({ request }) => api.agentSessions({}, request.signal),
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "agent-sessions/:id",
+        element: <CrmRouteShell section="agent-sessions" />,
+        loader: ({ params, request }) => api.agentSession(params.id as string, request.signal),
+        errorElement: <ErrorPage />,
+      },
       {
         path: "meetings",
         element: <MeetingsPage />,

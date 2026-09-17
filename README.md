@@ -10,6 +10,7 @@ SQLite database so prototypes are populated with data that looks real.
 npm install
 npm run dev       # http://localhost:3000
 npm run build     # typecheck + production build
+npm test          # isolated SQLite migration + read-only API relationship tests
 npm run db:reset  # delete the seeded database; the next `dev` rebuilds it
 ```
 
@@ -39,12 +40,16 @@ between the two doesn't change its imports. The route table is `src/routes/route
 
 | route | |
 |---|---|
-| `/meetings` | list, with search and a status filter, both in the URL |
-| `/meetings/:id` | summary, transcript, participants, link to the calendar entry |
+| `/companies`, `/companies/:id` | data-backed directory/hub shells; full layouts pending |
+| `/people`, `/people/:id` | data-backed contact shells, separate from Team |
+| `/agent-sessions`, `/agent-sessions/:id` | data-backed assistant Call/Chat shells |
+| `/meetings` | touchpoints, with search and a lifecycle filter in the URL |
+| `/meetings/:id` | documentation, optional transcript, independent participants, calendar link |
 | `/calendar` | entries grouped by day, filtered to upcoming / past / all |
-| `/calendar/:id` | the invite, and the recording if there is one |
+| `/calendar/:id` | invite metadata and a link to the canonical meeting, if represented |
 | `/team` | the org and its users |
 | `/settings/account` | account preferences, phone assistant, VoiceID, account deletion |
+| `/settings/sharing` | future sharing-policy placeholder; no controls or enforcement |
 | `/design-system` | the design-system reference page |
 
 Pages get their data from **route loaders**, not a store — every page has its rows
@@ -59,25 +64,53 @@ the app share one origin and one `npm run dev` — there is no second process.
 
 The database is **`node:sqlite`**, built into Node, so it costs no dependency and no
 native build step. `server/data/playground.db` is gitignored and created on the first
-request; if it is empty, `server/seed.ts` fills it.
+request. `server/migrate.ts` initializes it transactionally; `server/seed.ts` and
+`server/seed-crm.ts` provide static examples. The Node runtime must support
+`node:sqlite` and direct TypeScript execution for `npm test` (Node 22.18+ or newer).
 
 | table | |
 |---|---|
 | `orgs` | one fictional customer |
 | `users` | six colleagues — one deliberately has no calendar connected |
 | `calendar_entries` + `calendar_participants` | Google and Microsoft invites, internal and external, with RSVPs |
-| `meetings` | linked to a calendar entry **or** started ad hoc, with `recording` / `processing` / `completed` states |
-| `transcript_segments` | speaker-attributed lines |
+| `companies` + `people` | distinct customer organizations/contacts; optional company linkage |
+| `meetings` + `meeting_participants` | canonical touchpoints and independent participant snapshots; lifecycle separate from artifacts |
+| `meeting_transcripts` + `transcript_segments` | optional transcript, its processing state/language, and speaker-attributed lines |
+| `meeting_documentation` | optional summary, Phone Assistant, or voice-memo documentation with provenance |
+| `agent_sessions` + `agent_session_people` + `agent_messages` | assistant Call/Chat conversations and context; optional related meeting |
+| `knowledge_items` | company/person notes and illustrative revenue context, not meeting documentation |
 
 Everything is dated relative to the moment of seeding and shifted off weekends, so
 the calendar always has a believable "today" no matter when you last reset it. Change
 the fixtures in `server/seed.ts`, then `npm run db:reset` and restart.
 
-The API is read-only (`GET /api/session`, `/api/users`, `/api/meetings`,
-`/api/meetings/:id`, `/api/calendar`, `/api/calendar/:id`). Response shapes live in
-`server/types.ts`; the client imports them with `import type` through the `@server/*`
-alias, so the two sides share one definition without server code reaching the bundle.
-Add a write endpoint in `server/api.ts` when a prototype needs one.
+The API is read-only: `GET /api/session`, `/api/users`, and list/detail routes for
+`/api/companies`, `/api/people`, `/api/meetings`, `/api/agent-sessions`, `/api/calendar`.
+Canonical queries live in `server/records.ts`; company/person hubs reuse the same
+meeting/session summaries as the directories. Meeting filters include `q`, `status`,
+`ownerId`, `companyId`, and `personId`; session filters include `companyId`, `personId`,
+and `meetingId`. Missing records return 404 and no mutation endpoints exist.
+Response shapes live in `server/types.ts`; the client imports them with `import type`
+through the `@server/*` alias, without server code reaching the bundle.
+
+### Seed story and upgrades
+
+Start with `co_halden`: Anke and Ruben share discovery, but only Ruben participates
+in `mtg_halden_depot`. That customer call has Phone Assistant documentation and no
+transcript; `as_halden_debrief` is Lena's separate assistant call about it.
+`as_halden_plan` is a Chat session without a meeting link. `co_nordlicht` / `per_mira`
+illustrate newly encountered, manually seeded records and voice-memo documentation.
+`per_avery` has no company. Definitions live in `glossary.md`.
+
+Existing original v0 seeded databases upgrade automatically to schema version 1
+without resetting dates, IDs, calendar metadata, summaries, or transcript segments.
+Summary/language/processing fields move into artifacts, and explicit participant
+rows replace transcript-derived counts. Original internal meeting examples remain.
+This is a migration for this prototype, not a general identity-resolution system:
+custom legacy databases with multiple meetings for one calendar entry are rejected
+with a rollback rather than merged or losing links. Review such conflicts manually;
+no automatic reset is performed. Repeated startup does not reseed version 1 data.
+`npm test` uses temporary databases and leaves `server/data` untouched.
 
 ## Fake state
 

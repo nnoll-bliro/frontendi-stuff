@@ -9,7 +9,8 @@ export type UserRole = "owner" | "admin" | "member";
 export type Provider = "google" | "microsoft";
 export type RsvpResponse = "accepted" | "declined" | "tentative" | "needs_action";
 export type MeetingSource = "calendar" | "ad_hoc" | "phone";
-export type MeetingStatus = "recording" | "processing" | "completed" | "failed";
+export type MeetingStatus = "scheduled" | "in_progress" | "held" | "cancelled";
+export type ArtifactStatus = "collecting" | "processing" | "ready" | "failed";
 
 export interface Org {
   id: string;
@@ -52,7 +53,7 @@ export interface CalendarEntry {
   provider: Provider;
   isExternal: boolean;
   participants: CalendarParticipant[];
-  /** The meeting Bliro recorded for this entry, if it has happened yet. */
+  /** Canonical touchpoint, if represented; independent of recording/transcription. */
   meetingId: string | null;
 }
 
@@ -64,7 +65,95 @@ export interface TranscriptSegment {
   text: string;
 }
 
-/** List-row shape: enough for a table, without the transcript payload. */
+export interface CompanyRef {
+  id: string;
+  name: string;
+}
+
+export interface PersonRef {
+  id: string;
+  name: string;
+}
+
+export interface MeetingRef {
+  id: string;
+  title: string;
+}
+
+export interface CompanySummary extends CompanyRef {
+  domain: string;
+  overview: string;
+}
+
+export interface PersonSummary extends PersonRef {
+  email: string;
+  jobTitle: string;
+  overview: string;
+  company: CompanyRef | null;
+}
+
+export interface KnowledgeItem {
+  id: string;
+  kind: "internal_note" | "revenue_context";
+  title: string;
+  content: string;
+}
+
+export interface Company extends CompanySummary {
+  people: PersonSummary[];
+  meetings: MeetingSummary[];
+  agentSessions: AgentSessionSummary[];
+  knowledge: KnowledgeItem[];
+}
+
+export interface Person extends PersonSummary {
+  /** Membership-based history, never all meetings/sessions for their company. */
+  meetings: MeetingSummary[];
+  agentSessions: AgentSessionSummary[];
+  knowledge: KnowledgeItem[];
+}
+
+export interface MeetingParticipant {
+  id: string;
+  personId: string | null;
+  userId: string | null;
+  name: string;
+  email: string;
+}
+
+export interface Transcript {
+  id: string;
+  status: ArtifactStatus;
+  language: string;
+  segments: TranscriptSegment[];
+}
+
+export interface MeetingDocumentation {
+  id: string;
+  source: "meeting_summary" | "phone_assistant" | "voice_memo";
+  status: ArtifactStatus;
+  title: string;
+  content: string | null;
+  /** Provenance only: this session's conversation is NOT the customer transcript. */
+  agentSessionId: string | null;
+}
+
+export interface AgentSessionSummary {
+  id: string;
+  title: string;
+  channel: "call" | "chat";
+  startedAt: string;
+  overview: string;
+  company: CompanyRef | null;
+  people: PersonRef[];
+  meeting: MeetingRef | null;
+}
+
+export interface AgentSession extends AgentSessionSummary {
+  messages: { id: string; position: number; role: "user" | "assistant"; text: string }[];
+}
+
+/** List-row shape: no transcript or documentation content payload. */
 export interface MeetingSummary {
   id: string;
   orgId: string;
@@ -76,14 +165,21 @@ export interface MeetingSummary {
   durationMinutes: number;
   source: MeetingSource;
   status: MeetingStatus;
-  language: string;
-  hasSummary: boolean;
+  kind: "meeting" | "call";
+  overview: string;
+  company: CompanyRef | null;
+  people: PersonRef[];
+  participants: MeetingParticipant[];
   participantCount: number;
+  transcriptStatus: ArtifactStatus | null;
+  hasDocumentation: boolean;
 }
 
 export interface Meeting extends MeetingSummary {
-  summary: string | null;
-  transcript: TranscriptSegment[];
+  documentation: MeetingDocumentation[];
+  /** null means no transcript exists, not pending or failed processing. */
+  transcript: Transcript | null;
+  agentSessions: AgentSessionSummary[];
   /** Populated only when the meeting came from a calendar entry. */
   calendarEntry: CalendarEntry | null;
 }

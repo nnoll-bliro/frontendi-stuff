@@ -52,7 +52,7 @@ export const CalendarPage = () => {
     <>
       <PageHeader
         title="Calendar"
-        description="Google and Microsoft entries, and whether Bliro has a recording for them."
+        description="Google and Microsoft entries, with linked meeting records when available."
       />
 
       <Stack direction="row" spacing={1} sx={{ mb: 3 }}>
@@ -151,7 +151,7 @@ export const CalendarPage = () => {
 
                     {entry.meetingId ? (
                       <StatusPill
-                        label="Recorded"
+                        label="Meeting record"
                         color={colors.green.dark}
                         background={colors.green[600]}
                       />
@@ -159,7 +159,7 @@ export const CalendarPage = () => {
                       <Stack direction="row" alignItems="center" spacing={0.5}>
                         <Clock size={13} color={colors.dark[500]} />
                         <Typography variant="xxSmallBody" sx={{ color: colors.dark[500] }}>
-                          Not recorded
+                          No meeting record
                         </Typography>
                       </Stack>
                     )}

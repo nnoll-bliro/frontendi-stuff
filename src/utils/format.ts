@@ -55,10 +55,10 @@ interface Tone {
 }
 
 export const MEETING_STATUS_TONE: Record<MeetingStatus, Tone> = {
-  recording: { label: "Recording", color: colors.red[100], background: colors.red[600] },
-  processing: { label: "Processing", color: colors.yellow.dark, background: colors.yellow[600] },
-  completed: { label: "Completed", color: colors.green.dark, background: colors.green[600] },
-  failed: { label: "Failed", color: colors.red.dark, background: colors.red[600] },
+  scheduled: { label: "Scheduled", color: colors.blue.dark, background: colors.blue[600] },
+  in_progress: { label: "In progress", color: colors.yellow.dark, background: colors.yellow[600] },
+  held: { label: "Held", color: colors.green.dark, background: colors.green[600] },
+  cancelled: { label: "Cancelled", color: colors.red.dark, background: colors.red[600] },
 };
 
 export const RSVP_TONE: Record<RsvpResponse, Tone> = {
