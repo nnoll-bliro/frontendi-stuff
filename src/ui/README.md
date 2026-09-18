@@ -13,8 +13,16 @@ changes, and port reusable improvements back deliberately.
   Use `PageHeader` with `pageTitle` (28/36, semibold). Existing display variants remain
   available for display/marketing use, not routine record sections.
 - Use `SectionHeader` with `sectionTitle` (16/24, semibold) and an optional count.
-  Body copy is usually `smallBody` (14/22); supporting metadata is `xSmallBody` (13/18).
+  Body copy is usually `smallBody` (14/22) and supporting text `xSmallBody` (13/18).
+  The quietest tier — timestamps, counts, provenance — is the `meta` role (11/16,
+  muted), which carries its own colour: pass `variant` and nothing else.
   `eyebrow` is for short category labels, never paragraphs.
+- Reach for a role before a size. Roles (`pageTitle`, `sectionTitle`, `eyebrow`,
+  `meta`) name the job the text does and own their weight and colour; the
+  size-named variants are the scale those are built from. If a role needs a
+  `fontWeight` or `color` on top, it is the wrong role for that text. A pattern
+  earns a role only when the sites that share it also share one colour — text
+  that looks alike but carries three different emphases is three things.
 - Use a 4/8px spacing rhythm: 8px within tight groups, 16–24px within surfaces,
   32px after a page header, 40px between major sections. MUI spacing remains 8px.
   Take the value from `tokens.spacing.*` for `spacing`/`gap` props and
