@@ -11,8 +11,8 @@ export interface SectionHeaderProps {
 }
 
 export const SectionHeader = ({ id, title, description, count, component = "h2" }: SectionHeaderProps) => (
-  <Stack spacing={0.5}>
-    <Stack direction="row" alignItems="center" spacing={1}>
+  <Stack spacing={tokens.spacing.xs}>
+    <Stack direction="row" alignItems="center" spacing={tokens.spacing.sm}>
       <Typography id={id} component={component} variant="sectionTitle">{title}</Typography>
       {count !== undefined && (
         <Typography variant="xxSmallBody" sx={{ px: 0.75, py: 0.125, borderRadius: tokens.radius.control, backgroundColor: colors.dark[800], fontVariantNumeric: "tabular-nums" }}>

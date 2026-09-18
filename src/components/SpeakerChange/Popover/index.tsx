@@ -1,5 +1,6 @@
 import { Input } from "@bliro/ui/components/Input";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { Box, Button, Popover, Stack, Typography } from "@mui/material";
 import { CheckIcon } from "lucide-react";
@@ -63,8 +64,8 @@ export const SpeakerChangePopover = ({
         horizontal: "left",
       }}
     >
-      <Stack direction="row" gap={1} alignItems="flex-end" className={styles.container}>
-        <Stack gap={0.5} direction="column">
+      <Stack direction="row" gap={tokens.spacing.sm} alignItems="flex-end" className={styles.container}>
+        <Stack gap={tokens.spacing.xs} direction="column">
           <Typography variant="smallBody" color={colors.dark[200]} fontWeight={fontWeight.semiBold}>
             {t("speakers.name")}
           </Typography>

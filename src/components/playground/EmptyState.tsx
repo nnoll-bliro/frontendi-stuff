@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -13,10 +14,10 @@ interface EmptyStateProps {
 export const EmptyState = ({ Icon, title, description, action }: EmptyStateProps) => (
   <Stack
     alignItems="center"
-    spacing={1}
+    spacing={tokens.spacing.sm}
     sx={{
-      py: 4,
-      px: 3,
+      py: tokens.space.xl,
+      px: tokens.space.lg,
       textAlign: "center",
       border: `1px solid ${colors.dark[700]}`,
       backgroundColor: colors.dark[900],

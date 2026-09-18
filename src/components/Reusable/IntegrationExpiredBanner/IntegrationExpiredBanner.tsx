@@ -1,5 +1,6 @@
 import { IntegrationKey, IntegrationType } from "@bliro/common-types/Integration";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { IntegrationIcon, useIntegrationName } from "@bliro/web-app/components/IntegrationDisplay";
 import { Box, Button, Stack, Typography } from "@mui/material";
@@ -91,12 +92,12 @@ export const IntegrationExpiredBanner = ({
         borderRadius: 4,
         border: `1px solid ${colors.orange[300]}`,
         backgroundColor: colors.orange[700],
-        mt: 1,
-        mb: 2,
+        mt: tokens.space.sm,
+        mb: tokens.space.md,
         ...(fullWidth && { width: "100%", boxSizing: "border-box" }),
       }}
     >
-      <Stack direction="row" alignItems="center" gap={1.5}>
+      <Stack direction="row" alignItems="center" gap={tokens.spacing.md}>
         <TypeIcon integrationType={integrationType} />
         <Stack>
           <Typography
@@ -111,7 +112,7 @@ export const IntegrationExpiredBanner = ({
           </Typography>
         </Stack>
       </Stack>
-      <Stack direction="row" alignItems="center" gap={1}>
+      <Stack direction="row" alignItems="center" gap={tokens.spacing.sm}>
         {onDismiss && (
           <Button
             size="small"

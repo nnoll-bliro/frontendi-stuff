@@ -1,6 +1,7 @@
 import { Stack, Tooltip, Typography } from "@mui/material";
 import { Avatar } from "@bliro/ui/components/Avatar";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { Crown } from "lucide-react";
 
 import type { CalendarParticipant } from "@/api/client";
@@ -18,7 +19,7 @@ export const ParticipantRow = ({ participant }: ParticipantRowProps) => {
   const isInternal = participant.userId !== null;
 
   return (
-    <Stack direction="row" alignItems="center" spacing={1.5}>
+    <Stack direction="row" alignItems="center" spacing={tokens.spacing.md}>
       <Avatar
         title={initials(participant.name)}
         tooltip={participant.email}
@@ -26,7 +27,7 @@ export const ParticipantRow = ({ participant }: ParticipantRowProps) => {
         size="small"
       />
       <Stack sx={{ flex: 1, minWidth: 0 }}>
-        <Stack direction="row" alignItems="center" spacing={0.5}>
+        <Stack direction="row" alignItems="center" spacing={tokens.spacing.xs}>
           <Typography variant="smallBody" noWrap sx={{ color: colors.dark[100] }}>
             {participant.name}
           </Typography>
@@ -36,7 +37,7 @@ export const ParticipantRow = ({ participant }: ParticipantRowProps) => {
             </Tooltip>
           )}
         </Stack>
-        <Typography variant="xxSmallBody" noWrap sx={{ color: colors.dark[400] }}>
+        <Typography variant="meta" noWrap>
           {participant.company ?? participant.email}
         </Typography>
       </Stack>

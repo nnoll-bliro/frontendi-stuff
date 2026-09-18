@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { Bot } from "lucide-react";
 import { useLoaderData } from "react-router";
 
@@ -18,7 +19,7 @@ export const AgentSessionsPage = () => {
         title="Agent Sessions"
         description="Your calls and chats with the assistant, separate from customer meetings."
       />
-      <Typography component="p" variant="smallBody" sx={{ color: colors.dark[400], mb: 2 }}>
+      <Typography component="p" variant="smallBody" sx={{ color: colors.dark[400], mb: tokens.space.md }}>
         {sessions.length} {sessions.length === 1 ? "session" : "sessions"} · {calls}{" "}
         {calls === 1 ? "call" : "calls"} · {sessions.length - calls}{" "}
         {sessions.length - calls === 1 ? "chat" : "chats"}

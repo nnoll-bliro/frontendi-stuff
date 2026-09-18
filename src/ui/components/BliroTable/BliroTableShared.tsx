@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { tokens } from "@bliro/ui/theme/tokens";
 
 export interface ColumnData<RowData = Record<string, unknown>> {
   id: Extract<keyof RowData, string>;
@@ -56,7 +57,7 @@ export const tableBoxSx = {
   },
   "& .MuiTableBody-root tr": {
     "& td": {
-      pr: 4,
+      pr: tokens.space.xl,
     },
     "& td:last-of-type": {
       pr: 0,

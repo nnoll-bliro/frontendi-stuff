@@ -1,5 +1,6 @@
 import { MarqueeWrapper } from "@bliro/ui/components/MarqueeWrapper";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { Box, Stack, Typography } from "@mui/material";
 import { Emoji } from "emoji-picker-react";
@@ -29,7 +30,7 @@ export const DropDownList = ({ items, handleChange }: IDropDownListProps) => {
               key={idx}
               direction="row"
               p={0.5}
-              gap={1}
+              gap={tokens.spacing.sm}
               alignItems="center"
               className={styles.marqueeItem}
               onClick={() => handleChange(item)}

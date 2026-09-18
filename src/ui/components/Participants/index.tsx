@@ -1,4 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { useMemo } from "react";
 
 import { colors } from "../../theme/colors";
@@ -75,7 +76,7 @@ export const Participants = ({
   }, [participants]);
 
   return (
-    <Stack direction="column" gap={0.5}>
+    <Stack direction="column" gap={tokens.spacing.xs}>
       <Typography variant="smallBody" color={colors.dark[500]}>
         {title}
       </Typography>

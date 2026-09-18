@@ -1,4 +1,5 @@
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { Box, Stack, Typography } from "@mui/material";
 import { Emoji } from "emoji-picker-react";
@@ -62,7 +63,7 @@ export const TemplateCardBase = ({
           : {},
       }}
     >
-      <Stack direction="row" alignItems="start" flex={1} minWidth={0} gap={1}>
+      <Stack direction="row" alignItems="start" flex={1} minWidth={0} gap={tokens.spacing.sm}>
         {showIcon && (
           <Box
             className="template-card-icon"
@@ -80,7 +81,7 @@ export const TemplateCardBase = ({
             {icon || (emoji && <Emoji unified={emoji} size={20} />)}
           </Box>
         )}
-        <Stack direction="column" gap={0.5} minWidth={0} flex={1}>
+        <Stack direction="column" gap={tokens.spacing.xs} minWidth={0} flex={1}>
           <Typography
             className="template-card-title"
             sx={{
@@ -113,7 +114,7 @@ export const TemplateCardBase = ({
           </Typography>
         </Stack>
         {actions && (
-          <Stack direction="row" alignItems="center" gap={2} sx={{ flexShrink: 0 }}>
+          <Stack direction="row" alignItems="center" gap={tokens.spacing.md} sx={{ flexShrink: 0 }}>
             {actions}
           </Stack>
         )}

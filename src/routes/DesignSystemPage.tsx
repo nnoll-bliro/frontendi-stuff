@@ -33,23 +33,23 @@ export const DesignSystemPage = () => {
 
   return (
     <Box>
-      <Stack spacing={5}>
+      <Stack spacing={tokens.spacing.section}>
         <PageHeader title="Design system" eyebrow="Bliro foundations" description="Clear hierarchy. Useful space. Color with purpose. Shared patterns for a focused B2B workspace." />
 
         <Section title="Product patterns">
           <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", lg: "1fr 1fr" }, gap: 3 }}>
-            <Surface sx={{ p: 3 }}>
-              <Stack spacing={2}>
+            <Surface sx={{ p: tokens.space.lg }}>
+              <Stack spacing={tokens.spacing.md}>
                 <SectionHeader component="h3" title="One surface, one purpose" description="Use a quiet border, not a shadow, to group related information." />
                 <Typography variant="smallBody">28px page titles · 16px section headings · 14px body text. Keep large display typography for marketing, not record pages.</Typography>
                 <Typography variant="smallBody">Orange signals selection and primary actions. Neutral links and secondary controls keep the content in focus.</Typography>
               </Stack>
             </Surface>
-            <Stack spacing={1.5}>
+            <Stack spacing={tokens.spacing.md}>
               <SectionHeader component="h3" title="Grouped records" count={2} description="Use dividers for repeated records, not a stack of floating cards." />
               <SurfaceList>
                 {["Customer relationship", "Meeting and call history"].map((label) => (
-                  <Surface key={label} sx={{ p: 2 }}>
+                  <Surface key={label} sx={{ p: tokens.space.md }}>
                     <Typography variant="smallTitle" sx={{ fontWeight: 600 }}>{label}</Typography>
                     <Typography component="p" variant="xSmallBody">A clear title, then supporting context.</Typography>
                   </Surface>
@@ -60,9 +60,9 @@ export const DesignSystemPage = () => {
         </Section>
 
         <Section title="Spacing">
-          <Stack direction="row" spacing={3} flexWrap="wrap" useFlexGap>
+          <Stack direction="row" spacing={tokens.spacing.lg} flexWrap="wrap" useFlexGap>
             {Object.entries(tokens.space).map(([name, value]) => (
-              <Stack key={name} spacing={1} sx={{ minWidth: 64 }}>
+              <Stack key={name} spacing={tokens.spacing.sm} sx={{ minWidth: 64 }}>
                 <Box sx={{ width: value, height: 24, borderRadius: "2px", backgroundColor: colors.orange[400] }} />
                 <Typography variant="xSmallBody">{name} · {value}</Typography>
               </Stack>
@@ -71,9 +71,9 @@ export const DesignSystemPage = () => {
         </Section>
 
         <Section title="Colors">
-          <Stack spacing={1.5}>
+          <Stack spacing={tokens.spacing.md}>
             {Object.entries(colors).map(([name, ramp]) => (
-              <Stack key={name} direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap>
+              <Stack key={name} direction="row" spacing={tokens.spacing.sm} alignItems="center" flexWrap="wrap" useFlexGap>
                 <Typography
                   variant="xSmallBody"
                   sx={{ width: 64, color: colors.dark[400], fontWeight: fontWeight["medium"] }}
@@ -99,7 +99,7 @@ export const DesignSystemPage = () => {
         </Section>
 
         <Section title="Typography">
-          <Stack spacing={1}>
+          <Stack spacing={tokens.spacing.sm}>
             {(["pageTitle", "sectionTitle", "eyebrow", "normalTitle", "normalBody", "xSmallBody"] as const).map(
               (variant) => (
                 <Typography key={variant} variant={variant}>
@@ -111,7 +111,7 @@ export const DesignSystemPage = () => {
         </Section>
 
         <Section title="Buttons">
-          <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap" useFlexGap>
+          <Stack direction="row" spacing={tokens.spacing.md} alignItems="center" flexWrap="wrap" useFlexGap>
             <Button variant="contained">Contained</Button>
             <Button variant="outlined">Outlined</Button>
             <Button variant="text">Text</Button>
@@ -128,8 +128,8 @@ export const DesignSystemPage = () => {
         </Section>
 
         <Section title="Icons">
-          <Stack spacing={2}>
-            <Stack direction="row" spacing={2} alignItems="center">
+          <Stack spacing={tokens.spacing.md}>
+            <Stack direction="row" spacing={tokens.spacing.md} alignItems="center">
               {(["calendar", "users", "phone", "mail", "star", "zap"] as const).map((name) => (
                 <Icon key={name} name={name} color={IconColor.Black} size={24} />
               ))}
@@ -137,7 +137,7 @@ export const DesignSystemPage = () => {
                 Icon — the 600+ name registry from common-types
               </Typography>
             </Stack>
-            <Stack direction="row" spacing={2} alignItems="center">
+            <Stack direction="row" spacing={tokens.spacing.md} alignItems="center">
               {(
                 [
                   "GoogleCalendarIcon",
@@ -158,7 +158,7 @@ export const DesignSystemPage = () => {
         </Section>
 
         <Section title="Form controls">
-          <Stack direction="row" spacing={3} alignItems="flex-end" flexWrap="wrap" useFlexGap>
+          <Stack direction="row" spacing={tokens.spacing.lg} alignItems="flex-end" flexWrap="wrap" useFlexGap>
             <Input
               label="Search"
               placeholder="Type to search…"
@@ -178,8 +178,8 @@ export const DesignSystemPage = () => {
         </Section>
 
         <Section title="App components">
-          <Stack spacing={3}>
-            <Stack direction="row" spacing={1}>
+          <Stack spacing={tokens.spacing.lg}>
+            <Stack direction="row" spacing={tokens.spacing.sm}>
               {[
                 { title: "Home", icon: Home },
                 { title: "Calendar", icon: Calendar },
@@ -214,7 +214,7 @@ interface ISectionProps {
 }
 
 const Section = ({ title, children }: ISectionProps) => (
-  <Stack spacing={2}>
+  <Stack spacing={tokens.spacing.md}>
     <SectionHeader title={title} />
     {children}
   </Stack>

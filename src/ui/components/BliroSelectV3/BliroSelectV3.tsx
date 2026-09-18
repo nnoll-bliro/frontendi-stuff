@@ -1,4 +1,5 @@
 import { FormControl, MenuItem, Select, SelectChangeEvent, Stack } from "@mui/material";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import { KeyboardEvent, ReactNode, useRef, useState } from "react";
 
@@ -189,7 +190,7 @@ export const BliroSelectV3 = <T extends string = string>({
         renderValue={() => (
           <Stack
             direction="row"
-            gap={1}
+            gap={tokens.spacing.sm}
             alignItems="center"
             justifyContent="space-between"
             flex={1}
@@ -262,7 +263,7 @@ export const BliroSelectV3 = <T extends string = string>({
                 direction="row"
                 justifyContent="space-between"
                 alignItems="center"
-                gap={1}
+                gap={tokens.spacing.sm}
                 width="100%"
                 minWidth={0}
               >

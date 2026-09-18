@@ -1,6 +1,7 @@
 import "dayjs/locale/de";
 import "dayjs/locale/en";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { InputAdornment, Stack, SxProps, Theme, Typography } from "@mui/material";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -46,9 +47,9 @@ export const BliroTimeStampField = ({
   tzLabel,
 }: BliroTimeStampFieldProps) => {
   return (
-    <Stack direction="column" gap={0.5}>
+    <Stack direction="column" gap={tokens.spacing.xs}>
       {!isPlatform && (
-        <Stack direction="row" gap={1}>
+        <Stack direction="row" gap={tokens.spacing.sm}>
           <CalendarIcon size={20} color={colors.dark[400]} />
           <Typography
             variant="smallBody"
@@ -104,7 +105,7 @@ export const BliroTimeStampField = ({
                           <Typography
                             variant="xSmallBody"
                             color={colors.dark[400]}
-                            sx={{ whiteSpace: "nowrap", pr: 1 }}
+                            sx={{ whiteSpace: "nowrap", pr: tokens.space.sm }}
                           >
                             {tzLabel}
                           </Typography>

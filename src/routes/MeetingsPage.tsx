@@ -2,6 +2,7 @@ import { Stack, Typography } from "@mui/material";
 import { Input } from "@bliro/ui/components/Input";
 import { SurfaceList } from "@bliro/ui/components/Surface";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import {
   CalendarClock,
   CheckCircle2,
@@ -94,7 +95,7 @@ export const MeetingsPage = () => {
         }
       />
 
-      <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mb: 3 }}>
+      <Stack direction="row" spacing={tokens.spacing.sm} flexWrap="wrap" useFlexGap sx={{ mb: tokens.space.lg }}>
         {STATUS_TABS.map((tab) => (
           <TabItem
             key={tab.value}
@@ -123,14 +124,14 @@ export const MeetingsPage = () => {
           {meetings.map((meeting) => {
             const tone = MEETING_STATUS_TONE[meeting.status];
             return (
-              <Card key={meeting.id} sx={{ p: 2.5 }}>
-                <Stack spacing={1}>
-                  <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap>
+              <Card key={meeting.id} sx={{ p: tokens.space.lg }}>
+                <Stack spacing={tokens.spacing.sm}>
+                  <Stack direction="row" alignItems="center" spacing={tokens.spacing.sm} flexWrap="wrap" useFlexGap>
                     <RecordLink to={`/meetings/${meeting.id}`} primary>{meeting.title}</RecordLink>
                     <StatusPill label={tone.label} color={tone.color} background={tone.background} />
                   </Stack>
 
-                  <Stack direction="row" alignItems="center" spacing={1.5} flexWrap="wrap" useFlexGap>
+                  <Stack direction="row" alignItems="center" spacing={tokens.spacing.md} flexWrap="wrap" useFlexGap>
                     <Meta>{meeting.kind === "call" ? "Customer call" : "Meeting"}</Meta>
                     <Meta icon={<CalendarClock size={13} />}>
                       {formatDateTime(meeting.startedAt)}
@@ -144,7 +145,7 @@ export const MeetingsPage = () => {
                   <ContextText>{meeting.overview}</ContextText>
 
                   {/* Company and people stand on their own; neither depends on a transcript. */}
-                  <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap>
+                  <Stack direction="row" alignItems="center" spacing={tokens.spacing.sm} flexWrap="wrap" useFlexGap>
                     {meeting.company ? (
                       <RecordLink to={`/companies/${meeting.company.id}`}>
                         {meeting.company.name}
@@ -177,7 +178,7 @@ export const MeetingsPage = () => {
 };
 
 const Meta = ({ icon, children }: { icon?: React.ReactNode; children: React.ReactNode }) => (
-  <Stack direction="row" alignItems="center" spacing={0.5} sx={{ color: colors.dark[400] }}>
+  <Stack direction="row" alignItems="center" spacing={tokens.spacing.xs} sx={{ color: colors.dark[400] }}>
     {icon}
     <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
       {children}

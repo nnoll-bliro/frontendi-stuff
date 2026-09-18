@@ -1,5 +1,6 @@
 import { Button, Stack, Typography } from "@mui/material";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { isRouteErrorResponse, Link, useRouteError } from "react-router";
 
 /** Catches loader failures — most usefully a 404 from the mock API. */
@@ -15,7 +16,7 @@ export const ErrorPage = () => {
       : "Something went wrong.";
 
   return (
-    <Stack spacing={2} alignItems="flex-start" sx={{ px: 5, py: 8, maxWidth: 560 }}>
+    <Stack spacing={tokens.spacing.md} alignItems="flex-start" sx={{ px: tokens.space.section, py: tokens.space.section, maxWidth: 560 }}>
       <Typography variant="h3">{status === 404 ? "Not found" : "Something broke"}</Typography>
       <Typography variant="normalBody" sx={{ color: colors.dark[400] }}>
         {message}

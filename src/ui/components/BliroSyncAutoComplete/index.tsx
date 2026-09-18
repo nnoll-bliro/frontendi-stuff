@@ -1,4 +1,5 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
+import { tokens } from "@bliro/ui/theme/tokens";
 import clsx from "classnames";
 import { XIcon } from "lucide-react";
 import { ReactNode, useMemo, useState } from "react";
@@ -44,7 +45,7 @@ export const BliroSyncAutoComplete = ({
 
   return (
     <Box className={styles.container}>
-      <Stack direction="row" alignItems="center" gap={1} className={styles.content}>
+      <Stack direction="row" alignItems="center" gap={tokens.spacing.sm} className={styles.content}>
         {icon}
         <Stack direction="column" className={styles.contentItem}>
           <Typography variant="smallBody" fontWeight={fontWeight.semiBold} color={colors.dark[200]}>

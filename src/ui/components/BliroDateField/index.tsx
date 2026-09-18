@@ -1,4 +1,5 @@
 import "dayjs/locale/de";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { Stack, SxProps, Theme, Typography } from "@mui/material";
 import { DateField } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -43,9 +44,9 @@ export const BliroDateField = ({
   sx,
 }: IBliroDateFieldProps) => {
   return (
-    <Stack direction="column" gap={0.5}>
+    <Stack direction="column" gap={tokens.spacing.xs}>
       {!isPlatform && (
-        <Stack direction="row" gap={1}>
+        <Stack direction="row" gap={tokens.spacing.sm}>
           <CalendarIcon size={20} color={colors.dark[400]} />
           <Typography variant="smallBody" fontWeight={fontWeight.semiBold} color={colors.dark[400]}>
             {label}

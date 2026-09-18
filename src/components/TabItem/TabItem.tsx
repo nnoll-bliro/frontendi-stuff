@@ -1,4 +1,5 @@
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { Stack, Typography } from "@mui/material";
 import classNames from "classnames";
@@ -24,7 +25,7 @@ export const TabItem = ({ title, Icon, isActive, onClick, iconSize = 16 }: TabIt
       aria-pressed={isActive}
       direction="row"
       alignItems="center"
-      gap={0.5}
+      gap={tokens.spacing.xs}
       className={classNames(styles.tabItem, { [styles.active]: isActive })}
       onClick={onClick}
     >

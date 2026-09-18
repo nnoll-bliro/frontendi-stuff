@@ -1,6 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { Avatar } from "@bliro/ui/components/Avatar";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { useLoaderData } from "react-router";
 
@@ -54,7 +55,7 @@ export const TeamPage = () => {
         </Box>
       </Card>
 
-      <Stack spacing={1.5}>
+      <Stack spacing={tokens.spacing.md}>
         {users.map((user) => {
           const tone = ROLE_TONE[user.role];
           return (
@@ -73,7 +74,7 @@ export const TeamPage = () => {
               >
                 <Avatar title={initials(user.name)} tooltip={user.email} />
 
-                <Stack sx={{ minWidth: 0 }} spacing={0.125}>
+                <Stack sx={{ minWidth: 0 }} spacing={tokens.spacing.xs}>
                   <Typography
                     variant="normalTitle"
                     noWrap
@@ -81,10 +82,10 @@ export const TeamPage = () => {
                   >
                     {user.name}
                   </Typography>
-                  <Typography variant="xxSmallBody" noWrap sx={{ color: colors.dark[400] }}>
+                  <Typography variant="meta" noWrap>
                     {user.jobTitle ?? "No job title"}
                   </Typography>
-                  <Typography variant="xxSmallBody" noWrap sx={{ color: colors.dark[400] }}>
+                  <Typography variant="meta" noWrap>
                     {user.email}
                   </Typography>
                 </Stack>
@@ -100,7 +101,7 @@ export const TeamPage = () => {
                 <Stack
                   direction="row"
                   alignItems="center"
-                  spacing={0.75}
+                  spacing={tokens.spacing.sm}
                   sx={{
                     gridColumn: { xs: "2 / -1", md: "auto" },
                     minWidth: 0,
@@ -114,7 +115,7 @@ export const TeamPage = () => {
                         width={14}
                         height={14}
                       />
-                      <Typography variant="xxSmallBody" sx={{ color: colors.dark[400] }}>
+                      <Typography variant="meta">
                         Calendar connected
                       </Typography>
                     </>
@@ -142,8 +143,8 @@ export const TeamPage = () => {
 };
 
 const Fact = ({ label, value }: { label: string; value: string }) => (
-  <Stack spacing={0.375} sx={{ minWidth: 0 }}>
-    <Typography variant="xxSmallBody" sx={{ color: colors.dark[400] }}>
+  <Stack spacing={tokens.spacing.xs} sx={{ minWidth: 0 }}>
+    <Typography variant="meta">
       {label}
     </Typography>
     <Typography

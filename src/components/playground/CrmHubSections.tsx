@@ -3,6 +3,7 @@ import { Avatar } from "@bliro/ui/components/Avatar";
 import { SurfaceList } from "@bliro/ui/components/Surface";
 import { SectionHeader } from "@bliro/ui/components/SectionHeader";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { ArrowLeft, Bot, BookOpen, ContactRound, MessagesSquare } from "lucide-react";
 import type { ReactNode } from "react";
@@ -48,7 +49,7 @@ export const ListReturn = ({ to, label }: { to: string; label: string }) => (
     to={to}
     startIcon={<ArrowLeft size={16} />}
     color="secondary"
-    sx={{ mb: 2, px: 0, minWidth: 0, width: "fit-content", backgroundColor: "transparent", color: colors.dark[400], "&:hover": { backgroundColor: "transparent", color: colors.dark[100] } }}
+    sx={{ mb: tokens.space.md, px: 0, minWidth: 0, width: "fit-content", backgroundColor: "transparent", color: colors.dark[400], "&:hover": { backgroundColor: "transparent", color: colors.dark[100] } }}
   >
     Back to {label}
   </Button>
@@ -67,7 +68,7 @@ export const HubSection = ({
   count?: number;
   children: ReactNode;
 }) => (
-  <Stack component="section" aria-labelledby={`${id}-heading`} spacing={1.5}>
+  <Stack component="section" aria-labelledby={`${id}-heading`} spacing={tokens.spacing.md}>
     <SectionHeader id={`${id}-heading`} title={title} description={description} count={count} />
     {children}
   </Stack>
@@ -100,15 +101,15 @@ export const PeopleCards = ({
   ) : (
     <SurfaceList>
       {people.map((person) => (
-        <Card key={person.id} sx={{ p: 2.5 }}>
-          <Stack direction="row" alignItems="flex-start" spacing={1.5}>
+        <Card key={person.id} sx={{ p: tokens.space.lg }}>
+          <Stack direction="row" alignItems="flex-start" spacing={tokens.spacing.md}>
             <Avatar
               title={initials(person.name)}
               tooltip={person.name}
               size="small"
               variant="secondary"
             />
-            <Stack spacing={0.75} sx={{ minWidth: 0, flex: 1 }}>
+            <Stack spacing={tokens.spacing.sm} sx={{ minWidth: 0, flex: 1 }}>
               <RecordLink to={`/people/${person.id}`} primary>{person.name}</RecordLink>
               <Typography
                 variant="xSmallBody"
@@ -151,9 +152,9 @@ export const MeetingsSection = ({
         {meetings.map((meeting) => {
           const tone = MEETING_STATUS_TONE[meeting.status];
           return (
-            <Card key={meeting.id} sx={{ p: 2.5 }}>
-              <Stack spacing={1}>
-                <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap>
+            <Card key={meeting.id} sx={{ p: tokens.space.lg }}>
+              <Stack spacing={tokens.spacing.sm}>
+                <Stack direction="row" alignItems="center" spacing={tokens.spacing.sm} flexWrap="wrap" useFlexGap>
                   <RecordLink to={`/meetings/${meeting.id}`} primary>{meeting.title}</RecordLink>
                   <StatusPill label={tone.label} color={tone.color} background={tone.background} />
                 </Stack>
@@ -162,7 +163,7 @@ export const MeetingsSection = ({
                   {formatDateTime(meeting.startedAt)} · {formatDuration(meeting.durationMinutes)}
                 </Typography>
                 <ContextText>{meeting.overview}</ContextText>
-                <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                <Stack direction="row" spacing={tokens.spacing.sm} flexWrap="wrap" useFlexGap>
                   {meeting.people.map((person) => (
                     <RecordLink key={person.id} to={`/people/${person.id}`}>
                       {person.name}
@@ -194,9 +195,9 @@ export const AgentSessionCards = ({
 }) => (
   <SurfaceList>
     {sessions.map((session) => (
-      <Card key={session.id} sx={{ p: 2.5 }}>
-        <Stack spacing={1}>
-          <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap>
+      <Card key={session.id} sx={{ p: tokens.space.lg }}>
+        <Stack spacing={tokens.spacing.sm}>
+          <Stack direction="row" alignItems="center" spacing={tokens.spacing.sm} flexWrap="wrap" useFlexGap>
             <RecordLink to={`/agent-sessions/${session.id}`} primary>{session.title}</RecordLink>
             <StatusPill
               label={AGENT_CHANNEL_LABEL[session.channel]}
@@ -208,7 +209,7 @@ export const AgentSessionCards = ({
             Assistant conversation · {formatDateTime(session.startedAt)}
           </Typography>
           <ContextText>{session.overview}</ContextText>
-          <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+          <Stack direction="row" spacing={tokens.spacing.sm} flexWrap="wrap" useFlexGap>
             {showCompany &&
               (session.company ? (
                 <RecordLink to={`/companies/${session.company.id}`}>
@@ -226,7 +227,7 @@ export const AgentSessionCards = ({
             ))}
           </Stack>
           {session.meeting ? (
-            <Stack spacing={0.5}>
+            <Stack spacing={tokens.spacing.xs}>
               <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
                 Related meeting
               </Typography>
@@ -275,7 +276,7 @@ export const AgentSessionsSection = ({
  */
 export const DocumentationBody = ({ content }: { content: string | null }) =>
   content ? (
-    <Stack spacing={1}>
+    <Stack spacing={tokens.spacing.sm}>
       {content.split("\n").map((line, index) => (
         <DocumentationLine key={index} line={line} />
       ))}
@@ -294,7 +295,7 @@ const DocumentationLine = ({ line }: { line: string }) => {
     return (
       <Typography
         variant="smallTitle"
-        sx={{ color: colors.dark[100], fontWeight: fontWeight.semiBold, mt: 1 }}
+        sx={{ color: colors.dark[100], fontWeight: fontWeight.semiBold, mt: tokens.space.sm }}
       >
         {heading[1]}
       </Typography>
@@ -303,7 +304,7 @@ const DocumentationLine = ({ line }: { line: string }) => {
 
   if (line.startsWith("- ")) {
     return (
-      <Stack direction="row" spacing={1}>
+      <Stack direction="row" spacing={tokens.spacing.sm}>
         <Typography variant="normalBody" sx={{ color: colors.orange[100] }}>
           •
         </Typography>
@@ -350,8 +351,8 @@ export const KnowledgeSection = ({ items }: { items: KnowledgeItem[] }) => (
     ) : (
       <SurfaceList>
         {items.map((item) => (
-          <Card key={item.id} sx={{ p: 2.5 }}>
-            <Stack spacing={1}>
+          <Card key={item.id} sx={{ p: tokens.space.lg }}>
+            <Stack spacing={tokens.spacing.sm}>
               <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
                 {item.kind === "revenue_context"
                   ? "Revenue context · Illustrative only"
@@ -374,8 +375,8 @@ export const KnowledgeSection = ({ items }: { items: KnowledgeItem[] }) => (
  * Shared by the company/person hubs and the selected-meeting scope on a touchpoint.
  */
 export const SharingPlaceholder = ({ name, note }: { name: string; note?: string }) => (
-  <Card sx={{ p: 2.5 }}>
-    <Stack spacing={1.5}>
+  <Card sx={{ p: tokens.space.lg }}>
+    <Stack spacing={tokens.spacing.md}>
       <ContextText>
         Future capability · Sharing for {name}. No access is granted, changed, or enforced here.
       </ContextText>
@@ -395,8 +396,8 @@ export const FutureCapabilities = ({
 }) => (
   <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", lg: "1fr 1fr" }, gap: 3 }}>
     <HubSection id="analysis" title="Analysis">
-      <Card sx={{ p: 2.5 }}>
-        <Stack spacing={1.5}>
+      <Card sx={{ p: tokens.space.lg }}>
+        <Stack spacing={tokens.spacing.md}>
           <ContextText>
             Future capability · {scope === "company" ? "Company" : "Person"}-scoped analysis for{" "}
             {name}. No analysis runs or results are generated in this prototype.

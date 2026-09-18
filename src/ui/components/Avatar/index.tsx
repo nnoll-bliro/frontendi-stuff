@@ -1,4 +1,5 @@
 import { Box, Stack, Tooltip, Typography } from "@mui/material";
+import { tokens } from "@bliro/ui/theme/tokens";
 import clsx from "classnames";
 import { useMemo } from "react";
 
@@ -59,7 +60,7 @@ export const Avatar = ({
       );
     const titles = tooltip.split(",");
     return (
-      <Stack direction="column" gap={0.5}>
+      <Stack direction="column" gap={tokens.spacing.xs}>
         {titles.map((title, idx) => {
           return (
             <Typography

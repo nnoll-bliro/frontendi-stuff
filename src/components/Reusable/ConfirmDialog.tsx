@@ -1,5 +1,6 @@
 import { BliroCheckBox } from "@bliro/ui/components/BliroCheckBox";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import {
   Button,
@@ -72,7 +73,7 @@ export const ConfirmDialog = ({
   return (
     <Dialog open={open} onClose={handleClose} maxWidth={maxWidth} fullWidth>
       <DialogTitle sx={{ pr: "40px", pl: "40px", pt: "40px" }}>
-        <Stack direction="column" gap={1}>
+        <Stack direction="column" gap={tokens.spacing.sm}>
           {titleIcon}
           <Typography variant="subtitle1" color={colors.dark[100]} component="div">
             {title}
@@ -80,12 +81,12 @@ export const ConfirmDialog = ({
         </Stack>
       </DialogTitle>
       <DialogContent sx={{ pr: "40px", pl: "40px" }}>
-        <Stack spacing={2}>
+        <Stack spacing={tokens.spacing.md}>
           <Typography variant="normalBody" fontWeight={fontWeight.regular} color={colors.dark[200]}>
             {message}
           </Typography>
           {acknowledgmentLabel !== undefined && (
-            <Stack direction="row" alignItems="flex-start" gap={1}>
+            <Stack direction="row" alignItems="flex-start" gap={tokens.spacing.sm}>
               <BliroCheckBox
                 size={18}
                 checked={isAcknowledged}
@@ -107,7 +108,7 @@ export const ConfirmDialog = ({
         </Stack>
       </DialogContent>
       <DialogActions sx={{ pr: "40px", pl: "40px", pb: "40px" }}>
-        <Stack direction="row" justifyContent="flex-end" alignItems="center" gap={1}>
+        <Stack direction="row" justifyContent="flex-end" alignItems="center" gap={tokens.spacing.sm}>
           <Button onClick={handleClose} variant="outlined" color="secondary" disabled={isLoading}>
             {cancelButtonText}
           </Button>

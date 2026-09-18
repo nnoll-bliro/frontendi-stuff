@@ -2,11 +2,13 @@ import { createTheme } from "@mui/material/styles";
 
 import { colors } from "./colors";
 import { focusRing, tokens } from "./tokens";
+import { fontWeight } from "./fonts";
 
 export const fontVariants = {
   pageTitle: "pageTitle",
   sectionTitle: "sectionTitle",
   eyebrow: "eyebrow",
+  meta: "meta",
   h0: "h0",
   h1: "h1",
   h2: "h2",
@@ -42,6 +44,7 @@ declare module "@mui/material/Typography" {
     pageTitle: true;
     sectionTitle: true;
     eyebrow: true;
+    meta: true;
     h0: true;
     subtitle0: true;
     subtitle3: true;
@@ -127,6 +130,14 @@ export const theme = createTheme({
           }),
           ...(ownerState.variant === "sectionTitle" && {
             fontSize: "16px", fontWeight: 600, lineHeight: "24px", letterSpacing: "-0.2px",
+          }),
+          // Timestamps, counts, provenance: true but secondary to its neighbour.
+          ...(ownerState.variant === "meta" && {
+            fontSize: "11px",
+            fontWeight: fontWeight.regular,
+            lineHeight: "16px",
+            letterSpacing: "-0.11px",
+            color: colors.dark[400],
           }),
           ...(ownerState.variant === "eyebrow" && {
             fontSize: "11px", fontWeight: 600, lineHeight: "16px", letterSpacing: "0.8px",

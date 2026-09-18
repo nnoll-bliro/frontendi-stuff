@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { FileText, MessagesSquare } from "lucide-react";
 import { useLoaderData } from "react-router";
@@ -45,10 +46,10 @@ export const AgentSessionDetailPage = () => {
         }
       />
 
-      <Stack spacing={5}>
+      <Stack spacing={tokens.spacing.section}>
         <HubSection id="overview" title="Overview">
-          <Card sx={{ p: 3 }}>
-            <Stack spacing={1.5}>
+          <Card sx={{ p: tokens.space.lg }}>
+            <Stack spacing={tokens.spacing.md}>
               <ContextText>{session.overview}</ContextText>
               <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
                 {channelLabel} with the assistant · {formatDateTime(session.startedAt)}
@@ -71,11 +72,11 @@ export const AgentSessionDetailPage = () => {
               description="No messages are stored for this assistant session."
             />
           ) : (
-            <Card sx={{ p: 3 }}>
-              <Stack spacing={2.5}>
+            <Card sx={{ p: tokens.space.lg }}>
+              <Stack spacing={tokens.spacing.lg}>
                 {session.messages.map((message) => (
-                  <Stack key={message.id} spacing={1} sx={{
-                    p: 2.5, borderRadius: "8px",
+                  <Stack key={message.id} spacing={tokens.spacing.sm} sx={{
+                    p: tokens.space.lg, borderRadius: "8px",
                     backgroundColor: message.role === "user" ? colors.dark[900] : "transparent",
                     borderLeft: `2px solid ${message.role === "user" ? colors.dark[600] : colors.orange[400]}`,
                   }}>
@@ -108,7 +109,7 @@ export const AgentSessionDetailPage = () => {
               description="This conversation did not document a touchpoint."
             />
           ) : (
-            <Stack spacing={1.5}>
+            <Stack spacing={tokens.spacing.md}>
               {session.documentation.map((documentation) => (
                 <DocumentationCard key={documentation.id} documentation={documentation} />
               ))}
@@ -121,9 +122,9 @@ export const AgentSessionDetailPage = () => {
           title="Company and people"
           description="The contacts and company this session is about."
         >
-          <Card sx={{ p: 3 }}>
-            <Stack spacing={2.5}>
-              <Stack spacing={0.75}>
+          <Card sx={{ p: tokens.space.lg }}>
+            <Stack spacing={tokens.spacing.lg}>
+              <Stack spacing={tokens.spacing.sm}>
                 <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
                   Company
                 </Typography>
@@ -135,12 +136,12 @@ export const AgentSessionDetailPage = () => {
                   <ContextText>No company linked to this session.</ContextText>
                 )}
               </Stack>
-              <Stack spacing={0.75}>
+              <Stack spacing={tokens.spacing.sm}>
                 <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
                   People ({session.people.length})
                 </Typography>
                 {session.people.length ? (
-                  <Stack direction="row" spacing={1.5} flexWrap="wrap" useFlexGap>
+                  <Stack direction="row" spacing={tokens.spacing.md} flexWrap="wrap" useFlexGap>
                     {session.people.map((person) => (
                       <RecordLink key={person.id} to={`/people/${person.id}`}>
                         {person.name}
@@ -160,9 +161,9 @@ export const AgentSessionDetailPage = () => {
           title="Related meeting"
           description="The touchpoint discussed in this session, if linked."
         >
-          <Card sx={{ p: 2.5 }}>
+          <Card sx={{ p: tokens.space.lg }}>
             {session.meeting ? (
-              <Stack spacing={1}>
+              <Stack spacing={tokens.spacing.sm}>
                 <RecordLink to={`/meetings/${session.meeting.id}`}>
                   {session.meeting.title}
                 </RecordLink>
@@ -187,9 +188,9 @@ export const AgentSessionDetailPage = () => {
 const DocumentationCard = ({ documentation }: { documentation: AgentSessionDocumentation }) => {
   const tone = artifactStatusTone(documentation.status);
   return (
-    <Card sx={{ p: 3 }}>
-      <Stack spacing={2}>
-        <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={2}>
+    <Card sx={{ p: tokens.space.lg }}>
+      <Stack spacing={tokens.spacing.md}>
+        <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={tokens.spacing.md}>
           <Typography component="h3" variant="smallTitle" sx={{ color: colors.dark[100] }}>
             {documentation.title}
           </Typography>
@@ -199,7 +200,7 @@ const DocumentationCard = ({ documentation }: { documentation: AgentSessionDocum
             background={tone.background}
           />
         </Stack>
-        <Stack spacing={0.5}>
+        <Stack spacing={tokens.spacing.xs}>
           <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
             Source: {DOCUMENTATION_SOURCE_LABEL[documentation.source]}
           </Typography>

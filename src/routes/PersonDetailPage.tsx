@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { useLoaderData } from "react-router";
 
 import type { Person } from "@/api/client";
@@ -27,10 +28,10 @@ export const PersonDetailPage = () => {
         eyebrow="Person"
         description={person.jobTitle}
       />
-      <Stack spacing={5}>
+      <Stack spacing={tokens.spacing.section}>
         <HubSection id="overview" title="Overview">
-          <Card sx={{ p: 3 }}>
-            <Stack spacing={1.5}>
+          <Card sx={{ p: tokens.space.lg }}>
+            <Stack spacing={tokens.spacing.md}>
               <Typography
                 variant="smallBody"
                 sx={{ color: colors.dark[400], overflowWrap: "anywhere" }}
@@ -38,7 +39,7 @@ export const PersonDetailPage = () => {
                 {person.email}
               </Typography>
               <ContextText>{person.overview}</ContextText>
-              <Stack spacing={0.5}>
+              <Stack spacing={tokens.spacing.xs}>
                 <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
                   Company
                 </Typography>

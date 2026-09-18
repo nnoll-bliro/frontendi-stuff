@@ -1,5 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import type { ReactNode } from "react";
 
@@ -28,9 +29,9 @@ export const SettingsSection = ({
         direction={{ xs: "column", sm: "row" }}
         alignItems={{ xs: "stretch", sm: "flex-start" }}
         justifyContent="space-between"
-        spacing={2}
+        spacing={tokens.spacing.md}
       >
-        <Stack spacing={0.5} sx={{ minWidth: 0, maxWidth: 680 }}>
+        <Stack spacing={tokens.spacing.xs} sx={{ minWidth: 0, maxWidth: 680 }}>
           <Typography
             component="h2"
             variant="normalTitle"
@@ -65,7 +66,7 @@ interface SettingsFieldProps {
 
 /** Label above a control, matching the spacing the design system's Input uses. */
 export const SettingsField = ({ label, children, hint }: SettingsFieldProps) => (
-  <Stack spacing={0.5} sx={{ flex: 1, minWidth: 0 }}>
+  <Stack spacing={tokens.spacing.xs} sx={{ flex: 1, minWidth: 0 }}>
     <Typography
       variant="smallBody"
       component="div"
@@ -75,7 +76,7 @@ export const SettingsField = ({ label, children, hint }: SettingsFieldProps) => 
     </Typography>
     {children}
     {hint && (
-      <Typography variant="xxSmallBody" sx={{ color: colors.dark[400] }}>
+      <Typography variant="meta">
         {hint}
       </Typography>
     )}

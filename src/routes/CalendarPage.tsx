@@ -1,4 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { colors } from "@bliro/ui/theme/colors";
 import { focusRing } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
@@ -55,8 +56,8 @@ export const CalendarPage = () => {
         description="Calendar entries from Google and Microsoft, with linked meeting records when available."
       />
 
-      <Box component="nav" aria-label="Calendar range" sx={{ mb: 3, overflowX: "auto" }}>
-        <Stack direction="row" spacing={1} sx={{ minWidth: "max-content" }}>
+      <Box component="nav" aria-label="Calendar range" sx={{ mb: tokens.space.lg, overflowX: "auto" }}>
+        <Stack direction="row" spacing={tokens.spacing.sm} sx={{ minWidth: "max-content" }}>
           {RANGES.map((option) => (
             <TabItem
               key={option.value}
@@ -83,7 +84,7 @@ export const CalendarPage = () => {
       ) : (
         <Stack spacing={{ xs: 3, md: 4 }}>
           {days.map(([day, dayEntries]) => (
-            <Stack key={day} spacing={1.25}>
+            <Stack key={day} spacing={tokens.spacing.sm}>
               <Typography
                 variant="xSmallBody"
                 sx={{ color: colors.dark[400], fontWeight: fontWeight.semiBold }}
@@ -117,7 +118,7 @@ export const CalendarPage = () => {
                       >
                         {formatTime(entry.startsAt)}
                       </Typography>
-                      <Typography variant="xxSmallBody" sx={{ color: colors.dark[400] }}>
+                      <Typography variant="meta">
                         {formatDuration(entry.durationMinutes)}
                       </Typography>
                     </Stack>
@@ -132,7 +133,7 @@ export const CalendarPage = () => {
                       }}
                     />
 
-                    <Stack sx={{ minWidth: 0 }} spacing={0.5}>
+                    <Stack sx={{ minWidth: 0 }} spacing={tokens.spacing.xs}>
                       <Typography
                         variant="normalTitle"
                         noWrap
@@ -143,7 +144,7 @@ export const CalendarPage = () => {
                       <Stack
                         direction="row"
                         alignItems="center"
-                        spacing={1.5}
+                        spacing={tokens.spacing.md}
                         flexWrap="wrap"
                         useFlexGap
                       >
@@ -152,13 +153,13 @@ export const CalendarPage = () => {
                           width={13}
                           height={13}
                         />
-                        <Stack direction="row" alignItems="center" spacing={0.5}>
+                        <Stack direction="row" alignItems="center" spacing={tokens.spacing.xs}>
                           <Users size={13} color={colors.dark[400]} />
-                          <Typography variant="xxSmallBody" sx={{ color: colors.dark[400] }}>
+                          <Typography variant="meta">
                             {entry.participants.length}
                           </Typography>
                         </Stack>
-                        <Typography variant="xxSmallBody" sx={{ color: colors.dark[400] }}>
+                        <Typography variant="meta">
                           {entry.isExternal ? "External" : "Internal"}
                         </Typography>
                       </Stack>
@@ -172,7 +173,7 @@ export const CalendarPage = () => {
                           background={colors.green[600]}
                         />
                       ) : (
-                        <Stack direction="row" alignItems="center" spacing={0.5}>
+                        <Stack direction="row" alignItems="center" spacing={tokens.spacing.xs}>
                           <Clock size={13} color={colors.dark[500]} />
                           <Typography variant="xxSmallBody" sx={{ color: colors.dark[500] }}>
                             No meeting record

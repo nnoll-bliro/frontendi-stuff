@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { useLoaderData } from "react-router";
 
 import type { PersonSummary } from "@/api/client";
@@ -15,7 +16,7 @@ export const PeoplePage = () => {
         title="People"
         description="The people behind your customer relationships."
       />
-      <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap sx={{ mb: 2 }}>
+      <Stack direction="row" spacing={tokens.spacing.md} flexWrap="wrap" useFlexGap sx={{ mb: tokens.space.md }}>
         <Typography variant="smallBody" sx={{ color: colors.dark[400] }}>
           {people.length} {people.length === 1 ? "person" : "people"}
         </Typography>

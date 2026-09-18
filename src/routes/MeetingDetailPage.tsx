@@ -1,6 +1,7 @@
 import { Stack, Typography } from "@mui/material";
 import { Avatar } from "@bliro/ui/components/Avatar";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { CalendarClock, FileText, Languages, Users } from "lucide-react";
 import { useLoaderData } from "react-router";
@@ -50,12 +51,12 @@ export const MeetingDetailPage = () => {
         action={<StatusPill label={tone.label} color={tone.color} background={tone.background} />}
       />
 
-      <Stack spacing={5}>
+      <Stack spacing={tokens.spacing.section}>
         <HubSection id="overview" title="Overview">
-          <Card sx={{ p: 3 }}>
-            <Stack spacing={1.5}>
+          <Card sx={{ p: tokens.space.lg }}>
+            <Stack spacing={tokens.spacing.md}>
               <ContextText>{meeting.overview}</ContextText>
-              <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
+              <Stack direction="row" spacing={tokens.spacing.md} flexWrap="wrap" useFlexGap>
                 <Meta icon={<CalendarClock size={14} />}>{formatDateTime(meeting.startedAt)}</Meta>
                 <Meta>{formatDuration(meeting.durationMinutes)}</Meta>
                 <Meta icon={<Users size={14} />}>{meeting.participantCount} participants</Meta>
@@ -71,9 +72,9 @@ export const MeetingDetailPage = () => {
           title="Company and people"
           description="The company and participants in this touchpoint."
         >
-          <Card sx={{ p: 3 }}>
-            <Stack spacing={2.5}>
-              <Stack spacing={0.75}>
+          <Card sx={{ p: tokens.space.lg }}>
+            <Stack spacing={tokens.spacing.lg}>
+              <Stack spacing={tokens.spacing.sm}>
                 <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
                   Company
                 </Typography>
@@ -88,7 +89,7 @@ export const MeetingDetailPage = () => {
                 )}
               </Stack>
 
-              <Stack spacing={1.5}>
+              <Stack spacing={tokens.spacing.md}>
                 <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
                   Participants ({meeting.participants.length})
                 </Typography>
@@ -98,7 +99,7 @@ export const MeetingDetailPage = () => {
                       key={participant.id}
                       direction="row"
                       alignItems="center"
-                      spacing={1.5}
+                      spacing={tokens.spacing.md}
                       useFlexGap
                     >
                       <Avatar
@@ -107,7 +108,7 @@ export const MeetingDetailPage = () => {
                         variant={participant.userId ? "primary" : "secondary"}
                         size="small"
                       />
-                      <Stack sx={{ minWidth: 0 }} spacing={0.25}>
+                      <Stack sx={{ minWidth: 0 }} spacing={tokens.spacing.xs}>
                         {/* Only customer contacts are records; internal users are not. */}
                         {participant.personId ? (
                           <RecordLink to={`/people/${participant.personId}`}>
@@ -153,7 +154,7 @@ export const MeetingDetailPage = () => {
           {transcript ? (
             <TranscriptPanel transcript={transcript} />
           ) : (
-            <Card sx={{ p: 2.5 }}>
+            <Card sx={{ p: tokens.space.lg }}>
               <ContextText>
                 No transcript — this {kindLabel.toLowerCase()} was not transcribed. Nothing is
                 processing or missing.
@@ -172,9 +173,9 @@ export const MeetingDetailPage = () => {
           title="Calendar entry"
           description="The original invite and scheduling details."
         >
-          <Card sx={{ p: 2.5 }}>
+          <Card sx={{ p: tokens.space.lg }}>
             {entry ? (
-              <Stack spacing={1}>
+              <Stack spacing={tokens.spacing.sm}>
                 <RecordLink to={`/calendar/${entry.id}`}>{entry.title}</RecordLink>
                 <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
                   {formatDateTime(entry.startsAt)} · {formatDuration(entry.durationMinutes)} ·{" "}
@@ -221,13 +222,13 @@ const DocumentationPanel = ({ meeting }: { meeting: Meeting }) => {
   }
 
   return (
-    <Stack spacing={1.5}>
+    <Stack spacing={tokens.spacing.md}>
       {meeting.documentation.map((documentation) => {
         const statusTone = artifactStatusTone(documentation.status);
         return (
-          <Card key={documentation.id} sx={{ p: 3 }}>
-            <Stack spacing={2}>
-              <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={2}>
+          <Card key={documentation.id} sx={{ p: tokens.space.lg }}>
+            <Stack spacing={tokens.spacing.md}>
+              <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={tokens.spacing.md}>
                 <Typography component="h3" variant="smallTitle" sx={{ color: colors.dark[100] }}>
                   {documentation.title}
                 </Typography>
@@ -238,7 +239,7 @@ const DocumentationPanel = ({ meeting }: { meeting: Meeting }) => {
                 />
               </Stack>
 
-              <Stack spacing={0.5}>
+              <Stack spacing={tokens.spacing.xs}>
                 <Meta>Source: {DOCUMENTATION_SOURCE_LABEL[documentation.source]}</Meta>
                 <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
                   {DOCUMENTATION_SOURCE_NOTE[documentation.source]}
@@ -262,9 +263,9 @@ const DocumentationPanel = ({ meeting }: { meeting: Meeting }) => {
 const TranscriptPanel = ({ transcript }: { transcript: NonNullable<Meeting["transcript"]> }) => {
   const statusTone = artifactStatusTone(transcript.status);
   return (
-    <Card sx={{ p: 3 }}>
-      <Stack spacing={2.5}>
-        <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={2}>
+    <Card sx={{ p: tokens.space.lg }}>
+      <Stack spacing={tokens.spacing.lg}>
+        <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={tokens.spacing.md}>
           <Meta icon={<Languages size={14} />}>{transcript.language.toUpperCase()}</Meta>
           <StatusPill
             label={ARTIFACT_STATUS_LABEL[transcript.status]}
@@ -275,14 +276,14 @@ const TranscriptPanel = ({ transcript }: { transcript: NonNullable<Meeting["tran
 
         {transcript.segments.length ? (
           transcript.segments.map((segment) => (
-            <Stack key={segment.id} direction="row" spacing={2}>
+            <Stack key={segment.id} direction="row" spacing={tokens.spacing.md}>
               <Typography
                 variant="xxSmallBody"
                 sx={{ color: colors.dark[500], width: 40, flexShrink: 0, pt: "3px" }}
               >
                 {formatOffset(segment.startMs)}
               </Typography>
-              <Stack spacing={0.25} sx={{ minWidth: 0 }}>
+              <Stack spacing={tokens.spacing.xs} sx={{ minWidth: 0 }}>
                 <Typography
                   variant="xSmallBody"
                   sx={{ color: colors.dark[300], fontWeight: fontWeight.semiBold }}
@@ -306,7 +307,7 @@ const TranscriptPanel = ({ transcript }: { transcript: NonNullable<Meeting["tran
 };
 
 const Meta = ({ icon, children }: { icon?: React.ReactNode; children: React.ReactNode }) => (
-  <Stack direction="row" alignItems="center" spacing={0.5} sx={{ color: colors.dark[400] }}>
+  <Stack direction="row" alignItems="center" spacing={tokens.spacing.xs} sx={{ color: colors.dark[400] }}>
     {icon}
     <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
       {children}

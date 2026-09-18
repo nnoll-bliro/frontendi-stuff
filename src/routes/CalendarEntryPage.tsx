@@ -1,6 +1,7 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { BackButton } from "@bliro/ui/components/BackButton/BackButton";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { CalendarClock, FileText, Link2, Video } from "lucide-react";
 import { Link, useLoaderData, useNavigate } from "react-router";
@@ -18,22 +19,22 @@ export const CalendarEntryPage = () => {
 
   return (
     <>
-      <Box sx={{ mb: 2.5 }}>
+      <Box sx={{ mb: tokens.space.lg }}>
         <BackButton onClick={() => navigate("/calendar")} />
       </Box>
 
-      <Stack spacing={1} sx={{ mb: { xs: 3, md: 4 } }}>
+      <Stack spacing={tokens.spacing.sm} sx={{ mb: { xs: 3, md: 4 } }}>
         <Typography component="h1" variant="pageTitle" sx={{ overflowWrap: "anywhere" }}>
           {entry.title}
         </Typography>
-        <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap" useFlexGap>
-          <Stack direction="row" alignItems="center" spacing={0.5}>
+        <Stack direction="row" spacing={tokens.spacing.md} alignItems="center" flexWrap="wrap" useFlexGap>
+          <Stack direction="row" alignItems="center" spacing={tokens.spacing.xs}>
             <CalendarClock size={14} color={colors.dark[400]} />
             <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
               {formatDateTime(entry.startsAt)} · {formatDuration(entry.durationMinutes)}
             </Typography>
           </Stack>
-          <Stack direction="row" alignItems="center" spacing={0.5}>
+          <Stack direction="row" alignItems="center" spacing={tokens.spacing.xs}>
             <CustomIcon
               icon={entry.provider === "google" ? "GoogleCalendarIcon" : "OutlookIcon"}
               width={14}
@@ -51,12 +52,12 @@ export const CalendarEntryPage = () => {
 
       <Stack
         direction={{ xs: "column", md: "row" }}
-        spacing={3}
+        spacing={tokens.spacing.lg}
         alignItems={{ xs: "stretch", md: "flex-start" }}
       >
-        <Stack sx={{ flex: 1, minWidth: 0 }} spacing={2}>
+        <Stack sx={{ flex: 1, minWidth: 0 }} spacing={tokens.spacing.md}>
           <Card sx={{ p: { xs: 2.5, sm: 3 } }}>
-            <Stack spacing={2.5}>
+            <Stack spacing={tokens.spacing.lg}>
               <Detail label="Description">
                 <Typography variant="normalBody" sx={{ color: colors.dark[200] }}>
                   {entry.description ?? "No description on this invite."}
@@ -65,7 +66,7 @@ export const CalendarEntryPage = () => {
 
               <Detail label="Location">
                 {entry.location ? (
-                  <Stack direction="row" alignItems="flex-start" spacing={0.75}>
+                  <Stack direction="row" alignItems="flex-start" spacing={tokens.spacing.sm}>
                     <Box sx={{ display: "flex", pt: "3px", flexShrink: 0 }}>
                       {isLink ? (
                         <Video size={14} color={colors.dark[400]} />
@@ -90,16 +91,16 @@ export const CalendarEntryPage = () => {
           </Card>
 
           <Card sx={{ p: { xs: 2.5, sm: 3 } }}>
-            <Stack spacing={1.5}>
+            <Stack spacing={tokens.spacing.md}>
               <SectionLabel>Meeting record</SectionLabel>
               {entry.meetingId ? (
                 <Stack
                   direction={{ xs: "column", sm: "row" }}
                   alignItems={{ xs: "flex-start", sm: "center" }}
                   justifyContent="space-between"
-                  spacing={2}
+                  spacing={tokens.spacing.md}
                 >
-                  <Stack direction="row" alignItems="flex-start" spacing={1}>
+                  <Stack direction="row" alignItems="flex-start" spacing={tokens.spacing.sm}>
                     <Box sx={{ display: "flex", pt: "3px" }}>
                       <FileText size={16} color={colors.green.dark} />
                     </Box>
@@ -126,7 +127,7 @@ export const CalendarEntryPage = () => {
         </Stack>
 
         <Card sx={{ width: { xs: "100%", md: 300 }, flexShrink: 0, p: { xs: 2.5, sm: 3 } }}>
-          <Stack spacing={1.75}>
+          <Stack spacing={tokens.spacing.md}>
             <Typography
               component="h2"
               variant="normalTitle"
@@ -163,7 +164,7 @@ const SectionLabel = ({ children }: { children: React.ReactNode }) => (
 );
 
 const Detail = ({ label, children }: { label: string; children: React.ReactNode }) => (
-  <Stack spacing={0.75}>
+  <Stack spacing={tokens.spacing.sm}>
     <SectionLabel>{label}</SectionLabel>
     {children}
   </Stack>

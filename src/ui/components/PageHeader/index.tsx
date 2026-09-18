@@ -15,10 +15,10 @@ export const PageHeader = ({ title, description, action, eyebrow }: PageHeaderPr
     direction={{ xs: "column", sm: "row" }}
     alignItems={{ xs: "stretch", sm: "flex-start" }}
     justifyContent="space-between"
-    spacing={3}
+    spacing={tokens.spacing.lg}
     sx={{ mb: tokens.space.xl }}
   >
-    <Stack spacing={1} sx={{ minWidth: 0 }}>
+    <Stack spacing={tokens.spacing.sm} sx={{ minWidth: 0 }}>
       {eyebrow && <Typography variant="eyebrow">{eyebrow}</Typography>}
       <Typography component="h1" variant="pageTitle" sx={{ overflowWrap: "anywhere" }}>
         {title}

@@ -1,4 +1,5 @@
 import { Stack, TextField, TextFieldProps, Typography } from "@mui/material";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { ReactNode } from "react";
 
 import { colors } from "../../theme/colors";
@@ -18,9 +19,9 @@ export const BliroTextField = ({
   isPlatform = false,
 }: IBliroTextFieldProps) => {
   return (
-    <Stack direction="column" gap={0.5}>
+    <Stack direction="column" gap={tokens.spacing.xs}>
       {!isPlatform && (icon || label) && (
-        <Stack direction="row" gap={1}>
+        <Stack direction="row" gap={tokens.spacing.sm}>
           {icon}
           {label && (
             <Typography

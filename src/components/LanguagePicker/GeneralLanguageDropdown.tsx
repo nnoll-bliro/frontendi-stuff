@@ -4,6 +4,7 @@ import {
   TranscriptionLanguageCode,
 } from "@bliro/common-types/languages";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import {
   Autocomplete,
@@ -178,7 +179,7 @@ export function GeneralLanguageDropdown<L extends LanguageCode>({
   const showChevron = variant !== "xSmall" && variant !== "artifact";
 
   return (
-    <Stack gap={0.5} sx={{ height: "100%" }}>
+    <Stack gap={tokens.spacing.xs} sx={{ height: "100%" }}>
       {label && (
         <Typography
           variant={typographyVariantMap[variant]}
@@ -212,7 +213,7 @@ export function GeneralLanguageDropdown<L extends LanguageCode>({
                 sx={{
                   height: "1px",
                   backgroundColor: colors.dark[700],
-                  my: 0.5,
+                  my: tokens.space.xs,
                 }}
               />
             )}
@@ -226,7 +227,7 @@ export function GeneralLanguageDropdown<L extends LanguageCode>({
               key={key}
               direction="row"
               alignItems="center"
-              gap={1}
+              gap={tokens.spacing.sm}
               {...restProps}
               sx={{
                 padding: `${menuStyles.padding} !important`,

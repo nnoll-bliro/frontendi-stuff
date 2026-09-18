@@ -48,26 +48,26 @@ export const RootLayout = () => {
     <Stack direction="row" sx={{ height: "100%" }}>
       <Stack component="nav" aria-label="Main navigation" sx={{
         width: { xs: 64, md: tokens.layout.sidebar }, flexShrink: 0,
-        px: { xs: 1, md: 2 }, py: 3, gap: 3, overflowY: "auto",
+        px: { xs: 1, md: 2 }, py: tokens.space.lg, gap: 3, overflowY: "auto",
         borderRight: `1px solid ${tokens.color.border}`, backgroundColor: tokens.color.surface,
       }}>
-        <Box sx={{ px: 1, height: 32, overflow: "hidden", flexShrink: 0 }}>
+        <Box sx={{ px: tokens.space.sm, height: 32, overflow: "hidden", flexShrink: 0 }}>
           <BliroLogo width={110} height={31} />
         </Box>
         <Stack sx={{ flex: 1, gap: 3 }}>
-          <Stack spacing={0.5}>
+          <Stack spacing={tokens.spacing.xs}>
             {!collapsed && <NavMenuSectionLabel label="Relationships" />}
             {PRIMARY_NAV.map(navItem)}
           </Stack>
-          <Stack spacing={0.5}>
+          <Stack spacing={tokens.spacing.xs}>
             {!collapsed && <NavMenuSectionLabel label="Workspace" />}
             {WORKSPACE_NAV.map(navItem)}
           </Stack>
         </Stack>
         <NavMenuItem label="Design system" href="/design-system" linkComponent={Link}
           active={pathname === "/design-system"} isCollapsed={collapsed} startIcon={<Palette size={18} />} />
-        <Stack direction="row" alignItems="center" spacing={1.5} sx={{
-          pt: 2, px: { xs: 0, md: 1 }, borderTop: `1px solid ${tokens.color.border}`,
+        <Stack direction="row" alignItems="center" spacing={tokens.spacing.md} sx={{
+          pt: tokens.space.md, px: { xs: 0, md: 1 }, borderTop: `1px solid ${tokens.color.border}`,
           justifyContent: collapsed ? "center" : "flex-start",
         }}>
           <Avatar title={initials(user.name)} tooltip={user.email} size="small" variant="secondary" />
@@ -84,7 +84,7 @@ export const RootLayout = () => {
           borderBottom: `1px solid ${tokens.color.border}`,
         }}>
           <Typography variant="xSmallBody" noWrap sx={{ color: colors.dark[300] }}>
-            {org.name}<Box component="span" sx={{ mx: 1.5, color: colors.dark[600] }}>/</Box>
+            {org.name}<Box component="span" sx={{ mx: tokens.space.md, color: colors.dark[600] }}>/</Box>
             {currentSection?.label ?? "Design system"}
           </Typography>
           <Typography variant="xxSmallBody" sx={{ flexShrink: 0 }}>Prototype</Typography>

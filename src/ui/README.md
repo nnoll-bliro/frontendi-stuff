@@ -17,6 +17,14 @@ changes, and port reusable improvements back deliberately.
   `eyebrow` is for short category labels, never paragraphs.
 - Use a 4/8px spacing rhythm: 8px within tight groups, 16–24px within surfaces,
   32px after a page header, 40px between major sections. MUI spacing remains 8px.
+  Take the value from `tokens.spacing.*` for `spacing`/`gap` props and
+  `tokens.space.*` for `sx` lengths and CSS — same scale, two forms, because the
+  props reject a px string. Intrinsic control padding (a count badge, a pill) is
+  sizing rather than a gap and stays off the scale.
+- Along any one axis, a child's gap is at most half its parent's. Below 2:1 the
+  children stop reading as separate things: a row of icon+label controls at `xs`
+  spaced by `sm` collapses into one blob. Either open the parent to `lg`, or give
+  each child a bounded box, the way `TabItem` does.
 - A `Surface` groups a single purpose with an 8px radius, subtle border, and no shadow.
   A `SurfaceList` groups repeated `Surface` children with dividers, avoiding repeated
   rounded card outlines. Do not use a surface around every label or text block.

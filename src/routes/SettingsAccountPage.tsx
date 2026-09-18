@@ -2,6 +2,7 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import { Input } from "@bliro/ui/components/Input";
 import { BliroSwitch } from "@bliro/ui/components/BliroSwitch";
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import type { TranscriptionLanguageCode } from "@bliro/common-types/languages";
 import dayjs from "dayjs";
@@ -147,13 +148,13 @@ export const SettingsAccountPage = () => {
             direction="row"
             alignItems="center"
             justifyContent="flex-end"
-            spacing={1.5}
+            spacing={tokens.spacing.md}
             flexWrap="wrap"
             useFlexGap
-            sx={{ pt: 2.5, borderTop: `1px solid ${colors.dark[700]}` }}
+            sx={{ pt: tokens.space.lg, borderTop: `1px solid ${colors.dark[700]}` }}
           >
             {saved && (
-              <Stack direction="row" alignItems="center" spacing={0.5}>
+              <Stack direction="row" alignItems="center" spacing={tokens.spacing.xs}>
                 <Check size={14} color={colors.green.dark} />
                 <Typography variant="xSmallBody" sx={{ color: colors.green.dark }}>
                   Saved
@@ -199,9 +200,9 @@ export const SettingsAccountPage = () => {
               <Stack
                 direction={{ xs: "column", sm: "row" }}
                 alignItems={{ xs: "stretch", sm: "center" }}
-                spacing={2}
+                spacing={tokens.spacing.md}
               >
-                <Stack direction="row" alignItems="center" spacing={1.5} sx={{ flex: 1, minWidth: 0 }}>
+                <Stack direction="row" alignItems="center" spacing={tokens.spacing.md} sx={{ flex: 1, minWidth: 0 }}>
                   <Phone size={16} color={colors.dark[400]} />
                   <Stack sx={{ minWidth: 0 }}>
                     <Typography
@@ -210,12 +211,12 @@ export const SettingsAccountPage = () => {
                     >
                       {PHONE_ASSISTANT.number}
                     </Typography>
-                    <Typography variant="xxSmallBody" sx={{ color: colors.dark[400] }}>
+                    <Typography variant="meta">
                       Your assistant answers on this number.
                     </Typography>
                   </Stack>
                 </Stack>
-                <Stack direction="row" alignItems="center" spacing={1.5} flexWrap="wrap" useFlexGap>
+                <Stack direction="row" alignItems="center" spacing={tokens.spacing.md} flexWrap="wrap" useFlexGap>
                   <StatusPill
                     label={PHONE_ASSISTANT.forwardingConfigured ? "Forwarding active" : "Setup needed"}
                     color={
@@ -246,9 +247,9 @@ export const SettingsAccountPage = () => {
             <Stack
               direction={{ xs: "column", sm: "row" }}
               alignItems={{ xs: "stretch", sm: "center" }}
-              spacing={2}
+              spacing={tokens.spacing.md}
             >
-              <Stack direction="row" alignItems="center" spacing={1.5} sx={{ flex: 1, minWidth: 0 }}>
+              <Stack direction="row" alignItems="center" spacing={tokens.spacing.md} sx={{ flex: 1, minWidth: 0 }}>
                 <AudioLines size={16} color={voiceEnrolled ? colors.green.dark : colors.dark[400]} />
                 <Typography variant="smallBody" sx={{ color: colors.dark[200] }}>
                   {voiceEnrolled
@@ -257,7 +258,7 @@ export const SettingsAccountPage = () => {
                 </Typography>
               </Stack>
               {voiceEnrolled ? (
-                <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+                <Stack direction="row" spacing={tokens.spacing.sm} flexWrap="wrap" useFlexGap>
                   <Button variant="outlined" color="secondary">
                     Re-record
                   </Button>

@@ -1,4 +1,5 @@
 import { colors } from "@bliro/ui/theme/colors";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { Box, Button, Popover, Stack, Typography } from "@mui/material";
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
@@ -50,7 +51,7 @@ export const DropDownSelect = ({
 
   return (
     <Box>
-      <Stack direction="row" gap={1} alignItems="center">
+      <Stack direction="row" gap={tokens.spacing.sm} alignItems="center">
         {label && (
           <Typography variant="xSmallBody" fontWeight={fontWeight.regular} color={colors.dark[400]}>
             {label}:

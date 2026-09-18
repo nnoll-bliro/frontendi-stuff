@@ -1,4 +1,5 @@
 import { Box, BoxProps, Stack, Typography, TypographyProps } from "@mui/material";
+import { tokens } from "@bliro/ui/theme/tokens";
 import clsx from "classnames";
 import { ForwardedRef, forwardRef, InputHTMLAttributes, ReactNode, useId } from "react";
 
@@ -79,7 +80,7 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
           className={clsx(styles["container"], inputSizeMap[variant], {
             [styles["error"]]: Boolean(errorMessage),
           })}
-          gap={1}
+          gap={tokens.spacing.sm}
         >
           {startIcon}
           <input type="text" {...inputProps} id={id} aria-invalid={errorMessage ? true : inputProps["aria-invalid"]} aria-describedby={describedBy} className={styles["input"]} ref={ref} />
