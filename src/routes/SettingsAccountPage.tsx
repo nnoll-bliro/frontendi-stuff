@@ -12,7 +12,7 @@ import { useLoaderData } from "react-router";
 import type { Session } from "@/api/client";
 import { DropDownSelect } from "@/components/DropDownSelect";
 import { TranscriptionLanguageDropdown } from "@/components/LanguagePicker/TranscriptionLanguageDropdown";
-import { Card } from "@/components/playground/Card";
+import { PageHeader } from "@/components/playground/PageHeader";
 import { SettingsField, SettingsSection } from "@/components/playground/SettingsSection";
 import { StatusPill } from "@/components/playground/StatusPill";
 import { ConfirmDialog } from "@/components/Reusable/ConfirmDialog";
@@ -69,132 +69,124 @@ export const SettingsAccountPage = () => {
 
   return (
     <>
-      <Stack
-        direction="row"
-        alignItems="flex-start"
-        justifyContent="space-between"
-        spacing={2}
-        sx={{ mb: 3 }}
-      >
-        <Stack spacing={0.5}>
-          <Typography variant="h3">My Account</Typography>
-          <Typography variant="smallBody" sx={{ color: colors.dark[400] }}>
-            Manage your personal details and preferences
-          </Typography>
-        </Stack>
-        <Button
-          variant="text"
-          component="a"
-          href={HELP_CENTER_URL}
-          target="_blank"
-          rel="noreferrer"
-          endIcon={<ExternalLink size={14} />}
-          sx={{ flexShrink: 0 }}
+      <PageHeader
+        title="My Account"
+        description="Update your details, language preferences, and account features."
+        action={
+          <Button
+            variant="text"
+            component="a"
+            href={HELP_CENTER_URL}
+            target="_blank"
+            rel="noreferrer"
+            endIcon={<ExternalLink size={14} />}
+            sx={{ flexShrink: 0 }}
+          >
+            Go to Help Center
+          </Button>
+        }
+      />
+
+      <Stack spacing={{ xs: 2, md: 2.5 }}>
+        <SettingsSection
+          title="Profile and language"
+          description="Set the name and defaults Bliro uses for your conversations."
         >
-          Go to Help Center
-        </Button>
-      </Stack>
-
-      <Stack spacing={2.5}>
-        <Card sx={{ p: 3 }}>
-          <Stack spacing={2.5}>
-            <Stack direction="row" spacing={2.5} flexWrap="wrap" useFlexGap>
-              <Box sx={{ flex: 1, minWidth: 220 }}>
-                <Input
-                  label="First Name"
-                  value={settings.firstName}
-                  onChange={(event) => update("firstName", event.target.value)}
-                />
-              </Box>
-              <Box sx={{ flex: 1, minWidth: 220 }}>
-                <Input
-                  label="Last Name"
-                  value={settings.lastName}
-                  onChange={(event) => update("lastName", event.target.value)}
-                />
-              </Box>
-            </Stack>
-
-            <Stack direction="row" spacing={2.5} flexWrap="wrap" useFlexGap>
-              <Box sx={{ flex: 1, minWidth: 220 }}>
-                <TranscriptionLanguageDropdown
-                  label="Primary Conversation Language"
-                  value={settings.primaryLanguage}
-                  placeholder="Select a language"
-                  pinnedLanguageCodes={PINNED_LANGUAGES}
-                  // Excluding the other selection keeps the two pickers from
-                  // resolving to the same language — same guard the real
-                  // Settings/Profile applies.
-                  excludeLanguageCodes={[settings.secondaryLanguage]}
-                  onChange={(code: TranscriptionLanguageCode) => update("primaryLanguage", code)}
-                />
-              </Box>
-              <Box sx={{ flex: 1, minWidth: 220 }}>
-                <TranscriptionLanguageDropdown
-                  label="Secondary Conversation Language"
-                  value={settings.secondaryLanguage}
-                  placeholder="Select a language"
-                  pinnedLanguageCodes={PINNED_LANGUAGES}
-                  excludeLanguageCodes={[settings.primaryLanguage]}
-                  onChange={(code: TranscriptionLanguageCode) => update("secondaryLanguage", code)}
-                />
-              </Box>
-            </Stack>
-
-            <SettingsField label="Timezone">
-              <Box>
-                <DropDownSelect
-                  id="timezone"
-                  value={{ label: settings.timezone, value: settings.timezone }}
-                  items={TIMEZONE_ITEMS}
-                  setValue={(item) => update("timezone", item.value)}
-                />
-              </Box>
-            </SettingsField>
-
-            <Stack
-              direction="row"
-              alignItems="center"
-              justifyContent="flex-end"
-              spacing={1.5}
-              sx={{ mt: 0.5 }}
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: { xs: "minmax(0, 1fr)", md: "repeat(2, minmax(0, 1fr))" },
+              gap: 2.5,
+            }}
+          >
+            <Input
+              label="First Name"
+              value={settings.firstName}
+              onChange={(event) => update("firstName", event.target.value)}
+              wrapperProps={{ sx: { minWidth: 0 } }}
+            />
+            <Input
+              label="Last Name"
+              value={settings.lastName}
+              onChange={(event) => update("lastName", event.target.value)}
+              wrapperProps={{ sx: { minWidth: 0 } }}
+            />
+            <TranscriptionLanguageDropdown
+              label="Primary Conversation Language"
+              value={settings.primaryLanguage}
+              placeholder="Select a language"
+              pinnedLanguageCodes={PINNED_LANGUAGES}
+              // Excluding the other selection keeps the two pickers from
+              // resolving to the same language — same guard the real
+              // Settings/Profile applies.
+              excludeLanguageCodes={[settings.secondaryLanguage]}
+              onChange={(code: TranscriptionLanguageCode) => update("primaryLanguage", code)}
+            />
+            <TranscriptionLanguageDropdown
+              label="Secondary Conversation Language"
+              value={settings.secondaryLanguage}
+              placeholder="Select a language"
+              pinnedLanguageCodes={PINNED_LANGUAGES}
+              excludeLanguageCodes={[settings.primaryLanguage]}
+              onChange={(code: TranscriptionLanguageCode) => update("secondaryLanguage", code)}
+            />
+            <SettingsField
+              label="Timezone"
+              hint="Used for meeting dates, reminders, and summaries."
             >
-              {saved && (
-                <Stack direction="row" alignItems="center" spacing={0.5}>
-                  <Check size={14} color={colors.green.dark} />
-                  <Typography variant="xSmallBody" sx={{ color: colors.green.dark }}>
-                    Saved
-                  </Typography>
-                </Stack>
-              )}
-              <Button
-                variant="outlined"
-                color="secondary"
-                disabled={!isDirty}
-                onClick={() => {
-                  setSettings(initial);
-                  setSaved(false);
-                }}
-              >
-                Cancel
-              </Button>
-              <Button
-                variant="contained"
-                disabled={!isDirty}
-                onClick={() => setSaved(true)}
-                // Nothing is persisted — the mock state already holds the edit,
-                // so this only acknowledges it.
-              >
-                Save changes
-              </Button>
-            </Stack>
+              <DropDownSelect
+                id="timezone"
+                value={{ label: settings.timezone, value: settings.timezone }}
+                items={TIMEZONE_ITEMS}
+                setValue={(item) => update("timezone", item.value)}
+              />
+            </SettingsField>
+          </Box>
+
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="flex-end"
+            spacing={1.5}
+            flexWrap="wrap"
+            useFlexGap
+            sx={{ pt: 2.5, borderTop: `1px solid ${colors.dark[700]}` }}
+          >
+            {saved && (
+              <Stack direction="row" alignItems="center" spacing={0.5}>
+                <Check size={14} color={colors.green.dark} />
+                <Typography variant="xSmallBody" sx={{ color: colors.green.dark }}>
+                  Saved
+                </Typography>
+              </Stack>
+            )}
+            <Button
+              variant="outlined"
+              color="secondary"
+              disabled={!isDirty}
+              onClick={() => {
+                setSettings(initial);
+                setSaved(false);
+              }}
+            >
+              Cancel
+            </Button>
+            <Button
+              variant="contained"
+              disabled={!isDirty}
+              onClick={() => setSaved(true)}
+              // Nothing is persisted — the mock state already holds the edit,
+              // so this only acknowledges it.
+            >
+              Save changes
+            </Button>
           </Stack>
-        </Card>
+        </SettingsSection>
 
         {phoneAssistantEnabled && (
           <SettingsSection
             title="Bliro Phone Assistant"
-            description="Manage your personal phone assistant."
+            description="Choose whether your personal assistant can answer calls."
             action={
               <BliroSwitch
                 checked={assistantOn}
@@ -204,10 +196,14 @@ export const SettingsAccountPage = () => {
             }
           >
             {assistantOn ? (
-              <Stack direction="row" alignItems="center" spacing={2} flexWrap="wrap" useFlexGap>
-                <Stack direction="row" alignItems="center" spacing={1.5} sx={{ flex: 1 }}>
+              <Stack
+                direction={{ xs: "column", sm: "row" }}
+                alignItems={{ xs: "stretch", sm: "center" }}
+                spacing={2}
+              >
+                <Stack direction="row" alignItems="center" spacing={1.5} sx={{ flex: 1, minWidth: 0 }}>
                   <Phone size={16} color={colors.dark[400]} />
-                  <Stack>
+                  <Stack sx={{ minWidth: 0 }}>
                     <Typography
                       variant="smallBody"
                       sx={{ color: colors.dark[100], fontWeight: fontWeight.medium }}
@@ -219,22 +215,24 @@ export const SettingsAccountPage = () => {
                     </Typography>
                   </Stack>
                 </Stack>
-                <StatusPill
-                  label={PHONE_ASSISTANT.forwardingConfigured ? "Forwarding active" : "Setup needed"}
-                  color={
-                    PHONE_ASSISTANT.forwardingConfigured ? colors.green.dark : colors.yellow.dark
-                  }
-                  background={
-                    PHONE_ASSISTANT.forwardingConfigured ? colors.green[600] : colors.yellow[600]
-                  }
-                />
-                <Button variant="outlined" color="secondary">
-                  Configure
-                </Button>
+                <Stack direction="row" alignItems="center" spacing={1.5} flexWrap="wrap" useFlexGap>
+                  <StatusPill
+                    label={PHONE_ASSISTANT.forwardingConfigured ? "Forwarding active" : "Setup needed"}
+                    color={
+                      PHONE_ASSISTANT.forwardingConfigured ? colors.green.dark : colors.yellow.dark
+                    }
+                    background={
+                      PHONE_ASSISTANT.forwardingConfigured ? colors.green[600] : colors.yellow[600]
+                    }
+                  />
+                  <Button variant="outlined" color="secondary">
+                    Configure
+                  </Button>
+                </Stack>
               </Stack>
             ) : (
               <Typography variant="smallBody" sx={{ color: colors.dark[400] }}>
-                Turn the assistant on to get a number that answers calls for you.
+                Turn it on to get a number that answers calls for you.
               </Typography>
             )}
           </SettingsSection>
@@ -243,19 +241,23 @@ export const SettingsAccountPage = () => {
         {voiceIdEnabled && (
           <SettingsSection
             title="VoiceID"
-            description="With VoiceID, Bliro learns your voice and identifies your voice among other speakers in a meeting."
+            description="Teach Bliro to identify your voice among other meeting speakers."
           >
-            <Stack direction="row" alignItems="center" spacing={2} flexWrap="wrap" useFlexGap>
-              <Stack direction="row" alignItems="center" spacing={1.5} sx={{ flex: 1 }}>
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              alignItems={{ xs: "stretch", sm: "center" }}
+              spacing={2}
+            >
+              <Stack direction="row" alignItems="center" spacing={1.5} sx={{ flex: 1, minWidth: 0 }}>
                 <AudioLines size={16} color={voiceEnrolled ? colors.green.dark : colors.dark[400]} />
                 <Typography variant="smallBody" sx={{ color: colors.dark[200] }}>
                   {voiceEnrolled
-                    ? `Voice profile recorded ${dayjs(VOICE_ID.enrolledAt).format("D MMM YYYY")} · ${VOICE_ID.sampleSeconds}s sample`
+                    ? `Recorded ${dayjs(VOICE_ID.enrolledAt).format("D MMM YYYY")} · ${VOICE_ID.sampleSeconds}s sample`
                     : "No voice profile yet."}
                 </Typography>
               </Stack>
               {voiceEnrolled ? (
-                <Stack direction="row" spacing={1}>
+                <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
                   <Button variant="outlined" color="secondary">
                     Re-record
                   </Button>
@@ -264,7 +266,11 @@ export const SettingsAccountPage = () => {
                   </Button>
                 </Stack>
               ) : (
-                <Button variant="contained" onClick={() => setVoiceEnrolled(true)}>
+                <Button
+                  variant="contained"
+                  onClick={() => setVoiceEnrolled(true)}
+                  sx={{ alignSelf: { xs: "flex-start", sm: "auto" } }}
+                >
                   Set up VoiceID
                 </Button>
               )}
@@ -275,7 +281,7 @@ export const SettingsAccountPage = () => {
         <SettingsSection
           destructive
           title="Delete your Bliro account"
-          description="This action is permanent and all of your meeting notes will be lost."
+          description="Permanently delete your account and all of your meeting notes."
           action={
             <Button
               variant="contained"

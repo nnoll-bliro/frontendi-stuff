@@ -41,7 +41,7 @@ test("the session directory labels Call/Chat and links its context", async ({ pa
   const main = page.getByRole("main");
 
   await expect(main.getByRole("heading", { name: "Agent Sessions", level: 1 })).toBeVisible();
-  await expect(main).toContainText("never itself a customer touchpoint");
+  await expect(main).toContainText("separate from customer meetings");
 
   for (const session of sessions) {
     const card = sessionCard(main, session.title);
@@ -92,7 +92,7 @@ test("an assistant call reads as its own conversation, not a customer recording"
   await expect(region(page, "Overview")).toContainText("not a recording of a customer");
 
   const conversation = region(page, "Conversation");
-  await expect(conversation).toContainText("never a customer meeting transcript");
+  await expect(conversation).toContainText("not a customer transcript");
   await expect(conversation).toContainText("You");
   await expect(conversation).toContainText("Assistant");
   for (const message of session.messages) {
@@ -105,7 +105,7 @@ test("documentation produced points back at the meeting that owns it", async ({ 
   const documentation = region(page, "Documentation produced");
 
   await expect(documentation).toContainText("Source: Phone Assistant");
-  await expect(documentation).toContainText("belongs to the touchpoint it describes");
+  await expect(documentation).toContainText("attached to the related touchpoint");
   await expect(
     documentation.getByRole("link", { name: "Halden Logistics — Depot follow-up", exact: true }),
   ).toHaveAttribute("href", "/meetings/mtg_halden_depot");
@@ -127,7 +127,7 @@ test("meeting linkage is optional and reciprocal", async ({ page }) => {
 
   // And the touchpoint lists the same session back, without claiming it as a transcript.
   const sessions = region(page, "Agent Sessions");
-  await expect(sessions).toContainText("not a recording of this meeting");
+  await expect(sessions).toContainText("Separate assistant conversations about this touchpoint");
   await sessions.getByRole("link", { name: "Document Ruben's depot call", exact: true }).click();
   await expect(page).toHaveURL("/agent-sessions/as_halden_debrief");
 

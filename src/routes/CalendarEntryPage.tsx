@@ -18,12 +18,14 @@ export const CalendarEntryPage = () => {
 
   return (
     <>
-      <Box sx={{ mb: 2 }}>
+      <Box sx={{ mb: 2.5 }}>
         <BackButton onClick={() => navigate("/calendar")} />
       </Box>
 
-      <Stack spacing={1} sx={{ mb: 3 }}>
-        <Typography variant="h3">{entry.title}</Typography>
+      <Stack spacing={1} sx={{ mb: { xs: 3, md: 4 } }}>
+        <Typography component="h1" variant="pageTitle" sx={{ overflowWrap: "anywhere" }}>
+          {entry.title}
+        </Typography>
         <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap" useFlexGap>
           <Stack direction="row" alignItems="center" spacing={0.5}>
             <CalendarClock size={14} color={colors.dark[400]} />
@@ -47,33 +49,33 @@ export const CalendarEntryPage = () => {
         </Stack>
       </Stack>
 
-      <Stack direction="row" spacing={3} alignItems="flex-start">
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        spacing={3}
+        alignItems={{ xs: "stretch", md: "flex-start" }}
+      >
         <Stack sx={{ flex: 1, minWidth: 0 }} spacing={2}>
-          <Card sx={{ p: 3 }}>
-            <Stack spacing={2}>
-              <Stack spacing={0.5}>
-                <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
-                  Description
-                </Typography>
+          <Card sx={{ p: { xs: 2.5, sm: 3 } }}>
+            <Stack spacing={2.5}>
+              <Detail label="Description">
                 <Typography variant="normalBody" sx={{ color: colors.dark[200] }}>
                   {entry.description ?? "No description on this invite."}
                 </Typography>
-              </Stack>
+              </Detail>
 
-              <Stack spacing={0.5}>
-                <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
-                  Location
-                </Typography>
+              <Detail label="Location">
                 {entry.location ? (
-                  <Stack direction="row" alignItems="center" spacing={0.75}>
-                    {isLink ? (
-                      <Video size={14} color={colors.dark[400]} />
-                    ) : (
-                      <Link2 size={14} color={colors.dark[400]} />
-                    )}
+                  <Stack direction="row" alignItems="flex-start" spacing={0.75}>
+                    <Box sx={{ display: "flex", pt: "3px", flexShrink: 0 }}>
+                      {isLink ? (
+                        <Video size={14} color={colors.dark[400]} />
+                      ) : (
+                        <Link2 size={14} color={colors.dark[400]} />
+                      )}
+                    </Box>
                     <Typography
                       variant="normalBody"
-                      sx={{ color: colors.dark[200], wordBreak: "break-all" }}
+                      sx={{ color: colors.dark[200], overflowWrap: "anywhere", minWidth: 0 }}
                     >
                       {entry.location}
                     </Typography>
@@ -83,24 +85,24 @@ export const CalendarEntryPage = () => {
                     No location set.
                   </Typography>
                 )}
-              </Stack>
+              </Detail>
             </Stack>
           </Card>
 
-          <Card sx={{ p: 3 }}>
+          <Card sx={{ p: { xs: 2.5, sm: 3 } }}>
             <Stack spacing={1.5}>
-              <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
-                Meeting record
-              </Typography>
+              <SectionLabel>Meeting record</SectionLabel>
               {entry.meetingId ? (
                 <Stack
-                  direction="row"
-                  alignItems="center"
+                  direction={{ xs: "column", sm: "row" }}
+                  alignItems={{ xs: "flex-start", sm: "center" }}
                   justifyContent="space-between"
                   spacing={2}
                 >
-                  <Stack direction="row" alignItems="center" spacing={1}>
-                    <FileText size={16} color={colors.green.dark} />
+                  <Stack direction="row" alignItems="flex-start" spacing={1}>
+                    <Box sx={{ display: "flex", pt: "3px" }}>
+                      <FileText size={16} color={colors.green.dark} />
+                    </Box>
                     <Typography variant="normalBody" sx={{ color: colors.dark[200] }}>
                       A meeting record is linked to this calendar entry.
                     </Typography>
@@ -123,20 +125,46 @@ export const CalendarEntryPage = () => {
           </Card>
         </Stack>
 
-        <Card sx={{ width: 300, flexShrink: 0, p: 2 }}>
-          <Stack spacing={1.5}>
+        <Card sx={{ width: { xs: "100%", md: 300 }, flexShrink: 0, p: { xs: 2.5, sm: 3 } }}>
+          <Stack spacing={1.75}>
             <Typography
-              variant="xSmallBody"
-              sx={{ color: colors.dark[400], fontWeight: fontWeight.medium }}
+              component="h2"
+              variant="normalTitle"
+              sx={{ color: colors.dark[100], fontWeight: fontWeight.semiBold }}
             >
-              {entry.participants.length} participants
+              Participants
+              <Typography component="span" variant="xSmallBody" sx={{ color: colors.dark[400] }}>
+                {` · ${entry.participants.length}`}
+              </Typography>
             </Typography>
-            {entry.participants.map((participant) => (
-              <ParticipantRow key={participant.id} participant={participant} />
-            ))}
+            {entry.participants.length > 0 ? (
+              entry.participants.map((participant) => (
+                <ParticipantRow key={participant.id} participant={participant} />
+              ))
+            ) : (
+              <Typography variant="smallBody" sx={{ color: colors.dark[400] }}>
+                No participants listed.
+              </Typography>
+            )}
           </Stack>
         </Card>
       </Stack>
     </>
   );
 };
+
+const SectionLabel = ({ children }: { children: React.ReactNode }) => (
+  <Typography
+    variant="xSmallBody"
+    sx={{ color: colors.dark[400], fontWeight: fontWeight.semiBold }}
+  >
+    {children}
+  </Typography>
+);
+
+const Detail = ({ label, children }: { label: string; children: React.ReactNode }) => (
+  <Stack spacing={0.75}>
+    <SectionLabel>{label}</SectionLabel>
+    {children}
+  </Stack>
+);

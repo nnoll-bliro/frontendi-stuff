@@ -22,7 +22,7 @@ npm run db:reset  # delete the seeded database; the next `dev` rebuilds it
 | React 19 + TypeScript + Vite 8 | same major versions as `bliro/apps/web-app` |
 | MUI v5 + Emotion | `@mui/material`, `@mui/system`, `@mui/x-date-pickers` v6 |
 | Icons | `@mui/icons-material` and `lucide-react`, plus SVGR for `.svg` imports |
-| `src/ui/` | verbatim copy of `bliro/libs/bliro-ui/src` — theme, tokens, Inter, logo, 21 components |
+| `src/ui/` | evolving Bliro design-system library, originally copied from `bliro/libs/bliro-ui/src` — theme, tokens, Inter, logo, and shared components |
 | `src/components/` | the generalizable slice of `bliro/apps/web-app/src/components` |
 | `src/common-types/` | the handful of types those components import |
 | `src/i18n/` | i18next + the real `common.json` locales (en, de) |
@@ -195,8 +195,14 @@ Two parallel sources for the same palette, mirroring the main app:
 - **`@bliro/ui/theme/colors`** — the `colors` object, for `sx` props and inline styles.
 - **`@bliro/ui/theme.css`** — `--bliro-orange-1` … CSS custom properties, for CSS Modules.
 
-Typography goes through MUI's `Typography` with the custom variants the theme adds:
-`h0`–`h4`, `subtitle0`–`subtitle4`, `xxSmallTitle`→`largeTitle`, `xxSmallBody`→`largeBody`.
+Typography goes through MUI's `Typography`. Product pages use `pageTitle`,
+`sectionTitle`, and `eyebrow` alongside `smallBody` / `xSmallBody`. The existing
+`h0`–`h4`, `subtitle0`–`subtitle4`, title and body variants remain available.
+
+The shared library now owns `PageHeader`, `SectionHeader`, `Surface`, `SurfaceList`,
+and semantic product tokens in `src/ui/theme/tokens.ts`. Keep reusable improvements
+in the library rather than adding app-level overrides. See [the design-system guide](src/ui/README.md)
+for hierarchy, spacing, surfaces, accessibility, and contribution boundaries.
 
 Styling follows the web-app's mix: `sx={{}}` for one-offs, `*.module.css` for anything
 reused. `styled()` is essentially unused in the real app — don't start here.
@@ -233,17 +239,12 @@ not ship. So the language pickers render real flags.
 
 ## Keeping in sync
 
-`src/ui/` is a **snapshot**, deliberately not a dependency. To refresh it from the
-monorepo:
+`src/ui/` started as a snapshot, but is now an **evolving local library**, deliberately
+not a package dependency. Compare upstream changes in a temporary directory and merge
+selectively; do not use `rsync --delete` over this library. Preserve the local product
+patterns and tokens, and port reusable improvements back to the monorepo intentionally.
 
-```bash
-rsync -a --delete ~/dev/bliro/libs/bliro-ui/src/ \
-  ~/dev/frontend-bliro/src/ui/ \
-  --exclude '*.test.tsx' --exclude 'setupTests.ts'
-```
-
-`src/components/` is a hand-picked subset, so refresh those per folder rather than
-with `--delete`.
+`src/components/` is a hand-picked subset, so review updates per folder there too.
 
 Then re-run `npm run typecheck`, and add any new third-party dependency the copied
 components pulled in (`react-international-phone` was one such surprise).

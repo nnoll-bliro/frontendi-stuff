@@ -13,7 +13,7 @@ export const PeoplePage = () => {
     <>
       <PageHeader
         title="People"
-        description="Customer contacts and independent advisers, separate from your internal Team. Read-only examples."
+        description="The people behind your customer relationships."
       />
       <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap sx={{ mb: 2 }}>
         <Typography variant="smallBody" sx={{ color: colors.dark[400] }}>

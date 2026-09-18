@@ -38,13 +38,14 @@ export const AgentSessionDetailPage = () => {
       <ListReturn to="/agent-sessions" label="Agent Sessions" />
       <PageHeader
         title={session.title}
-        description={`Agent session · ${formatDateTime(session.startedAt)} · Read-only example`}
+        eyebrow="Agent session"
+        description={formatDateTime(session.startedAt)}
         action={
           <StatusPill label={channelLabel} color={colors.dark[300]} background={colors.dark[800]} />
         }
       />
 
-      <Stack spacing={4}>
+      <Stack spacing={5}>
         <HubSection id="overview" title="Overview">
           <Card sx={{ p: 3 }}>
             <Stack spacing={1.5}>
@@ -61,7 +62,7 @@ export const AgentSessionDetailPage = () => {
           id="conversation"
           title="Conversation"
           count={session.messages.length}
-          description="What was said between you and the assistant. This is the session's own content, never a customer meeting transcript."
+          description="Your conversation with the assistant, not a customer transcript."
         >
           {session.messages.length === 0 ? (
             <EmptyState
@@ -73,7 +74,11 @@ export const AgentSessionDetailPage = () => {
             <Card sx={{ p: 3 }}>
               <Stack spacing={2.5}>
                 {session.messages.map((message) => (
-                  <Stack key={message.id} spacing={0.5}>
+                  <Stack key={message.id} spacing={1} sx={{
+                    p: 2.5, borderRadius: "8px",
+                    backgroundColor: message.role === "user" ? colors.dark[900] : "transparent",
+                    borderLeft: `2px solid ${message.role === "user" ? colors.dark[600] : colors.orange[400]}`,
+                  }}>
                     <Typography
                       variant="xSmallBody"
                       sx={{ color: colors.dark[300], fontWeight: fontWeight.semiBold }}
@@ -94,7 +99,7 @@ export const AgentSessionDetailPage = () => {
           id="documentation"
           title="Documentation produced"
           count={session.documentation.length}
-          description="Documentation this conversation wrote up. The artifact belongs to the touchpoint it describes, not to this session."
+          description="Notes created here and attached to the related touchpoint."
         >
           {session.documentation.length === 0 ? (
             <EmptyState
@@ -114,7 +119,7 @@ export const AgentSessionDetailPage = () => {
         <HubSection
           id="context"
           title="Company and people"
-          description="Who this session is about. Context links are explicit; a session never inherits a whole company history."
+          description="The contacts and company this session is about."
         >
           <Card sx={{ p: 3 }}>
             <Stack spacing={2.5}>
@@ -153,7 +158,7 @@ export const AgentSessionDetailPage = () => {
         <HubSection
           id="meeting"
           title="Related meeting"
-          description="Optional. A session can be about a touchpoint, or stand entirely on its own."
+          description="The touchpoint discussed in this session, if linked."
         >
           <Card sx={{ p: 2.5 }}>
             {session.meeting ? (

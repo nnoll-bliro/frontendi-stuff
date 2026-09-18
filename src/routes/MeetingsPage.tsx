@@ -1,5 +1,6 @@
 import { Stack, Typography } from "@mui/material";
 import { Input } from "@bliro/ui/components/Input";
+import { SurfaceList } from "@bliro/ui/components/Surface";
 import { colors } from "@bliro/ui/theme/colors";
 import {
   CalendarClock,
@@ -83,16 +84,17 @@ export const MeetingsPage = () => {
         description="Customer meetings and calls, whether scheduled or added ad hoc."
         action={
           <Input
+            aria-label="Search meetings"
             placeholder="Search meetings…"
             startIcon={<Search size={16} color={colors.dark[400]} />}
             value={draft}
             onChange={(event) => setDraft(event.target.value)}
-            wrapperProps={{ sx: { width: 260 } }}
+            wrapperProps={{ sx: { width: { xs: "100%", sm: 260 } } }}
           />
         }
       />
 
-      <Stack direction="row" spacing={1} sx={{ mb: 3 }}>
+      <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mb: 3 }}>
         {STATUS_TABS.map((tab) => (
           <TabItem
             key={tab.value}
@@ -117,14 +119,14 @@ export const MeetingsPage = () => {
           description="Try a different search term, or switch back to All."
         />
       ) : (
-        <Stack spacing={1.5}>
+        <SurfaceList>
           {meetings.map((meeting) => {
             const tone = MEETING_STATUS_TONE[meeting.status];
             return (
               <Card key={meeting.id} sx={{ p: 2.5 }}>
                 <Stack spacing={1}>
                   <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap>
-                    <RecordLink to={`/meetings/${meeting.id}`}>{meeting.title}</RecordLink>
+                    <RecordLink to={`/meetings/${meeting.id}`} primary>{meeting.title}</RecordLink>
                     <StatusPill label={tone.label} color={tone.color} background={tone.background} />
                   </Stack>
 
@@ -168,7 +170,7 @@ export const MeetingsPage = () => {
               </Card>
             );
           })}
-        </Stack>
+        </SurfaceList>
       )}
     </>
   );
@@ -177,7 +179,7 @@ export const MeetingsPage = () => {
 const Meta = ({ icon, children }: { icon?: React.ReactNode; children: React.ReactNode }) => (
   <Stack direction="row" alignItems="center" spacing={0.5} sx={{ color: colors.dark[400] }}>
     {icon}
-    <Typography variant="xxSmallBody" sx={{ color: colors.dark[400] }}>
+    <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
       {children}
     </Typography>
   </Stack>

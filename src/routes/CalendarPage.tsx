@@ -1,5 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { colors } from "@bliro/ui/theme/colors";
+import { focusRing } from "@bliro/ui/theme/tokens";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import {
   CalendarClock,
@@ -10,7 +11,7 @@ import {
   Users,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useLoaderData, useNavigate, useSearchParams } from "react-router";
+import { Link, useLoaderData, useSearchParams } from "react-router";
 
 import { api, type CalendarEntry, type CalendarRange as Range } from "@/api/client";
 import { Card } from "@/components/playground/Card";
@@ -30,7 +31,6 @@ const RANGES = [
 export const CalendarPage = () => {
   const initial = useLoaderData() as CalendarEntry[];
   const [searchParams, setSearchParams] = useSearchParams();
-  const navigate = useNavigate();
 
   const range = (searchParams.get("range") ?? "upcoming") as Range;
   const [entries, setEntries] = useState(initial);
@@ -52,25 +52,27 @@ export const CalendarPage = () => {
     <>
       <PageHeader
         title="Calendar"
-        description="Google and Microsoft entries, with linked meeting records when available."
+        description="Calendar entries from Google and Microsoft, with linked meeting records when available."
       />
 
-      <Stack direction="row" spacing={1} sx={{ mb: 3 }}>
-        {RANGES.map((option) => (
-          <TabItem
-            key={option.value}
-            title={option.label}
-            Icon={option.Icon}
-            isActive={range === option.value}
-            onClick={() =>
-              setSearchParams((params) => {
-                params.set("range", option.value);
-                return params;
-              })
-            }
-          />
-        ))}
-      </Stack>
+      <Box component="nav" aria-label="Calendar range" sx={{ mb: 3, overflowX: "auto" }}>
+        <Stack direction="row" spacing={1} sx={{ minWidth: "max-content" }}>
+          {RANGES.map((option) => (
+            <TabItem
+              key={option.value}
+              title={option.label}
+              Icon={option.Icon}
+              isActive={range === option.value}
+              onClick={() =>
+                setSearchParams((params) => {
+                  params.set("range", option.value);
+                  return params;
+                })
+              }
+            />
+          ))}
+        </Stack>
+      </Box>
 
       {days.length === 0 ? (
         <EmptyState
@@ -79,9 +81,9 @@ export const CalendarPage = () => {
           description="No calendar entries in this range."
         />
       ) : (
-        <Stack spacing={4}>
+        <Stack spacing={{ xs: 3, md: 4 }}>
           {days.map(([day, dayEntries]) => (
-            <Stack key={day} spacing={1.5}>
+            <Stack key={day} spacing={1.25}>
               <Typography
                 variant="xSmallBody"
                 sx={{ color: colors.dark[400], fontWeight: fontWeight.semiBold }}
@@ -89,20 +91,26 @@ export const CalendarPage = () => {
                 {day}
               </Typography>
               {dayEntries.map((entry) => (
-                <Card
-                  key={entry.id}
-                  interactive
-                  sx={{ p: 2 }}
-                  // Cards navigate on click; the detail route is also reachable
-                  // from a meeting, so both directions of the link work.
-                >
-                  <Stack
-                    direction="row"
-                    spacing={2}
-                    alignItems="center"
-                    onClick={() => navigate(`/calendar/${entry.id}`)}
+                <Card key={entry.id} interactive>
+                  <Box
+                    component={Link}
+                    to={`/calendar/${entry.id}`}
+                    sx={{
+                      display: "grid",
+                      gridTemplateColumns: {
+                        xs: "52px 3px minmax(0, 1fr)",
+                        sm: "64px 3px minmax(0, 1fr) auto",
+                      },
+                      gap: { xs: 1.5, sm: 2 },
+                      alignItems: "center",
+                      p: { xs: 2, sm: 2.5 },
+                      color: "inherit",
+                      textDecoration: "none",
+                      borderRadius: "inherit",
+                      "&:focus-visible": focusRing,
+                    }}
                   >
-                    <Stack sx={{ width: 64, flexShrink: 0 }}>
+                    <Stack sx={{ minWidth: 0 }}>
                       <Typography
                         variant="normalTitle"
                         sx={{ color: colors.dark[100], fontWeight: fontWeight.semiBold }}
@@ -118,12 +126,13 @@ export const CalendarPage = () => {
                       sx={{
                         width: 3,
                         alignSelf: "stretch",
+                        gridRow: { xs: "1 / span 2", sm: "auto" },
                         borderRadius: "2px",
                         backgroundColor: entry.isExternal ? colors.orange[100] : colors.blue[300],
                       }}
                     />
 
-                    <Stack sx={{ flex: 1, minWidth: 0 }} spacing={0.5}>
+                    <Stack sx={{ minWidth: 0 }} spacing={0.5}>
                       <Typography
                         variant="normalTitle"
                         noWrap
@@ -131,7 +140,13 @@ export const CalendarPage = () => {
                       >
                         {entry.title}
                       </Typography>
-                      <Stack direction="row" alignItems="center" spacing={1.5}>
+                      <Stack
+                        direction="row"
+                        alignItems="center"
+                        spacing={1.5}
+                        flexWrap="wrap"
+                        useFlexGap
+                      >
                         <CustomIcon
                           icon={entry.provider === "google" ? "GoogleCalendarIcon" : "OutlookIcon"}
                           width={13}
@@ -149,21 +164,23 @@ export const CalendarPage = () => {
                       </Stack>
                     </Stack>
 
-                    {entry.meetingId ? (
-                      <StatusPill
-                        label="Meeting record"
-                        color={colors.green.dark}
-                        background={colors.green[600]}
-                      />
-                    ) : (
-                      <Stack direction="row" alignItems="center" spacing={0.5}>
-                        <Clock size={13} color={colors.dark[500]} />
-                        <Typography variant="xxSmallBody" sx={{ color: colors.dark[500] }}>
-                          No meeting record
-                        </Typography>
-                      </Stack>
-                    )}
-                  </Stack>
+                    <Box sx={{ gridColumn: { xs: "3", sm: "auto" }, justifySelf: "start" }}>
+                      {entry.meetingId ? (
+                        <StatusPill
+                          label="Meeting record"
+                          color={colors.green.dark}
+                          background={colors.green[600]}
+                        />
+                      ) : (
+                        <Stack direction="row" alignItems="center" spacing={0.5}>
+                          <Clock size={13} color={colors.dark[500]} />
+                          <Typography variant="xxSmallBody" sx={{ color: colors.dark[500] }}>
+                            No meeting record
+                          </Typography>
+                        </Stack>
+                      )}
+                    </Box>
+                  </Box>
                 </Card>
               ))}
             </Stack>

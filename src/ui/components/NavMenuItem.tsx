@@ -4,6 +4,7 @@ import { createElement, ElementType, MouseEvent, ReactNode, Ref, useId, useRef }
 
 import { colors } from "../theme/colors";
 import { fontWeight } from "../theme/fonts";
+import { focusRing, tokens } from "../theme/tokens";
 import { TruncatedTooltip } from "./TruncatedTooltip/TruncatedTooltip";
 
 interface NavMenuItemSharedProps {
@@ -71,7 +72,7 @@ interface ResolveIconColorOptions {
 function resolveIconColor({ active, disabled, isRemove, locked }: ResolveIconColorOptions): string {
   if (disabled) return colors.dark[500];
   if (isRemove) return colors.red[100];
-  if (active) return colors.orange[100];
+  if (active) return colors.orange.dark;
   if (locked) return colors.dark[500];
   return colors.dark[100];
 }
@@ -94,7 +95,8 @@ function resolveTextColor({
   if (disabled || inactive) return colors.dark[500];
   if (isRemove) return colors.red[100];
   if (locked && !active) return colors.dark[500];
-  return colors.dark[100];
+  if (active) return colors.orange.dark;
+  return colors.dark[300];
 }
 
 function resolveHoverBg(active?: boolean, isRemove?: boolean): string {
@@ -257,6 +259,7 @@ export const NavMenuItem = ({
             // child (the outer MenuItem) — it never reaches this nested link, which
             // is the actual focus target here, so it needs its own explicit name
             // once the visible label is hidden.
+            "aria-current": active ? "page" : undefined,
             "aria-label": isCollapsed ? label : undefined,
           }
         : {
@@ -266,6 +269,7 @@ export const NavMenuItem = ({
             style: linkStyle,
             ref: linkRef,
             "aria-describedby": lockedDescription ? lockedDescriptionId : undefined,
+            "aria-current": active ? "page" : undefined,
             "aria-label": isCollapsed ? label : undefined,
           },
       startIconNode,
@@ -288,6 +292,8 @@ export const NavMenuItem = ({
     <MenuItem
       ref={ref}
       component="div"
+      role={isLinkVariant ? "presentation" : "menuitem"}
+      tabIndex={isLinkVariant || disabled ? -1 : 0}
       disableRipple
       onClick={handleDeadZoneClick}
       // `component="div"` means the native `disabled` attribute does not apply, so a
@@ -303,7 +309,9 @@ export const NavMenuItem = ({
         py: isCollapsed ? "10px" : py,
         minHeight: 0,
         ...(isCollapsed && { justifyContent: "center" }),
-        borderRadius: "8px",
+        borderRadius: tokens.radius.control,
+        "&:focus-within": { ...focusRing, outlineOffset: "-2px" },
+        "& > a:focus-visible": { outline: "none" },
         cursor: disabled ? "not-allowed" : "pointer",
         width: "100%",
         overflow: "hidden",
@@ -349,7 +357,7 @@ export function NavMenuSectionLabel({ label, action }: NavMenuSectionLabelProps)
   return (
     <Stack direction="row" alignItems="center" sx={{ height: "32px", px: "8px", flexShrink: 0 }}>
       <Box sx={{ flex: 1 }}>
-        <Typography variant="smallBody" fontWeight={fontWeight.regular} color={colors.dark[400]}>
+        <Typography variant="eyebrow">
           {label}
         </Typography>
       </Box>

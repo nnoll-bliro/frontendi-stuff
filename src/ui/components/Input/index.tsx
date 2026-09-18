@@ -1,6 +1,6 @@
 import { Box, BoxProps, Stack, Typography, TypographyProps } from "@mui/material";
 import clsx from "classnames";
-import { ForwardedRef, forwardRef, InputHTMLAttributes, ReactNode } from "react";
+import { ForwardedRef, forwardRef, InputHTMLAttributes, ReactNode, useId } from "react";
 
 import { colors } from "../../theme/colors";
 import { fontWeight } from "../../theme/fonts";
@@ -55,10 +55,17 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
       ...inputProps
     } = props;
 
+    const generatedId = useId();
+    const id = inputProps.id ?? generatedId;
+    const errorId = `${id}-error`;
+    const describedBy = [inputProps["aria-describedby"], errorMessage ? errorId : undefined].filter(Boolean).join(" ") || undefined;
+
     return (
       <Box {...wrapperProps}>
         {label && (
           <Typography
+            component="label"
+            htmlFor={id}
             variant={typographyVariantMap[variant]}
             color={colors.dark[200]}
             fontWeight={fontWeight["semiBold"]}
@@ -75,11 +82,12 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
           gap={1}
         >
           {startIcon}
-          <input type="text" {...inputProps} className={styles["input"]} ref={ref} />
+          <input type="text" {...inputProps} id={id} aria-invalid={errorMessage ? true : inputProps["aria-invalid"]} aria-describedby={describedBy} className={styles["input"]} ref={ref} />
           {endIcon}
         </Stack>
         {Boolean(errorMessage) && (
           <Typography
+            id={errorId}
             variant="xSmallBody"
             color={colors.red[100]}
             fontWeight={fontWeight["medium"]}

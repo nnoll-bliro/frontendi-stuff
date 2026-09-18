@@ -5,11 +5,14 @@ import { PageHeader } from "@/components/playground/PageHeader";
 
 export const SettingsSharingPage = () => (
   <>
-    <PageHeader title="Sharing" description="Organization sharing policies · Future capability" />
+    <PageHeader
+      title="Sharing"
+      description="Organisation-wide sharing policies. Not yet available."
+    />
     <EmptyState
       Icon={Shield}
-      title="Sharing policies are not available yet"
-      description="This is a navigation placeholder only. No access is granted, changed, or enforced here, and there are no policy controls in this prototype."
+      title="Sharing policies are coming soon"
+      description="This preview does not grant access or change existing permissions."
     />
   </>
 );

@@ -16,9 +16,12 @@ interface TabItemProps {
   iconSize?: number;
 }
 
-export const TabItem = ({ title, Icon, isActive, onClick, iconSize = 20 }: TabItemProps) => {
+export const TabItem = ({ title, Icon, isActive, onClick, iconSize = 16 }: TabItemProps) => {
   return (
     <Stack
+      component="button"
+      type="button"
+      aria-pressed={isActive}
       direction="row"
       alignItems="center"
       gap={0.5}

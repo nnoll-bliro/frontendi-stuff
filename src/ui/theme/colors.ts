@@ -17,7 +17,8 @@ export const colors = {
     "100": "#131A26",
     "200": "#2B313C",
     "300": "#424852",
-    "400": "#71767D",
+    // Muted text: meets AA on white, canvas (900), and subtle surfaces (800).
+    "400": "#626870",
     "500": "#A1A3A8",
     "600": "#D0D1D4",
     "700": "#E7E8E9",

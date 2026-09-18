@@ -24,9 +24,10 @@ export const PersonDetailPage = () => {
       <ListReturn to="/people" label="People" />
       <PageHeader
         title={person.name}
-        description={`Customer contact · ${person.jobTitle} · Read-only example`}
+        eyebrow="Person"
+        description={person.jobTitle}
       />
-      <Stack spacing={4}>
+      <Stack spacing={5}>
         <HubSection id="overview" title="Overview">
           <Card sx={{ p: 3 }}>
             <Stack spacing={1.5}>
@@ -60,11 +61,11 @@ export const PersonDetailPage = () => {
         </HubSection>
         <MeetingsSection
           meetings={person.meetings}
-          description={`Only meetings and calls involving ${person.name}, not every meeting with their company.`}
+          description={`Meetings and calls involving ${person.name}.`}
         />
         <AgentSessionsSection
           sessions={person.agentSessions}
-          description={`Assistant conversations explicitly linked to ${person.name}, separate from customer meetings.`}
+          description={`Your assistant conversations about ${person.name}.`}
         />
         <KnowledgeSection items={person.knowledge} />
         <FutureCapabilities scope="person" name={person.name} />

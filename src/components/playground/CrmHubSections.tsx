@@ -1,5 +1,7 @@
 import { Box, Button, Link as MuiLink, Stack, Typography } from "@mui/material";
 import { Avatar } from "@bliro/ui/components/Avatar";
+import { SurfaceList } from "@bliro/ui/components/Surface";
+import { SectionHeader } from "@bliro/ui/components/SectionHeader";
 import { colors } from "@bliro/ui/theme/colors";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import { ArrowLeft, Bot, BookOpen, ContactRound, MessagesSquare } from "lucide-react";
@@ -24,13 +26,17 @@ import { Card } from "./Card";
 import { EmptyState } from "./EmptyState";
 import { StatusPill } from "./StatusPill";
 
-export const RecordLink = ({ to, children }: { to: string; children: ReactNode }) => (
+export const RecordLink = ({ to, children, primary = false }: { to: string; children: ReactNode; primary?: boolean }) => (
   <MuiLink
     component={Link}
     to={to}
     variant="smallBody"
-    underline="always"
-    sx={{ color: colors.orange.dark, overflowWrap: "anywhere" }}
+    underline={primary ? "hover" : "always"}
+    sx={{
+      color: colors.dark[200], fontWeight: primary ? 600 : 500, fontSize: primary ? "15px" : undefined, overflowWrap: "anywhere",
+      textDecorationColor: colors.dark[500], textUnderlineOffset: "3px",
+      "&:hover": { color: colors.orange.dark },
+    }}
   >
     {children}
   </MuiLink>
@@ -41,7 +47,8 @@ export const ListReturn = ({ to, label }: { to: string; label: string }) => (
     component={Link}
     to={to}
     startIcon={<ArrowLeft size={16} />}
-    sx={{ mb: 2, width: "auto", color: colors.orange.dark, textTransform: "none" }}
+    color="secondary"
+    sx={{ mb: 2, px: 0, minWidth: 0, width: "fit-content", backgroundColor: "transparent", color: colors.dark[400], "&:hover": { backgroundColor: "transparent", color: colors.dark[100] } }}
   >
     Back to {label}
   </Button>
@@ -61,23 +68,7 @@ export const HubSection = ({
   children: ReactNode;
 }) => (
   <Stack component="section" aria-labelledby={`${id}-heading`} spacing={1.5}>
-    <Stack spacing={0.5}>
-      <Stack direction="row" alignItems="baseline" spacing={1}>
-        <Typography id={`${id}-heading`} component="h2" variant="h4">
-          {title}
-        </Typography>
-        {count !== undefined && (
-          <Typography variant="smallBody" sx={{ color: colors.dark[400] }}>
-            {count}
-          </Typography>
-        )}
-      </Stack>
-      {description && (
-        <Typography variant="smallBody" sx={{ color: colors.dark[400] }}>
-          {description}
-        </Typography>
-      )}
-    </Stack>
+    <SectionHeader id={`${id}-heading`} title={title} description={description} count={count} />
     {children}
   </Stack>
 );
@@ -107,7 +98,7 @@ export const PeopleCards = ({
       description="There are no customer contacts in this view."
     />
   ) : (
-    <Stack spacing={1.5}>
+    <SurfaceList>
       {people.map((person) => (
         <Card key={person.id} sx={{ p: 2.5 }}>
           <Stack direction="row" alignItems="flex-start" spacing={1.5}>
@@ -118,7 +109,7 @@ export const PeopleCards = ({
               variant="secondary"
             />
             <Stack spacing={0.75} sx={{ minWidth: 0, flex: 1 }}>
-              <RecordLink to={`/people/${person.id}`}>{person.name}</RecordLink>
+              <RecordLink to={`/people/${person.id}`} primary>{person.name}</RecordLink>
               <Typography
                 variant="xSmallBody"
                 sx={{ color: colors.dark[400], overflowWrap: "anywhere" }}
@@ -138,7 +129,7 @@ export const PeopleCards = ({
           </Stack>
         </Card>
       ))}
-    </Stack>
+    </SurfaceList>
   );
 
 export const MeetingsSection = ({
@@ -156,14 +147,14 @@ export const MeetingsSection = ({
         description="No meeting or call history is linked to this record."
       />
     ) : (
-      <Stack spacing={1.5}>
+      <SurfaceList>
         {meetings.map((meeting) => {
           const tone = MEETING_STATUS_TONE[meeting.status];
           return (
             <Card key={meeting.id} sx={{ p: 2.5 }}>
               <Stack spacing={1}>
                 <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap>
-                  <RecordLink to={`/meetings/${meeting.id}`}>{meeting.title}</RecordLink>
+                  <RecordLink to={`/meetings/${meeting.id}`} primary>{meeting.title}</RecordLink>
                   <StatusPill label={tone.label} color={tone.color} background={tone.background} />
                 </Stack>
                 <Typography variant="xSmallBody" sx={{ color: colors.dark[400] }}>
@@ -188,7 +179,7 @@ export const MeetingsSection = ({
             </Card>
           );
         })}
-      </Stack>
+      </SurfaceList>
     )}
   </HubSection>
 );
@@ -201,12 +192,12 @@ export const AgentSessionCards = ({
   sessions: AgentSessionSummary[];
   showCompany?: boolean;
 }) => (
-  <Stack spacing={1.5}>
+  <SurfaceList>
     {sessions.map((session) => (
       <Card key={session.id} sx={{ p: 2.5 }}>
         <Stack spacing={1}>
           <Stack direction="row" alignItems="center" spacing={1} flexWrap="wrap" useFlexGap>
-            <RecordLink to={`/agent-sessions/${session.id}`}>{session.title}</RecordLink>
+            <RecordLink to={`/agent-sessions/${session.id}`} primary>{session.title}</RecordLink>
             <StatusPill
               label={AGENT_CHANNEL_LABEL[session.channel]}
               color={colors.dark[300]}
@@ -249,7 +240,7 @@ export const AgentSessionCards = ({
         </Stack>
       </Card>
     ))}
-  </Stack>
+  </SurfaceList>
 );
 
 export const AgentSessionsSection = ({
@@ -348,7 +339,7 @@ export const KnowledgeSection = ({ items }: { items: KnowledgeItem[] }) => (
     id="knowledge"
     title="Knowledge"
     count={items.length}
-    description="Seeded relationship context, separate from documentation of individual meetings."
+    description="Relationship notes and account context."
   >
     {items.length === 0 ? (
       <EmptyState
@@ -357,7 +348,7 @@ export const KnowledgeSection = ({ items }: { items: KnowledgeItem[] }) => (
         description="No non-meeting notes or context are attached to this record."
       />
     ) : (
-      <Stack spacing={1.5}>
+      <SurfaceList>
         {items.map((item) => (
           <Card key={item.id} sx={{ p: 2.5 }}>
             <Stack spacing={1}>
@@ -373,7 +364,7 @@ export const KnowledgeSection = ({ items }: { items: KnowledgeItem[] }) => (
             </Stack>
           </Card>
         ))}
-      </Stack>
+      </SurfaceList>
     )}
   </HubSection>
 );

@@ -1,10 +1,13 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { Avatar } from "@bliro/ui/components/Avatar";
+import { PageHeader } from "@bliro/ui/components/PageHeader";
+import { SectionHeader } from "@bliro/ui/components/SectionHeader";
+import { Surface, SurfaceList } from "@bliro/ui/components/Surface";
+import { tokens } from "@bliro/ui/theme/tokens";
 import { BliroCheckBox } from "@bliro/ui/components/BliroCheckBox";
 import { BliroSwitch } from "@bliro/ui/components/BliroSwitch";
 import { Input } from "@bliro/ui/components/Input";
 import { SquareIconButton } from "@bliro/ui/components/SquareIconButton";
-import { BliroLogo } from "@bliro/ui/logo";
 import { IconColor } from "@bliro/common-types/icon/IconColor";
 import { Icon } from "@/components/Icon";
 import { PanelWarning } from "@/components/PanelWarning";
@@ -31,17 +34,46 @@ export const DesignSystemPage = () => {
   return (
     <Box>
       <Stack spacing={5}>
-        <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <BliroLogo />
-          <Typography variant="smallBody" sx={{ color: colors.dark[400] }}>
-            Frontend playground
-          </Typography>
-        </Stack>
+        <PageHeader title="Design system" eyebrow="Bliro foundations" description="Clear hierarchy. Useful space. Color with purpose. Shared patterns for a focused B2B workspace." />
+
+        <Section title="Product patterns">
+          <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", lg: "1fr 1fr" }, gap: 3 }}>
+            <Surface sx={{ p: 3 }}>
+              <Stack spacing={2}>
+                <SectionHeader component="h3" title="One surface, one purpose" description="Use a quiet border, not a shadow, to group related information." />
+                <Typography variant="smallBody">28px page titles · 16px section headings · 14px body text. Keep large display typography for marketing, not record pages.</Typography>
+                <Typography variant="smallBody">Orange signals selection and primary actions. Neutral links and secondary controls keep the content in focus.</Typography>
+              </Stack>
+            </Surface>
+            <Stack spacing={1.5}>
+              <SectionHeader component="h3" title="Grouped records" count={2} description="Use dividers for repeated records, not a stack of floating cards." />
+              <SurfaceList>
+                {["Customer relationship", "Meeting and call history"].map((label) => (
+                  <Surface key={label} sx={{ p: 2 }}>
+                    <Typography variant="smallTitle" sx={{ fontWeight: 600 }}>{label}</Typography>
+                    <Typography component="p" variant="xSmallBody">A clear title, then supporting context.</Typography>
+                  </Surface>
+                ))}
+              </SurfaceList>
+            </Stack>
+          </Box>
+        </Section>
+
+        <Section title="Spacing">
+          <Stack direction="row" spacing={3} flexWrap="wrap" useFlexGap>
+            {Object.entries(tokens.space).map(([name, value]) => (
+              <Stack key={name} spacing={1} sx={{ minWidth: 64 }}>
+                <Box sx={{ width: value, height: 24, borderRadius: "2px", backgroundColor: colors.orange[400] }} />
+                <Typography variant="xSmallBody">{name} · {value}</Typography>
+              </Stack>
+            ))}
+          </Stack>
+        </Section>
 
         <Section title="Colors">
           <Stack spacing={1.5}>
             {Object.entries(colors).map(([name, ramp]) => (
-              <Stack key={name} direction="row" spacing={1} alignItems="center">
+              <Stack key={name} direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap>
                 <Typography
                   variant="xSmallBody"
                   sx={{ width: 64, color: colors.dark[400], fontWeight: fontWeight["medium"] }}
@@ -68,7 +100,7 @@ export const DesignSystemPage = () => {
 
         <Section title="Typography">
           <Stack spacing={1}>
-            {(["h2", "h4", "subtitle1", "normalTitle", "normalBody", "xSmallBody"] as const).map(
+            {(["pageTitle", "sectionTitle", "eyebrow", "normalTitle", "normalBody", "xSmallBody"] as const).map(
               (variant) => (
                 <Typography key={variant} variant={variant}>
                   {variant} — The quick brown fox
@@ -133,7 +165,7 @@ export const DesignSystemPage = () => {
               startIcon={<Search size={16} color={colors.dark[400]} />}
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              wrapperProps={{ sx: { width: 280 } }}
+              wrapperProps={{ sx: { width: 280, maxWidth: "100%" } }}
             />
             <BliroCheckBox checked={checked} onChange={setChecked} aria-label="Toggle checkbox" />
             <BliroSwitch
@@ -183,9 +215,7 @@ interface ISectionProps {
 
 const Section = ({ title, children }: ISectionProps) => (
   <Stack spacing={2}>
-    <Typography variant="subtitle2" sx={{ color: colors.dark[300] }}>
-      {title}
-    </Typography>
+    <SectionHeader title={title} />
     {children}
   </Stack>
 );

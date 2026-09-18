@@ -2,6 +2,13 @@
 
 Dated history of meaningful task work and decisions.
 
+## 2026-09-18
+
+- Refined the product pages into a consistent B2B language: compact heading hierarchy, grouped record lists, quieter navigation, shorter copy, and responsive calendar/team/settings layouts. Existing canonical records, visible hub sections, and placeholder boundaries remain intact.
+- User clarified that `src/ui` should evolve, not remain an untouched snapshot. Added shared product typography, semantic tokens, `PageHeader`, `SectionHeader`, `Surface`, and `SurfaceList`; documented the library in `src/ui/README.md` and expanded `/design-system`. Upstream updates must now be merged selectively rather than overwriting local improvements.
+- Improved input label/error associations, keyboard-operable filters, active-link semantics, focus indicators, and muted-text contrast. Record titles use restrained styling; supporting record links remain underlined.
+- Validation: build/typecheck, 17 backend checks, and 29 Chrome browser tests passed. New tests cover 14 routes at 390/768/1440px, collapsed navigation, keyboard filters, labeled inputs, and shared visual styles. Desktop/mobile screenshots were reviewed. Existing language-picker option warnings and bundle-size/lottie eval warnings remain.
+
 ## 2026-09-17
 
 - Ticket 6: Agent Sessions is a real destination instead of a shell. `src/routes/CrmRouteShell.tsx` is gone; `AgentSessionsPage` lists Call/Chat sessions with their company, people, and optional meeting, and `AgentSessionDetailPage` stacks Overview, Conversation, Documentation produced, Company and people, and Related meeting.

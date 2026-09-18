@@ -329,7 +329,8 @@ test("analysis and sharing stay scoped placeholders and reset main scroll", asyn
   await expect(page).toHaveURL("/settings/sharing");
   await expect(main.getByRole("heading", { name: "Sharing", exact: true })).toBeVisible();
   await expect.poll(() => main.evaluate((element) => element.scrollTop)).toBeLessThan(5);
-  await expect(main).toContainText("there are no policy controls in this prototype");
+  await expect(main).toContainText("This preview does not grant access or change existing permissions.");
+  await expect(main.getByRole("button")).toHaveCount(0);
 
   await page.goto("/people/per_anke");
   const personAnalysis = main.getByRole("region", { name: "Analysis", exact: true });

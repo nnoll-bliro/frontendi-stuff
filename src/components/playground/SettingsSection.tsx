@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { colors } from "@bliro/ui/theme/colors";
 import { fontWeight } from "@bliro/ui/theme/fonts";
 import type { ReactNode } from "react";
@@ -22,11 +22,17 @@ export const SettingsSection = ({
   children,
   destructive,
 }: SettingsSectionProps) => (
-  <Card sx={{ p: 3, ...(destructive && { borderColor: colors.red[400] }) }}>
+  <Card sx={{ p: { xs: 2.5, sm: 3 }, ...(destructive && { borderColor: colors.red[400] }) }}>
     <Stack spacing={children ? 2.5 : 0}>
-      <Stack direction="row" alignItems="flex-start" justifyContent="space-between" spacing={2}>
-        <Stack spacing={0.5} sx={{ minWidth: 0 }}>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        alignItems={{ xs: "stretch", sm: "flex-start" }}
+        justifyContent="space-between"
+        spacing={2}
+      >
+        <Stack spacing={0.5} sx={{ minWidth: 0, maxWidth: 680 }}>
           <Typography
+            component="h2"
             variant="normalTitle"
             sx={{
               color: destructive ? colors.red.dark : colors.dark[100],
@@ -41,7 +47,9 @@ export const SettingsSection = ({
             </Typography>
           )}
         </Stack>
-        {action}
+        {action && (
+          <Box sx={{ flexShrink: 0, alignSelf: { xs: "flex-start", sm: "auto" } }}>{action}</Box>
+        )}
       </Stack>
       {children}
     </Stack>
@@ -57,7 +65,7 @@ interface SettingsFieldProps {
 
 /** Label above a control, matching the spacing the design system's Input uses. */
 export const SettingsField = ({ label, children, hint }: SettingsFieldProps) => (
-  <Stack spacing={0.5} sx={{ flex: 1, minWidth: 220 }}>
+  <Stack spacing={0.5} sx={{ flex: 1, minWidth: 0 }}>
     <Typography
       variant="smallBody"
       component="div"

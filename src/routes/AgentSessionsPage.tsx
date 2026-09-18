@@ -16,7 +16,7 @@ export const AgentSessionsPage = () => {
     <>
       <PageHeader
         title="Agent Sessions"
-        description="Your Call and Chat conversations with the assistant. A session can be about a customer meeting, but it is never itself a customer touchpoint."
+        description="Your calls and chats with the assistant, separate from customer meetings."
       />
       <Typography component="p" variant="smallBody" sx={{ color: colors.dark[400], mb: 2 }}>
         {sessions.length} {sessions.length === 1 ? "session" : "sessions"} · {calls}{" "}

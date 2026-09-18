@@ -1,8 +1,12 @@
 import { createTheme } from "@mui/material/styles";
 
 import { colors } from "./colors";
+import { focusRing, tokens } from "./tokens";
 
 export const fontVariants = {
+  pageTitle: "pageTitle",
+  sectionTitle: "sectionTitle",
+  eyebrow: "eyebrow",
   h0: "h0",
   h1: "h1",
   h2: "h2",
@@ -35,6 +39,9 @@ export const fontSizes = {
 
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
+    pageTitle: true;
+    sectionTitle: true;
+    eyebrow: true;
     h0: true;
     subtitle0: true;
     subtitle3: true;
@@ -59,7 +66,11 @@ declare module "@mui/material/Button" {
 }
 
 export const theme = createTheme({
+  shape: { borderRadius: 6 },
   palette: {
+    background: { default: tokens.color.canvas, paper: tokens.color.surface },
+    text: { primary: tokens.color.text, secondary: tokens.color.muted },
+    divider: tokens.color.border,
     primary: {
       main: colors.orange[100],
       dark: colors.orange.dark,
@@ -94,11 +105,33 @@ export const theme = createTheme({
     fontFamily: "Inter",
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        "a:focus-visible, button:focus-visible, [tabindex]:focus-visible": focusRing,
+        "@media (prefers-reduced-motion: reduce)": {
+          "*, *::before, *::after": {
+            animationDuration: "0.01ms !important",
+            transitionDuration: "0.01ms !important",
+            scrollBehavior: "auto !important",
+          },
+        },
+      },
+    },
     MuiTypography: {
       styleOverrides: {
         root: ({ ownerState }) => ({
           fontFamily: "Inter",
           color: colors.dark[100],
+          ...(ownerState.variant === "pageTitle" && {
+            fontSize: "28px", fontWeight: 600, lineHeight: "36px", letterSpacing: "-0.7px",
+          }),
+          ...(ownerState.variant === "sectionTitle" && {
+            fontSize: "16px", fontWeight: 600, lineHeight: "24px", letterSpacing: "-0.2px",
+          }),
+          ...(ownerState.variant === "eyebrow" && {
+            fontSize: "11px", fontWeight: 600, lineHeight: "16px", letterSpacing: "0.8px",
+            textTransform: "uppercase", color: colors.dark[400],
+          }),
           ...(ownerState.variant === "h0" && {
             fontSize: "56px",
             fontWeight: 700,
@@ -236,8 +269,11 @@ export const theme = createTheme({
           display: "flex",
           alignItems: "center",
           boxShadow: "none",
-          borderRadius: "4px",
-          textTransform: "capitalize",
+          borderRadius: tokens.radius.control,
+          textTransform: "none",
+          fontSize: "13px",
+          fontWeight: 500,
+          "&:focus-visible": focusRing,
           "&:hover": {
             boxShadow: "none",
           },
@@ -345,7 +381,7 @@ export const theme = createTheme({
     MuiDivider: {
       styleOverrides: {
         root: () => ({
-          borderColor: colors.dark[800],
+          borderColor: tokens.color.border,
         }),
       },
     },

@@ -88,7 +88,7 @@ test("related agent sessions are shown as separate conversations", async ({ page
   await page.goto("/meetings/mtg_halden_depot");
   const sessions = region(page, "Agent Sessions");
 
-  await expect(sessions).toContainText("not a recording of this meeting");
+  await expect(sessions).toContainText("Separate assistant conversations about this touchpoint");
   await expect(
     sessions.getByRole("link", { name: "Document Ruben's depot call", exact: true }),
   ).toHaveAttribute("href", "/agent-sessions/as_halden_debrief");
@@ -104,7 +104,7 @@ test("calendar entry stays supporting context on both sides of the link", async 
   // A calendar-sourced meeting keeps its invite metadata as context.
   await page.goto("/meetings/mtg_halden_discovery");
   const calendar = region(page, "Calendar entry");
-  await expect(calendar).toContainText("not a second meeting record");
+  await expect(calendar).toContainText("The original invite and scheduling details");
   await calendar.getByRole("link").first().click();
   await expect(page).toHaveURL("/calendar/cal_halden_discovery");
 

@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { Avatar } from "@bliro/ui/components/Avatar";
 import { colors } from "@bliro/ui/theme/colors";
 import { fontWeight } from "@bliro/ui/theme/fonts";
@@ -28,26 +28,52 @@ export const TeamPage = () => {
 
   return (
     <>
-      <PageHeader title="Team" description={`${org.name} · ${org.domain}`} />
+      <PageHeader
+        title="Team"
+        description={`Members and calendar connections for ${org.name}.`}
+      />
 
-      <Card sx={{ p: 3, mb: 3 }}>
-        <Stack direction="row" spacing={4} flexWrap="wrap" useFlexGap>
+      <Card sx={{ p: { xs: 2.5, sm: 3 }, mb: { xs: 3, md: 4 } }}>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "repeat(2, minmax(0, 1fr))",
+              sm: "repeat(3, minmax(0, 1fr))",
+              lg: "repeat(5, minmax(0, 1fr))",
+            },
+            columnGap: 3,
+            rowGap: 2.5,
+          }}
+        >
           <Fact label="Organisation" value={org.name} />
           <Fact label="Domain" value={org.domain} />
-          <Fact label="Plan" value={org.plan.toUpperCase()} />
+          <Fact label="Plan" value={org.plan[0].toUpperCase() + org.plan.slice(1)} />
           <Fact label="Members" value={String(users.length)} />
           <Fact label="Customer since" value={formatDate(org.createdAt)} />
-        </Stack>
+        </Box>
       </Card>
 
       <Stack spacing={1.5}>
         {users.map((user) => {
           const tone = ROLE_TONE[user.role];
           return (
-            <Card key={user.id} sx={{ p: 2 }}>
-              <Stack direction="row" alignItems="center" spacing={2}>
+            <Card key={user.id} sx={{ p: { xs: 2, sm: 2.5 } }}>
+              <Box
+                sx={{
+                  display: "grid",
+                  gridTemplateColumns: {
+                    xs: "auto minmax(0, 1fr) auto",
+                    md: "auto minmax(180px, 1fr) auto auto",
+                  },
+                  alignItems: "center",
+                  columnGap: { xs: 1.25, sm: 2 },
+                  rowGap: 1.25,
+                }}
+              >
                 <Avatar title={initials(user.name)} tooltip={user.email} />
-                <Stack sx={{ flex: 1, minWidth: 0 }}>
+
+                <Stack sx={{ minWidth: 0 }} spacing={0.125}>
                   <Typography
                     variant="normalTitle"
                     noWrap
@@ -56,33 +82,57 @@ export const TeamPage = () => {
                     {user.name}
                   </Typography>
                   <Typography variant="xxSmallBody" noWrap sx={{ color: colors.dark[400] }}>
-                    {user.jobTitle ?? "—"} · {user.email}
+                    {user.jobTitle ?? "No job title"}
+                  </Typography>
+                  <Typography variant="xxSmallBody" noWrap sx={{ color: colors.dark[400] }}>
+                    {user.email}
                   </Typography>
                 </Stack>
 
-                {user.provider ? (
-                  <Stack direction="row" alignItems="center" spacing={0.75}>
-                    <CustomIcon
-                      icon={user.provider === "google" ? "GoogleCalendarIcon" : "MicrosoftLogo"}
-                      width={14}
-                      height={14}
-                    />
-                    <Typography variant="xxSmallBody" sx={{ color: colors.dark[400] }}>
-                      Calendar connected
-                    </Typography>
-                  </Stack>
-                ) : (
-                  <Typography variant="xxSmallBody" sx={{ color: colors.yellow.dark }}>
-                    No calendar connected
-                  </Typography>
-                )}
+                <Box sx={{ display: { xs: "block", md: "none" }, justifySelf: "end" }}>
+                  <StatusPill
+                    label={user.role[0].toUpperCase() + user.role.slice(1)}
+                    color={tone.color}
+                    background={tone.background}
+                  />
+                </Box>
 
-                <StatusPill
-                  label={user.role[0].toUpperCase() + user.role.slice(1)}
-                  color={tone.color}
-                  background={tone.background}
-                />
-              </Stack>
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  spacing={0.75}
+                  sx={{
+                    gridColumn: { xs: "2 / -1", md: "auto" },
+                    minWidth: 0,
+                    justifySelf: { xs: "start", md: "end" },
+                  }}
+                >
+                  {user.provider ? (
+                    <>
+                      <CustomIcon
+                        icon={user.provider === "google" ? "GoogleCalendarIcon" : "MicrosoftLogo"}
+                        width={14}
+                        height={14}
+                      />
+                      <Typography variant="xxSmallBody" sx={{ color: colors.dark[400] }}>
+                        Calendar connected
+                      </Typography>
+                    </>
+                  ) : (
+                    <Typography variant="xxSmallBody" sx={{ color: colors.yellow.dark }}>
+                      No calendar connected
+                    </Typography>
+                  )}
+                </Stack>
+
+                <Box sx={{ display: { xs: "none", md: "block" }, justifySelf: "end" }}>
+                  <StatusPill
+                    label={user.role[0].toUpperCase() + user.role.slice(1)}
+                    color={tone.color}
+                    background={tone.background}
+                  />
+                </Box>
+              </Box>
             </Card>
           );
         })}
@@ -91,15 +141,15 @@ export const TeamPage = () => {
   );
 };
 
-// Stack, not Box: the theme's custom Typography variants fall outside MUI's
-// variantMapping and render as inline <span>, so a plain Box runs the label and
-// the value together on one line.
 const Fact = ({ label, value }: { label: string; value: string }) => (
-  <Stack spacing={0.25}>
+  <Stack spacing={0.375} sx={{ minWidth: 0 }}>
     <Typography variant="xxSmallBody" sx={{ color: colors.dark[400] }}>
       {label}
     </Typography>
-    <Typography variant="normalTitle" sx={{ color: colors.dark[100] }}>
+    <Typography
+      variant="normalTitle"
+      sx={{ color: colors.dark[100], overflowWrap: "anywhere" }}
+    >
       {value}
     </Typography>
   </Stack>

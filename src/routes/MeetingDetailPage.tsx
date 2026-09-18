@@ -45,11 +45,12 @@ export const MeetingDetailPage = () => {
       <ListReturn to="/meetings" label="Meetings" />
       <PageHeader
         title={meeting.title}
-        description={`${kindLabel} · ${formatDateTime(meeting.startedAt)} · Read-only example`}
+        eyebrow={kindLabel}
+        description={formatDateTime(meeting.startedAt)}
         action={<StatusPill label={tone.label} color={tone.color} background={tone.background} />}
       />
 
-      <Stack spacing={4}>
+      <Stack spacing={5}>
         <HubSection id="overview" title="Overview">
           <Card sx={{ p: 3 }}>
             <Stack spacing={1.5}>
@@ -68,7 +69,7 @@ export const MeetingDetailPage = () => {
         <HubSection
           id="participants"
           title="Company and people"
-          description="Who this touchpoint was with. These links exist whether or not the meeting was transcribed."
+          description="The company and participants in this touchpoint."
         >
           <Card sx={{ p: 3 }}>
             <Stack spacing={2.5}>
@@ -139,7 +140,7 @@ export const MeetingDetailPage = () => {
           id="documentation"
           title="Documentation"
           count={meeting.documentation.length}
-          description="What was written up about this touchpoint, and where it came from."
+          description="Notes, summaries, and their sources."
         >
           <DocumentationPanel meeting={meeting} />
         </HubSection>
@@ -147,7 +148,7 @@ export const MeetingDetailPage = () => {
         <HubSection
           id="transcript"
           title="Transcript"
-          description="An optional artifact. A touchpoint without one is still a complete record."
+          description="Customer conversation, when transcribed."
         >
           {transcript ? (
             <TranscriptPanel transcript={transcript} />
@@ -163,13 +164,13 @@ export const MeetingDetailPage = () => {
 
         <AgentSessionsSection
           sessions={meeting.agentSessions}
-          description="Assistant conversations related to this touchpoint. An assistant call is its own conversation, not a recording of this meeting."
+          description="Separate assistant conversations about this touchpoint."
         />
 
         <HubSection
           id="calendar"
           title="Calendar entry"
-          description="Scheduling metadata that supports this touchpoint. The invite is not a second meeting record."
+          description="The original invite and scheduling details."
         >
           <Card sx={{ p: 2.5 }}>
             {entry ? (

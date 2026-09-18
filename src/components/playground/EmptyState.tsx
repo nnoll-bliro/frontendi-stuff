@@ -15,14 +15,15 @@ export const EmptyState = ({ Icon, title, description, action }: EmptyStateProps
     alignItems="center"
     spacing={1}
     sx={{
-      py: 8,
+      py: 4,
       px: 3,
       textAlign: "center",
-      border: `1px dashed ${colors.dark[600]}`,
-      borderRadius: "12px",
+      border: `1px solid ${colors.dark[700]}`,
+      backgroundColor: colors.dark[900],
+      borderRadius: "8px",
     }}
   >
-    <Icon size={28} color={colors.dark[500]} />
+    <Icon size={22} color={colors.dark[400]} aria-hidden="true" />
     <Typography variant="normalTitle" sx={{ color: colors.dark[200] }}>
       {title}
     </Typography>

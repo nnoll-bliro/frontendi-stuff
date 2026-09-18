@@ -1,16 +1,18 @@
 .container {
   border-width: 1px;
   border-style: solid;
-  border-radius: 4px;
+  border-radius: 6px;
+  background-color: var(--white);
   border-color: var(--bliro-dark-6);
   color: var(--bliro-dark-2);
-  transition: all 0.2s ease-in-out;
+  transition: border-color 150ms, box-shadow 150ms;
   box-sizing: border-box;
   margin: 4px 0;
 }
 
 .container:has(input:focus) {
-  border-color: var(--bliro-dark-4);
+  border-color: var(--bliro-blue-1);
+  box-shadow: 0 0 0 2px var(--bliro-blue-6);
 }
 
 .container:has(input:disabled) {
@@ -31,12 +33,16 @@
   outline: none;
   padding: 0;
   flex: 1;
+  min-width: 0;
+  width: 100%;
+  background: transparent;
+  color: inherit;
   font-family: Inter;
   font-style: normal;
 }
 
 .input::placeholder {
-  color: var(--bliro-dark-5);
+  color: var(--bliro-dark-4);
 }
 .small {
   padding: 6px 12px;
